@@ -21,20 +21,6 @@ const values = [
 const lead =
   "Driven by a vision of eco-friendly hospitality, The Mountain Table emerged as a haven where nature's harmony thrives.";
 
-/** Mountain-ridge edge that carries the ivory story section down into the forest-green one. */
-function Ridge() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 1440 90"
-      preserveAspectRatio="none"
-      className="absolute inset-x-0 top-0 block h-10 w-full -translate-y-[calc(100%-1px)] fill-forest desk:h-[90px]"
-    >
-      <path d="M0 90V52l130-30 150 34 170-46 190 52 160-38 190 44 170-52 280 46v78Z" />
-    </svg>
-  );
-}
-
 /** "Our Philosophy": numbered statements divided by hairlines, then the sustainability feature. */
 export function AboutPhilosophy() {
   return (
@@ -43,7 +29,6 @@ export function AboutPhilosophy() {
       aria-labelledby="philosophy-title"
       className="relative bg-forest py-24 text-ivory desk:py-[150px]"
     >
-      <Ridge />
       <div className="mx-auto grid max-w-[1180px] gap-14 px-6 desk:grid-cols-12 desk:gap-x-10 desk:px-8">
         <header className="desk:col-span-4">
           <div className="desk:sticky desk:top-32">

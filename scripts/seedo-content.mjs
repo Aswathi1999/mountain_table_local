@@ -7,7 +7,7 @@ const p = await (await b.newContext({ viewport: { width: +w, height: 900 } })).n
 const errors = [];
 p.on("console", (m) => m.type() === "error" && errors.push(m.text()));
 p.on("pageerror", (e) => errors.push(e.message));
-await p.goto(`http://localhost:3100/${route}`, { waitUntil: "load" });
+await p.goto(`http://localhost:3001/${route}`, { waitUntil: "load" });
 await p.waitForTimeout(2000);
 const data = await p.evaluate(() => {
   const main = document.querySelector("main");

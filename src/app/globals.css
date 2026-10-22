@@ -341,22 +341,6 @@ body {
   background: var(--color-accent);
 }
 
-/* ---------- Honeycomb gallery tiles ---------- */
-.hc-tile {
-  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-}
-.hc-tile::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.75);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.hc-tile:hover::after {
-  opacity: 1;
-}
-
 /* Video-in-text headline (See & Do): the text knocks out a video using mix-blend-mode. */
 .text-knockout {
   mix-blend-mode: screen;
@@ -445,31 +429,66 @@ body {
   }
 }
 
-/* ---------- See & Do ---------- */
-.hc-scale {
-  --hs: 1;
+/* ---------- Vertical hairline that draws downwards (cancellation timeline) ---------- */
+[data-reveal="drawy"] {
+  opacity: 1;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 1.8s var(--ease-out);
 }
-@media (min-width: 750px) and (max-width: 1279.98px) {
-  .hc-scale {
-    --hs: 0.78;
-  }
-}
-@media (min-width: 750px) and (max-width: 999.98px) {
-  .hc-scale {
-    --hs: 0.6;
-  }
-}
-.hc-tile::after {
-  background: rgba(31, 59, 47, 0.45);
+[data-reveal="drawy"].is-in {
+  transform: none;
 }
 
-/* ---------- Shared footer (location + contact): gold focus ring on the dark/ivory bands ---------- */
-#location :focus-visible,
-#contact :focus-visible {
-  outline-color: var(--color-gold);
+/* ---------- More image reveals, so neighbouring photographs do not all enter the same way ---------- */
+[data-reveal="wipel"] {
+  opacity: 1;
+  clip-path: inset(0 0 0 100%);
+  transition: clip-path 1.5s cubic-bezier(0.77, 0, 0.18, 1);
 }
-.home-page {
-  background-color: var(--color-ivory);
+[data-reveal="wipeu"] {
+  opacity: 1;
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+[data-reveal="iris"] {
+  opacity: 1;
+  clip-path: inset(50% 50% 50% 50%);
+  transition: clip-path 1.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal="wipel"].is-in,
+[data-reveal="wipeu"].is-in,
+[data-reveal="iris"].is-in {
+  clip-path: inset(0 0 0 0);
+}
+[data-reveal="wipel"] .mask-img {
+  transform: scale(1.14) translateX(3%);
+  transition: transform 2s var(--ease-out);
+}
+[data-reveal="wipeu"] .mask-img {
+  transform: scale(1.1) translateY(4%);
+  transition: transform 1.6s var(--ease-out);
+}
+[data-reveal="iris"] .mask-img {
+  transform: scale(1.3);
+  transition: transform 2.2s var(--ease-out);
+}
+[data-reveal="wipel"].is-in .mask-img,
+[data-reveal="wipeu"].is-in .mask-img,
+[data-reveal="iris"].is-in .mask-img {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal="wipel"],
+  [data-reveal="wipeu"],
+  [data-reveal="iris"] {
+    clip-path: none !important;
+  }
+  [data-reveal="wipel"] .mask-img,
+  [data-reveal="wipeu"] .mask-img,
+  [data-reveal="iris"] .mask-img {
+    transform: none !important;
+  }
 }
 
 /* ---------- Typography system ----------
@@ -633,4 +652,28 @@ dialog[open] {
   .gal-sweep::after {
     animation: none;
   }
+}
+
+/* ---------- Shared footer (location + contact): gold focus ring ---------- */
+#location :focus-visible,
+#contact :focus-visible {
+  outline-color: var(--color-gold);
+}
+
+/* ---------- Chat panel: gold focus ring, and the message field shows focus on its underline instead ---------- */
+[role="dialog"][aria-label="Chat"] :focus-visible {
+  outline-color: var(--color-gold);
+}
+[role="dialog"][aria-label="Chat"] textarea:focus-visible {
+  outline: none;
+}
+
+/* ---------- Discover: gold keyboard-focus ring ---------- */
+#discover :focus-visible {
+  outline-color: var(--color-gold);
+}
+
+/* ---------- Home page canvas ---------- */
+.home-page {
+  background-color: var(--color-ivory);
 }

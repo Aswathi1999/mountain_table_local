@@ -94,7 +94,7 @@ export const activityLayouts: readonly ActivityLayout[] = [
   },
 ];
 
-/** Honeycomb gallery photos in tile order (top row, then bottom row). */
+/** The seven "Exciting Escapes" photographs, in their original order. */
 export const honeycombPhotos = [
   { src: "/images/81d784_a43d2aa0646e4ef884b76c80a2b04d2f.jpg", alt: "A bathtub beside a slatted window" },
   { src: "/images/81d784_1c2a1355792941408dd4987fa7e78484.jpg", alt: "The infinity pool at night" },
@@ -107,14 +107,3 @@ export const honeycombPhotos = [
   { src: "/images/c18256_6f8159e643924ae99302e95ab1689264.jpg", alt: "A wooden writing desk" },
   { src: "/images/c18256_856598ef975d4cef8aab0df95f08eb12.jpg", alt: "A bright hall with a world map" },
 ] as const;
-
-/** Tile boxes inside the gallery container: desktop 1216x477 (288px tiles), mobile 280x126 (54px tiles). */
-export const honeycombTiles: readonly { d: Box; m: Box }[] = [
-  { d: [13, 13, 288, 288], m: [13, 13, 54, 54] },
-  { d: [313, 13, 288, 288], m: [80, 13, 54, 54] },
-  { d: [613, 13, 288, 288], m: [147, 13, 54, 54] },
-  { d: [913, 13, 288, 288], m: [214, 13, 54, 54] },
-  { d: [163, 163, 288, 288], m: [46.5, 47, 54, 54] },
-  { d: [463, 163, 288, 288], m: [113.5, 47, 54, 54] },
-  { d: [763, 163, 288, 288], m: [180.5, 47, 54, 54] },
-];

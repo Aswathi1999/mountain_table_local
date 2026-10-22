@@ -23,6 +23,9 @@ export const contact = {
   copyright: "© 2024 by The Mountain Table",
 } as const;
 
+/** WhatsApp chat for the property's phone number (the number in the contact details). */
+export const WHATSAPP_URL = "https://wa.me/919447009954";
+
 export const social = {
   facebook: "https://www.facebook.com/themountaintableresort",
   instagram: "https://www.instagram.com/themountaintable/",

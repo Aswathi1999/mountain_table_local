@@ -24,7 +24,7 @@ export function LocationSection() {
         </div>
 
         <div
-          className="relative z-10 -mt-10 mr-4 ml-4 bg-white p-8 shadow-[0_18px_50px_rgba(36,35,35,0.12)] desk:col-span-5 desk:col-start-8 desk:row-start-1 desk:m-0 desk:-ml-6 desk:p-12"
+          className="relative z-10 -mt-10 mr-4 ml-4 bg-white p-6 shadow-[0_18px_50px_rgba(36,35,35,0.12)] desk:col-span-5 desk:col-start-8 desk:row-start-1 desk:m-0 desk:-ml-6 desk:p-12"
           {...rv("rise", "rise", delay(0.25))}
         >
           <p className="m-0 text-[12px] tracking-[0.3em] text-muted uppercase">Find us</p>
@@ -41,7 +41,7 @@ export function LocationSection() {
               href={DIRECTIONS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="t-ui bg-gold text-forest-deep hover:bg-forest hover:text-ivory inline-flex h-12 items-center px-7 tracking-[0.2em] whitespace-nowrap uppercase no-underline transition-colors duration-300"
+              className="t-ui bg-gold text-forest-deep hover:bg-forest hover:text-ivory inline-flex h-12 items-center px-5 tracking-[0.2em] whitespace-nowrap desk:px-7 uppercase no-underline transition-colors duration-300"
             >
               Get directions
             </a>

@@ -73,7 +73,7 @@ export function HomeServices() {
     <section
       id="services"
       aria-labelledby="services-title"
-      className="bg-ivory-deep relative px-6 py-20 desk:px-8 desk:py-[120px]"
+      className="bg-ivory-deep relative px-6 py-14 desk:px-8 desk:py-20"
     >
       <div className="mx-auto max-w-[1180px]">
         <header className="text-center" {...rv("rise")}>
@@ -83,13 +83,13 @@ export function HomeServices() {
           <span className="mx-auto mt-6 block h-px w-16 bg-gold" />
         </header>
 
-        <div className="mt-16 flex flex-col gap-16 desk:mt-24 desk:gap-28">
+        <div className="mt-12 flex flex-col gap-12 desk:mt-16 desk:gap-20">
           {featured.map((service, i) => (
             <FeaturedService key={service.key} service={service} index={i} />
           ))}
         </div>
 
-        <div className="mt-20 grid gap-10 desk:mt-32 desk:grid-cols-3 desk:gap-14">
+        <div className="mt-14 grid gap-10 desk:mt-20 desk:grid-cols-3 desk:gap-14">
           {compact.map((service, i) => (
             <CompactService key={service.key} service={service} index={i} />
           ))}

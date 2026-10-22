@@ -1,7 +1,22 @@
 import type { CSSProperties } from "react";
 
 export type RevealEffect =
-  "none" | "rise" | "mask" | "wipe" | "draw" | "fade" | "grow" | "slide-x" | "slide-y" | "turn" | "fly" | "fly-y";
+  | "none"
+  | "rise"
+  | "mask"
+  | "wipe"
+  | "wipel"
+  | "wipeu"
+  | "iris"
+  | "draw"
+  | "drawy"
+  | "fade"
+  | "grow"
+  | "slide-x"
+  | "slide-y"
+  | "turn"
+  | "fly"
+  | "fly-y";
 
 type RevealProps = { "data-reveal": RevealEffect; "data-reveal-m"?: RevealEffect; style?: CSSProperties };
 

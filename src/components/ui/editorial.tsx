@@ -39,7 +39,7 @@ type RevealImageProps = {
   /** Sizing of the frame (aspect ratio / height / width). */
   className?: string;
   /** Entrance: `mask` reveals downwards, `wipe` sideways. Both settle a zoomed image. */
-  reveal?: "mask" | "wipe";
+  reveal?: "mask" | "wipe" | "wipel" | "wipeu" | "iris";
   delay?: number;
   /** Scroll drift factor (0.04 to 0.1). Omit for a still image. */
   drift?: number;
@@ -86,19 +86,5 @@ export function RevealImage({
         </div>
       </div>
     </div>
-  );
-}
-
-/** Mountain-ridge edge on top of a section that carries the section above down into it (fill set via className). */
-export function Ridge({ className = "fill-forest" }: { className?: string }) {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 1440 90"
-      preserveAspectRatio="none"
-      className={`absolute inset-x-0 top-0 block h-10 w-full -translate-y-[calc(100%-1px)] desk:h-[90px] ${className}`}
-    >
-      <path d="M0 90V52l130-30 150 34 170-46 190 52 160-38 190 44 170-52 280 46v78Z" />
-    </svg>
   );
 }

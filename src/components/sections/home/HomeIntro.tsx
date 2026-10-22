@@ -1,70 +1,101 @@
 import Image from "next/image";
 import { copy } from "@/data/copy";
 import { rv, stagger } from "@/lib/reveal";
-import { merge, pos } from "@/lib/stage";
-import { Block } from "@/components/ui/Block";
+import { RevealImage } from "@/components/ui/editorial";
 import { ParallaxImage } from "@/components/ui/ParallaxImage";
 
-const INTRO = { d: 737, m: 587 };
-const STRIP = { d: 1155, m: 957 };
-const HOUSE = { d: 1828, m: 1257 };
-
-/** Logo + rule + welcome paragraph (the page's h1), then the first image strip and the "house" blurb. */
+/**
+ * The section after the hero, told as a short arrival in three beats:
+ *  1. A gold line falls from the hero's scroll cue to the logo, then the welcome statement sits beside a wide photograph of the pool terrace at sunset.
+ *  2. A full-bleed band of the dining room, with the original scroll parallax (the photograph is pinned to the viewport on mobile).
+ *  3. The house: a framed aerial photograph of the thatched house among the tea terraces, overlapping the band above, with a
+ *     second photograph tucked into its corner, and the house blurb beside them.
+ * Entrances are the site's own reveals (fade, grow, slide, mask); every text string is unchanged.
+ */
 export function HomeIntro() {
   return (
     <>
-      <Block d={418} m={370} id="intro" label="Introduction">
-        <div
-          className="at mix-blend-multiply"
-          {...rv("fade", "turn")}
-          style={merge(pos(INTRO, [552, 795, 175, 153], [95, 617, 130, 110]), stagger(0))}
-        >
-          <Image
-            src="/images/c18256_c623270b113b42aaa3981dedc1077ade.jpg"
-            alt="The Mountain Table"
-            fill
-            sizes="175px"
-            className="object-cover"
-          />
+      <section id="intro" aria-label="Introduction" className="relative bg-ivory pb-12 desk:pb-[72px]">
+        <div className="flex flex-col items-center">
+          <span aria-hidden="true" className="block h-16 w-px bg-gold desk:h-24" {...rv("drawy", "drawy")} />
+          <div
+            className="relative mt-5 h-[6.5rem] w-[9.5rem] mix-blend-multiply desk:h-[110px] desk:w-[160px]"
+            {...rv("fade", "turn")}
+          >
+            <Image
+              src="/images/c18256_c623270b113b42aaa3981dedc1077ade.jpg"
+              alt="The Mountain Table"
+              fill
+              sizes="160px"
+              className="object-cover"
+            />
+          </div>
         </div>
-        <div
-          className="at border-t border-gold"
-          {...rv("grow")}
-          style={merge(pos(INTRO, [517, 928, 245, 5], [22, 948, 276, 5]), stagger(0.18))}
+
+        <div className="mx-auto mt-8 grid max-w-[1180px] items-center gap-10 px-6 desk:mt-12 desk:grid-cols-12 desk:gap-x-12 desk:px-8">
+          <div className="relative desk:col-span-7">
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 translate-x-3 translate-y-3 border border-gold/70 desk:translate-x-5 desk:translate-y-5"
+            />
+            <RevealImage
+              src="/images/c18256_e258df5a2e004fb0b702a4bb9e142cec.jpg"
+              alt="The infinity pool and covered terrace at sunset"
+              sizes="(min-width: 1000px) 700px, 92vw"
+              className="aspect-[4/3] w-full"
+              reveal="wipe"
+              drift={0.07}
+              position="50% 58%"
+            />
+          </div>
+
+          <div className="desk:col-span-5">
+            <span aria-hidden="true" className="block h-px w-16 bg-gold" {...rv("grow")} />
+            <h1 className="t-lead m-0 mt-8 text-ink" {...rv("fade", "fade", stagger(0.15))}>
+              {copy.home.intro}
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Dining area" className="relative h-[20rem] overflow-hidden bg-forest-deep desk:h-[600px]">
+        <ParallaxImage
+          src="/images/c18256_a5070a9643594d6e90bf5288ae7d0bec.jpg"
+          alt="Dining area with a long wooden table and glass walls"
+          sizes="100vw"
+          k={0.8}
+          km={1}
         />
-        <h1
-          className="at m-0 text-center text-[1rem] leading-5 font-normal tracking-[0.05em] text-forest italic desk:text-[20px] desk:leading-[25px] desk:tracking-[1px]"
-          {...rv("fade")}
-          style={merge(pos(INTRO, [443, 938, 393, 200], [46, 724, 228, 200]), stagger(0.3))}
-        >
-          {copy.home.intro}
-        </h1>
-      </Block>
+      </section>
 
-      <Block d={673} m={300} label="Dining area">
-        <div className="at overflow-hidden" style={pos(STRIP, [150, 1190, 980, 638], [0, 968, 320, 289])}>
-          <ParallaxImage
-            src="/images/c18256_a5070a9643594d6e90bf5288ae7d0bec.jpg"
-            alt="Dining area with a long wooden table and glass walls"
-            sizes="(min-width: 750px) 980px, 100vw"
-            k={0.8}
-            km={1}
-          />
-        </div>
-      </Block>
+      <section aria-label="About the house" className="relative z-10 bg-ivory px-6 pb-24 desk:px-8 desk:pb-[150px]">
+        <div className="mx-auto grid max-w-[1180px] gap-10 desk:grid-cols-12 desk:gap-x-12">
+          <div className="relative -mt-16 pr-6 desk:-mt-[150px] desk:col-span-7 desk:self-start desk:pr-0">
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 -translate-x-3 translate-y-3 border border-gold/70 desk:-translate-x-5 desk:translate-y-5"
+            />
+            <RevealImage
+              src="/images/81d784_a30ae9d65f7a4c158c25796451fed75f.jpg"
+              alt="Aerial view of The Mountain Table's thatched house among the tea plantations"
+              sizes="(min-width: 1000px) 700px, 90vw"
+              className="aspect-[4/3] w-full"
+              drift={0.06}
+              position="52% 50%"
+            />
+          </div>
 
-      <Block d={332} m={267} label="About the house">
-        <div className="at" {...rv("fade", "slide-y")} style={pos(HOUSE, [562, 1882, 153, 82], [140, 1262, 40, 42])}>
-          <Image src="/icons/house.svg" alt="" fill sizes="153px" className="object-contain" />
+          <div className="desk:col-span-5 desk:self-end">
+            <div className="relative h-9 w-16 desk:h-11 desk:w-20" {...rv("fade", "slide-y")}>
+              <Image src="/icons/house.svg" alt="" fill sizes="80px" className="object-contain object-left" />
+            </div>
+            <span aria-hidden="true" className="mt-6 block h-px w-16 bg-gold" {...rv("grow")} />
+            <p className="t-lead m-0 mt-8 text-ink" {...rv("fade", "slide-y", stagger(0.15))}>
+              {copy.home.house}
+            </p>
+          </div>
         </div>
-        <p
-          className="at m-0 text-center text-[1rem] leading-6 text-ink/80 italic desk:text-[18px] desk:leading-[27px]"
-          {...rv("fade", "slide-y")}
-          style={pos(HOUSE, [347, 1988, 585, 108], [36, 1309, 252, 192])}
-        >
-          {copy.home.house}
-        </p>
-      </Block>
+      </section>
     </>
   );
 }
