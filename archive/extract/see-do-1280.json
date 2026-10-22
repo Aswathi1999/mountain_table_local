@@ -1,0 +1,1536 @@
+[
+ {
+  "id": "SITE_HEADER",
+  "box": [
+   0,
+   0,
+   1280,
+   80
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": [
+   {
+    "t": "wix-dropdown-menu",
+    "id": "comp-iix98xkp",
+    "box": [
+     150,
+     19,
+     980,
+     42
+    ]
+   },
+   {
+    "t": "nav",
+    "id": "comp-iix98xkpnavContainer",
+    "box": [
+     150,
+     19,
+     980,
+     42
+    ]
+   },
+   {
+    "t": "ul",
+    "id": "comp-iix98xkpitemsContainer",
+    "box": [
+     150,
+     19,
+     980,
+     42
+    ]
+   },
+   {
+    "t": "li",
+    "id": "comp-iix98xkp0",
+    "box": [
+     150,
+     19,
+     217,
+     42
+    ]
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp0label",
+    "box": [
+     227,
+     19,
+     63,
+     42
+    ],
+    "text": "HOME",
+    "font": "normal 400 14px/42px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)",
+    "href": "https://www.themountaintable.in/"
+   },
+   {
+    "t": "li",
+    "id": "comp-iix98xkp1",
+    "box": [
+     367,
+     19,
+     220,
+     42
+    ]
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp1label",
+    "box": [
+     444,
+     19,
+     66,
+     42
+    ],
+    "text": "ABOUT",
+    "font": "normal 400 14px/42px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)",
+    "href": "https://www.themountaintable.in/about"
+   },
+   {
+    "t": "li",
+    "id": "comp-iix98xkp2",
+    "box": [
+     587,
+     19,
+     236,
+     42
+    ]
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp2label",
+    "box": [
+     664,
+     19,
+     82,
+     42
+    ],
+    "text": "SEE & DO",
+    "font": "normal 400 14px/42px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(146, 145, 145)",
+    "href": "https://www.themountaintable.in/see-do"
+   },
+   {
+    "t": "li",
+    "id": "comp-iix98xkp3",
+    "box": [
+     823,
+     19,
+     307,
+     42
+    ]
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp3label",
+    "box": [
+     900,
+     19,
+     153,
+     42
+    ],
+    "text": "ROOMS & BOOKING",
+    "font": "normal 400 14px/42px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)",
+    "href": "https://www.themountaintable.in/rooms-booking"
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp__more__label",
+    "box": [
+     1135,
+     19,
+     50,
+     20
+    ],
+    "text": "More",
+    "font": "normal 400 14px/19.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)"
+   }
+  ]
+ },
+ {
+  "id": "comp-lv9nmqyt",
+  "box": [
+   0,
+   80,
+   1280,
+   820
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "bgImg": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png\")",
+  "items": [
+   {
+    "t": "wix-bg-image",
+    "id": "bgImg_comp-lv9nmqyt",
+    "box": [
+     0,
+     80,
+     1280,
+     820
+    ],
+    "bgi": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4b",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvb6alvk",
+    "box": [
+     187,
+     112,
+     677,
+     414
+    ],
+    "src": "https://static.wixstatic.com/media/11062b_d578b9d4ffba48c68d086ec29fe9e6f0f000.jpg/v1/fill/w_677,h_414,al_c,q_80,usm_0.33_1.00_0.00,enc_avif,quality_auto/11062b_d578b9d4ffba48c68d086ec29fe9e6f0f000.jpg"
+   },
+   {
+    "t": "h1",
+    "box": [
+     187,
+     112,
+     1,
+     23
+    ],
+    "text": "Adventure \nAwaits:",
+    "font": "normal 700 20px/normal Arial, Helvetica, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(0, 0, 0)",
+    "op": "0"
+   },
+   {
+    "t": "svg",
+    "box": [
+     187,
+     112,
+     300,
+     150
+    ]
+   },
+   {
+    "t": "text",
+    "box": [
+     187,
+     112,
+     910,
+     333
+    ],
+    "text": "Adventure",
+    "font": "normal 400 221px/normal anton, sans-serif ls:normal tt:uppercase ta:start",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "text",
+    "box": [
+     187,
+     333,
+     657,
+     333
+    ],
+    "text": "Awaits:",
+    "font": "normal 400 221px/normal anton, sans-serif ls:normal tt:uppercase ta:start",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "svg",
+    "box": [
+     187,
+     112,
+     677,
+     412
+    ]
+   },
+   {
+    "t": "text",
+    "box": [
+     187,
+     112,
+     677,
+     247
+    ],
+    "text": "Adventure",
+    "font": "normal 400 164.479px/normal anton, sans-serif ls:normal tt:uppercase ta:start",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "text",
+    "box": [
+     187,
+     276,
+     489,
+     247
+    ],
+    "text": "Awaits:",
+    "font": "normal 400 164.479px/normal anton, sans-serif ls:normal tt:uppercase ta:start",
+    "color": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "video",
+    "id": "comp-lvb6alvk_video",
+    "box": [
+     187,
+     112,
+     677,
+     414
+    ]
+   },
+   {
+    "t": "wow-image",
+    "id": "comp-lvb6alvk_img",
+    "box": [
+     187,
+     112,
+     677,
+     414
+    ],
+    "src": "https://static.wixstatic.com/media/11062b_d578b9d4ffba48c68d086ec29fe9e6f0f000.jpg/v1/fill/w_677,h_414,al_c,q_80,usm_0.33_1.00_0.00,enc_avif,quality_auto/11062b_d578b9d4ffba48c68d086ec29fe9e6f0f000.jpg",
+    "op": "0"
+   },
+   {
+    "t": "img",
+    "box": [
+     187,
+     112,
+     677,
+     414
+    ],
+    "src": "https://static.wixstatic.com/media/11062b_d578b9d4ffba48c68d086ec29fe9e6f0f000.jpg/v1/fill/w_677,h_414,al_c,q_80,usm_0.33_1.00_0.00,enc_avif,quality_auto/11062b_d578b9d4ffba48c68d086ec29fe9e6f0f000.jpg"
+   },
+   {
+    "t": "svg",
+    "box": [
+     525,
+     310,
+     1,
+     18
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9nslhl",
+    "box": [
+     187,
+     526,
+     657,
+     107
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     530,
+     570,
+     90
+    ],
+    "text": "Thrills and Tranquility",
+    "font": "normal 700 70px/98px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvks5bpq",
+    "box": [
+     187,
+     677,
+     64,
+     34
+    ]
+   },
+   {
+    "t": "svg",
+    "box": [
+     187,
+     677,
+     64,
+     34
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9nq9ed",
+    "box": [
+     187,
+     730,
+     790,
+     129
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     731,
+     784,
+     109
+    ],
+    "text": "Embark on an unforgettable adventure at our homestay, where thrilling jeep safaris, scenic trekking trails, leisurely cycling routes, and captivating plantation walks await. Indulge in live barbeque evenings, adding a flavorful touch to your stay. Whether seeking adrenaline, our homestay offers diverse activities for every guest.",
+    "font": "italic 400 20px/28px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   }
+  ]
+ },
+ {
+  "id": "comp-lv70n2si",
+  "box": [
+   0,
+   900,
+   1280,
+   774
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "bgImg": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png\")",
+  "items": [
+   {
+    "t": "wix-bg-image",
+    "id": "bgImg_comp-lv70n2si",
+    "box": [
+     0,
+     900,
+     1280,
+     774
+    ],
+    "bgi": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4b",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "wix-iframe",
+    "id": "comp-lv70mo5u",
+    "box": [
+     32,
+     989,
+     1216,
+     477
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9scxue",
+    "box": [
+     884,
+     1520,
+     211,
+     43
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     884,
+     1522,
+     209,
+     38
+    ],
+    "text": "Exciting Escapes",
+    "font": "italic 400 30px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9sbgto",
+    "box": [
+     63,
+     1581,
+     1147,
+     6
+    ],
+    "bd": "1px rgb(66, 66, 66)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9ra3wf",
+    "box": [
+     63,
+     1602,
+     1147,
+     6
+    ],
+    "bd": "5px rgb(91, 90, 90)"
+   }
+  ]
+ },
+ {
+  "id": "comp-lv70ebxb",
+  "box": [
+   0,
+   1674,
+   1280,
+   2794
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "bgImg": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png\")",
+  "items": [
+   {
+    "t": "wix-bg-image",
+    "id": "bgImg_comp-lv70ebxb",
+    "box": [
+     0,
+     1674,
+     1280,
+     2794
+    ],
+    "bgi": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4b",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv70ebyc2",
+    "box": [
+     179,
+     1732,
+     628,
+     125
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     179,
+     1737,
+     358,
+     102
+    ],
+    "text": "Jeep Safari",
+    "font": "normal 700 80px/112px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     537,
+     1775,
+     219,
+     51
+    ],
+    "text": "(On Request)",
+    "font": "normal 700 40px/112px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv70ebyf",
+    "box": [
+     245,
+     1859,
+     444,
+     32
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     245,
+     1863,
+     260,
+     23
+    ],
+    "text": "Unleash Adventure, Discover Nature",
+    "font": "normal 400 18px/32.4px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv70ebyg2",
+    "box": [
+     245,
+     1910,
+     495,
+     184
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     245,
+     1914,
+     490,
+     143
+    ],
+    "text": "Embark on a thrilling Jeep safari in Wagamon, starting at the stunning Wagamon View Point for panoramic hill and tea plantation views. Explore the intriguing Vellaramchitta Tunnel, enjoy scenic dam views, and experience an adrenaline-filled off-road ride through rugged terrain. It's an unforgettable adventure in Wagamon's natural beauty.",
+    "font": "italic 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "span",
+    "box": [
+     245,
+     2067,
+     146,
+     21
+    ],
+    "text": "* Extra Charges Apply",
+    "font": "italic 700 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9nwxdv",
+    "box": [
+     849,
+     1663,
+     281,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/11062b_4ed71e30b24e45bfa12d57c8cbbb52d3~mv2_d_5863_3920_s_4_2.jpg/v1/fill/w_277,h_426,al_r,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_4ed71e30b24e45bfa12d57c8cbbb52d3~mv2_d_5863_3920_s_4_2.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9nwxfg__item1",
+    "box": [
+     851,
+     1663,
+     277,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/11062b_4ed71e30b24e45bfa12d57c8cbbb52d3~mv2_d_5863_3920_s_4_2.jpg/v1/fill/w_277,h_426,al_r,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_4ed71e30b24e45bfa12d57c8cbbb52d3~mv2_d_5863_3920_s_4_2.jpg",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "img",
+    "box": [
+     851,
+     1663,
+     277,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/11062b_4ed71e30b24e45bfa12d57c8cbbb52d3~mv2_d_5863_3920_s_4_2.jpg/v1/fill/w_277,h_426,al_r,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_4ed71e30b24e45bfa12d57c8cbbb52d3~mv2_d_5863_3920_s_4_2.jpg",
+    "alt": "Safari Sunrise"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9nwxfn__item1",
+    "box": [
+     901,
+     1910,
+     191,
+     184
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     925,
+     1921,
+     142,
+     152
+    ],
+    "text": "01",
+    "font": "normal 700 128px/normal helvetica-w01-bold, helvetica-w02-bold, helvetica- ls:normal tt:none ta:center",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9nzqa3",
+    "box": [
+     150,
+     2129,
+     281,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/11062b_ff90a3f429144c7d853bea6506b7f737~mv2.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_ff90a3f429144c7d853bea6506b7f737~mv2.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9nzqbx__item1",
+    "box": [
+     152,
+     2129,
+     277,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/11062b_ff90a3f429144c7d853bea6506b7f737~mv2.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_ff90a3f429144c7d853bea6506b7f737~mv2.jpg",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "img",
+    "box": [
+     152,
+     2129,
+     277,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/11062b_ff90a3f429144c7d853bea6506b7f737~mv2.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_ff90a3f429144c7d853bea6506b7f737~mv2.jpg",
+    "alt": "Three Paragliders"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9nzqc01__item1",
+    "box": [
+     202,
+     2376,
+     191,
+     184
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     226,
+     2387,
+     142,
+     152
+    ],
+    "text": "02",
+    "font": "normal 700 128px/normal helvetica-w01-bold, helvetica-w02-bold, helvetica- ls:normal tt:none ta:center",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv70ebyi",
+    "box": [
+     534,
+     2152,
+     573,
+     125
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     534,
+     2157,
+     359,
+     102
+    ],
+    "text": "Paragliding",
+    "font": "normal 700 80px/112px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     893,
+     2195,
+     164,
+     51
+    ],
+    "text": "(Seasonal)",
+    "font": "normal 700 40px/112px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv70ebyj",
+    "box": [
+     595,
+     2279,
+     444,
+     32
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     595,
+     2283,
+     260,
+     23
+    ],
+    "text": "Soar High with Wagamon Paragliding",
+    "font": "normal 400 18px/32.4px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv70ebym",
+    "box": [
+     595,
+     2330,
+     495,
+     275
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     595,
+     2334,
+     492,
+     235
+    ],
+    "text": "Wagamon's paragliding experience is a breathtaking adventure that takes you soaring high above the lush landscapes of Kerala. Glide through the skies, feeling the rush of wind as you admire panoramic views of tea plantations, rolling hills, and serene lakes below. With experienced instructors and top-notch equipment, Wagamon offers a safe and exhilarating paragliding experience for thrill-seekers ",
+    "font": "italic 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "span",
+    "box": [
+     595,
+     2578,
+     6,
+     21
+    ],
+    "text": "*",
+    "font": "italic 700 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "span",
+    "box": [
+     601,
+     2578,
+     137,
+     21
+    ],
+    "text": "Extra Charges Apply",
+    "font": "italic 700 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv70ebyn1",
+    "box": [
+     179,
+     2661,
+     392,
+     112
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     179,
+     2666,
+     282,
+     102
+    ],
+    "text": "Bicycling",
+    "font": "normal 700 80px/112px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv70ebyr",
+    "box": [
+     240,
+     2775,
+     444,
+     32
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     240,
+     2779,
+     164,
+     23
+    ],
+    "text": "Pedal Through Paradise",
+    "font": "normal 400 18px/32.4px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv70ebyt",
+    "box": [
+     240,
+     2825,
+     453,
+     122
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     240,
+     2829,
+     428,
+     113
+    ],
+    "text": "Explore Wagamon's charm on two wheels, cycling through scenic villages and stunning landscapes. Discover the art of farming and spice cultivation, blending nature and culture into a captivating journey.",
+    "font": "italic 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9o1hcz",
+    "box": [
+     849,
+     2629,
+     281,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/11062b_a52890f0d524450eb3e371bcfa5c0b77~mv2.jpg/v1/fill/w_277,h_426,al_r,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_a52890f0d524450eb3e371bcfa5c0b77~mv2.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9o1heg__item1",
+    "box": [
+     851,
+     2629,
+     277,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/11062b_a52890f0d524450eb3e371bcfa5c0b77~mv2.jpg/v1/fill/w_277,h_426,al_r,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_a52890f0d524450eb3e371bcfa5c0b77~mv2.jpg",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "img",
+    "box": [
+     851,
+     2629,
+     277,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/11062b_a52890f0d524450eb3e371bcfa5c0b77~mv2.jpg/v1/fill/w_277,h_426,al_r,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_a52890f0d524450eb3e371bcfa5c0b77~mv2.jpg",
+    "alt": "Professional Mountain Bikers"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9o1hej1__item1",
+    "box": [
+     901,
+     2876,
+     191,
+     184
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     925,
+     2887,
+     142,
+     152
+    ],
+    "text": "03",
+    "font": "normal 700 128px/normal helvetica-w01-bold, helvetica-w02-bold, helvetica- ls:normal tt:none ta:center",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9o9g0x",
+    "box": [
+     150,
+     3055,
+     281,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/8daf94f88f524d8cb168d8004c1fe282.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/8daf94f88f524d8cb168d8004c1fe282.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9o9g2p__item1",
+    "box": [
+     152,
+     3055,
+     277,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/8daf94f88f524d8cb168d8004c1fe282.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/8daf94f88f524d8cb168d8004c1fe282.jpg",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "img",
+    "box": [
+     152,
+     3055,
+     277,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/8daf94f88f524d8cb168d8004c1fe282.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/8daf94f88f524d8cb168d8004c1fe282.jpg",
+    "alt": "Hikers"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9o9g2s__item1",
+    "box": [
+     202,
+     3302,
+     191,
+     184
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     226,
+     3313,
+     142,
+     152
+    ],
+    "text": "04",
+    "font": "normal 700 128px/normal helvetica-w01-bold, helvetica-w02-bold, helvetica- ls:normal tt:none ta:center",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv71msc0",
+    "box": [
+     552,
+     3068,
+     573,
+     112
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     552,
+     3073,
+     203,
+     102
+    ],
+    "text": "Hiking",
+    "font": "normal 700 80px/112px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv71msc9",
+    "box": [
+     613,
+     3182,
+     444,
+     32
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     613,
+     3186,
+     199,
+     23
+    ],
+    "text": "Vagamon's Windy Walk Trek",
+    "font": "normal 400 18px/32.4px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv71msci",
+    "box": [
+     613,
+     3232,
+     495,
+     153
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     613,
+     3236,
+     485,
+     113
+    ],
+    "text": "Explore the scenic Vakavanam trail, known as Vagamon Windy Walk Trekking, through grasslands and shola forests. Enjoy stunning views of Idukki reservoir's catchment area and vast mountain ranges. Keep an eye out for wildlife like elephants. It's a serene and rewarding hike in Wagamon",
+    "font": "italic 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "span",
+    "box": [
+     613,
+     3359,
+     6,
+     21
+    ],
+    "text": "*",
+    "font": "italic 700 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "span",
+    "box": [
+     619,
+     3359,
+     137,
+     21
+    ],
+    "text": "Extra Charges Apply",
+    "font": "italic 700 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "span",
+    "box": [
+     756,
+     3359,
+     4,
+     21
+    ],
+    "text": ".",
+    "font": "italic 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9o9vdf",
+    "box": [
+     179,
+     3525,
+     573,
+     348
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-lv96uuqp",
+    "box": [
+     179,
+     3525,
+     573,
+     112
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     179,
+     3530,
+     445,
+     102
+    ],
+    "text": "BBQ & Music",
+    "font": "normal 700 80px/112px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv96uuqw",
+    "box": [
+     240,
+     3639,
+     444,
+     32
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     240,
+     3643,
+     164,
+     23
+    ],
+    "text": "Sizzle, Strum, and Stars",
+    "font": "normal 400 18px/32.4px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv96uur4",
+    "box": [
+     240,
+     3689,
+     495,
+     184
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     240,
+     3693,
+     494,
+     174
+    ],
+    "text": "Indulge in an unforgettable evening of BBQ and music at our resort in Wagamon. Savour mouthwatering grilled delicacies under the starry sky, accompanied by live music that sets the perfect ambience. Whether you're gathering with friends, family, or loved ones, our BBQ and music night promises a delightful blend of flavours, melodies, and cherished moments in the heart of nature's tranquillity.",
+    "font": "italic 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9oh380",
+    "box": [
+     849,
+     3481,
+     281,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/66154b37def64bfba3cf82929427e0c5.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/66154b37def64bfba3cf82929427e0c5.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9oh3a0__item1",
+    "box": [
+     851,
+     3481,
+     277,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/66154b37def64bfba3cf82929427e0c5.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/66154b37def64bfba3cf82929427e0c5.jpg",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "img",
+    "box": [
+     851,
+     3481,
+     277,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/66154b37def64bfba3cf82929427e0c5.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/66154b37def64bfba3cf82929427e0c5.jpg",
+    "alt": "Hamburgers in Grill"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9oh3a23__item1",
+    "box": [
+     901,
+     3728,
+     191,
+     184
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     925,
+     3739,
+     142,
+     152
+    ],
+    "text": "05",
+    "font": "normal 700 128px/normal helvetica-w01-bold, helvetica-w02-bold, helvetica- ls:normal tt:none ta:center",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvcngs4l",
+    "box": [
+     159,
+     3934,
+     281,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/7323565a035442139d080d3d3fead270.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/7323565a035442139d080d3d3fead270.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvcngs6n__item1",
+    "box": [
+     161,
+     3934,
+     277,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/7323565a035442139d080d3d3fead270.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/7323565a035442139d080d3d3fead270.jpg",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "img",
+    "box": [
+     161,
+     3934,
+     277,
+     426
+    ],
+    "src": "https://static.wixstatic.com/media/7323565a035442139d080d3d3fead270.jpg/v1/fill/w_277,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/7323565a035442139d080d3d3fead270.jpg",
+    "alt": "Wildlife"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvcngs6z__item1",
+    "box": [
+     211,
+     4181,
+     191,
+     184
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     235,
+     4192,
+     142,
+     152
+    ],
+    "text": "06",
+    "font": "normal 700 128px/normal helvetica-w01-bold, helvetica-w02-bold, helvetica- ls:normal tt:none ta:center",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvcnh5as",
+    "box": [
+     529,
+     4013,
+     573,
+     112
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     529,
+     4018,
+     505,
+     102
+    ],
+    "text": "Elephant Watch",
+    "font": "normal 700 80px/112px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvcnh5bj",
+    "box": [
+     590,
+     4127,
+     444,
+     32
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     590,
+     4131,
+     224,
+     23
+    ],
+    "text": "Witness Wild Elephants Grazing",
+    "font": "normal 400 18px/32.4px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvcnh5c9",
+    "box": [
+     590,
+     4177,
+     495,
+     92
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     590,
+     4181,
+     447,
+     82
+    ],
+    "text": "At our homestay, guests can marvel at the sight of wild elephants peacefully grazing in the meadows, adding an unforgettable touch of natural beauty to their stay",
+    "font": "italic 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   }
+  ]
+ },
+ {
+  "id": "SITE_FOOTER",
+  "box": [
+   0,
+   4468,
+   1280,
+   745
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": [
+   {
+    "t": "div",
+    "id": "comp-ijacaifa",
+    "box": [
+     159,
+     4562,
+     962,
+     35
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     564,
+     4563,
+     153,
+     32
+    ],
+    "text": "CONTACT US",
+    "font": "normal 700 25px/35px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ij0fjv59",
+    "box": [
+     928,
+     4629,
+     171,
+     27
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     933,
+     4631,
+     161,
+     23
+    ],
+    "text": "Tel: +91 9447009954",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)",
+    "href": "tel:+91 9447009954"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishoi88h",
+    "box": [
+     181,
+     4629,
+     253,
+     27
+    ]
+   },
+   {
+    "t": "a",
+    "box": [
+     184,
+     4631,
+     246,
+     23
+    ],
+    "text": "themountaintable500@gmail.com",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)",
+    "href": "mailto:themountaintable500@gmail.com"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishoj9o6",
+    "box": [
+     396,
+     4629,
+     571,
+     27
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     453,
+     4631,
+     457,
+     23
+    ],
+    "text": "Uluppuni, Kottamala P.O, Vagamon, Idukki Dst, Kerala- 685503",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishophzl",
+    "box": [
+     420,
+     4629,
+     41,
+     27
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     436,
+     4631,
+     10,
+     23
+    ],
+    "text": "/",
+    "font": "italic 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(90, 88, 88)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishoquie",
+    "box": [
+     898,
+     4629,
+     41,
+     27
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     914,
+     4631,
+     10,
+     23
+    ],
+    "text": "/",
+    "font": "italic 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(90, 88, 88)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ir1y0yr9",
+    "box": [
+     0,
+     4739,
+     1279,
+     375
+    ]
+   },
+   {
+    "t": "section",
+    "id": "comp-ijeflm1h",
+    "box": [
+     0,
+     5114,
+     1280,
+     60
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-ijb4uzrb",
+    "box": [
+     185,
+     5134,
+     910,
+     20
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     553,
+     5135,
+     173,
+     18
+    ],
+    "text": "© 2024 by The Mountain Table",
+    "font": "normal 400 14px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)"
+   }
+  ]
+ },
+ {
+  "id": "comp-ijeflm1h",
+  "box": [
+   0,
+   5114,
+   1280,
+   60
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": [
+   {
+    "t": "div",
+    "id": "comp-ijb4uzrb",
+    "box": [
+     185,
+     5134,
+     910,
+     20
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     553,
+     5135,
+     173,
+     18
+    ],
+    "text": "© 2024 by The Mountain Table",
+    "font": "normal 400 14px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)"
+   }
+  ]
+ }
+]

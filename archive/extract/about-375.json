@@ -1,0 +1,631 @@
+[
+ {
+  "id": "SITE_HEADER",
+  "box": [
+   0,
+   0,
+   320,
+   71
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": []
+ },
+ {
+  "id": "comp-lv6v18t2",
+  "box": [
+   0,
+   71,
+   320,
+   983
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "bgImg": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png\")",
+  "items": [
+   {
+    "t": "section",
+    "id": "comp-lv6v18te",
+    "box": [
+     0,
+     71,
+     320,
+     963
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_bca9ca65f306415a95ae5b159b661421~mv2.jpg/v1/fill/w_640,h_1384,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_bca9ca65f306415a95ae5b159b661421~mv2.jpg"
+   },
+   {
+    "t": "wix-bg-image",
+    "id": "bgImg_comp-lv6v18te",
+    "box": [
+     0,
+     71,
+     320,
+     963
+    ],
+    "bgi": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4b",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6v18tn2",
+    "box": [
+     0,
+     72,
+     320,
+     151
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_bca9ca65f306415a95ae5b159b661421~mv2.jpg/v1/fill/w_640,h_1384,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_bca9ca65f306415a95ae5b159b661421~mv2.jpg"
+   },
+   {
+    "t": "img",
+    "box": [
+     0,
+     0,
+     320,
+     692
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_bca9ca65f306415a95ae5b159b661421~mv2.jpg/v1/fill/w_640,h_1384,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_bca9ca65f306415a95ae5b159b661421~mv2.jpg",
+    "alt": "Garden"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6v18ts",
+    "box": [
+     20,
+     92,
+     280,
+     86
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     20,
+     94,
+     56,
+     38
+    ],
+    "text": "Our",
+    "font": "normal 700 30px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "span",
+    "box": [
+     20,
+     137,
+     64,
+     38
+    ],
+    "text": "Story",
+    "font": "normal 700 30px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6v18tz",
+    "box": [
+     20,
+     200,
+     30,
+     5
+    ],
+    "bd": "1px rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6v18u9",
+    "box": [
+     0,
+     224,
+     320,
+     808
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6zlat0",
+    "box": [
+     138,
+     253,
+     43,
+     33
+    ]
+   },
+   {
+    "t": "svg",
+    "box": [
+     138,
+     253,
+     43,
+     33
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6v18ue",
+    "box": [
+     20,
+     300,
+     280,
+     666
+    ]
+   },
+   {
+    "t": "p",
+    "box": [
+     20,
+     300,
+     280,
+     238
+    ],
+    "text": "Nestled in Ulupuni, Wagamon, The Mountain Table is a tale of transformation and natural splendour. What once was a chaotic landscape of bushes and shrubs evolved into a serene tea plantation, crafted through years of dedication. Our journey began with a humble hut at the plantation's peak, offering mesmerizing sunset vistas that inspired us to share this beauty with the world.",
+    "font": "italic 400 17px/23.8px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "p",
+    "box": [
+     20,
+     538,
+     280,
+     238
+    ],
+    "text": "Driven by a vision of eco-friendly hospitality, The Mountain Table emerged as a haven where nature's harmony thrives. Our accommodations blend modern comfort with rustic charm, inviting guests to wake up to birdsong and panoramic views. Culinary delights await, crafted from local ingredients by our skilled chefs, while our infinity pool overlooks Idukki Dam and lush hills.",
+    "font": "italic 400 17px/23.8px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "p",
+    "box": [
+     20,
+     776,
+     280,
+     190
+    ],
+    "text": "Explore tea plantations, and savor grilled dishes at our forest-set grill house. Whether for romance, family, or business, The Mountain Table ensures an unforgettable stay amid nature's enchantment. Step into our story and discover timeless memories in every moment.",
+    "font": "italic 400 17px/23.8px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6zq2gm",
+    "box": [
+     113,
+     1003,
+     94,
+     10
+    ],
+    "bd": "5px rgb(36, 35, 35)"
+   }
+  ]
+ },
+ {
+  "id": "comp-lv6yi2a6",
+  "box": [
+   0,
+   1054,
+   320,
+   990
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "bgImg": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png\")",
+  "items": [
+   {
+    "t": "section",
+    "id": "comp-lv6ysnye",
+    "box": [
+     0,
+     1054,
+     320,
+     990
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_90e3f3e6801e4781854e622b194e9b04~mv2.jpg/v1/fill/w_640,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_90e3f3e6801e4781854e622b194e9b04~mv2.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6ysoay",
+    "box": [
+     0,
+     1054,
+     320,
+     250
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_90e3f3e6801e4781854e622b194e9b04~mv2.jpg/v1/fill/w_640,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_90e3f3e6801e4781854e622b194e9b04~mv2.jpg"
+   },
+   {
+    "t": "img",
+    "box": [
+     0,
+     1054,
+     320,
+     250
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_90e3f3e6801e4781854e622b194e9b04~mv2.jpg/v1/fill/w_640,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_90e3f3e6801e4781854e622b194e9b04~mv2.jpg",
+    "alt": "Thatch roofing"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6ysob1",
+    "box": [
+     0,
+     1313,
+     320,
+     463
+    ]
+   },
+   {
+    "t": "wix-bg-image",
+    "id": "bgImg_comp-lv6ysob1",
+    "box": [
+     0,
+     1313,
+     320,
+     463
+    ],
+    "bgi": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4b",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6ysob3",
+    "box": [
+     59,
+     1326,
+     202,
+     60
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     87,
+     1326,
+     146,
+     59
+    ],
+    "text": "Commitment to Sustainability",
+    "font": "normal 700 23px/29.9px brandon-grot-w01-light, brandon-grot-w05-light, sa ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6ysob81",
+    "box": [
+     150,
+     1389,
+     28,
+     26
+    ],
+    "tf": "matrix(-0.743145, 0.669131, -0.669131, -0.743145, 0, 0)",
+    "bd": "6px rgb(91, 90, 90)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6ysob7",
+    "box": [
+     24,
+     1425,
+     272,
+     328
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     25,
+     1426,
+     271,
+     325
+    ],
+    "text": "The thatch roofing at The Mountain Table not only adds to our homestay's rustic charm but also reflects our commitment to sustainability. Crafted from natural materials such as straw or reeds, thatch roofing provides excellent insulation, keeping our interiors cool in the summer and warm in the winter. Its timeless appeal and eco-friendly nature perfectly complement the serene ambience of our surr",
+    "font": "italic 400 18px/25.2px brandon-grot-w01-light, brandon-grot-w05-light, sa ls:-0.36px tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6ysobf",
+    "box": [
+     0,
+     1786,
+     320,
+     250
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_0e64216c9f4a47aa9286384c0daec85b~mv2.jpg/v1/fill/w_640,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_0e64216c9f4a47aa9286384c0daec85b~mv2.jpg"
+   },
+   {
+    "t": "img",
+    "box": [
+     0,
+     1786,
+     320,
+     250
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_0e64216c9f4a47aa9286384c0daec85b~mv2.jpg/v1/fill/w_640,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_0e64216c9f4a47aa9286384c0daec85b~mv2.jpg",
+    "alt": "Kitche - The Mountain Table"
+   }
+  ]
+ },
+ {
+  "id": "comp-lvlaiqao",
+  "box": [
+   0,
+   2045,
+   320,
+   386
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "bgImg": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png\")",
+  "items": [
+   {
+    "t": "wix-bg-image",
+    "id": "bgImg_comp-lvlaiqao",
+    "box": [
+     0,
+     2045,
+     320,
+     386
+    ],
+    "bgi": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4b",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvlbjpbu",
+    "box": [
+     140,
+     2086,
+     155,
+     26
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     140,
+     2087,
+     143,
+     23
+    ],
+    "text": "Explore & Follow Us",
+    "font": "italic 400 18px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvl7btxe",
+    "box": [
+     22,
+     2123,
+     278,
+     278
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-lvlbjpc6",
+    "box": [
+     24,
+     2411,
+     276,
+     5
+    ],
+    "bd": "1px rgb(146, 145, 145)"
+   }
+  ]
+ },
+ {
+  "id": "SITE_FOOTER",
+  "box": [
+   0,
+   2431,
+   320,
+   600
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": [
+   {
+    "t": "div",
+    "id": "comp-ijacaifa",
+    "box": [
+     22,
+     2462,
+     278,
+     28
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     100,
+     2463,
+     122,
+     25
+    ],
+    "text": "CONTACT US",
+    "font": "normal 700 20px/28px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishoi88h",
+    "box": [
+     20,
+     2515,
+     280,
+     23
+    ]
+   },
+   {
+    "t": "a",
+    "box": [
+     57,
+     2516,
+     205,
+     20
+    ],
+    "text": "themountaintable500@gmail.com",
+    "font": "normal 700 15px/22.5px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)",
+    "href": "mailto:themountaintable500@gmail.com"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishoj9o6",
+    "box": [
+     51,
+     2547,
+     219,
+     45
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     54,
+     2548,
+     214,
+     43
+    ],
+    "text": "Uluppuni, Kottamala P.O, Vagamon, Idukki Dst, Kerala- 685503",
+    "font": "normal 700 15px/22.5px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ij0fjv59",
+    "box": [
+     20,
+     2615,
+     280,
+     23
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     93,
+     2616,
+     134,
+     20
+    ],
+    "text": "Tel: +91 9447009954",
+    "font": "normal 700 15px/22.5px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)",
+    "href": "tel:+91 9447009954"
+   },
+   {
+    "t": "div",
+    "id": "comp-ij0fuucb",
+    "box": [
+     120,
+     2665,
+     79,
+     26
+    ],
+    "src": "https://static.wixstatic.com/media/0fdef751204647a3bbd7eaa2827ed4f9.png/v1/fill/w_52,h_52,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0fdef751204647a3bbd7eaa2827ed4f9.png"
+   },
+   {
+    "t": "img",
+    "id": "img_0_comp-ij0fuucb",
+    "box": [
+     120,
+     2665,
+     26,
+     26
+    ],
+    "src": "https://static.wixstatic.com/media/0fdef751204647a3bbd7eaa2827ed4f9.png/v1/fill/w_52,h_52,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0fdef751204647a3bbd7eaa2827ed4f9.png",
+    "alt": "Black Facebook Icon",
+    "href": "https://www.facebook.com/themountaintableresort"
+   },
+   {
+    "t": "img",
+    "id": "img_1_comp-ij0fuucb",
+    "box": [
+     173,
+     2665,
+     26,
+     26
+    ],
+    "src": "https://static.wixstatic.com/media/01c3aff52f2a4dffa526d7a9843d46ea.png/v1/fill/w_52,h_52,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/01c3aff52f2a4dffa526d7a9843d46ea.png",
+    "alt": "Black Instagram Icon",
+    "href": "https://www.instagram.com/themountaintable/"
+   },
+   {
+    "t": "div",
+    "id": "comp-ir1y0yr9",
+    "box": [
+     0,
+     2707,
+     320,
+     240
+    ]
+   },
+   {
+    "t": "section",
+    "id": "comp-ijeflm1h",
+    "box": [
+     0,
+     2989,
+     320,
+     36
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-ijb4uzrb",
+    "box": [
+     61,
+     3003,
+     198,
+     22
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     67,
+     3004,
+     186,
+     20
+    ],
+    "text": "© 2024 by The Mountain Table",
+    "font": "normal 400 15px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)"
+   }
+  ]
+ },
+ {
+  "id": "comp-ijeflm1h",
+  "box": [
+   0,
+   2989,
+   320,
+   36
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": [
+   {
+    "t": "div",
+    "id": "comp-ijb4uzrb",
+    "box": [
+     61,
+     3003,
+     198,
+     22
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     67,
+     3004,
+     186,
+     20
+    ],
+    "text": "© 2024 by The Mountain Table",
+    "font": "normal 400 15px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)"
+   }
+  ]
+ }
+]

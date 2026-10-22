@@ -1,0 +1,204 @@
+{
+ "reveals": [
+  {
+   "key": "#intro#0",
+   "effect": "fade",
+   "effectM": "turn",
+   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "matrix3d(0.743145, 0, -0.669131, 0.000669131, 0, 1, 0, 0, 0.669131, 0, 0.743145, -0.000743145, 0, 0, 0, 1)",
+   "triggerTop": 777,
+   "triggerFraction": 0.971
+  },
+  {
+   "key": "#intro#1",
+   "effect": "grow",
+   "effectM": null,
+   "transition": "opacity, transform|0.8s, 0.8s|linear, cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "matrix(0.8, 0, 0, 0.8, 0, 0)",
+   "triggerTop": 760,
+   "triggerFraction": 0.95
+  },
+  {
+   "key": "#intro#2",
+   "effect": "fade",
+   "effectM": null,
+   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "none",
+   "triggerTop": 667,
+   "triggerFraction": 0.834
+  },
+  {
+   "key": "section[aria-label=\"About the house\"]#0",
+   "effect": "fade",
+   "effectM": "slide-y",
+   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "matrix(1, 0, 0, 1, 0, 60)",
+   "triggerTop": 783,
+   "triggerFraction": 0.979
+  },
+  {
+   "key": "section[aria-label=\"About the house\"]#1",
+   "effect": "fade",
+   "effectM": "slide-y",
+   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "matrix(1, 0, 0, 1, 0, 60)",
+   "triggerTop": 720,
+   "triggerFraction": 0.9
+  },
+  {
+   "key": "#reviews#0",
+   "effect": "fade",
+   "effectM": null,
+   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "none",
+   "triggerTop": 769,
+   "triggerFraction": 0.961
+  },
+  {
+   "key": "#reviews#1",
+   "effect": "slide-x",
+   "effectM": "fade",
+   "transition": "opacity|1.2s|cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "none",
+   "triggerTop": 770,
+   "triggerFraction": 0.963
+  },
+  {
+   "key": "#reviews#2",
+   "effect": "slide-x",
+   "effectM": "fade",
+   "transition": "opacity|1.2s|cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "none",
+   "triggerTop": 794,
+   "triggerFraction": 0.993
+  },
+  {
+   "key": "#reviews#3",
+   "effect": "slide-x",
+   "effectM": "fade",
+   "transition": "opacity|1.2s|cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "none",
+   "triggerTop": 765,
+   "triggerFraction": 0.956
+  }
+ ],
+ "parallax": [
+  {
+   "parent": "Welcome",
+   "k": [
+    0.2,
+    0.8
+   ],
+   "attr": "0.8/0.8"
+  },
+  {
+   "parent": "Dining area",
+   "k": [
+    1
+   ],
+   "attr": "0.8/1"
+  },
+  {
+   "parent": "Guest review",
+   "k": [
+    1
+   ],
+   "attr": "0.8/1"
+  }
+ ],
+ "slideshow": {
+  "samples": [
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    0.4,
+    0.6,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0.3,
+    0.7
+   ],
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1
+   ]
+  ],
+  "afterClick": [
+   0,
+   0,
+   1
+  ],
+  "quoteTransition": "opacity 1s cubic-bezier(0.4, 0, 0.2, 1)",
+  "texts": [
+   "“A tranquil haven amidst nature's embrace. The Mountain Table provided an enchanting retreat that exceeded all expectations.”",
+   "Immerse yourself in the beauty of nature at The Mountain Table. An experience that lingers in the heart and beckons you to return.",
+   "The Mountain Table is a testament to serenity and hospitality. A destination that promises rejuvenation and lasting memories."
+  ],
+  "dotCount": 3
+ }
+}

@@ -1,0 +1,1290 @@
+[
+ {
+  "id": "SITE_HEADER",
+  "box": [
+   0,
+   0,
+   1280,
+   80
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": [
+   {
+    "t": "wix-dropdown-menu",
+    "id": "comp-iix98xkp",
+    "box": [
+     150,
+     19,
+     980,
+     42
+    ],
+    "op": "0"
+   },
+   {
+    "t": "nav",
+    "id": "comp-iix98xkpnavContainer",
+    "box": [
+     150,
+     19,
+     980,
+     42
+    ]
+   },
+   {
+    "t": "ul",
+    "id": "comp-iix98xkpitemsContainer",
+    "box": [
+     150,
+     19,
+     980,
+     42
+    ]
+   },
+   {
+    "t": "li",
+    "id": "comp-iix98xkp0",
+    "box": [
+     150,
+     19,
+     217,
+     42
+    ]
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp0label",
+    "box": [
+     227,
+     19,
+     63,
+     42
+    ],
+    "text": "HOME",
+    "font": "normal 400 14px/42px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(146, 145, 145)",
+    "href": "https://www.themountaintable.in/"
+   },
+   {
+    "t": "li",
+    "id": "comp-iix98xkp1",
+    "box": [
+     367,
+     19,
+     220,
+     42
+    ]
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp1label",
+    "box": [
+     444,
+     19,
+     66,
+     42
+    ],
+    "text": "ABOUT",
+    "font": "normal 400 14px/42px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)",
+    "href": "https://www.themountaintable.in/about"
+   },
+   {
+    "t": "li",
+    "id": "comp-iix98xkp2",
+    "box": [
+     587,
+     19,
+     236,
+     42
+    ]
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp2label",
+    "box": [
+     664,
+     19,
+     82,
+     42
+    ],
+    "text": "SEE & DO",
+    "font": "normal 400 14px/42px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)",
+    "href": "https://www.themountaintable.in/see-do"
+   },
+   {
+    "t": "li",
+    "id": "comp-iix98xkp3",
+    "box": [
+     823,
+     19,
+     307,
+     42
+    ]
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp3label",
+    "box": [
+     900,
+     19,
+     153,
+     42
+    ],
+    "text": "ROOMS & BOOKING",
+    "font": "normal 400 14px/42px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)",
+    "href": "https://www.themountaintable.in/rooms-booking"
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp__more__label",
+    "box": [
+     1135,
+     19,
+     50,
+     20
+    ],
+    "text": "More",
+    "font": "normal 400 14px/19.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)"
+   }
+  ]
+ },
+ {
+  "id": "comp-lvtlam8d",
+  "box": [
+   0,
+   80,
+   1280,
+   657
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": [
+   {
+    "t": "img",
+    "box": [
+     0,
+     0,
+     1280,
+     900
+    ],
+    "src": "https://static.wixstatic.com/media/81d784_a30ae9d65f7a4c158c25796451fed75f~mv2.jpg/v1/fill/w_1280,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/81d784_a30ae9d65f7a4c158c25796451fed75f~mv2.jpg",
+    "alt": "DJI_20240312063905_0019_D copy_edited.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvtpiasu",
+    "box": [
+     1241,
+     111,
+     112,
+     112
+    ],
+    "src": "https://static.wixstatic.com/media/81d784_b04585865a4143659f5fb16e59163c94~mv2.png/v1/fill/w_112,h_112,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/81d784_b04585865a4143659f5fb16e59163c94~mv2.png",
+    "op": "0"
+   },
+   {
+    "t": "img",
+    "id": "img_comp-lvtpiasu",
+    "box": [
+     1241,
+     111,
+     112,
+     112
+    ],
+    "src": "https://static.wixstatic.com/media/81d784_b04585865a4143659f5fb16e59163c94~mv2.png/v1/fill/w_112,h_112,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/81d784_b04585865a4143659f5fb16e59163c94~mv2.png"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvtpyg0c",
+    "box": [
+     150,
+     512,
+     980,
+     224
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-lvtlw6dl",
+    "box": [
+     252,
+     562,
+     776,
+     150
+    ],
+    "op": "0"
+   },
+   {
+    "t": "span",
+    "box": [
+     501,
+     564,
+     278,
+     45
+    ],
+    "text": "RUSTIC CHARM",
+    "font": "normal 400 35px/normal brandon-grot-w01-light, brandon-grot-w05-light, sa ls:2.1px tt:none ta:center",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "span",
+    "box": [
+     321,
+     614,
+     638,
+     95
+    ],
+    "text": "THATCHED ELEGANCE: UNWIND IN THE HEART OF NATURE",
+    "font": "normal 400 35px/normal brandon-grot-w01-light, brandon-grot-w05-light, sa ls:2.1px tt:none ta:center",
+    "color": "rgb(255, 255, 255)"
+   }
+  ]
+ },
+ {
+  "id": "comp-lt8qpnpu",
+  "box": [
+   0,
+   737,
+   1280,
+   418
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "bgImg": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png\")",
+  "items": [
+   {
+    "t": "wix-bg-image",
+    "id": "bgImg_comp-lt8qpnpu",
+    "box": [
+     0,
+     737,
+     1280,
+     418
+    ],
+    "bgi": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4b",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvakzh9q",
+    "box": [
+     552,
+     795,
+     175,
+     153
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_c623270b113b42aaa3981dedc1077ade~mv2.jpg/v1/fill/w_175,h_153,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/FINAL%20TMT%20_edited.jpg",
+    "op": "0"
+   },
+   {
+    "t": "img",
+    "id": "img_comp-lvakzh9q",
+    "box": [
+     552,
+     795,
+     175,
+     153
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_c623270b113b42aaa3981dedc1077ade~mv2.jpg/v1/fill/w_175,h_153,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/FINAL%20TMT%20_edited.jpg",
+    "alt": "Logo - - The Mountain Table"
+   },
+   {
+    "t": "div",
+    "id": "comp-iixafam5",
+    "box": [
+     517,
+     928,
+     245,
+     5
+    ],
+    "op": "0",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)",
+    "bd": "1px rgb(146, 145, 145)"
+   },
+   {
+    "t": "div",
+    "id": "comp-iix9gelf",
+    "box": [
+     443,
+     938,
+     393,
+     200
+    ],
+    "op": "0"
+   },
+   {
+    "t": "span",
+    "box": [
+     449,
+     938,
+     380,
+     200
+    ],
+    "text": "Escape to The Mountain Table for an unforgettable getaway surrounded by misty hill views, cosy rooms, delectable local cuisine, and an infinity pool that beckons you to relax in style. Indulge in the serenity of nature's beauty and create lasting memories at our picturesque retreat.",
+    "font": "normal 400 20px/normal didot-w01-italic, serif ls:1px tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   }
+  ]
+ },
+ {
+  "id": "comp-lt8qpnpv",
+  "box": [
+   0,
+   1155,
+   1280,
+   3770
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "bgImg": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png\")",
+  "items": [
+   {
+    "t": "wix-bg-image",
+    "id": "bgImg_comp-lt8qpnpv",
+    "box": [
+     0,
+     1155,
+     1280,
+     3770
+    ],
+    "bgi": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4b",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "section",
+    "id": "comp-ipy07tiu",
+    "box": [
+     150,
+     1190,
+     980,
+     638
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_a5070a9643594d6e90bf5288ae7d0bec~mv2.jpg/v1/fill/w_980,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_a5070a9643594d6e90bf5288ae7d0bec~mv2.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-ipy07tq0",
+    "box": [
+     150,
+     1190,
+     980,
+     638
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_a5070a9643594d6e90bf5288ae7d0bec~mv2.jpg/v1/fill/w_980,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_a5070a9643594d6e90bf5288ae7d0bec~mv2.jpg"
+   },
+   {
+    "t": "img",
+    "box": [
+     150,
+     290,
+     980,
+     900
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_a5070a9643594d6e90bf5288ae7d0bec~mv2.jpg/v1/fill/w_980,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_a5070a9643594d6e90bf5288ae7d0bec~mv2.jpg",
+    "alt": "RESORT0087-HDR-Edit copy_edited.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv6zfovz",
+    "box": [
+     562,
+     1882,
+     153,
+     82
+    ],
+    "op": "0"
+   },
+   {
+    "t": "svg",
+    "box": [
+     562,
+     1882,
+     153,
+     82
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-iixajtum",
+    "box": [
+     347,
+     1988,
+     585,
+     108
+    ],
+    "op": "0"
+   },
+   {
+    "t": "span",
+    "box": [
+     352,
+     1990,
+     576,
+     104
+    ],
+    "text": "Nestled in the serene hills of Ulupuni, The Mountain Table offers a peaceful escape from the hustle and bustle of city life. Our homestay is a place where you can unwind, relax, and immerse yourself in the beauty of nature. Come and experience the tranquil charm of The Mountain Table.",
+    "font": "italic 400 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "section",
+    "id": "comp-ipy0aqro",
+    "box": [
+     150,
+     2160,
+     980,
+     822
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_989549b27d9e4d7b8dacd876f73eb8b7~mv2.jpg/v1/fill/w_980,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_989549b27d9e4d7b8dacd876f73eb8b7~mv2.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-ipy0aqvs",
+    "box": [
+     150,
+     2160,
+     980,
+     822
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_989549b27d9e4d7b8dacd876f73eb8b7~mv2.jpg/v1/fill/w_980,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_989549b27d9e4d7b8dacd876f73eb8b7~mv2.jpg"
+   },
+   {
+    "t": "img",
+    "box": [
+     150,
+     1260,
+     980,
+     900
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_989549b27d9e4d7b8dacd876f73eb8b7~mv2.jpg/v1/fill/w_980,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_989549b27d9e4d7b8dacd876f73eb8b7~mv2.jpg",
+    "alt": "Room"
+   },
+   {
+    "t": "div",
+    "id": "comp-iixen41f",
+    "box": [
+     701,
+     2281,
+     391,
+     634
+    ],
+    "op": "0"
+   },
+   {
+    "t": "div",
+    "id": "comp-iixb5hdk",
+    "box": [
+     753,
+     2376,
+     287,
+     36
+    ],
+    "op": "0"
+   },
+   {
+    "t": "span",
+    "box": [
+     820,
+     2378,
+     153,
+     32
+    ],
+    "text": "OUR ROOMS",
+    "font": "normal 400 25px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-iixb7ydi",
+    "box": [
+     753,
+     2447,
+     287,
+     351
+    ],
+    "op": "0"
+   },
+   {
+    "t": "p",
+    "box": [
+     753,
+     2447,
+     287,
+     162
+    ],
+    "text": "Indulge in the comfort of our well-appointed rooms, each offering breathtaking views of the mist-covered hills. The cozy ambiance and modern amenities ensure a delightful stay amidst the natural splendor.",
+    "font": "italic 400 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "p",
+    "box": [
+     753,
+     2609,
+     287,
+     189
+    ],
+    "text": "Step into our  three cozy rooms, where rustic charm meets modern comfort. Wake up to the sound of birds chirping and the gentle rustle of leaves outside your window, and feel the stresses of everyday life melt away in the embrace of nature.",
+    "font": "italic 400 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(91, 90, 90)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvconmhu",
+    "box": [
+     825,
+     2830,
+     148,
+     42
+    ],
+    "op": "0"
+   },
+   {
+    "t": "span",
+    "box": [
+     848,
+     2840,
+     71,
+     22
+    ],
+    "text": "Explore",
+    "font": "normal 400 15px/normal brandon-grot-w01-light, brandon-grot-w05-light, sa ls:3.75px tt:none ta:center",
+    "color": "rgb(255, 255, 255)",
+    "href": "https://www.themountaintable.in/rooms-booking"
+   },
+   {
+    "t": "svg",
+    "box": [
+     927,
+     2840,
+     23,
+     23
+    ],
+    "href": "https://www.themountaintable.in/rooms-booking"
+   },
+   {
+    "t": "div",
+    "id": "comp-iizpxlxg",
+    "box": [
+     159,
+     3051,
+     962,
+     36
+    ],
+    "op": "0"
+   },
+   {
+    "t": "h2",
+    "box": [
+     159,
+     3051,
+     962,
+     36
+    ],
+    "text": "OUR SERVICES",
+    "font": "normal 400 25px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-iu44l5vo",
+    "box": [
+     296,
+     3135,
+     40,
+     42
+    ],
+    "op": "0"
+   },
+   {
+    "t": "svg",
+    "box": [
+     296,
+     3135,
+     40,
+     42
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-iizq3pya",
+    "box": [
+     184,
+     3187,
+     265,
+     108
+    ],
+    "op": "0"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3189,
+     260,
+     104
+    ],
+    "text": "Delight in a delectable spread of local cuisine with our complimentary breakfast offerings, our chef showcases the region's flavours.",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-iu44kfwj",
+    "box": [
+     300,
+     3347,
+     33,
+     38
+    ],
+    "op": "0"
+   },
+   {
+    "t": "svg",
+    "box": [
+     300,
+     3347,
+     33,
+     38
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-imq1cg362",
+    "box": [
+     184,
+     3396,
+     265,
+     108
+    ],
+    "op": "0"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3398,
+     259,
+     104
+    ],
+    "text": "Stay connected with our complimentary Wi-Fi access and share your memorable moments with loved ones.",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-iu44e535",
+    "box": [
+     606,
+     3145,
+     67,
+     22
+    ],
+    "op": "0"
+   },
+   {
+    "t": "svg",
+    "box": [
+     606,
+     3145,
+     67,
+     22
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-iizqarz6",
+    "box": [
+     507,
+     3187,
+     265,
+     81
+    ],
+    "op": "0"
+   },
+   {
+    "t": "span",
+    "box": [
+     508,
+     3189,
+     263,
+     77
+    ],
+    "text": "Stroll through our lush garden and tea Plantation and revel in the tranquillity of the surroundings.",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-iu44j9tt",
+    "box": [
+     625,
+     3344,
+     29,
+     42
+    ],
+    "op": "0"
+   },
+   {
+    "t": "svg",
+    "box": [
+     625,
+     3344,
+     29,
+     42
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-imq1cg36",
+    "box": [
+     507,
+     3396,
+     265,
+     108
+    ],
+    "op": "0"
+   },
+   {
+    "t": "span",
+    "box": [
+     521,
+     3398,
+     237,
+     104
+    ],
+    "text": "Let us take care of the daily housekeeping, ensuring that your space remains pristine throughout your stay.",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-iu44hx4n",
+    "box": [
+     941,
+     3132,
+     40,
+     45
+    ],
+    "op": "0"
+   },
+   {
+    "t": "svg",
+    "box": [
+     941,
+     3132,
+     40,
+     45
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-iizqjzvp2",
+    "box": [
+     828,
+     3187,
+     265,
+     81
+    ],
+    "op": "0"
+   },
+   {
+    "t": "span",
+    "box": [
+     834,
+     3189,
+     253,
+     77
+    ],
+    "text": "Take a refreshing dip in our infinity pool while soaking in the panoramic vistas of the misty hills and meadows",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-iu44io8f",
+    "box": [
+     944,
+     3349,
+     34,
+     34
+    ],
+    "op": "0"
+   },
+   {
+    "t": "svg",
+    "box": [
+     944,
+     3349,
+     34,
+     34
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-imq1cg35",
+    "box": [
+     827,
+     3396,
+     265,
+     81
+    ],
+    "op": "0"
+   },
+   {
+    "t": "span",
+    "box": [
+     827,
+     3398,
+     264,
+     77
+    ],
+    "text": "Experience the epitome of leisure and entertainment with our resort's modern amenities",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ijcuq0hg",
+    "box": [
+     159,
+     3632,
+     961,
+     36
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     577,
+     3634,
+     125,
+     32
+    ],
+    "text": "DISCOVER",
+    "font": "normal 400 25px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-khkazses",
+    "box": [
+     150,
+     3701,
+     980,
+     475
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_f351e4c4ff654f0bae5209bb90cd484e~mv2.jpg/v1/fill/w_267,h_475,q_90,enc_avif,quality_auto/c18256_f351e4c4ff654f0bae5209bb90cd484e~mv2.jpg"
+   },
+   {
+    "t": "img",
+    "id": "3aa99dc8-3069-4fbf-aa3c-a02cdec48d1c",
+    "box": [
+     150,
+     3701,
+     267,
+     475
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_f351e4c4ff654f0bae5209bb90cd484e~mv2.jpg/v1/fill/w_267,h_475,q_90,enc_avif,quality_auto/c18256_f351e4c4ff654f0bae5209bb90cd484e~mv2.jpg"
+   },
+   {
+    "t": "img",
+    "id": "be6af876-bb79-46dc-8d0f-33c5963c6d18",
+    "box": [
+     432,
+     3701,
+     267,
+     475
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_4f1a87a5cd434f3e869c7e16b058f9b1~mv2.jpg/v1/fill/w_267,h_475,q_90,enc_avif,quality_auto/c18256_4f1a87a5cd434f3e869c7e16b058f9b1~mv2.jpg"
+   },
+   {
+    "t": "img",
+    "id": "ac95e8d8-6008-42ad-9f70-b70a5064088b",
+    "box": [
+     714,
+     3701,
+     267,
+     475
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_13d5e4f454de4cdd85681b5304521f32~mv2.jpg/v1/fill/w_267,h_475,q_90,enc_avif,quality_auto/c18256_13d5e4f454de4cdd85681b5304521f32~mv2.jpg"
+   },
+   {
+    "t": "img",
+    "id": "b3b49263-c2e5-45e2-bd32-ac805c3aadc4",
+    "box": [
+     996,
+     3701,
+     267,
+     475
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_55a42d4d67124846bf5373915527592c~mv2.jpg/v1/fill/w_267,h_475,q_90,enc_avif,quality_auto/c18256_55a42d4d67124846bf5373915527592c~mv2.jpg"
+   },
+   {
+    "t": "svg",
+    "box": [
+     1084,
+     3919,
+     23,
+     39
+    ],
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lv9nicew",
+    "box": [
+     552,
+     4221,
+     176,
+     36
+    ]
+   },
+   {
+    "t": "h2",
+    "box": [
+     552,
+     4221,
+     176,
+     36
+    ],
+    "text": "GUEST REVIEW",
+    "font": "normal 400 25px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "section",
+    "id": "comp-ipy0furf",
+    "box": [
+     150,
+     4295,
+     980,
+     630
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_c5916f03293c42b08d9b41c3f08adeee~mv2.jpg/v1/fill/w_980,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_c5916f03293c42b08d9b41c3f08adeee~mv2.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-ipy0fuvo",
+    "box": [
+     150,
+     4295,
+     980,
+     630
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_c5916f03293c42b08d9b41c3f08adeee~mv2.jpg/v1/fill/w_980,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_c5916f03293c42b08d9b41c3f08adeee~mv2.jpg"
+   },
+   {
+    "t": "img",
+    "box": [
+     150,
+     3395,
+     980,
+     900
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_c5916f03293c42b08d9b41c3f08adeee~mv2.jpg/v1/fill/w_980,h_900,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_c5916f03293c42b08d9b41c3f08adeee~mv2.jpg",
+    "alt": "Toilet"
+   },
+   {
+    "t": "div",
+    "id": "comp-ipx1kah5",
+    "box": [
+     444,
+     4425,
+     392,
+     370
+    ],
+    "src": "https://static.wixstatic.com/media/a9ff3b_e630dab1211b433ba1955369e2f15c16.png/v1/fill/w_21,h_18,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a9ff3b_e630dab1211b433ba1955369e2f15c16.png",
+    "op": "0",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ipwnvy82",
+    "box": [
+     629,
+     4545,
+     21,
+     25
+    ],
+    "src": "https://static.wixstatic.com/media/a9ff3b_e630dab1211b433ba1955369e2f15c16.png/v1/fill/w_21,h_18,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a9ff3b_e630dab1211b433ba1955369e2f15c16.png"
+   },
+   {
+    "t": "img",
+    "id": "img_comp-ipwnvy82",
+    "box": [
+     629,
+     4545,
+     21,
+     25
+    ],
+    "src": "https://static.wixstatic.com/media/a9ff3b_e630dab1211b433ba1955369e2f15c16.png/v1/fill/w_21,h_18,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a9ff3b_e630dab1211b433ba1955369e2f15c16.png",
+    "alt": "Vector"
+   },
+   {
+    "t": "div",
+    "id": "comp-ipwnogyq",
+    "box": [
+     453,
+     4580,
+     372,
+     185
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-ipwnogzo",
+    "box": [
+     453,
+     4580,
+     372,
+     185
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-imt1nrie",
+    "box": [
+     497,
+     4593,
+     287,
+     108
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     505,
+     4595,
+     272,
+     104
+    ],
+    "text": "“A tranquil haven amidst nature's embrace. The Mountain Table provided an enchanting retreat that exceeded all expectations.”",
+    "font": "italic 400 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(255, 255, 255)"
+   }
+  ]
+ },
+ {
+  "id": "SITE_FOOTER",
+  "box": [
+   0,
+   4925,
+   1280,
+   745
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": [
+   {
+    "t": "div",
+    "id": "comp-ijacaifa",
+    "box": [
+     159,
+     5019,
+     962,
+     35
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     564,
+     5020,
+     153,
+     32
+    ],
+    "text": "CONTACT US",
+    "font": "normal 700 25px/35px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ij0fjv59",
+    "box": [
+     928,
+     5086,
+     171,
+     27
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     933,
+     5088,
+     161,
+     23
+    ],
+    "text": "Tel: +91 9447009954",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)",
+    "href": "tel:+91 9447009954"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishoi88h",
+    "box": [
+     181,
+     5086,
+     253,
+     27
+    ]
+   },
+   {
+    "t": "a",
+    "box": [
+     184,
+     5088,
+     246,
+     23
+    ],
+    "text": "themountaintable500@gmail.com",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)",
+    "href": "mailto:themountaintable500@gmail.com"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishoj9o6",
+    "box": [
+     396,
+     5086,
+     571,
+     27
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     453,
+     5088,
+     457,
+     23
+    ],
+    "text": "Uluppuni, Kottamala P.O, Vagamon, Idukki Dst, Kerala- 685503",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishophzl",
+    "box": [
+     420,
+     5086,
+     41,
+     27
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     436,
+     5088,
+     10,
+     23
+    ],
+    "text": "/",
+    "font": "italic 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(90, 88, 88)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishoquie",
+    "box": [
+     898,
+     5086,
+     41,
+     27
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     914,
+     5088,
+     10,
+     23
+    ],
+    "text": "/",
+    "font": "italic 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(90, 88, 88)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ir1y0yr9",
+    "box": [
+     0,
+     5196,
+     1279,
+     375
+    ]
+   },
+   {
+    "t": "section",
+    "id": "comp-ijeflm1h",
+    "box": [
+     0,
+     5571,
+     1280,
+     60
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-ijb4uzrb",
+    "box": [
+     185,
+     5591,
+     910,
+     20
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     553,
+     5592,
+     173,
+     18
+    ],
+    "text": "© 2024 by The Mountain Table",
+    "font": "normal 400 14px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)"
+   }
+  ]
+ },
+ {
+  "id": "comp-ijeflm1h",
+  "box": [
+   0,
+   5571,
+   1280,
+   60
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": [
+   {
+    "t": "div",
+    "id": "comp-ijb4uzrb",
+    "box": [
+     185,
+     5591,
+     910,
+     20
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     553,
+     5592,
+     173,
+     18
+    ],
+    "text": "© 2024 by The Mountain Table",
+    "font": "normal 400 14px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)"
+   }
+  ]
+ }
+]

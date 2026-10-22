@@ -1,26 +1,636 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Design tokens, extracted from the original site's computed styles (see archive/extract, scripts/colors.mjs).
+ * Desktop (>= 750px) uses a fixed 980px column; below that the layout is the original's 320px mobile design,
+ * scaled to the viewport by setting the root font size to 5vw (1rem = 16px at 320px wide).
+ */
+@theme {
+  --color-ink: #242323;
+  --color-muted: #5b5a5a;
+  --color-nav: #c8c8c8;
+  --color-nav-active: #929191;
+  --color-accent: #ff4f4f;
+  --color-footer: #d6d6d6;
+  --color-card-dark: #323232;
+  --color-rule: #424242;
+  --color-rule-soft: #929191;
+  --color-dot: #9a9a9a;
+  --color-sep: #5a5858;
+
+  /* About page palette: forest green, warm ivory, muted gold (charcoal is --color-ink). */
+  --color-ivory: #f5f0e4;
+  --color-ivory-deep: #ebe4d2;
+  --color-forest: #1f3b2f;
+  --color-forest-deep: #142a21;
+  --color-gold: #b8935a;
+  --color-gold-ink: #7d5f2c;
+  --color-gold-soft: #d2b57f;
+
+  /* One typeface for the whole site: Brandon Grotesque (the original's brand face; the logo wordmark is the same geometric sans).
+     The font-sans / font-serif utilities resolve to it too, so no component can pick up a different family by accident. */
+  --font-brandon: var(--font-face-brandon), "Avenir Next", "Century Gothic", "Segoe UI", system-ui, sans-serif;
+  --font-sans: var(--font-brandon);
+  --font-serif: var(--font-brandon);
+
+  --breakpoint-desk: 750px;
+  --ease-wix: cubic-bezier(0.42, 0, 0.58, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (max-width: 749.98px) {
+  html {
+    font-size: 5vw;
   }
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #fff;
+  background-image: url("/images/11062b_ae6a248fb44a41ff998fa4bb245dd70d.png");
+  background-repeat: repeat;
+  background-size: 159px 159px;
+  color: var(--color-ink);
+  font-family: var(--font-brandon);
+  font-weight: 400;
+  overflow-x: clip;
+}
+
+@media (min-width: 750px) {
+  body {
+    min-width: 980px;
+  }
+}
+
+@media (max-width: 749.98px) {
+  body {
+    background-size: 9.9375rem 9.9375rem;
+  }
+}
+
+::selection {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ---------- Layout primitives ---------- */
+@layer components {
+  .mt-block {
+    position: relative;
+    height: var(--bh);
+  }
+  .mt-stage {
+    position: relative;
+    margin: 0 auto;
+    width: 980px;
+    height: 100%;
+  }
+  /* Absolutely positioned child. Desktop box in px, mobile box in rem (set by lib/stage.ts). */
+  .at {
+    --dx: auto;
+    --dy: auto;
+    --dw: auto;
+    --dh: auto;
+    --mx: auto;
+    --my: auto;
+    --mw: auto;
+    --mh: auto;
+    position: absolute;
+    left: var(--dx);
+    top: var(--dy);
+    width: var(--dw);
+    height: var(--dh);
+  }
+  @media (max-width: 749.98px) {
+    .mt-block {
+      height: var(--bmh);
+    }
+    .mt-stage {
+      width: 20rem;
+    }
+    .at {
+      left: var(--mx);
+      top: var(--my);
+      width: var(--mw);
+      height: var(--mh);
+    }
+  }
+}
+
+/* ---------- Entrance animations (see ANIMATIONS.md) ----------
+ * One-shot, time-based, triggered when an element first enters the viewport. Class `is-in` is added by
+ * MotionController. All timings/easings were measured on the original (opacity ~1.2s ease-in-out). */
+[data-reveal] {
+  opacity: 0;
+  transition:
+    opacity 1.2s var(--ease-wix),
+    transform 1.2s var(--ease-wix);
+}
+[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+/* Desktop: no entrance (mobile-only effects set via data-reveal-m). */
+[data-reveal="none"] {
+  opacity: 1;
+  transition: none;
+}
+[data-reveal="grow"] {
+  transform: scale(0);
+  transition:
+    opacity 1.2s linear,
+    transform 1.2s cubic-bezier(0.6, 0, 0.4, 1);
+}
+[data-reveal="slide-x"] {
+  transform: translateX(60px);
+}
+[data-reveal="slide-y"] {
+  transform: translateY(60px);
+}
+[data-reveal="turn"] {
+  transform: perspective(1000px) rotateY(42deg);
+  transform-origin: 100% 50%;
+}
+/* Fly-in: moves from the viewport edge to its place, no fade (--fly set per element). */
+[data-reveal="fly"] {
+  opacity: 1;
+  transform: translateX(var(--fly, 0));
+}
+[data-reveal="fly-y"] {
+  opacity: 1;
+  transform: translateY(var(--fly, 0));
+}
+/* Below 750px the original animates some elements differently; `data-reveal-m` overrides the effect there. */
+@media (max-width: 749.98px) {
+  [data-reveal-m] {
+    opacity: 0;
+  }
+  [data-reveal="grow"],
+  [data-reveal-m="grow"] {
+    transform: scale(0.8);
+    transition:
+      opacity 0.8s linear,
+      transform 0.8s var(--ease-wix);
+  }
+  [data-reveal-m="fade"] {
+    transform: none;
+    transition: opacity 1.2s var(--ease-wix);
+  }
+  [data-reveal-m="slide-y"] {
+    transform: translateY(60px);
+    transition:
+      opacity 1.2s var(--ease-wix),
+      transform 1.2s var(--ease-wix);
+  }
+  [data-reveal-m="turn"] {
+    transform: perspective(1000px) rotateY(42deg);
+    transform-origin: 100% 50%;
+    transition:
+      opacity 1.2s var(--ease-wix),
+      transform 1.2s var(--ease-wix);
+  }
+  [data-reveal="fly"] {
+    transform: translateX(var(--fly-m, var(--fly, 0)));
+  }
+  [data-reveal-m="fly-y"] {
+    opacity: 1;
+    transform: translateY(var(--fly-m, 0));
+  }
+  [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* ---- Redesigned sections (header, hero, services, contact, location): staggered rise + image mask ---- */
+[data-reveal="rise"] {
+  transform: translateY(28px);
+  transition:
+    opacity 1s var(--ease-out),
+    transform 1s var(--ease-out);
+}
+[data-reveal="mask"] {
+  opacity: 1;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.3s cubic-bezier(0.77, 0, 0.18, 1);
+}
+[data-reveal="mask"].is-in {
+  clip-path: inset(0 0 0 0);
+}
+[data-reveal="mask"] .mask-img {
+  transform: scale(1.18);
+  transition: transform 1.8s var(--ease-out);
+}
+[data-reveal="mask"].is-in .mask-img {
+  transform: scale(1);
+}
+/* Optional stagger: style={{ "--d": "0.15s" }} */
+[data-reveal][style*="--d"] {
+  transition-delay: var(--d);
+}
+.mask-img {
+  transition: transform 1.2s var(--ease-out);
+}
+@media (max-width: 749.98px) {
+  [data-reveal-m="rise"] {
+    transform: translateY(28px);
+    transition:
+      opacity 1s var(--ease-out),
+      transform 1s var(--ease-out);
+  }
+}
+
+/* Hero entrance (CSS-only, runs on load; each line is staggered with --i) */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(34px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hero-cue {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+.hero-rise {
+  opacity: 0;
+  animation: hero-rise 1.15s var(--ease-out) forwards;
+  animation-delay: calc(var(--i, 0) * 140ms + 300ms);
+}
+.hero-cue {
+  animation: hero-cue 2.4s var(--ease-wix) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise {
+    opacity: 1;
+    animation: none;
+  }
+  .hero-cue {
+    animation: none;
+  }
+  [data-reveal="mask"],
+  [data-reveal="mask"] .mask-img {
+    clip-path: none !important;
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- Header / nav ---------- */
+.nav-link {
+  color: var(--color-nav);
+  transition: color 0.4s;
+}
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link[aria-current="page"] {
+  color: #fff;
+}
+.nav-underline {
+  position: relative;
+}
+.nav-underline::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease-out);
+}
+.nav-underline:hover::after,
+.nav-underline:focus-visible::after,
+.nav-underline[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Pill button (Explore / Book Now) ---------- */
+.pill-btn {
+  background: var(--color-muted);
+  transition: background-color 0.2s;
+}
+.pill-btn:hover {
+  background: var(--color-accent);
+}
+
+/* ---------- Honeycomb gallery tiles ---------- */
+.hc-tile {
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+.hc-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.75);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.hc-tile:hover::after {
+  opacity: 1;
+}
+
+/* Video-in-text headline (See & Do): the text knocks out a video using mix-blend-mode. */
+.text-knockout {
+  mix-blend-mode: screen;
+  background: #fff;
+}
+
+/* ---------- Skip link (visible on keyboard focus only) ---------- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 200;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  color: var(--color-ink);
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ---------- About page (editorial) ---------- */
+@media (min-width: 750px) {
+  /* The About page is fluid; the original's fixed 980px minimum width would clip it on tablets. */
+  body:has(.about-page, .seedo-page, .rooms-page, .gallery-page, .blog-page) {
+    min-width: 0;
+  }
+}
+[data-reveal="draw"] {
+  opacity: 1;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.3s var(--ease-out);
+}
+[data-reveal="draw"].is-in {
+  transform: none;
+}
+[data-reveal="wipe"] {
+  opacity: 1;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.4s cubic-bezier(0.77, 0, 0.18, 1);
+}
+[data-reveal="wipe"].is-in {
+  clip-path: inset(0 0 0 0);
+}
+[data-reveal="wipe"] .mask-img {
+  transform: scale(1.12);
+  transition: transform 1.9s var(--ease-out);
+}
+[data-reveal="wipe"].is-in .mask-img {
+  transform: scale(1);
+}
+@keyframes about-zoom {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.about-zoom {
+  animation: about-zoom 2.6s var(--ease-out) both;
+}
+.about-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  transition: background-size 0.5s var(--ease-out);
+}
+.about-link:hover,
+.about-link:focus-visible {
+  background-size: 0 1px;
+  background-position: 100% 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal="wipe"] {
+    clip-path: none !important;
+  }
+  [data-reveal="wipe"] .mask-img,
+  .about-zoom {
+    animation: none;
+    transform: none !important;
+  }
+  [data-drift] {
+    transform: none !important;
+  }
+}
+
+/* ---------- See & Do ---------- */
+.hc-scale {
+  --hs: 1;
+}
+@media (min-width: 750px) and (max-width: 1279.98px) {
+  .hc-scale {
+    --hs: 0.78;
+  }
+}
+@media (min-width: 750px) and (max-width: 999.98px) {
+  .hc-scale {
+    --hs: 0.6;
+  }
+}
+.hc-tile::after {
+  background: rgba(31, 59, 47, 0.45);
+}
+
+/* ---------- Shared footer (location + contact): gold focus ring on the dark/ivory bands ---------- */
+#location :focus-visible,
+#contact :focus-visible {
+  outline-color: var(--color-gold);
+}
+.home-page {
+  background-color: var(--color-ivory);
+}
+
+/* ---------- Typography system ----------
+ * One family (Brandon Grotesque, a single Light weight), so hierarchy comes from size, line height, letter spacing and case,
+ * never from a second typeface or a synthetic bold. Sizes are rem below 750px (the root font size scales with the viewport,
+ * see the top of this file) and px from 750px up. Use the .t-* classes instead of ad-hoc text-[..] sizes.
+ */
+:root {
+  --fs-display: 2.75rem;
+  --lh-display: 1.04;
+  --fs-h1: 2.5rem;
+  --lh-h1: 1.08;
+  --fs-h2: 2rem;
+  --lh-h2: 1.12;
+  --fs-h3: 1.75rem;
+  --lh-h3: 1.15;
+  --fs-h4: 1.375rem;
+  --lh-h4: 1.3;
+  --fs-lead: 1.1875rem;
+  --lh-lead: 1.7;
+  --fs-body: 1.0625rem;
+  --lh-body: 1.75;
+  --fs-small: 0.9375rem;
+  --lh-small: 1.6;
+  --fs-label: 0.75rem;
+  --fs-ui: 0.8125rem;
+}
+@media (min-width: 750px) {
+  :root {
+    --fs-display: 88px;
+    --fs-h1: 72px;
+    --fs-h2: 56px;
+    --fs-h3: 40px;
+    --fs-h4: 28px;
+    --fs-lead: 20px;
+    --lh-lead: 1.7;
+    --fs-body: 18px;
+    --lh-body: 1.75;
+    --fs-small: 16px;
+    --fs-label: 12px;
+    --fs-ui: 13px;
+  }
+}
+@media (min-width: 750px) and (max-width: 999.98px) {
+  :root {
+    --fs-display: 60px;
+    --fs-h1: 52px;
+    --fs-h2: 44px;
+    --fs-h3: 34px;
+  }
+}
+@layer components {
+  .t-display,
+  .t-h1,
+  .t-h2,
+  .t-h3,
+  .t-h4 {
+    font-family: var(--font-brandon);
+    font-weight: 400;
+    font-style: normal;
+  }
+  .t-display {
+    font-size: var(--fs-display);
+    line-height: var(--lh-display);
+    letter-spacing: -0.01em;
+  }
+  .t-h1 {
+    font-size: var(--fs-h1);
+    line-height: var(--lh-h1);
+    letter-spacing: -0.01em;
+  }
+  .t-h2 {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
+    letter-spacing: 0;
+  }
+  .t-h3 {
+    font-size: var(--fs-h3);
+    line-height: var(--lh-h3);
+    letter-spacing: 0.005em;
+  }
+  .t-h4 {
+    font-size: var(--fs-h4);
+    line-height: var(--lh-h4);
+    letter-spacing: 0.01em;
+  }
+  .t-lead {
+    font-size: var(--fs-lead);
+    line-height: var(--lh-lead);
+  }
+  .t-body {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+  }
+  .t-small {
+    font-size: var(--fs-small);
+    line-height: var(--lh-small);
+  }
+  /* Eyebrows, field labels and captions: small, upper-case, widely tracked (case and tracking are set where used). */
+  .t-label {
+    font-size: var(--fs-label);
+    line-height: 1.5;
+    letter-spacing: 0.3em;
+  }
+  /* Buttons and navigation. */
+  .t-ui {
+    font-size: var(--fs-ui);
+    line-height: 1.4;
+    letter-spacing: 0.22em;
+  }
+}
+
+/* ---------- Gallery lightbox ---------- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+dialog[open] {
+  animation: fade-in 0.35s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  dialog[open] {
+    animation: none;
+  }
+}
+
+/* ---------- Gallery image loading ---------- */
+@keyframes gal-sweep {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes lb-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.gal-sweep {
+  overflow: hidden;
+}
+.gal-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(245, 240, 228, 0.45) 50%, transparent 70%);
+  animation: gal-sweep 1.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gal-sweep::after {
+    animation: none;
+  }
 }

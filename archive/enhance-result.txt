@@ -1,0 +1,7 @@
+Overflow + page errors at 360 / 390 / 768 / 1024 / 1440
+Warning: Detected unsettled top-level await at file:///D:/projects/the-mountain-table/scripts/enhance-check.mjs:39
+  const { b, p, errors } = await open(w < 750 ? mobileOpts(w, 800) : { viewport: { width: w, height: 800 } });
+                           ^
+
+
+

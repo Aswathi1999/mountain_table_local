@@ -1,0 +1,42 @@
+{
+ "w": 1440,
+ "reveals": [
+  [
+   "fade",
+   null,
+   "1.2s, 1.2s"
+  ]
+ ],
+ "heading": {
+  "text": "DISCOVER",
+  "opacity": "1"
+ },
+ "slides": {
+  "n": 30,
+  "w": 267,
+  "alts": [
+   "Stone steps winding through the gardens",
+   "The dining area with a long wooden table",
+   "A stone path between tea bushes",
+   "The infinity pool overlooking the hills",
+   "View across the valley from the property"
+  ]
+ },
+ "arrowsBefore": [
+  "Next"
+ ],
+ "scrollAfterClicks": [
+  208,
+  490,
+  772,
+  1054
+ ],
+ "arrowsAfter": [
+  "Previous",
+  "Next"
+ ],
+ "afterPrev": 772,
+ "afterDrag": 1054,
+ "overflowX": false,
+ "errs": []
+}

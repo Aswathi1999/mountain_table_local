@@ -1,0 +1,203 @@
+{
+ "reveals": [
+  {
+   "key": "#intro#0",
+   "effect": "fade",
+   "effectM": "turn",
+   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "1",
+   "initialTransform": "none",
+   "triggerTop": 837,
+   "triggerFraction": 0.964
+  },
+  {
+   "key": "#intro#1",
+   "effect": "grow",
+   "effectM": null,
+   "transition": "opacity, transform|0.8s, 0.8s|linear, cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "matrix(0.8, 0, 0, 0.8, 0, 0)",
+   "triggerTop": 820,
+   "triggerFraction": 0.945
+  },
+  {
+   "key": "#intro#2",
+   "effect": "fade",
+   "effectM": null,
+   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "none",
+   "triggerTop": 787,
+   "triggerFraction": 0.907
+  },
+  {
+   "key": "section[aria-label=\"About the house\"]#0",
+   "effect": "fade",
+   "effectM": "slide-y",
+   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "matrix(1, 0, 0, 1, 0, 60)",
+   "triggerTop": 843,
+   "triggerFraction": 0.971
+  },
+  {
+   "key": "section[aria-label=\"About the house\"]#1",
+   "effect": "fade",
+   "effectM": "slide-y",
+   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "matrix(1, 0, 0, 1, 0, 60)",
+   "triggerTop": 840,
+   "triggerFraction": 0.968
+  },
+  {
+   "key": "#reviews#0",
+   "effect": "fade",
+   "effectM": null,
+   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "none",
+   "triggerTop": 818,
+   "triggerFraction": 0.942
+  },
+  {
+   "key": "#reviews#1",
+   "effect": "slide-x",
+   "effectM": "fade",
+   "transition": "opacity|1.2s|cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "none",
+   "triggerTop": 819,
+   "triggerFraction": 0.944
+  },
+  {
+   "key": "#reviews#2",
+   "effect": "slide-x",
+   "effectM": "fade",
+   "transition": "opacity|1.2s|cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "none",
+   "triggerTop": 843,
+   "triggerFraction": 0.971
+  },
+  {
+   "key": "#reviews#3",
+   "effect": "slide-x",
+   "effectM": "fade",
+   "transition": "opacity|1.2s|cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "none",
+   "triggerTop": 814,
+   "triggerFraction": 0.938
+  }
+ ],
+ "parallax": [
+  {
+   "parent": "Welcome",
+   "k": [
+    0.8
+   ],
+   "attr": "0.8/0.8"
+  },
+  {
+   "parent": "Dining area",
+   "k": [
+    1
+   ],
+   "attr": "0.8/1"
+  },
+  {
+   "parent": "Guest review",
+   "k": [
+    1
+   ],
+   "attr": "0.8/1"
+  }
+ ],
+ "slideshow": {
+  "samples": [
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    0.8,
+    0.2,
+    0
+   ],
+   [
+    0.1,
+    0.9,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0.8,
+    0.2
+   ],
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1
+   ]
+  ],
+  "afterClick": [
+   0,
+   0,
+   1
+  ],
+  "quoteTransition": "opacity 1s cubic-bezier(0.4, 0, 0.2, 1)",
+  "texts": [
+   "“A tranquil haven amidst nature's embrace. The Mountain Table provided an enchanting retreat that exceeded all expectations.”",
+   "Immerse yourself in the beauty of nature at The Mountain Table. An experience that lingers in the heart and beckons you to return.",
+   "The Mountain Table is a testament to serenity and hospitality. A destination that promises rejuvenation and lasting memories."
+  ],
+  "dotCount": 3
+ }
+}

@@ -1,0 +1,402 @@
+{
+  "https://static.wixstatic.com/media/01c3aff52f2a4dffa526d7a9843d46ea.png": {
+    "local": "\\images\\01c3aff52f2a4dffa526d7a9843d46ea.png",
+    "size": 21665,
+    "sha256": "a77d9274fc196cca0035dd2be4eca8b59577846eeedaf1571bb35a354845ebcd",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/0fdef751204647a3bbd7eaa2827ed4f9.png": {
+    "local": "\\images\\0fdef751204647a3bbd7eaa2827ed4f9.png",
+    "size": 833,
+    "sha256": "e8141d92078bba8a5d432c009a829c7acf6cc959869d4a81a4d949704d2ac0f4",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/81d784_b04585865a4143659f5fb16e59163c94~mv2.png": {
+    "local": "\\images\\81d784_b04585865a4143659f5fb16e59163c94.png",
+    "size": 244409,
+    "sha256": "a0d38147c377fe85500a63d0827453c41123e32c10f08b5bb41425a44350257f",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_c623270b113b42aaa3981dedc1077ade~mv2.jpg": {
+    "local": "\\images\\c18256_c623270b113b42aaa3981dedc1077ade.jpg",
+    "size": 22259,
+    "sha256": "19018f7168481dabd19b707a6245e12f236de9f8b47fccddc4c1e7ed020e967f",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/81d784_a30ae9d65f7a4c158c25796451fed75f~mv2.jpg": {
+    "local": "\\images\\81d784_a30ae9d65f7a4c158c25796451fed75f.jpg",
+    "size": 1885000,
+    "sha256": "f8a80516718cc4eb876f2d4487b51fdb7563c8efc21d865d78fee3ca6e3b50df",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_a5070a9643594d6e90bf5288ae7d0bec~mv2.jpg": {
+    "local": "\\images\\c18256_a5070a9643594d6e90bf5288ae7d0bec.jpg",
+    "size": 1128475,
+    "sha256": "ba94761976c678f149597b59a96e1f5c1fff4f53f5ec471914301f6cd543ac8d",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_989549b27d9e4d7b8dacd876f73eb8b7~mv2.jpg": {
+    "local": "\\images\\c18256_989549b27d9e4d7b8dacd876f73eb8b7.jpg",
+    "size": 894821,
+    "sha256": "4a8338d482ea373bf7209f4a99d0ff0127b0d5ea42adcac845a82ca1c231eb35",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_4f1a87a5cd434f3e869c7e16b058f9b1~mv2.jpg": {
+    "local": "\\images\\c18256_4f1a87a5cd434f3e869c7e16b058f9b1.jpg",
+    "size": 4575159,
+    "sha256": "fa1593b028a2289125d6cf28b38539be0b4bf4c260919f4b39091a600d3ec742",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png": {
+    "local": "\\images\\11062b_ae6a248fb44a41ff998fa4bb245dd70d.png",
+    "size": 8265,
+    "sha256": "1cd9b1ef3a73a4681903e860ae08c7dc4a50f6967a69f82b4ca4f190a3ea2667",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_13d5e4f454de4cdd85681b5304521f32~mv2.jpg": {
+    "local": "\\images\\c18256_13d5e4f454de4cdd85681b5304521f32.jpg",
+    "size": 4914071,
+    "sha256": "5e2032e3ff153a2ff79f7d9a60ed03e6de750a537324c0485829258a3af36a4e",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_f351e4c4ff654f0bae5209bb90cd484e~mv2.jpg": {
+    "local": "\\images\\c18256_f351e4c4ff654f0bae5209bb90cd484e.jpg",
+    "size": 4876242,
+    "sha256": "6a8a4b17939348dd13944bd8871086ffb92408e1b7b94be0176cbb2264e70a50",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_c5916f03293c42b08d9b41c3f08adeee~mv2.jpg": {
+    "local": "\\images\\c18256_c5916f03293c42b08d9b41c3f08adeee.jpg",
+    "size": 4939330,
+    "sha256": "1a0dda2e9dc125d060c5a04a5ae8b90930a651481d1f2f183afbe9f511f34c52",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_55a42d4d67124846bf5373915527592c~mv2.jpg": {
+    "local": "\\images\\c18256_55a42d4d67124846bf5373915527592c.jpg",
+    "size": 1276006,
+    "sha256": "a806f18a50a0aaa259c222b94eee39ac497b6f69163890a2ad2ca73a179c14dd",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.parastorage.com/fonts/v2/fe0edf38-314c-46d5-b570-a37546d197e4/v1/brandon-grot-w01-light.woff2": {
+    "local": "\\fonts\\brandon-grot-w01-light.woff2",
+    "size": 17388,
+    "sha256": "0a3465927a1c4118e5c115e3588d72964194fddf5ee3e2bff7da6be10e5cc70f",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.parastorage.com/fonts/v2/6a8685bf-8255-4762-98b8-54a1192acc7c/v1/didot-w01-italic.woff2": {
+    "local": "\\fonts\\didot-w01-italic.woff2",
+    "size": 22364,
+    "sha256": "c0db3afa73d9589b36ee4238e285ef43dea306eeb2636bcaac21c0d865705180",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/81d784_b04585865a4143659f5fb16e59163c94%7Emv2.png": {
+    "local": "\\images\\81d784_b04585865a4143659f5fb16e59163c94.png",
+    "size": 244409,
+    "sha256": "a0d38147c377fe85500a63d0827453c41123e32c10f08b5bb41425a44350257f",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/84770f_227925e4873b4c67bb0c7bc1a29fd473.svg": {
+    "local": "\\icons\\garden.svg",
+    "size": 2543,
+    "sha256": "614dd37f372a5292757fab54948bd45173b77d454d6c11dc3b4eb559fad3afe5",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/11062b_6ae75f5973f14b8c85543a72a4f1f89b.svg": {
+    "local": "\\icons\\play.svg",
+    "size": 539,
+    "sha256": "ab80e03f5f1a2773ed3177859a98ad9675b5206d317a504c591d2cf62c3fbcf6",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/eeee7cbf768f46b392b957d721205ef2.svg": {
+    "local": "\\icons\\pool.svg",
+    "size": 3195,
+    "sha256": "f3dd2eb17d2545e76a725c63b7a8d193decfd20186ad5de085b9d46dfac8dbb1",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/357ace99ce2b41c6a0cfaa07dd102299.svg": {
+    "local": "\\icons\\breakfast.svg",
+    "size": 2277,
+    "sha256": "f2f04c451ebcd6d74cc09199276a6f36c8cf2c3e64da4aa5a3cfe1a37cc6adce",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/7cd8fd287d534ee2881f3f9d3a7988c0.svg": {
+    "local": "\\icons\\house.svg",
+    "size": 16446,
+    "sha256": "b645c108e440fcae86cf28dbad1964d086645a5ccb1f85c0efb12580243fd500",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/ad5c44251cee47d2bbd9d6726bbb505c.svg": {
+    "local": "\\icons\\housekeeping.svg",
+    "size": 906,
+    "sha256": "cc254037c01f46dc710e99b537f76b751d55441f4ad844e78f7d6a6b081f9e01",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/3a44cc98be924931ae72a47fa57c414e.svg": {
+    "local": "\\icons\\wifi.svg",
+    "size": 965,
+    "sha256": "584e8a11909e8aaf71eb5ef081a49c12f3a41a968bddee71e7008fab1d1fef2c",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_e5d979a1e3574fa4982be5aba13e7d68~mv2.jpg": {
+    "local": "\\images\\c18256_e5d979a1e3574fa4982be5aba13e7d68.jpg",
+    "size": 4927207,
+    "sha256": "7f42e194467707c97cc255c79f3872cc60816788e133f8a266d76db3c02d1569",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/a9ff3b_e630dab1211b433ba1955369e2f15c16.png": {
+    "local": "\\images\\a9ff3b_e630dab1211b433ba1955369e2f15c16.png",
+    "size": 383,
+    "sha256": "fec090192ed1874bc8a05c39fb8fe8cb67caf89bc087d939168a93a5ff538934",
+    "usedOn": [
+      "/"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_90e3f3e6801e4781854e622b194e9b04~mv2.jpg": {
+    "local": "\\images\\c18256_90e3f3e6801e4781854e622b194e9b04.jpg",
+    "size": 1081352,
+    "sha256": "d84086ab23b1f92cb16779950b8c450f5b21c665813391898a23880d8f76dc6b",
+    "usedOn": [
+      "/about"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_0e64216c9f4a47aa9286384c0daec85b~mv2.jpg": {
+    "local": "\\images\\c18256_0e64216c9f4a47aa9286384c0daec85b.jpg",
+    "size": 428256,
+    "sha256": "8e3e20c04c201f0670d13684db6dfe0d79ca107a28ad4a9edd97a9669a39d96f",
+    "usedOn": [
+      "/about"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_bca9ca65f306415a95ae5b159b661421~mv2.jpg": {
+    "local": "\\images\\c18256_bca9ca65f306415a95ae5b159b661421.jpg",
+    "size": 4760347,
+    "sha256": "2cc2ba64ec0541462eb72abe75d2bd3aed20891bda830fcd58a19a9d89f71bbd",
+    "usedOn": [
+      "/about"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/11062b_d62383881875450493afde52ffe02c6d.svg": {
+    "local": "\\icons\\book.svg",
+    "size": 3745,
+    "sha256": "9ebd47c110a3bdaf87f1c3b0adbb82e36b0078810e7e73e426ba0a9e06142358",
+    "usedOn": [
+      "/about"
+    ]
+  },
+  "https://static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/anton/v11/1Ptgg87LROyAm3Kz-C8CSKlv.woff2": {
+    "local": "\\fonts\\anton-latin.woff2",
+    "size": 8580,
+    "sha256": "373dd2c1d2e595a589ff4533952ba07f8b35e44dbfcd2f1575d81627de30be1e",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.parastorage.com/fonts/v2/2f12de04-5ca4-4ada-9e66-a958673b12b5/v1/helvetica-w01-bold.woff2": {
+    "local": "\\fonts\\helvetica-w01-bold.woff2",
+    "size": 28648,
+    "sha256": "22c148080695837bcba284e8069146bd93e94aaa8e8ec4cbe43e0cfe8224527e",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/11062b_d578b9d4ffba48c68d086ec29fe9e6f0f000.jpg": {
+    "local": "\\images\\11062b_d578b9d4ffba48c68d086ec29fe9e6f0f000.jpg",
+    "size": 805338,
+    "sha256": "79e464462fb6b20f32f2fdbc7f90ba0598b1c0a601720cce77cc4bc7c29137af",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/66154b37def64bfba3cf82929427e0c5.jpg": {
+    "local": "\\images\\66154b37def64bfba3cf82929427e0c5.jpg",
+    "size": 4565997,
+    "sha256": "abdaa607908a36635ef4daa0ba086c25affe13fb1d84dcc049eb584514031881",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/11062b_4ed71e30b24e45bfa12d57c8cbbb52d3~mv2_d_5863_3920_s_4_2.jpg": {
+    "local": "\\images\\11062b_4ed71e30b24e45bfa12d57c8cbbb52d3_d_5863_3920_s_4_2.jpg",
+    "size": 10475081,
+    "sha256": "a255414326193aca2e393852953eda4cf9fc0d9e251b622475c969af941cdeaf",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/8daf94f88f524d8cb168d8004c1fe282.jpg": {
+    "local": "\\images\\8daf94f88f524d8cb168d8004c1fe282.jpg",
+    "size": 1800307,
+    "sha256": "60b4813c543ae2db325423279568ff8533e609edd5c1c4d7704996fabd69abc9",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/7323565a035442139d080d3d3fead270.jpg": {
+    "local": "\\images\\7323565a035442139d080d3d3fead270.jpg",
+    "size": 1519720,
+    "sha256": "00abdf2768397f67f4bc8ddd62c352dfcb9e8560f9b4adea12266d5daac961e2",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/11062b_a52890f0d524450eb3e371bcfa5c0b77~mv2.jpg": {
+    "local": "\\images\\11062b_a52890f0d524450eb3e371bcfa5c0b77.jpg",
+    "size": 4362201,
+    "sha256": "9fb0a3ca78c179905aa3ec971ade4f5c6500abb9a6c5af32e4b15ab19368c9bc",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/11062b_ff90a3f429144c7d853bea6506b7f737~mv2.jpg": {
+    "local": "\\images\\11062b_ff90a3f429144c7d853bea6506b7f737.jpg",
+    "size": 1295762,
+    "sha256": "85feaf02029628c6b49eec1c6ce2fa5bc1b371c6771ff168facf22334745e625",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/11062b_bbbbe61e2f734ee38939deab5e6c34f1.svg": {
+    "local": "\\icons\\hills.svg",
+    "size": 1718,
+    "sha256": "ae55f62177d3bc96908a5791c34dc7ec379dd6f26dfb2af4757a8266e98ed7a4",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_6f8159e643924ae99302e95ab1689264~mv2.jpg": {
+    "local": "\\images\\c18256_6f8159e643924ae99302e95ab1689264.jpg",
+    "size": 4852669,
+    "sha256": "935bc01cf7147ac12bd8793a39db74f3eb6677b37f3a9a3f6148fc272de6007d",
+    "usedOn": [
+      "/rooms-booking"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_e258df5a2e004fb0b702a4bb9e142cec~mv2.jpg": {
+    "local": "\\images\\c18256_e258df5a2e004fb0b702a4bb9e142cec.jpg",
+    "size": 4653740,
+    "sha256": "c1fff90101d10ea92294c06d77f5406569e43a3574efe2dbe57d6fb59c5e7ff3",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/81d784_a43d2aa0646e4ef884b76c80a2b04d2f~mv2.jpg": {
+    "local": "\\images\\81d784_a43d2aa0646e4ef884b76c80a2b04d2f.jpg",
+    "size": 1423370,
+    "sha256": "212d4c663084290206c0a55df0055facec15b1ae8dff9f227dbc0ae589de7445",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/81d784_25b1f7c4c5de4910a05fa23069ef109a~mv2.jpg": {
+    "local": "\\images\\81d784_25b1f7c4c5de4910a05fa23069ef109a.jpg",
+    "size": 521807,
+    "sha256": "4e7cecfd02b911e3605727a3daf4146e48534cbcb90c3d1fe7bd6233f2304188",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_9bf951b03ba94f55a8d71c9ad2cd5249~mv2.jpg": {
+    "local": "\\images\\c18256_9bf951b03ba94f55a8d71c9ad2cd5249.jpg",
+    "size": 4978394,
+    "sha256": "dca26191c66bef558a7cd2abb88e6b19917b36c852737a557923e7dc95182d10",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/81d784_1c2a1355792941408dd4987fa7e78484~mv2.jpg": {
+    "local": "\\images\\81d784_1c2a1355792941408dd4987fa7e78484.jpg",
+    "size": 915063,
+    "sha256": "57ba6c503cb12d75b301d042571aae8e9564f3c83964a56d400c70b89dbf6339",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_856598ef975d4cef8aab0df95f08eb12~mv2.jpg": {
+    "local": "\\images\\c18256_856598ef975d4cef8aab0df95f08eb12.jpg",
+    "size": 4931057,
+    "sha256": "8caa01b637f79691973b74589527bbc964d7d6eda578feaee8d3c830e26d0857",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://video.wixstatic.com/video/11062b_d578b9d4ffba48c68d086ec29fe9e6f0/480p/mp4/file.mp4": {
+    "local": "\\videos\\11062b_d578b9d4ffba48c68d086ec29fe9e6f0-480p.mp4",
+    "size": 6146272,
+    "sha256": "3dec86f1bc52d1fbdd4559e747e6d25f6220ecccfc449ab9502d577a513fc5f1",
+    "usedOn": [
+      "/see-do"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_6dc10df5ec984167b34b20faaf20a16c~mv2.jpg": {
+    "local": "\\images\\c18256_6dc10df5ec984167b34b20faaf20a16c.jpg",
+    "size": 167704,
+    "sha256": "01ec92cd555a20ad6cba4ae0c564768f0ecaaa09a32194434949822ca719d27c",
+    "usedOn": [
+      "/rooms-booking"
+    ]
+  },
+  "https://static.wixstatic.com/media/c18256_e6722fd3397a4b21a829c2ab06e9e5a6~mv2.jpg": {
+    "local": "\\images\\c18256_e6722fd3397a4b21a829c2ab06e9e5a6.jpg",
+    "size": 4778120,
+    "sha256": "f914df5572673a561cb6f41b62756dd9f9fbab1b0a98cce5e03d78b477e1c51f",
+    "usedOn": [
+      "/rooms-booking"
+    ]
+  },
+  "https://static.wixstatic.com/shapes/db4682d617bb43fabc720d6617470588.svg": {
+    "local": "\\icons\\bed.svg",
+    "size": 519,
+    "sha256": "054134cf194d5e7fa6179a1f2e9c62068f2c098d03369dc002e2bd69dbd414a8",
+    "usedOn": [
+      "/rooms-booking"
+    ]
+  }
+}

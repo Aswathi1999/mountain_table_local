@@ -1,0 +1,1355 @@
+[
+ {
+  "id": "SITE_HEADER",
+  "box": [
+   0,
+   0,
+   1280,
+   80
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": [
+   {
+    "t": "wix-dropdown-menu",
+    "id": "comp-iix98xkp",
+    "box": [
+     150,
+     19,
+     980,
+     42
+    ]
+   },
+   {
+    "t": "nav",
+    "id": "comp-iix98xkpnavContainer",
+    "box": [
+     150,
+     19,
+     980,
+     42
+    ]
+   },
+   {
+    "t": "ul",
+    "id": "comp-iix98xkpitemsContainer",
+    "box": [
+     150,
+     19,
+     980,
+     42
+    ]
+   },
+   {
+    "t": "li",
+    "id": "comp-iix98xkp0",
+    "box": [
+     150,
+     19,
+     217,
+     42
+    ]
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp0label",
+    "box": [
+     227,
+     19,
+     63,
+     42
+    ],
+    "text": "HOME",
+    "font": "normal 400 14px/42px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)",
+    "href": "https://www.themountaintable.in/"
+   },
+   {
+    "t": "li",
+    "id": "comp-iix98xkp1",
+    "box": [
+     367,
+     19,
+     220,
+     42
+    ]
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp1label",
+    "box": [
+     444,
+     19,
+     66,
+     42
+    ],
+    "text": "ABOUT",
+    "font": "normal 400 14px/42px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)",
+    "href": "https://www.themountaintable.in/about"
+   },
+   {
+    "t": "li",
+    "id": "comp-iix98xkp2",
+    "box": [
+     587,
+     19,
+     236,
+     42
+    ]
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp2label",
+    "box": [
+     664,
+     19,
+     82,
+     42
+    ],
+    "text": "SEE & DO",
+    "font": "normal 400 14px/42px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)",
+    "href": "https://www.themountaintable.in/see-do"
+   },
+   {
+    "t": "li",
+    "id": "comp-iix98xkp3",
+    "box": [
+     823,
+     19,
+     307,
+     42
+    ]
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp3label",
+    "box": [
+     900,
+     19,
+     153,
+     42
+    ],
+    "text": "ROOMS & BOOKING",
+    "font": "normal 400 14px/42px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(146, 145, 145)",
+    "href": "https://www.themountaintable.in/rooms-booking"
+   },
+   {
+    "t": "p",
+    "id": "comp-iix98xkp__more__label",
+    "box": [
+     1135,
+     19,
+     50,
+     20
+    ],
+    "text": "More",
+    "font": "normal 400 14px/19.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)"
+   }
+  ]
+ },
+ {
+  "id": "comp-lvb4n4z9",
+  "box": [
+   0,
+   80,
+   1280,
+   724
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "bgImg": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png\")",
+  "items": [
+   {
+    "t": "wix-bg-image",
+    "id": "bgImg_comp-lvb4n4z9",
+    "box": [
+     0,
+     80,
+     1280,
+     724
+    ],
+    "bgi": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4b",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvb4yz9p",
+    "box": [
+     202,
+     128,
+     605,
+     342
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     202,
+     133,
+     560,
+     102
+    ],
+    "text": "Luxurious Rooms:",
+    "font": "normal 700 80px/112px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     202,
+     254,
+     562,
+     205
+    ],
+    "text": "Where Every View is a Masterpiece",
+    "font": "normal 700 70px/112px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvkku46k",
+    "box": [
+     202,
+     571,
+     61,
+     41
+    ]
+   },
+   {
+    "t": "svg",
+    "box": [
+     202,
+     571,
+     61,
+     41
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-lvb505yb",
+    "box": [
+     202,
+     639,
+     819,
+     101
+    ]
+   },
+   {
+    "t": "p",
+    "box": [
+     202,
+     639,
+     819,
+     101
+    ],
+    "text": "Welcome to our luxurious retreat where every aspect is meticulously designed to offer you an unparalleled experience. Our resort boasts three air-conditioned bedrooms, each uniquely showcasing a breathtaking view of our lush tea plantation. With expansive glass doors and windows, you'll enjoy the best vistas right from the comfort of your room. Experience the epitome of luxury and natural beauty a",
+    "font": "normal 400 18px/25.2px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:justify",
+    "color": "rgb(36, 35, 35)"
+   }
+  ]
+ },
+ {
+  "id": "comp-lv9m94pf",
+  "box": [
+   0,
+   804,
+   1280,
+   1196
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "bgImg": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png\")",
+  "items": [
+   {
+    "t": "wix-bg-image",
+    "id": "bgImg_comp-lv9m94pf",
+    "box": [
+     0,
+     804,
+     1280,
+     1196
+    ],
+    "bgi": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4b",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf0q3",
+    "box": [
+     150,
+     894,
+     980,
+     849
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_e6722fd3397a4b21a829c2ab06e9e5a6~mv2.jpg/v1/fill/w_302,h_848,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_e6722fd3397a4b21a829c2ab06e9e5a6~mv2.jpg"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf0w9__item1",
+    "box": [
+     154,
+     894,
+     302,
+     848
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_e6722fd3397a4b21a829c2ab06e9e5a6~mv2.jpg/v1/fill/w_302,h_848,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_e6722fd3397a4b21a829c2ab06e9e5a6~mv2.jpg",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "img",
+    "box": [
+     154,
+     894,
+     302,
+     848
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_e6722fd3397a4b21a829c2ab06e9e5a6~mv2.jpg/v1/fill/w_302,h_848,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_e6722fd3397a4b21a829c2ab06e9e5a6~mv2.jpg",
+    "alt": "Room 1"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf0z0__item1",
+    "box": [
+     154,
+     1380,
+     303,
+     351
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf0z7__item1",
+    "box": [
+     177,
+     1394,
+     191,
+     34
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     177,
+     1396,
+     88,
+     28
+    ],
+    "text": "Room 1",
+    "font": "normal 700 24px/normal helvetica-w01-bold, helvetica-w02-bold, helvetica- ls:normal tt:none ta:start",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf10c__item1",
+    "box": [
+     175,
+     1434,
+     260,
+     238
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     175,
+     1435,
+     260,
+     235
+    ],
+    "text": "With panoramic glass windows offering a rich view of the surroundings, a shaded balcony providing easy access to the pool under the canopy of a mango tree, and an attached toilet featuring a stunning glass window framing mountain sunsets, every moment here is a blend of luxury and natural beauty, ensuring an unforgettable stay.",
+    "font": "italic 400 17px/23.8px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:justify",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf0w9__item2",
+    "box": [
+     489,
+     894,
+     302,
+     849
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_6f8159e643924ae99302e95ab1689264~mv2.jpg/v1/fill/w_302,h_849,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_6f8159e643924ae99302e95ab1689264~mv2.jpg",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "img",
+    "box": [
+     489,
+     894,
+     302,
+     849
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_6f8159e643924ae99302e95ab1689264~mv2.jpg/v1/fill/w_302,h_849,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_6f8159e643924ae99302e95ab1689264~mv2.jpg",
+    "alt": "Room 2"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf0z0__item2",
+    "box": [
+     489,
+     1380,
+     303,
+     352
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf0z7__item2",
+    "box": [
+     512,
+     1394,
+     191,
+     35
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     512,
+     1396,
+     88,
+     28
+    ],
+    "text": "Room 2",
+    "font": "normal 700 24px/33.6px helvetica-w01-bold, helvetica-w02-bold, helvetica- ls:normal tt:none ta:start",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf10c__item2",
+    "box": [
+     510,
+     1434,
+     260,
+     238
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     510,
+     1435,
+     260,
+     211
+    ],
+    "text": "Step onto your private grass lawn and enjoy sunset chats with a refreshing breeze. With easy access to the grill house and tea plantation walk, every moment here is filled with relaxation and exploration. Plus, the attached toilet's glass window offers a wide view of the hills, adding to the charm of your stay.",
+    "font": "italic 400 17px/23.8px brandon-grot-w01-light, brandon-grot-w05-light, sa ls:normal tt:none ta:justify",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf0w9__item3",
+    "box": [
+     824,
+     894,
+     302,
+     849
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_6dc10df5ec984167b34b20faaf20a16c~mv2.jpg/v1/fill/w_302,h_849,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_6dc10df5ec984167b34b20faaf20a16c~mv2.jpg",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "img",
+    "box": [
+     824,
+     894,
+     302,
+     849
+    ],
+    "src": "https://static.wixstatic.com/media/c18256_6dc10df5ec984167b34b20faaf20a16c~mv2.jpg/v1/fill/w_302,h_849,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c18256_6dc10df5ec984167b34b20faaf20a16c~mv2.jpg",
+    "alt": "Room 3"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf0z0__item3",
+    "box": [
+     824,
+     1380,
+     303,
+     352
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf0z7__item3",
+    "box": [
+     847,
+     1394,
+     191,
+     35
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     847,
+     1396,
+     88,
+     28
+    ],
+    "text": "Room 3",
+    "font": "normal 700 24px/33.6px helvetica-w01-bold, helvetica-w02-bold, helvetica- ls:normal tt:none ta:start",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvamf10c__item3",
+    "box": [
+     845,
+     1434,
+     260,
+     238
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     845,
+     1435,
+     260,
+     235
+    ],
+    "text": "Our largest and most luxurious accommodation at the homestay. This spacious room features a side glass window that offers a stunning view of our lush garden, creating a serene ambience. With direct access to the infinity pool, you can easily unwind and enjoy a refreshing dip whenever you please. It is designed for ultimate comfort and relaxation.",
+    "font": "italic 400 17px/23.8px brandon-grot-w01-light, brandon-grot-w05-light, sa ls:normal tt:none ta:justify",
+    "color": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvknkwsd",
+    "box": [
+     574,
+     1801,
+     132,
+     42
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     592,
+     1811,
+     92,
+     22
+    ],
+    "text": "Book Now",
+    "font": "normal 400 15px/normal brandon-grot-w01-light, brandon-grot-w05-light, sa ls:3.75px tt:none ta:center",
+    "color": "rgb(255, 255, 255)",
+    "href": "https://www.themountaintable.in/rooms-booking#book-now"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvl517qd",
+    "box": [
+     67,
+     1938,
+     1147,
+     6
+    ],
+    "bd": "1px rgb(66, 66, 66)"
+   }
+  ]
+ },
+ {
+  "id": "comp-lvieckpu",
+  "box": [
+   0,
+   2000,
+   1280,
+   1633
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "bgImg": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png\")",
+  "items": [
+   {
+    "t": "wix-bg-image",
+    "id": "bgImg_comp-lvieckpu",
+    "box": [
+     0,
+     2000,
+     1280,
+     1633
+    ],
+    "bgi": "url(\"https://static.wixstatic.com/media/11062b_ae6a248fb44a41ff998fa4bb245dd70d~mv2.png/v1/crop/x_0,y_0,w_159,h_159,q_85,enc_auto/11062b_ae6a248fb44a41ff998fa4b",
+    "tf": "matrix(1, 0, 0, 1, 0, 0)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvif1chc",
+    "box": [
+     197,
+     2046,
+     310,
+     112
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     197,
+     2048,
+     291,
+     107
+    ],
+    "text": "Booking Policies & Guidelines",
+    "font": "normal 700 40px/56px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvif4mny",
+    "box": [
+     187,
+     2183,
+     928,
+     1103
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2187,
+     695,
+     21
+    ],
+    "text": "● Please note that all activities related to fireworks are strictly prohibited on our property and its premises.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2217,
+     449,
+     21
+    ],
+    "text": "● Bookings will be only confirmed upon receipt of advance payment.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2248,
+     538,
+     21
+    ],
+    "text": "● On weekends, we prioritize full-property bookings. (Friday, Saturday& Sunday).",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2279,
+     917,
+     52
+    ],
+    "text": "● We kindly request you to confirm your booking as soon as possible. For multiple inquiries on the same day, bookings will be processed on a first-come, first-served basis.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2340,
+     474,
+     21
+    ],
+    "text": "● Please note, all guests must share their valid ID proof during check-in.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2370,
+     659,
+     21
+    ],
+    "text": "● Children above 6 years old will be considered in the adult category and will be charged accordingly.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2401,
+     373,
+     21
+    ],
+    "text": "● Check In:14:00 Hrs   & Check-Out: 11:00 Hrs  ( IST)",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2432,
+     920,
+     52
+    ],
+    "text": "● Early check-in & Late check-out is subject to availability and will be chargeable. Checkouts from 11:00 to 18:00 hours are subject to 50% of the room rate and after that at 100%.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2493,
+     507,
+     21
+    ],
+    "text": "● Please complete the balance payment procedure during the check-in time.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2523,
+     896,
+     52
+    ],
+    "text": "● Please remember, that the number of guests must not exceed as mentioned in the confirmation. During the stay, no guests other than those who have made a reservation may enter the property.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2585,
+     906,
+     52
+    ],
+    "text": "● We kindly request that guests confirm their food choices two days before arrival. The menu lists will be provided to you when booking for your convenience.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "p",
+    "box": [
+     187,
+     2642,
+     928,
+     31
+    ],
+    "text": "For the health, safety, and quality standards of our guests, we do not permit outside food on our property.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2646,
+     14,
+     21
+    ],
+    "text": "●",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2676,
+     711,
+     21
+    ],
+    "text": "● Complimentary breakfast is provided, and guests can select up to three main courses from the food menu.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2707,
+     374,
+     21
+    ],
+    "text": "● Negotiation is not possible after reaching the property.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2738,
+     418,
+     21
+    ],
+    "text": "● The late check-in must be informed to the property manager.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2768,
+     627,
+     21
+    ],
+    "text": "● Early check-in & Late check-out are subject to availability and must be informed beforehand.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2799,
+     469,
+     21
+    ],
+    "text": "● Smoking and alcohol consumption is allowed in designated areas only.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2829,
+     573,
+     21
+    ],
+    "text": "● We strictly prohibit all illegal activities, including gambling, prostitution, and narcotics.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2860,
+     653,
+     21
+    ],
+    "text": "● Damage to the property caused by the guest will be charged at the cost of repair or replacement.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2890,
+     925,
+     52
+    ],
+    "text": "● We appreciate your cooperation and respect for the property staff. They are here to help you and make your stay comfortable. Please treat them with kindness and courtesy.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2952,
+     546,
+     21
+    ],
+    "text": "● Please take care of yourself if you engage in adventure activities on the property.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     2982,
+     910,
+     52
+    ],
+    "text": "● We kindly request you to take good care of your belongings. We are not liable for any loss or damage that may occur. Make sure you pick up all your personal belongings before checking out.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3043,
+     925,
+     52
+    ],
+    "text": "● If you have ordered the BBQ and campfire will depend on the weather and availability. If the bonfire and barbecue cannot take place due to the weather, the costs will be refunded",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3105,
+     344,
+     21
+    ],
+    "text": "● Kindly note that our homestay is not pet-friendly.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3136,
+     508,
+     21
+    ],
+    "text": "● Food and beverages will only be served at designated areas on the property.",
+    "font": "normal 400 17px/32.4px brandon-grot-w01-light, brandon-grot-w05-light, sa ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3169,
+     892,
+     53
+    ],
+    "text": "● Jeep safari and trekking activities are subject to availability and should be requested during the booking process. Please note that these activities incur additional charges.",
+    "font": "normal 400 17px/32.4px brandon-grot-w01-light, brandon-grot-w05-light, sa ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3230,
+     14,
+     21
+    ],
+    "text": "●",
+    "font": "normal 400 17px/25.2px brandon-grot-w01-light, brandon-grot-w05-light, sa ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     201,
+     3229,
+     512,
+     23
+    ],
+    "text": "All the special requests by the guest are subject to availability upon arrival.",
+    "font": "normal 400 18px/25.2px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3259,
+     850,
+     21
+    ],
+    "text": "● For any disputes in payments and any other legal disputes, the jurisdiction of the court will be at Muttom in Idukki district Kerala",
+    "font": "normal 400 17px/32.4px brandon-grot-w01-light, brandon-grot-w05-light, sa ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvvtr581",
+    "box": [
+     187,
+     3329,
+     310,
+     56
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3331,
+     300,
+     51
+    ],
+    "text": "Cancellation Policy",
+    "font": "normal 700 40px/56px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvvts39q",
+    "box": [
+     187,
+     3410,
+     928,
+     137
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3412,
+     14,
+     21
+    ],
+    "text": "●",
+    "font": "normal 400 17px/25.2px brandon-grot-w01-light, brandon-grot-w05-light, sa ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     201,
+     3411,
+     709,
+     23
+    ],
+    "text": "In case of no show or cancellation of the reservation, the resort has the right to levy retention charges.",
+    "font": "normal 400 18px/25.2px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3439,
+     14,
+     21
+    ],
+    "text": "●",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     201,
+     3439,
+     749,
+     21
+    ],
+    "text": "Guests who cancel their reservation at least 7 days before arrival will receive a 90% refund of the advance amount.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3470,
+     14,
+     21
+    ],
+    "text": "●",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     201,
+     3470,
+     750,
+     21
+    ],
+    "text": "Guests who cancel their reservation at least 3 days before arrival will receive a 50% refund of the advance amount.",
+    "font": "normal 400 17px/30.6px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3498,
+     14,
+     21
+    ],
+    "text": "●",
+    "font": "normal 400 17px/25.2px brandon-grot-w01-light, brandon-grot-w05-light, sa ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     201,
+     3497,
+     531,
+     23
+    ],
+    "text": "Cancellations before 0-3 days before the arrival are not entitled to a refund.",
+    "font": "normal 400 18px/25.2px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     187,
+     3524,
+     14,
+     21
+    ],
+    "text": "●",
+    "font": "normal 400 17px/25.2px brandon-grot-w01-light, brandon-grot-w05-light, sa ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "span",
+    "box": [
+     201,
+     3523,
+     677,
+     23
+    ],
+    "text": "Reservations cancelled between December 20th and January 10th are not eligible for any refund.",
+    "font": "normal 400 18px/25.2px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:start",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-lvvb0a4w",
+    "box": [
+     0,
+     3567,
+     1280,
+     90
+    ]
+   }
+  ]
+ },
+ {
+  "id": "SITE_FOOTER",
+  "box": [
+   0,
+   3633,
+   1280,
+   745
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": [
+   {
+    "t": "div",
+    "id": "comp-ijacaifa",
+    "box": [
+     159,
+     3727,
+     962,
+     35
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     564,
+     3728,
+     153,
+     32
+    ],
+    "text": "CONTACT US",
+    "font": "normal 700 25px/35px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ij0fjv59",
+    "box": [
+     928,
+     3794,
+     171,
+     27
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     933,
+     3796,
+     161,
+     23
+    ],
+    "text": "Tel: +91 9447009954",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)",
+    "href": "tel:+91 9447009954"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishoi88h",
+    "box": [
+     181,
+     3794,
+     253,
+     27
+    ]
+   },
+   {
+    "t": "a",
+    "box": [
+     184,
+     3796,
+     246,
+     23
+    ],
+    "text": "themountaintable500@gmail.com",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)",
+    "href": "mailto:themountaintable500@gmail.com"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishoj9o6",
+    "box": [
+     396,
+     3794,
+     571,
+     27
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     453,
+     3796,
+     457,
+     23
+    ],
+    "text": "Uluppuni, Kottamala P.O, Vagamon, Idukki Dst, Kerala- 685503",
+    "font": "normal 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(36, 35, 35)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishophzl",
+    "box": [
+     420,
+     3794,
+     41,
+     27
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     436,
+     3796,
+     10,
+     23
+    ],
+    "text": "/",
+    "font": "italic 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(90, 88, 88)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ishoquie",
+    "box": [
+     898,
+     3794,
+     41,
+     27
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     914,
+     3796,
+     10,
+     23
+    ],
+    "text": "/",
+    "font": "italic 700 18px/27px brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(90, 88, 88)"
+   },
+   {
+    "t": "div",
+    "id": "comp-ir1y0yr9",
+    "box": [
+     0,
+     3904,
+     1279,
+     375
+    ]
+   },
+   {
+    "t": "section",
+    "id": "comp-ijeflm1h",
+    "box": [
+     0,
+     4279,
+     1280,
+     60
+    ]
+   },
+   {
+    "t": "div",
+    "id": "comp-ijb4uzrb",
+    "box": [
+     185,
+     4299,
+     910,
+     20
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     553,
+     4300,
+     173,
+     18
+    ],
+    "text": "© 2024 by The Mountain Table",
+    "font": "normal 400 14px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)"
+   }
+  ]
+ },
+ {
+  "id": "comp-ijeflm1h",
+  "box": [
+   0,
+   4279,
+   1280,
+   60
+  ],
+  "bg": "rgba(0, 0, 0, 0)",
+  "items": [
+   {
+    "t": "div",
+    "id": "comp-ijb4uzrb",
+    "box": [
+     185,
+     4299,
+     910,
+     20
+    ]
+   },
+   {
+    "t": "span",
+    "box": [
+     553,
+     4300,
+     173,
+     18
+    ],
+    "text": "© 2024 by The Mountain Table",
+    "font": "normal 400 14px/normal brandon-grot-w01-light, sans-serif ls:normal tt:none ta:center",
+    "color": "rgb(200, 200, 200)"
+   }
+  ]
+ }
+]

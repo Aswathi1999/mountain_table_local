@@ -1,0 +1,6 @@
+.next
+node_modules
+archive
+public
+package-lock.json
+CLONE_PROMPT.md
