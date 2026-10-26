@@ -1,6 +1,7 @@
 import { SeeDoActivities } from "@/components/sections/see-do/SeeDoActivities";
-import { SeeDoEscapes } from "@/components/sections/see-do/SeeDoEscapes";
-import { SeeDoIntro } from "@/components/sections/see-do/SeeDoIntro";
+import { SeeDoHero } from "@/components/sections/see-do/SeeDoHero";
+import { SeeDoNav } from "@/components/sections/see-do/SeeDoNav";
+import { SeeDoPlan } from "@/components/sections/see-do/SeeDoPlan";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata("/see-do");
@@ -8,9 +9,10 @@ export const metadata = pageMetadata("/see-do");
 export default function SeeDoPage() {
   return (
     <div className="seedo-page">
-      <SeeDoIntro />
-      <SeeDoEscapes />
+      <SeeDoHero />
+      <SeeDoNav />
       <SeeDoActivities />
+      <SeeDoPlan />
     </div>
   );
 }

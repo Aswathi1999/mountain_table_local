@@ -14,7 +14,7 @@ export function NavLinks() {
           <Link
             href={item.href}
             aria-current={pathname === item.href ? "page" : undefined}
-            className="nav-link nav-underline t-ui block py-2 tracking-[0.2em] no-underline"
+            className="nav-link nav-underline t-nav block py-2 no-underline"
           >
             {item.label}
           </Link>

@@ -1,59 +1,39 @@
-import type { CSSProperties } from "react";
+import { Reveal } from "@/components/motion/primitives";
 import { contact, DIRECTIONS_URL, MAP_PAGE_URL } from "@/lib/site";
-import { rv } from "@/lib/reveal";
 import { LazyMap } from "./LazyMap";
 
-const delay = (seconds: number) => ({ "--d": `${seconds}s` }) as CSSProperties;
-
-/** Where to find us: the map (loaded only when close to view) beside a details card with directions. */
+/**
+ * Where to find us: the map runs edge to edge (loaded only when close to view, and toned toward the site's greens), with the
+ * address set on a forest-green panel laid over its lower left.
+ */
 export function LocationSection() {
   return (
-    <section
-      id="location"
-      aria-labelledby="location-title"
-      className="bg-ivory relative px-6 py-14 desk:px-8 desk:py-20"
-    >
-      <div className="mx-auto grid max-w-[1180px] items-center desk:grid-cols-12">
-        <div
-          className="relative aspect-[4/3] overflow-hidden desk:col-span-8 desk:col-start-1 desk:row-start-1 desk:aspect-[16/11]"
-          {...rv("mask")}
-        >
-          <div className="mask-img absolute inset-0">
-            <LazyMap title="Map of The Mountain Table, Uluppuni, Vagamon" />
-          </div>
+    <section id="location" aria-labelledby="location-title" className="bg-ivory relative">
+      <div className="relative h-[34rem] overflow-hidden desk:h-[680px]">
+        <div className="absolute inset-0 [filter:grayscale(0.45)_sepia(0.15)_contrast(1.03)]">
+          <LazyMap title="Map of The Mountain Table, Uluppuni, Vagamon" />
         </div>
-
-        <div
-          className="relative z-10 -mt-10 mr-4 ml-4 bg-white p-6 shadow-[0_18px_50px_rgba(36,35,35,0.12)] desk:col-span-5 desk:col-start-8 desk:row-start-1 desk:m-0 desk:-ml-6 desk:p-12"
-          {...rv("rise", "rise", delay(0.25))}
-        >
-          <p className="m-0 text-[12px] tracking-[0.3em] text-muted uppercase">Find us</p>
-          <h2
-            id="location-title"
-            className="m-0 mt-4 text-[1.5rem] font-normal tracking-[0.12em] text-ink uppercase desk:text-[28px]"
+        <div className="wrap pointer-events-none relative flex h-full items-end pb-6 desk:pb-14">
+          <Reveal
+            y={36}
+            className="bg-forest-deep text-ivory pointer-events-auto w-full max-w-[26rem] p-7 shadow-[0_30px_70px_rgba(20,42,33,0.35)] desk:max-w-[30rem] desk:p-12"
           >
-            The Mountain Table
-          </h2>
-          <span className="mt-5 block h-px w-14 bg-gold" />
-          <address className="t-lead mt-6 text-ink not-italic">{contact.address}</address>
-          <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
-            <a
-              href={DIRECTIONS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="t-ui bg-gold text-forest-deep hover:bg-forest hover:text-ivory inline-flex h-12 items-center px-5 tracking-[0.2em] whitespace-nowrap desk:px-7 uppercase no-underline transition-colors duration-300"
-            >
-              Get directions
-            </a>
-            <a
-              href={MAP_PAGE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="t-ui nav-underline tracking-[0.2em] text-ink uppercase no-underline"
-            >
-              Open in Maps
-            </a>
-          </div>
+            <p className="t-kicker text-gold-soft m-0">Find us</p>
+            <h2 id="location-title" className="t-h3 m-0 mt-3">
+              The Mountain Table
+            </h2>
+            <address className="t-body text-ivory/85 mt-5 not-italic">{contact.address}</address>
+            <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+              <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
+                Get directions
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+              <a href={MAP_PAGE_URL} target="_blank" rel="noopener noreferrer" className="t-ui link-u text-ivory">
+                Open in Maps
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

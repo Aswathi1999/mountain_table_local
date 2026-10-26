@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { ChatBubble } from "@/components/layout/ChatBubble";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { MotionController } from "@/components/motion/MotionController";
-import { brandon } from "@/lib/fonts";
+import { MotionProvider } from "@/components/motion/MotionProvider";
+import { caveat, cormorant, manrope } from "@/lib/fonts";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -27,19 +27,20 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${brandon.variable}`}>
+    <html lang="en" className={`${manrope.variable} ${cormorant.variable} ${caveat.variable}`}>
       <body>
         <noscript>
-          <style>{`[data-reveal],[data-reveal-m]{opacity:1!important;transform:none!important}`}</style>
+          <style>{`[data-motion]{opacity:1!important;transform:none!important;clip-path:none!important}`}</style>
         </noscript>
         <a href="#PAGES_CONTAINER" className="skip-link">
           Skip to Main Content
         </a>
-        <MotionController />
-        <Header />
-        <main id="PAGES_CONTAINER">{children}</main>
-        <Footer />
-        <ChatBubble />
+        <MotionProvider>
+          <Header />
+          <main id="PAGES_CONTAINER">{children}</main>
+          <Footer />
+          <ChatBubble />
+        </MotionProvider>
       </body>
     </html>
   );

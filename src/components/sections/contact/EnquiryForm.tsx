@@ -40,9 +40,8 @@ function buildMailto(f: Fields) {
 }
 
 const fieldClass =
-  "peer block w-full border-0 border-b border-ink/25 bg-transparent px-0 py-2 text-[1.0625rem] text-ink outline-none transition-colors duration-300 placeholder:text-ink/40 focus:border-forest aria-[invalid=true]:border-[#a32a2a] desk:text-[18px]";
-const labelClass =
-  "t-label block tracking-[0.24em] text-muted uppercase transition-colors duration-300 peer-focus:text-forest";
+  "peer block w-full border-0 border-b border-ink/25 bg-transparent px-0 py-2 [font-size:var(--fs-body)] text-ink outline-none transition-colors duration-300 placeholder:text-ink/40 focus:border-forest focus:shadow-[0_1px_0_0_var(--color-forest)] aria-[invalid=true]:border-[#a32a2a]";
+const labelClass = "t-small block text-muted transition-colors duration-300 peer-focus:text-forest";
 
 export function EnquiryForm() {
   const uid = useId();
@@ -83,24 +82,19 @@ export function EnquiryForm() {
   if (status === "success") {
     return (
       <div role="status" className="border border-gold/50 p-6 desk:p-8">
-        <p className="m-0 text-[1.25rem] tracking-[0.08em] text-forest desk:text-[22px]">
-          Thank you, {fields.name.trim().split(" ")[0]}.
-        </p>
-        <p className="m-0 mt-4 text-[1rem] leading-[1.7rem] text-muted desk:text-[17px]">
+        <p className="t-h4 text-forest m-0">Thank you, {fields.name.trim().split(" ")[0]}.</p>
+        <p className="t-small m-0 mt-4 text-muted">
           Your email app should now open with your message ready to send to {contact.email}. If nothing opened, use the
           button below or write to us directly.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-4">
-          <a
-            href={mailto}
-            className="bg-gold text-forest-deep hover:bg-ivory inline-flex h-11 items-center px-7 text-[13px] tracking-[0.22em] uppercase no-underline transition-colors duration-300"
-          >
+          <a href={mailto} className="btn btn-gold btn-sm">
             Open email
           </a>
           <button
             type="button"
             onClick={() => setStatus("idle")}
-            className="cursor-pointer border-0 bg-transparent p-0 text-[13px] tracking-[0.22em] text-muted uppercase underline underline-offset-8 transition-colors hover:text-forest"
+            className="t-ui link-u cursor-pointer border-0 bg-transparent p-0 text-muted transition-colors hover:text-forest"
           >
             Edit message
           </button>
@@ -121,7 +115,7 @@ export function EnquiryForm() {
   });
   const error = (key: keyof Fields) =>
     errors[key] ? (
-      <p id={`${uid}-${key}-error`} className="m-0 mt-2 text-[13px] text-[#a32a2a]">
+      <p id={`${uid}-${key}-error`} className="t-caption m-0 mt-2 text-[#a32a2a]">
         {errors[key]}
       </p>
     ) : null;
@@ -211,7 +205,7 @@ export function EnquiryForm() {
         <button
           type="submit"
           disabled={sending}
-          className="bg-gold text-forest-deep hover:bg-ivory inline-flex h-12 min-w-[11rem] cursor-pointer items-center justify-center gap-3 border-0 px-8 text-[13px] tracking-[0.22em] uppercase transition-colors duration-300 disabled:cursor-wait disabled:opacity-80"
+          className="btn btn-gold min-w-[11rem] border-0 disabled:cursor-wait disabled:opacity-80"
         >
           {sending ? (
             <>
@@ -225,9 +219,9 @@ export function EnquiryForm() {
             "Send enquiry"
           )}
         </button>
-        <p className="m-0 text-[13px] text-muted">Opens your email app with the message ready to send.</p>
+        <p className="t-caption m-0 text-muted">Opens your email app with the message ready to send.</p>
       </div>
-      <p role="alert" className="m-0 text-[14px] text-[#a32a2a]">
+      <p role="alert" className="t-small m-0 text-[#a32a2a]">
         {status === "error"
           ? `Your message is too long to send this way. Please shorten it, or write to ${contact.email}.`
           : Object.keys(errors).length

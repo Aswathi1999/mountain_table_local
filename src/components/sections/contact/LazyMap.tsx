@@ -41,7 +41,7 @@ export function LazyMap({ title }: { title: string }) {
         <button
           type="button"
           onClick={() => setLoad(true)}
-          className="absolute inset-0 flex size-full cursor-pointer items-center justify-center border-0 bg-transparent text-[13px] tracking-[0.22em] text-ink uppercase"
+          className="absolute inset-0 flex size-full cursor-pointer items-center justify-center border-0 t-ui bg-transparent text-ink"
         >
           Load map
         </button>
