@@ -126,8 +126,8 @@ type FrameProps = {
   priority?: boolean;
   /** Slow zoom on hover of an ancestor with the `group` class. */
   zoomOnHover?: boolean;
-  /** Corner radius in px (the site's photographs have softly rounded corners). */
-  radius?: number;
+  /** Corner radius in px, or any CSS border-radius (e.g. an arch: "999px 999px 18px 18px"). */
+  radius?: number | string;
   /** Ties the drift straight to the scroll position (no spring), so the picture never wobbles or lags behind the page. */
   lock?: boolean;
   /** Shows the custom cursor's "View" ring over the photograph. */

@@ -98,7 +98,7 @@ export const copy = {
   rooms: {
     titleLines: ["Luxurious Rooms:", "Where Every View is a Masterpiece"],
     intro:
-      "Welcome to our luxurious retreat where every aspect is meticulously designed to offer you an unparalleled experience. Our resort boasts three air-conditioned bedrooms, each uniquely showcasing a breathtaking view of our lush tea plantation. With expansive glass doors and windows, you'll enjoy the best vistas right from the comfort of your room. Experience the epitome of luxury and natural beauty at our homestay.",
+      "Three air-conditioned bedrooms, each framing a breathtaking view of our lush tea plantation through expansive glass doors and windows.",
     cards: [
       "With panoramic glass windows offering a rich view of the surroundings, a shaded balcony providing easy access to the pool under the canopy of a mango tree, and an attached toilet featuring a stunning glass window framing mountain sunsets, every moment here is a blend of luxury and natural beauty, ensuring an unforgettable stay.",
       "Step onto your private grass lawn and enjoy sunset chats with a refreshing breeze. With easy access to the grill house and tea plantation walk, every moment here is filled with relaxation and exploration. Plus, the attached toilet's glass window offers a wide view of the hills, adding to the charm of your stay.",

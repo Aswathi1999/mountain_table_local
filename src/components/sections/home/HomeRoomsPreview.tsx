@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Bleed, PineSprig } from "@/components/decor";
 import Link from "next/link";
 import { Lines, Reveal } from "@/components/motion/primitives";
 import { ArrowIcon } from "@/components/ui/BookNowButton";
@@ -20,6 +21,9 @@ const focus = ["50% 55%", "45% 55%", "50% 60%"] as const;
 export function HomeRoomsPreview() {
   return (
     <section id="rooms" aria-labelledby="rooms-title" className="bg-ivory relative pt-10 pb-20 desk:pt-12 desk:pb-28">
+      <Bleed>
+        <PineSprig size={96} rotate={-8} opacity={0.55} draw className="decor-lg absolute -bottom-24 left-[1.5%]" />
+      </Bleed>
       <div className="wrap">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>

@@ -42,24 +42,6 @@ const discoverPhotos = [
   },
 ] as const;
 
-/** Soft warm lights scattered over the lower half of the terrace picture (fixed positions, so server and client agree). */
-const LIGHTS = [
-  { x: 14, y: 58, s: 18, d: 0 },
-  { x: 27, y: 66, s: 12, d: 1.2 },
-  { x: 38, y: 52, s: 16, d: 2.1 },
-  { x: 46, y: 72, s: 22, d: 0.6 },
-  { x: 58, y: 60, s: 14, d: 1.7 },
-  { x: 66, y: 78, s: 18, d: 2.6 },
-  { x: 74, y: 55, s: 12, d: 0.9 },
-  { x: 82, y: 68, s: 20, d: 1.4 },
-  { x: 90, y: 62, s: 14, d: 2.3 },
-  { x: 22, y: 80, s: 14, d: 0.3 },
-  { x: 52, y: 86, s: 16, d: 1.9 },
-  { x: 70, y: 88, s: 12, d: 0.7 },
-  { x: 33, y: 90, s: 18, d: 2.8 },
-  { x: 88, y: 84, s: 16, d: 1.1 },
-] as const;
-
 const control =
   "flex size-10 cursor-pointer items-center justify-center rounded-full border border-ivory/50 bg-forest-deep/30 text-ivory backdrop-blur-sm transition-colors duration-300 hover:bg-ivory hover:text-forest-deep focus-visible:bg-ivory focus-visible:text-forest-deep hover:scale-[1.06] active:scale-95";
 
@@ -132,7 +114,7 @@ export function StoryDialog({ open, onClose }: { open: boolean; onClose: () => v
 /**
  * "Discover", as in the reference: a deep forest-green band with the headline, paragraph and "Watch Our Story" on the left and a wide
  * photograph bleeding off the right edge that fades into the green. The photographs are a carousel (three terrace views): it
- * advances by itself, rests while hovered, focused or just used, and can be moved with the arrows, the dots, a swipe or the
+ * advances by itself, rests while hovered, focused or just used, and can be moved with the arrows, a swipe or the
  * keyboard. The active photograph settles from a slight zoom as it arrives.
  */
 export function HomeDiscover() {
@@ -147,11 +129,10 @@ export function HomeDiscover() {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress: sectionProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
   const dusk = useSpring(sectionProgress, SCROLL_SPRING);
-  // Sunset to night: the picture slowly zooms in while a golden wash drains out and a twilight-blue wash deepens; warm lights fade up.
+  // Sunset to night: the picture slowly zooms in while a golden wash drains out and a twilight-blue wash deepens.
   const zoom = useTransform(dusk, [0, 1], [1.08, night ? 1.08 * HOME_FX.discover.zoomTo : 1.08]);
   const goldenOpacity = useTransform(dusk, [0.15, 0.65], [HOME_FX.discover.goldenOpacity, 0]);
   const twilightOpacity = useTransform(dusk, [0.2, 0.85], [0, HOME_FX.discover.twilightOpacity]);
-  const lightsOpacity = useTransform(dusk, [0.4, 0.8], [0, 1]);
   // Slow parallax: the photographs drift a few percent against the scroll while the band crosses the screen.
   const { scrollYProgress } = useScroll({ target: regionRef, offset: ["start end", "end start"] });
   const driftPct = useSpring(useTransform(scrollYProgress, [0, 1], [reduce ? 0 : -4, reduce ? 0 : 4]), SCROLL_SPRING);
@@ -328,27 +309,6 @@ export function HomeDiscover() {
                   mixBlendMode: "multiply",
                 }}
               />
-              <motion.div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0"
-                style={{ opacity: lightsOpacity }}
-              >
-                {LIGHTS.slice(0, HOME_FX.discover.lights).map((l, i) => (
-                  <span
-                    key={i}
-                    className="light-glow absolute block rounded-full"
-                    style={{
-                      left: `${l.x}%`,
-                      top: `${l.y}%`,
-                      width: l.s,
-                      height: l.s,
-                      animationDelay: `${l.d}s`,
-                      background:
-                        "radial-gradient(circle, rgba(255,226,170,1) 0%, rgba(255,176,84,0.55) 45%, rgba(255,176,84,0) 72%)",
-                    }}
-                  />
-                ))}
-              </motion.div>
             </>
           ) : null}
 
@@ -357,29 +317,6 @@ export function HomeDiscover() {
             aria-hidden="true"
             className="from-forest-deep lg:via-forest-deep/10 pointer-events-none absolute inset-0 bg-gradient-to-b via-transparent via-30% to-transparent lg:bg-gradient-to-r lg:via-18% lg:to-transparent lg:to-52%"
           />
-
-          <ol className="absolute top-1/2 right-4 m-0 flex -translate-y-1/2 list-none flex-col gap-3 p-0 lg:right-8">
-            {discoverPhotos.map((photo, i) => (
-              <li key={photo.src}>
-                <button
-                  type="button"
-                  aria-label={`Show photograph ${i + 1}`}
-                  aria-current={i === selected}
-                  onClick={() => {
-                    touch();
-                    embla?.scrollTo(i);
-                  }}
-                  className="flex size-5 cursor-pointer items-center justify-center border-0 bg-transparent p-0"
-                >
-                  <span
-                    className={`border-ivory block rounded-full border transition-[background-color,width,height] duration-500 ${
-                      i === selected ? "bg-ivory size-2.5" : "size-2 bg-transparent"
-                    }`}
-                  />
-                </button>
-              </li>
-            ))}
-          </ol>
 
           <div className="absolute right-4 bottom-4 flex gap-2 lg:right-8 lg:bottom-8">
             <button type="button" aria-label="Previous photograph" onClick={() => go(-1)} className={control}>

@@ -28,6 +28,8 @@
   --color-gold-soft: #d2b57f;
   /* Terracotta accent, used sparingly (italic tags, small marks). */
   --color-clay: #b0552f;
+  /* Sage line: the pale tint of the decorative line art (botanicals, contours). */
+  --color-sage: #c9b98f;
 
   /* Two voices: Cormorant Garamond for display (headings, quotes, figures) and Manrope for text and interface chrome. */
   --font-text: var(--font-face-text), system-ui, "Segoe UI", sans-serif;
@@ -1489,4 +1491,127 @@ html.splash-seen .splash {
     transform: translateY(-2.6px);
     opacity: 1;
   }
+}
+
+/* ---------- Site-wide smoothing: a baseline that every existing rule and utility overrides (base layer, zero specificity) ---------- */
+@layer base {
+  :where(a, button, summary, [role="button"], input, select, textarea) {
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* ---------- Shake: a field that fails validation jolts side to side once so the error is noticed ---------- */
+@keyframes field-shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: translateX(3px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-6px);
+  }
+  40%,
+  60% {
+    transform: translateX(6px);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  :is(input, select, textarea)[aria-invalid="true"] {
+    animation: field-shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
+}
+
+/* ---------- Decorative library (src/components/decor): hooks, frames, texture ---------- */
+
+/* Large botanicals, watermarks and most doodles are hidden on small screens. */
+@media (max-width: 767.98px) {
+  .decor-lg {
+    display: none !important;
+  }
+}
+
+/* Gentle drift and slow rotation (data-float / data-rotate). */
+@keyframes decor-float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-9px);
+  }
+}
+@keyframes decor-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes decor-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-float] {
+    animation: decor-float 9s ease-in-out infinite alternate;
+  }
+  [data-rotate] {
+    animation: decor-spin 48s linear infinite;
+  }
+  /* Strokes draw in as the element scrolls into view; where scroll timelines are unsupported they simply stay drawn. */
+  @supports (animation-timeline: view()) {
+    [data-draw] path {
+      stroke-dasharray: 1 2;
+      stroke-dashoffset: 1;
+      animation: decor-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 40%;
+    }
+  }
+}
+
+/* Image shapes. */
+.frame-arch {
+  border-radius: 999px 999px 0 0;
+  overflow: hidden;
+}
+.frame-pill {
+  border-radius: 2.5rem;
+  overflow: hidden;
+}
+
+/* Gold diamonds as list markers. */
+.decor-diamonds > li {
+  position: relative;
+  padding-left: 1.4em;
+}
+.decor-diamonds > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.45em;
+  height: 0.45em;
+  background: var(--color-gold);
+  transform: rotate(45deg);
+}
+
+/* Gold foil: for very small accents (numbers, icons) only. */
+.gold-foil {
+  background: linear-gradient(110deg, #b8935a 0%, #e7cf98 48%, #b8935a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Paper grain: a 180px tiled turbulence, so there is no large image or filter to repaint while scrolling. */
+.paper-grain {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .08  0 0 0 0 .17  0 0 0 0 .13  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size: 180px 180px;
+  mix-blend-mode: multiply;
 }

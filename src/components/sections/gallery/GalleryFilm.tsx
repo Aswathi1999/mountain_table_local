@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useInView, useScroll, useTransform } from "motion/react";
+import { FilmEdge } from "@/components/decor";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -114,6 +115,7 @@ export function GalleryFilm() {
         />
       </motion.div>
       <div aria-hidden="true" className="bg-forest-deep/70 absolute inset-0 -z-10" />
+      <FilmEdge />
       {fx && armed && !irisDone ? <Iris go={seen && photoReady} onDone={() => setIrisDone(true)} /> : null}
       <div className="wrap flex flex-col items-center">
         <Reveal delay={base}>

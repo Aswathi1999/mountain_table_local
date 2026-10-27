@@ -1,4 +1,5 @@
 import { DrawnLeaf, ImageFrame, Lines, Reveal } from "@/components/motion/primitives";
+import { WaxSeal } from "@/components/decor";
 import { EnquiryForm } from "./EnquiryForm";
 import { SignOff } from "./SignOff";
 
@@ -51,7 +52,8 @@ export function ContactSection() {
         </div>
 
         <Reveal delay={0.1} className="min-w-0 lg:col-span-7">
-          <div className="rounded-[22px] bg-[#fffdf8] p-7 shadow-[0_14px_40px_rgba(10,34,27,0.08)] desk:p-11">
+          <div className="relative rounded-[22px] bg-[#fffdf8] p-7 shadow-[0_14px_40px_rgba(10,34,27,0.08)] desk:p-11">
+            <WaxSeal size={60} rotate={-10} className="absolute -top-6 right-8 z-10" />
             <EnquiryForm />
           </div>
         </Reveal>

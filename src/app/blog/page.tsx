@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Bleed, Fern, PaperGrain } from "@/components/decor";
 import { Reveal, Rule } from "@/components/motion/primitives";
 import { BlogHero, FeaturedPost, PostRow } from "@/components/sections/blog/BlogParts";
 import { posts } from "@/data/blog";
@@ -15,6 +16,10 @@ export default function BlogPage() {
       <BlogHero intro="Articles from our homestay in the hills of Ulupuni, Vagamon." />
 
       <section aria-label="Articles" className="bg-ivory relative pt-20 pb-24 desk:pt-52 desk:pb-36">
+        <PaperGrain />
+        <Bleed>
+          <Fern size={120} rotate={14} opacity={0.5} draw className="decor-lg absolute top-24 -right-8" />
+        </Bleed>
         <div className="wrap">
           {featured ? (
             <>

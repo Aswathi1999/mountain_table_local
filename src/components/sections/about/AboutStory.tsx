@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Postmark, Wildflower } from "@/components/decor";
 import { InkReveal, PageSweep, PhotoDrop, ScalePop } from "@/components/motion/about-fx";
 import { DrawnLeaf, ImageFrame, Lines, Reveal } from "@/components/motion/primitives";
 import { ArrowIcon } from "@/components/ui/BookNowButton";
@@ -50,6 +51,8 @@ export function AboutStory() {
           <div aria-hidden="true" className="absolute -top-3 left-[-2%] h-[24%] w-[14%] lg:-left-3">
             <DrawnLeaf className="text-forest h-full w-auto" />
           </div>
+          <Wildflower size={58} rotate={10} opacity={0.6} draw className="decor-lg absolute -right-3 bottom-[14%]" />
+          <Postmark size={132} opacity={0.75} rotate={-8} className="decor-lg absolute top-[-4%] right-[2%] z-10" />
           <ImageFrame
             src="/images/about/ridges.jpg"
             alt="Misty mountain ridges at sunrise seen from the resort"
