@@ -52,8 +52,8 @@ Notes:
 - `Coordinates` reads the property's verified coordinates from `src/lib/site.ts`. An altitude is shown only if you pass one
   (none is recorded in the project, so none is invented).
 - `Postmark` omits the "EST." line unless you pass `date` (for example `date="EST. 2019"`): the founding year is not in the project.
-- `ImageFrame` (`components/motion/primitives.tsx`) now accepts `radius` as a number or any CSS `border-radius`, which is how the
-  room photographs get an arch top.
+- `ImageFrame` (`components/motion/primitives.tsx`) now accepts `radius` as a number or any CSS `border-radius` (for example
+  an arch top).
 - Paper grain is a 180px tiled SVG tile in `globals.css` (`.paper-grain`), not a large image, so scrolling is unaffected.
 
 ## Animation hooks (in `globals.css`)
@@ -67,24 +67,20 @@ Notes:
 
 To remove one, delete its JSX line (and the import if it was the last use).
 
-| Page / area         | Element                                                        | File                                              |
-| ------------------- | -------------------------------------------------------------- | ------------------------------------------------- |
-| Home, Reviews       | `OrnamentRule` above the heading                               | `components/sections/home/HomeReviews.tsx`        |
-| Home, Rooms preview | `PineSprig` (bottom-left, cut off)                             | `components/sections/home/HomeRoomsPreview.tsx`   |
-| Rooms               | Arch masks on the three main room photos (`radius`)            | `components/sections/rooms/RoomsList.tsx`         |
-| Rooms               | `GoldFrame` behind Room 1's photo                              | `components/sections/rooms/RoomsList.tsx`         |
-| Rooms               | `Contour` behind the booking-policies card                     | `components/sections/rooms/RoomsPolicies.tsx`     |
-| About               | `Wildflower` and `Postmark` on the story collage               | `components/sections/about/AboutStory.tsx`        |
-| About               | `RidgeDivider` at the bottom of the quote band                 | `components/sections/about/AboutQuote.tsx`        |
-| See & Do            | `CompassRose` on the hero photo                                | `components/sections/see-do/SeeDoHero.tsx`        |
-| Gallery             | `FilmEdge` on the In Motion section                            | `components/sections/gallery/GalleryFilm.tsx`     |
-| Blog                | `PaperGrain` and `Fern` on the article list                    | `app/blog/page.tsx`                               |
-| Contact             | `WaxSeal` on the form card                                     | `components/sections/contact/ContactSection.tsx`  |
-| Contact             | `Contour` in the Find us panel                                 | `components/sections/contact/LocationSection.tsx` |
-| Contact             | `CurvedArrow` and a Caveat "say hello" under the WhatsApp card | `components/sections/contact/ContactCards.tsx`    |
-| Footer (all pages)  | `RidgeStack` along the top edge                                | `components/layout/Footer.tsx`                    |
-| Footer (all pages)  | `CompassRose` and `Coordinates` in the bottom row              | `components/layout/Footer.tsx`                    |
-| Footer (all pages)  | `LeafyBranch` near the newsletter column                       | `components/layout/Footer.tsx`                    |
+| Page / area         | Element                                                        | File                                            |
+| ------------------- | -------------------------------------------------------------- | ----------------------------------------------- |
+| Home, Reviews       | `OrnamentRule` above the heading                               | `components/sections/home/HomeReviews.tsx`      |
+| Home, Rooms preview | `PineSprig` (bottom-left, cut off)                             | `components/sections/home/HomeRoomsPreview.tsx` |
+| Rooms               | `GoldFrame` behind Room 1's photo                              | `components/sections/rooms/RoomsList.tsx`       |
+| About               | `Wildflower` and `Postmark` on the story collage               | `components/sections/about/AboutStory.tsx`      |
+| About               | `RidgeDivider` at the bottom of the quote band                 | `components/sections/about/AboutQuote.tsx`      |
+| See & Do            | `CompassRose` on the hero photo                                | `components/sections/see-do/SeeDoHero.tsx`      |
+| Gallery             | `FilmEdge` on the In Motion section                            | `components/sections/gallery/GalleryFilm.tsx`   |
+| Blog                | `PaperGrain` and `Fern` on the article list                    | `app/blog/page.tsx`                             |
+| Contact             | `CurvedArrow` and a Caveat "say hello" under the WhatsApp card | `components/sections/contact/ContactCards.tsx`  |
+| Footer (all pages)  | `RidgeStack` along the top edge                                | `components/layout/Footer.tsx`                  |
+| Footer (all pages)  | `CompassRose` and `Coordinates` in the bottom row              | `components/layout/Footer.tsx`                  |
+| Footer (all pages)  | `LeafyBranch` near the newsletter column                       | `components/layout/Footer.tsx`                  |
 
 Already on the site before this library (left as they were): the hero `CurveEdge`, `LeafSprig` sprigs, the Services watermark,
 gold diamond markers in the policies list, the Services and Experience frames and the Contact wax-seal animation.

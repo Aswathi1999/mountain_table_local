@@ -1,5 +1,4 @@
 import { Lines, Reveal } from "@/components/motion/primitives";
-import { Contour } from "@/components/decor";
 import { LeafSprig } from "@/components/ui/decor";
 import { copy } from "@/data/copy";
 import { bookingPolicies, cancellationPolicies } from "@/data/policies";
@@ -33,8 +32,7 @@ export function RoomsPolicies() {
             />
           </div>
 
-          <div className="relative isolate rounded-[24px] bg-[#fffdf8] p-6 shadow-[0_10px_30px_rgba(10,34,27,0.06)] desk:p-12">
-            <Contour opacity={0.16} className="-z-10 rounded-[24px]" />
+          <div className="rounded-[24px] bg-[#fffdf8] p-6 shadow-[0_10px_30px_rgba(10,34,27,0.06)] desk:p-12">
             <ul className="m-0 list-none gap-x-14 p-0 lg:columns-2">
               {bookingPolicies.map((item, i) => (
                 <li key={item} className="break-inside-avoid pb-5">

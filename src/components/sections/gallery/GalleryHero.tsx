@@ -165,7 +165,7 @@ export function GalleryHero() {
       ref={ref}
       id="gallery-hero"
       aria-labelledby="gallery-title"
-      className="relative overflow-hidden bg-[linear-gradient(180deg,#ece6d8_0%,#f6f2ea_100%)] pt-16 pb-20 text-center desk:pt-20 desk:pb-28"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#ece6d8_0%,#f6f2ea_100%)] pt-16 pb-8 text-center desk:pt-20 desk:pb-12"
     >
       <div className="pointer-events-none absolute top-8 -left-4 hidden h-56 lg:block">
         <DrawnLeaf className="text-gold/60 h-full w-auto rotate-[24deg]" />

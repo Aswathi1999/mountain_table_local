@@ -74,7 +74,7 @@ export function RoomsList() {
                   {i === 0 ? (
                     <GoldFrame
                       className="aspect-[4/3.4] w-[88%]"
-                      radius="999px 999px 18px 18px"
+                      radius="18px"
                       style={{ inset: flip ? "0 0 auto auto" : "0 auto auto 0" }}
                     />
                   ) : null}
@@ -83,7 +83,7 @@ export function RoomsList() {
                     alt={room.image.alt}
                     sizes="(min-width: 1280px) 620px, (min-width: 1024px) 48vw, 92vw"
                     className={`aspect-[4/3.4] w-[88%] shadow-[0_24px_50px_rgba(10,34,27,0.18)] ${flip ? "ml-auto" : ""}`}
-                    radius="999px 999px 18px 18px"
+                    radius={18}
                     from={ROOMS_FX.doors.enabled ? "doors" : flip ? "right" : "left"}
                     drift={3}
                     position={FOCUS[i]}

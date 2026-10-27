@@ -1,5 +1,4 @@
 import { CONTACT_FX } from "@/components/motion/home-fx.config";
-import { Contour } from "@/components/decor";
 import { Lines, Reveal } from "@/components/motion/primitives";
 import { Magnetic } from "@/components/sections/home/RoomsFx";
 import { ArrowIcon } from "@/components/ui/BookNowButton";
@@ -16,8 +15,7 @@ export function LocationSection() {
       <div className="wrap">
         <Reveal y={CONTACT_FX.location.enabled ? CONTACT_FX.location.rise : 0}>
           <div className="bg-forest-deep text-ivory grid overflow-hidden rounded-[24px] shadow-[0_24px_60px_rgba(10,34,27,0.2)] lg:grid-cols-2">
-            <div className="relative isolate flex flex-col justify-center p-8 desk:p-14">
-              <Contour opacity={0.14} className="-z-10" />
+            <div className="flex flex-col justify-center p-8 desk:p-14">
               <Reveal>
                 <p className="t-eyebrow text-ivory">Find us</p>
               </Reveal>
