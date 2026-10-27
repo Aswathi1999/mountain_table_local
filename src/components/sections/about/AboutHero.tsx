@@ -15,6 +15,7 @@ export function AboutHero() {
       eyebrow="Our story"
       lines={["About", "The Mountain Table"]}
       intro={intro}
+      memory
     />
   );
 }

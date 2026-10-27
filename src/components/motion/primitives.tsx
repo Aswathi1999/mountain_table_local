@@ -6,12 +6,12 @@ import {
   useMotionTemplate,
   useMotionValueEvent,
   useInView,
-  useReducedMotion,
   useScroll,
   useSpring,
   useTransform,
   type HTMLMotionProps,
 } from "motion/react";
+import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, type CSSProperties, type ElementType, type ReactNode } from "react";
 
@@ -64,6 +64,8 @@ type LinesProps = {
   /** Seconds between lines. */
   step?: number;
   immediate?: boolean;
+  /** Holds the entrance until true (for headings that wait for an intro to finish). Defaults to true. */
+  ready?: boolean;
   id?: string;
 };
 
@@ -71,12 +73,22 @@ type LinesProps = {
  * Headline whose lines are set deliberately and rise out of a mask one after another. The heading stays one element, so
  * assistive tech reads it as one sentence.
  */
-export function Lines({ lines, as = "h2", className, lineClasses, delay = 0, step = 0.09, immediate, id }: LinesProps) {
+export function Lines({
+  lines,
+  as = "h2",
+  className,
+  lineClasses,
+  delay = 0,
+  step = 0.09,
+  immediate,
+  ready = true,
+  id,
+}: LinesProps) {
   const Tag = as as ElementType;
   // Observe the heading itself (never clipped), not the masked lines, so a line that wraps onto several rows still un-hides.
   const ref = useRef<HTMLElement>(null);
   const seen = useInView(ref, { once: true, margin: "0px 0px -8% 0px" });
-  const show = immediate || seen;
+  const show = (immediate || seen) && ready;
   return (
     <Tag ref={ref} className={className} id={id}>
       {lines.map((line, i) => (
@@ -106,7 +118,7 @@ type FrameProps = {
   /** Frame sizing: aspect ratio, height, width. */
   className?: string;
   /** Direction the photograph is uncovered from, or `fade` to fade and rise instead of a wipe. */
-  from?: "bottom" | "top" | "left" | "right" | "center" | "fade";
+  from?: "bottom" | "top" | "left" | "right" | "center" | "doors" | "fade" | "none";
   delay?: number;
   /** Scroll-linked drift inside the frame, as a percentage of the frame height (0 = still). */
   drift?: number;
@@ -118,6 +130,8 @@ type FrameProps = {
   radius?: number;
   /** Ties the drift straight to the scroll position (no spring), so the picture never wobbles or lags behind the page. */
   lock?: boolean;
+  /** Shows the custom cursor's "View" ring over the photograph. */
+  viewCursor?: boolean;
   children?: ReactNode;
 };
 
@@ -127,6 +141,8 @@ const INSETS = {
   left: "inset(0 100% 0 0)",
   right: "inset(0 0 0 100%)",
   center: "inset(50% 50% 50% 50%)",
+  /** Two halves opening outward from the vertical centre, like double doors. */
+  doors: "inset(0 50% 0 50%)",
 } as const;
 
 /**
@@ -147,6 +163,7 @@ export function ImageFrame({
   zoomOnHover,
   radius = 6,
   lock,
+  viewCursor,
   children,
 }: FrameProps) {
   const reduce = useReducedMotion();
@@ -162,10 +179,11 @@ export function ImageFrame({
     <motion.div
       ref={ref}
       data-motion=""
+      data-cursor={viewCursor ? "view" : undefined}
       className={`relative overflow-hidden ${className}`}
       style={{ borderRadius: radius }}
-      initial={reduce ? false : from === "fade" ? { opacity: 0, y: 26 } : { clipPath: INSETS[from] }}
-      whileInView={from === "fade" ? { opacity: 1, y: 0 } : { clipPath: "inset(0 0 0 0)" }}
+      initial={reduce || from === "none" ? false : from === "fade" ? { opacity: 0, y: 26 } : { clipPath: INSETS[from] }}
+      whileInView={from === "none" ? {} : from === "fade" ? { opacity: 1, y: 0 } : { clipPath: "inset(0 0 0 0)" }}
       viewport={{ once: true, margin: "0px 0px -10% 0px" }}
       transition={{ duration: DUR.image, ease: EASE_REVEAL, delay }}
     >

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gallery — The Mountain Table</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Jost:wght@300;400;500&amp;family=Caveat:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F4ED}
+a{color:#0B2B1F}a:hover{color:#8A5A2B}
+.tmt-cta{background-image:linear-gradient(0deg,rgba(10,34,27,.78),rgba(10,34,27,.55)),url(./assets/7a7116bf7f5aa67c57dbe610738d43f4.jpg);background-size:cover;background-position:center}
+.tmt-video{background-image:linear-gradient(0deg,rgba(10,34,27,.55),rgba(10,34,27,.3)),url(./assets/74255310fcfe59fbe803aa3674cc9549.jpg);background-size:cover;background-position:center}
+.tmt-post{transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.tmt-post:hover{transform:translateY(-10px) rotate(0deg)!important;z-index:5}
+.tmt-gi img{transition:transform .6s ease}
+.tmt-gi:hover img{transform:scale(1.05)}
+.tmt-gi .tmt-cap{opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease}
+.tmt-gi:hover .tmt-cap,.tmt-gi:focus-visible .tmt-cap{opacity:1;transform:none}
+.tmt-gi:focus-visible{outline:3px solid #B8912F;outline-offset:3px}
+.tmt-sq img{transition:transform .6s ease}
+.tmt-sq:hover img{transform:scale(1.06)}
+</style>
+</helmet>
+<div style="font-family: 'Jost', 'Helvetica Neue', Arial, sans-serif; color: #1F2A24; background: #F7F4ED; min-height: 100vh">
+
+<header style="background: #F7F4ED; border-bottom: 1px solid #E6DFD1">
+<div style="max-width: 1240px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+<a href="#" style="text-decoration: none; color: #0B2B1F; display: flex; flex-direction: column; align-items: center; gap: 2px">
+<svg width="64" height="22" viewBox="0 0 64 22" fill="none" stroke="#0B2B1F" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2 21 L20 5 L28 12 L36 2 L62 21"></path><path d="M30 9 L36 2 L42 8"></path></svg>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 19px; letter-spacing: 0.04em; font-weight: 600">THE MOUNTAIN TABLE</span>
+<span style="font-size: 9px; letter-spacing: 0.32em; color: #4A544D">PREMIUM RESORT</span>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 30px; font-size: 14px">
+<a href="Home.dc.html" style="text-decoration: none; color: #1F2A24">Home</a>
+<a href="About.dc.html" style="text-decoration: none; color: #1F2A24">About</a>
+<a href="Main.dc.html" style="text-decoration: none; color: #1F2A24">Rooms</a>
+<a href="#" style="text-decoration: none; color: #1F2A24">See &amp; Do</a>
+<a href="#" aria-current="page" style="text-decoration: none; color: #0B2B1F; font-weight: 500; border-bottom: 1.5px solid #B8912F; padding-bottom: 3px">Gallery</a>
+<a href="#" style="text-decoration: none; color: #1F2A24">Blog</a>
+<a href="Contact.dc.html" style="text-decoration: none; color: #1F2A24">Contact</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 18px">
+<a href="Main.dc.html#book" style="text-decoration: none; background: #0B2B1F; color: #F7F4ED; border-radius: 999px; padding: 13px 24px; font-size: 14px; display: flex; align-items: center; gap: 10px">Book Your Stay <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<button aria-label="Open menu" style="background: none; border: 0; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #1F2A24"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"></path></svg></button>
+</div>
+</div>
+</header>
+
+<section style="padding: 80px 32px 60px; position: relative; overflow: hidden; background: linear-gradient(180deg, #F1E6D4 0%, #F7F4ED 70%)">
+<svg aria-hidden="true" width="150" height="240" viewBox="0 0 120 200" fill="none" stroke="#C9B98F" stroke-width="1.2" style="position: absolute; left: -16px; top: 40px"><path d="M10 200 C40 150 60 90 100 10"></path><path d="M40 140 C20 130 8 112 10 92 C30 100 42 118 40 140Z"></path><path d="M58 100 C40 88 32 68 38 50 C56 60 64 80 58 100Z"></path><path d="M54 150 C74 138 96 136 112 146 C96 160 74 162 54 150Z"></path><path d="M72 90 C90 80 108 80 118 88 C106 102 88 102 72 90Z"></path></svg>
+<svg aria-hidden="true" width="150" height="240" viewBox="0 0 120 200" fill="none" stroke="#C9B98F" stroke-width="1.2" style="position: absolute; right: -16px; top: 40px; transform: scaleX(-1)"><path d="M10 200 C40 150 60 90 100 10"></path><path d="M40 140 C20 130 8 112 10 92 C30 100 42 118 40 140Z"></path><path d="M58 100 C40 88 32 68 38 50 C56 60 64 80 58 100Z"></path><path d="M54 150 C74 138 96 136 112 146 C96 160 74 162 54 150Z"></path><path d="M72 90 C90 80 108 80 118 88 C106 102 88 102 72 90Z"></path></svg>
+<div style="position: relative; max-width: 760px; margin: 0 auto; text-align: center">
+<p style="margin: 0 0 18px; font-size: 13px; letter-spacing: 0.08em; color: #4A544D"><a href="Home.dc.html" style="color: #4A544D; text-decoration: none">Home</a> <span aria-hidden="true" style="margin: 0 8px">/</span> Gallery</p>
+<p style="margin: 0 0 14px; font-size: 12px; letter-spacing: 0.22em; font-weight: 500; color: #0B2B1F; display: flex; align-items: center; justify-content: center; gap: 14px"><span aria-hidden="true" style="display: inline-block; width: 44px; height: 1px; background: #B8912F"></span> OUR GALLERY <span aria-hidden="true" style="display: inline-block; width: 44px; height: 1px; background: #B8912F"></span></p>
+<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(46px, 6vw, 80px); line-height: 1.02; color: #0B2B1F">Moments From the Mountain</h1>
+<p style="margin: 22px auto 0; font-size: 17px; line-height: 1.75; max-width: 540px; color: #555E57">Golden mornings, firelit evenings and every quiet moment in between — a glimpse of life at The Mountain Table.</p>
+</div>
+<div aria-hidden="true" style="position: relative; display: flex; justify-content: center; align-items: center; margin-top: 64px; padding-bottom: 20px">
+<div class="tmt-post" style="width: clamp(120px, 15vw, 210px); height: clamp(160px, 20vw, 270px); background: #FFFDF8; padding: 8px 8px 30px; box-shadow: 0 16px 34px rgba(10,34,27,.16); transform: rotate(-9deg) translateY(30px); margin-right: -24px; flex-shrink: 0; box-sizing: border-box"><img src="./assets/4f515264daf27d79f8e5ad24a497bf08.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div class="tmt-post" style="width: clamp(130px, 17vw, 240px); height: clamp(170px, 22vw, 300px); background: #FFFDF8; padding: 8px 8px 30px; box-shadow: 0 16px 34px rgba(10,34,27,.18); transform: rotate(-4deg) translateY(8px); margin-right: -24px; flex-shrink: 0; position: relative; z-index: 1; box-sizing: border-box"><img src="./assets/61d331b8c028d1736944c88e3bb1cf0e.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div class="tmt-post" style="width: clamp(150px, 20vw, 280px); height: clamp(190px, 25vw, 340px); background: #FFFDF8; padding: 9px 9px 36px; box-shadow: 0 22px 44px rgba(10,34,27,.22); transform: rotate(0deg); flex-shrink: 0; position: relative; z-index: 2; box-sizing: border-box"><img src="./assets/64d4ab0fa489abf91cead601cfabdca2.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; left: 0; right: 0; bottom: 6px; text-align: center; font-family: 'Caveat', cursive; font-size: 22px; color: #9A4F2E">our little cabin</span></div>
+<div class="tmt-post" style="width: clamp(130px, 17vw, 240px); height: clamp(170px, 22vw, 300px); background: #FFFDF8; padding: 8px 8px 30px; box-shadow: 0 16px 34px rgba(10,34,27,.18); transform: rotate(4deg) translateY(8px); margin-left: -24px; flex-shrink: 0; position: relative; z-index: 1; box-sizing: border-box"><img src="./assets/811441e75777b498571c4d75951e5172.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div class="tmt-post" style="width: clamp(120px, 15vw, 210px); height: clamp(160px, 20vw, 270px); background: #FFFDF8; padding: 8px 8px 30px; box-shadow: 0 16px 34px rgba(10,34,27,.16); transform: rotate(9deg) translateY(30px); margin-left: -24px; flex-shrink: 0; box-sizing: border-box"><img src="./assets/4550b4995edb448676b71e3252ff7f59.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+</div>
+</section>
+
+<section id="gallery" aria-labelledby="gal-title" style="padding: 70px 32px 110px">
+<div style="max-width: 1240px; margin: 0 auto">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 36px">
+<div>
+<p style="margin: 0 0 14px; font-size: 12px; letter-spacing: 0.22em; font-weight: 500; color: #0B2B1F; display: flex; align-items: center; gap: 14px">EXPLORE BY THEME <span aria-hidden="true" style="display: inline-block; width: 44px; height: 1px; background: #B8912F"></span></p>
+<h2 id="gal-title" style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; color: #0B2B1F">Wander Through the Collection</h2>
+</div>
+<div role="group" aria-label="Filter photos" style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="6">
+<button onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="{{f.style}}">{{f.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; background: #0A221B; border-radius: 22px; overflow: hidden; margin-bottom: 40px; box-shadow: 0 20px 44px rgba(10,34,27,.16)">
+<div style="flex: 2 1 560px; min-width: 0; height: 520px; position: relative; overflow: hidden">
+<img src="{{cur.img}}" alt="{{cur.alt}}" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<div style="position: absolute; left: 20px; bottom: 20px; display: flex; gap: 10px">
+<button onClick="{{prev}}" aria-label="Previous photo" style="width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(247,244,237,.7); background: rgba(10,34,27,.45); color: #F7F4ED; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button onClick="{{next}}" aria-label="Next photo" style="width: 48px; height: 48px; border-radius: 50%; border: 0; background: #F7F4ED; color: #0B2B1F; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; padding: 44px 40px; color: #F7F4ED; display: flex; flex-direction: column; justify-content: space-between; gap: 30px">
+<div>
+<p style="margin: 0 0 16px; font-size: 12px; letter-spacing: 0.22em; color: #D9C08A">{{cur.catUpper}}</p>
+<h3 aria-live="polite" style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 38px; line-height: 1.1">{{cur.title}}</h3>
+<p style="margin: 18px 0 0; font-size: 15px; line-height: 1.75; color: #CFD6CF">{{cur.desc}}</p>
+</div>
+<div>
+<p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; color: #D9C08A">{{counter}}</p>
+<div aria-hidden="true" style="margin-top: 12px; height: 2px; background: rgba(247,244,237,.15); border-radius: 2px; overflow: hidden"><div style="{{progressStyle}}"></div></div>
+</div>
+</div>
+</div>
+
+<div style="columns: 3 280px; column-gap: 22px">
+<sc-for list="{{items}}" as="it" hint-placeholder-count="10">
+<button onClick="{{it.pick}}" class="tmt-gi" aria-label="{{it.label}}" aria-pressed="{{it.pressed}}" style="{{it.style}}">
+<img src="{{it.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<span class="tmt-cap" style="position: absolute; left: 0; right: 0; bottom: 0; padding: 50px 18px 16px; background: linear-gradient(0deg, rgba(10,34,27,.88), rgba(10,34,27,0)); color: #F7F4ED; text-align: left; display: block"><span style="display: block; font-size: 11px; letter-spacing: 0.18em; color: #D9C08A">{{it.catUpper}}</span><span style="display: block; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; margin-top: 4px">{{it.title}}</span></span>
+</button>
+</sc-for>
+</div>
+<div style="display: flex; justify-content: center; margin-top: 26px">
+<button style="height: 52px; padding: 0 28px; border: 1px solid #0B2B1F; border-radius: 999px; background: transparent; color: #0B2B1F; font-size: 15px; cursor: pointer; font-family: inherit; display: flex; align-items: center; gap: 10px">Load More Photos <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg></button>
+</div>
+</div>
+</section>
+
+<section class="tmt-video" style="padding: 140px 32px; color: #F7F4ED; text-align: center">
+<div style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 22px">
+<p style="margin: 0; font-size: 12px; letter-spacing: 0.22em; font-weight: 500; display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="display: inline-block; width: 44px; height: 1px; background: #D9C08A"></span> IN MOTION <span aria-hidden="true" style="display: inline-block; width: 44px; height: 1px; background: #D9C08A"></span></p>
+<button aria-label="Play the resort film" style="width: 96px; height: 96px; border-radius: 50%; border: 1px solid rgba(247,244,237,.8); background: rgba(247,244,237,.12); color: #F7F4ED; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 14px rgba(247,244,237,.08)"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></button>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(38px, 5vw, 58px); line-height: 1.05">A Day at The Mountain Table</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #E3E8E3; max-width: 500px">From the first light on the ridge to the last ember of the fire pit — watch a day unfold.</p>
+<p style="margin: 0; font-family: 'Caveat', cursive; font-size: 26px; color: #E9C9A8">[FILM LENGTH] min film</p>
+</div>
+</section>
+
+<section aria-labelledby="social-title" style="padding: 110px 32px">
+<div style="max-width: 1240px; margin: 0 auto">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px">
+<div style="max-width: 560px">
+<p style="margin: 0 0 14px; font-size: 12px; letter-spacing: 0.22em; font-weight: 500; color: #0B2B1F; display: flex; align-items: center; gap: 14px">SHARED BY GUESTS <span aria-hidden="true" style="display: inline-block; width: 44px; height: 1px; background: #B8912F"></span></p>
+<h2 id="social-title" style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; color: #0B2B1F">#TheMountainTable</h2>
+<p style="margin: 16px 0 0; font-size: 15px; line-height: 1.75; color: #555E57">Tag your photos to be featured here. We love seeing the mountain through your eyes.</p>
+</div>
+<a href="#" style="text-decoration: none; background: #0B2B1F; color: #F7F4ED; border-radius: 999px; padding: 14px 26px; font-size: 15px; display: inline-flex; align-items: center; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg>Follow [@HANDLE]</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px">
+<a href="#" class="tmt-sq" aria-label="Guest photo of the valley" style="display: block; aspect-ratio: 1; border-radius: 12px; overflow: hidden"><img src="./assets/b2794178518025a54aff52dbe94c75ab.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></a>
+<a href="#" class="tmt-sq" aria-label="Guest photo of the fire pit" style="display: block; aspect-ratio: 1; border-radius: 12px; overflow: hidden"><img src="./assets/61d331b8c028d1736944c88e3bb1cf0e.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></a>
+<a href="#" class="tmt-sq" aria-label="Guest photo of the suite" style="display: block; aspect-ratio: 1; border-radius: 12px; overflow: hidden"><img src="./assets/f2c130b476b096e2a184e5272287be90.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></a>
+<a href="#" class="tmt-sq" aria-label="Guest photo on a hike" style="display: block; aspect-ratio: 1; border-radius: 12px; overflow: hidden"><img src="./assets/811441e75777b498571c4d75951e5172.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></a>
+<a href="#" class="tmt-sq" aria-label="Guest photo at the spa" style="display: block; aspect-ratio: 1; border-radius: 12px; overflow: hidden"><img src="./assets/e958d7ba7fd73c9a4a49090054faf0c1.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></a>
+<a href="#" class="tmt-sq" aria-label="Guest photo of the cabin" style="display: block; aspect-ratio: 1; border-radius: 12px; overflow: hidden"><img src="./assets/64d4ab0fa489abf91cead601cfabdca2.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></a>
+</div>
+</div>
+</section>
+
+<section class="tmt-cta" style="padding: 110px 32px; text-align: center; color: #F7F4ED">
+<div style="max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 18px">
+<p style="margin: 0; font-family: 'Caveat', cursive; font-size: 34px; color: #E9C9A8">Stay · Relax · Explore</p>
+<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(38px, 5vw, 60px); line-height: 1.05">Your Mountain Escape Awaits</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #E3E8E3; max-width: 520px">Book directly with us for the best available rates and a warm welcome at the door.</p>
+<a href="Main.dc.html#book" style="margin-top: 14px; text-decoration: none; background: #F7F4ED; color: #0B2B1F; border-radius: 999px; padding: 15px 30px; font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 10px">Book Your Stay <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</section>
+
+<footer style="background: #0A221B; color: #CFD6CF; padding: 72px 32px 28px">
+<div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<svg width="64" height="22" viewBox="0 0 64 22" fill="none" stroke="#F7F4ED" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2 21 L20 5 L28 12 L36 2 L62 21"></path><path d="M30 9 L36 2 L42 8"></path></svg>
+<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; letter-spacing: 0.04em; font-weight: 600; color: #F7F4ED">THE MOUNTAIN TABLE</span>
+<p style="margin: 0; font-size: 14px; line-height: 1.7">A luxury mountain escape where nature, comfort and good food come together.</p>
+</div>
+<div><h3 style="margin: 0 0 16px; font-size: 12px; letter-spacing: 0.2em; font-weight: 500; color: #F7F4ED">EXPLORE</h3><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14px"><li><a href="Main.dc.html" style="color: #CFD6CF; text-decoration: none">Rooms &amp; Suites</a></li><li><a href="#" style="color: #CFD6CF; text-decoration: none">Dining</a></li><li><a href="#" style="color: #CFD6CF; text-decoration: none">See &amp; Do</a></li><li><a href="Gallery.dc.html" style="color: #CFD6CF; text-decoration: none">Gallery</a></li></ul></div>
+<div><h3 style="margin: 0 0 16px; font-size: 12px; letter-spacing: 0.2em; font-weight: 500; color: #F7F4ED">CONTACT</h3><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14px"><li>[ADDRESS]</li><li>[PHONE]</li><li>[EMAIL]</li></ul></div>
+<div><h3 style="margin: 0 0 16px; font-size: 12px; letter-spacing: 0.2em; font-weight: 500; color: #F7F4ED">NEWSLETTER</h3>
+<label for="nl" style="display: block; font-size: 14px; margin-bottom: 10px">Seasonal offers, straight to your inbox.</label>
+<div style="display: flex; gap: 8px"><input id="nl" type="email" placeholder="Your email" style="flex-grow: 1; min-width: 0; height: 46px; border-radius: 999px; border: 1px solid rgba(247,244,237,.3); background: transparent; color: #F7F4ED; padding: 0 18px; font-size: 14px"><button aria-label="Subscribe" style="width: 46px; height: 46px; flex-shrink: 0; border-radius: 50%; border: 0; background: #F7F4ED; color: #0B2B1F; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></div>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 56px auto 0; border-top: 1px solid rgba(247,244,237,.14); padding-top: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #A9B4AB">
+<span>© The Mountain Table. All rights reserved.</span>
+<span>Privacy · Terms</span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4800}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'All', sel: 0 };
+  }
+  renderVals() {
+    const all = [
+      { cat: 'Nature', title: 'Morning Over the Ridge', img: './assets/b2794178518025a54aff52dbe94c75ab.jpg', alt: 'Mountain peak in soft morning light', desc: 'The first light catches the high peaks while the valley is still waking up.', h: 300 },
+      { cat: 'Rooms', title: 'Summit Suite Lounge', img: './assets/f2c130b476b096e2a184e5272287be90.jpg', alt: 'Suite lounge opening onto a balcony with mountain views', desc: 'Soft sofas, warm timber and a balcony that opens straight onto the view.', h: 380 },
+      { cat: 'Experiences', title: 'Fireside Evenings', img: './assets/61d331b8c028d1736944c88e3bb1cf0e.jpg', alt: 'Terrace chairs around a lit fire pit at dusk', desc: 'As the sun sets, the fire pit becomes the heart of the terrace.', h: 260 },
+      { cat: 'Rooms', title: 'Pinewood Room', img: './assets/4f515264daf27d79f8e5ad24a497bf08.jpg', alt: 'Wood-panelled bedroom with a view of the hills', desc: 'A cosy room of wood and lamplight, looking out into the pines.', h: 280 },
+      { cat: 'Nature', title: 'The Valley at Dawn', img: './assets/7a7116bf7f5aa67c57dbe610738d43f4.jpg', alt: 'Layered ridges and the valley in morning haze', desc: 'Layer upon layer of ridges, softened by the morning haze.', h: 320 },
+      { cat: 'Dining', title: 'Candlelit Dinners', img: './assets/4550b4995edb448676b71e3252ff7f59.jpg', alt: 'Dinner table set with wine glasses and candles', desc: 'Seasonal dishes from local farms, served by candlelight.', h: 360 },
+      { cat: 'Experiences', title: 'Guided Hikes', img: './assets/811441e75777b498571c4d75951e5172.jpg', alt: 'Hiker looking out over a mountain valley', desc: 'Trails and viewpoints just beyond the door, with a guide who knows them by heart.', h: 340 },
+      { cat: 'Rooms', title: 'Stone Cliff Cabin', img: './assets/64d4ab0fa489abf91cead601cfabdca2.jpg', alt: 'Stone and glass cabin with a terrace above the valley', desc: 'Stone, glass and a private deck perched above the treeline.', h: 300 },
+      { cat: 'Wellness', title: 'Spa Rituals', img: './assets/e958d7ba7fd73c9a4a49090054faf0c1.jpg', alt: 'Rolled white towels and fresh flowers on a spa table', desc: 'Slow, restoring treatments after a day in the mountain air.', h: 260 },
+      { cat: 'Experiences', title: 'Sunset Terrace', img: './assets/74255310fcfe59fbe803aa3674cc9549.jpg', alt: 'Wooden terrace with lounge chairs at sunset', desc: 'Golden hour on the terrace — the best seat for the evening show.', h: 300 }
+    ];
+    const f = this.state.filter;
+    const list = f === 'All' ? all : all.filter((x) => x.cat === f);
+    const sel = Math.min(this.state.sel, list.length - 1);
+    const cur = list[sel] || all[0];
+    const base = 'min-height: 44px; padding: 0 20px; border-radius: 999px; font-size: 14px; cursor: pointer; font-family: inherit; ';
+    const filters = ['All', 'Rooms', 'Dining', 'Nature', 'Experiences', 'Wellness'].map((label) => {
+      const on = label === f;
+      return {
+        label,
+        pressed: on ? 'true' : 'false',
+        style: base + (on ? 'background: #0B2B1F; color: #F7F4ED; border: 1px solid #0B2B1F' : 'background: transparent; color: #0B2B1F; border: 1px solid #C9BFA9'),
+        pick: () => this.setState({ filter: label, sel: 0 })
+      };
+    });
+    const items = list.map((x, i) => {
+      const on = i === sel;
+      return {
+        img: x.img,
+        title: x.title,
+        catUpper: x.cat.toUpperCase(),
+        label: 'Show ' + x.title,
+        pressed: on ? 'true' : 'false',
+        style: 'position: relative; display: block; width: 100%; height: ' + x.h + 'px; margin: 0 0 22px; padding: 0; border: 0; border-radius: 14px; overflow: hidden; cursor: pointer; break-inside: avoid; background: #EFE6D3; box-shadow: ' + (on ? '0 0 0 3px #B8912F, 0 14px 30px rgba(10,34,27,.18)' : '0 8px 22px rgba(10,34,27,.08)'),
+        pick: () => this.setState({ sel: i })
+      };
+    });
+    const n = list.length;
+    const pad = (v) => (v < 10 ? '0' + v : '' + v);
+    return {
+      filters,
+      items,
+      cur: { img: cur.img, alt: cur.alt, title: cur.title, desc: cur.desc, catUpper: cur.cat.toUpperCase() },
+      counter: pad(sel + 1) + ' / ' + pad(n),
+      progressStyle: 'height: 100%; background: #D9C08A; transition: width .4s ease; width: ' + Math.round(((sel + 1) / n) * 100) + '%',
+      prev: () => this.setState({ sel: (sel - 1 + n) % n }),
+      next: () => this.setState({ sel: (sel + 1) % n })
+    };
+  }
+}
+</script>
+</body>
+</html>

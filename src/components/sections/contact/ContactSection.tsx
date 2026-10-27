@@ -1,79 +1,60 @@
-import Image from "next/image";
-import { Lines, Reveal, Rule } from "@/components/motion/primitives";
-import { contact, social } from "@/lib/site";
+import { DrawnLeaf, ImageFrame, Lines, Reveal } from "@/components/motion/primitives";
 import { EnquiryForm } from "./EnquiryForm";
+import { SignOff } from "./SignOff";
 
-const detailLabel = "t-small text-muted block";
-const detailValue = "t-h4 link-u mt-1 inline-block text-forest [overflow-wrap:anywhere]";
-
-/** Contact us: tap-to-call and tap-to-email details set large on the left, the enquiry form on the right. */
+/**
+ * "Send a message", as in the Contact design: on the left the eyebrow, the heading, a short note, a lounge photograph and a
+ * handwritten "See you soon!"; on the right the form in a soft rounded card. (The form builds an email to the property.)
+ */
 export function ContactSection() {
-  const phone = contact.phoneLabel.replace(/^Tel:\s*/, "");
   return (
-    <section id="contact" aria-labelledby="contact-title" className="bg-ivory-deep text-ink relative py-20 desk:py-32">
-      <div className="wrap grid gap-14 desk:grid-cols-12 desk:gap-x-12">
-        <div className="min-w-0 desk:col-span-5">
-          <Lines id="contact-title" as="h2" lines={["Contact us"]} className="t-h1 text-forest m-0" />
-
-          <dl className="m-0 mt-12 grid">
-            <Reveal delay={0.05} className="border-forest/15 border-t py-6">
-              <dt className={detailLabel}>Call</dt>
-              <dd className="m-0">
-                <a href={contact.phoneHref} className={detailValue}>
-                  {phone}
-                </a>
-              </dd>
-            </Reveal>
-            <Reveal delay={0.1} className="border-forest/15 border-t py-6">
-              <dt className={detailLabel}>Email</dt>
-              <dd className="m-0">
-                <a href={`mailto:${contact.email}`} className={detailValue}>
-                  {contact.email}
-                </a>
-              </dd>
-            </Reveal>
-            <Reveal delay={0.15} className="border-forest/15 border-y py-6">
-              <dt className={detailLabel}>Visit</dt>
-              <dd className="m-0">
-                <address className="t-lead text-ink mt-1 not-italic">{contact.address}</address>
-              </dd>
-            </Reveal>
-          </dl>
-
-          <Reveal as="div" delay={0.2} className="mt-8">
-            <ul className="m-0 flex list-none gap-3 p-0">
-              {[
-                { href: social.facebook, src: "/images/0fdef751204647a3bbd7eaa2827ed4f9.png", label: "Facebook" },
-                { href: social.instagram, src: "/images/01c3aff52f2a4dffa526d7a9843d46ea.png", label: "Instagram" },
-              ].map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${link.label} (opens in a new tab)`}
-                    className="border-forest/30 hover:bg-forest hover:border-forest group flex size-12 items-center justify-center rounded-full border transition-colors duration-500"
-                  >
-                    <Image
-                      src={link.src}
-                      alt=""
-                      width={22}
-                      height={22}
-                      className="transition-[filter] duration-500 group-hover:invert"
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
+    <section
+      id="contact"
+      aria-labelledby="contact-title"
+      className="bg-ivory text-ink relative overflow-hidden py-20 desk:py-28"
+    >
+      <div aria-hidden="true" className="pointer-events-none absolute top-40 -left-6 hidden h-56 lg:block">
+        <DrawnLeaf className="text-gold/45 h-full w-auto -rotate-6" />
+      </div>
+      <div className="wrap relative grid items-center gap-14 lg:grid-cols-12 lg:gap-x-14">
+        <div className="min-w-0 lg:col-span-5">
+          <Reveal>
+            <p className="t-eyebrow text-forest">Send a message</p>
           </Reveal>
+          <Lines
+            id="contact-title"
+            as="h2"
+            lines={["Let’s Plan Your", "Mountain Escape"]}
+            className="t-h2 text-forest m-0 mt-4 [font-size:clamp(2.125rem,1.3rem+2.4vw,3.25rem)]"
+          />
+          <Reveal delay={0.1} className="mt-5">
+            <p className="t-body text-ink/70 m-0 max-w-[28em] [font-size:1rem]">
+              Tell us a little about what you have in mind — dates, guests, a special occasion — and we’ll get back to
+              you personally.
+            </p>
+          </Reveal>
+          <div className="relative mt-9 pb-10">
+            <ImageFrame
+              src="/images/about/lounge.jpg"
+              alt="A lounge opening onto a balcony with mountain views"
+              sizes="(min-width: 1024px) 34vw, 90vw"
+              className="aspect-[4/3] w-[88%] shadow-[0_20px_40px_rgba(10,34,27,0.14)]"
+              from="bottom"
+              drift={3}
+              position="40% 55%"
+              radius={6}
+            />
+            <div className="absolute right-0 bottom-0 -rotate-6" aria-hidden="true">
+              <SignOff text="See you soon!" />
+            </div>
+          </div>
         </div>
 
-        <div className="min-w-0 desk:col-span-7 desk:pt-6">
-          <Rule className="bg-gold/70 mb-10 hidden desk:block" />
-          <Reveal delay={0.15}>
+        <Reveal delay={0.1} className="min-w-0 lg:col-span-7">
+          <div className="rounded-[22px] bg-[#fffdf8] p-7 shadow-[0_14px_40px_rgba(10,34,27,0.08)] desk:p-11">
             <EnquiryForm />
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

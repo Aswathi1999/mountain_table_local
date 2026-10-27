@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
+import { motion, useScroll, useSpring } from "motion/react";
+import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import { useRef, type ReactNode } from "react";
 
 /**

@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useScroll, useSpring } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useSyncExternalStore } from "react";
-import { DUR, EASE } from "@/components/motion/tokens";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { HOME_FX } from "@/components/motion/home-fx.config";
+import { DUR, EASE, SCROLL_SPRING } from "@/components/motion/tokens";
 import { BookNowButton } from "@/components/ui/BookNowButton";
 import { SocialIcons } from "./SocialIcons";
 import { MobileMenu } from "./MobileMenu";
@@ -30,15 +31,43 @@ const enter = (delay: number) => ({
  */
 export function Header() {
   const scrolled = useSyncExternalStore(subscribeToScroll, isScrolled, () => false);
+  const [hidden, setHidden] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, SCROLL_SPRING);
+
+  // Slides away while the page scrolls down, and back as soon as it scrolls up (never while the menu is open).
+  useEffect(() => {
+    if (!HOME_FX.header.enabled || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let last = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      const delta = y - last;
+      if (Math.abs(delta) < 6) return;
+      last = y;
+      if (document.getElementById("mobile-menu")) return;
+      setHidden(delta > 0 && y > HOME_FX.header.hideAfterPx);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
       <header
         id="SITE_HEADER"
-        className={`bg-ivory/92 text-forest fixed inset-x-0 top-0 z-50 backdrop-blur-md transition-[height,box-shadow] duration-500 ${
-          scrolled ? "h-[64px] shadow-[0_1px_0_rgba(31,59,47,0.12)]" : "h-[72px] desk:h-[84px]"
-        }`}
+        className={`text-forest fixed inset-x-0 top-0 z-50 transition-[height,box-shadow,transform,background-color,backdrop-filter] duration-500 ease-out focus-within:translate-y-0 ${
+          scrolled
+            ? "h-[64px] bg-ivory/80 shadow-[0_1px_0_rgba(31,59,47,0.12)] backdrop-blur-xl"
+            : "h-[72px] bg-ivory/95 backdrop-blur-md desk:h-[84px]"
+        } ${hidden ? "-translate-y-full" : "translate-y-0"}`}
       >
+        {HOME_FX.header.progressLine ? (
+          <motion.span
+            aria-hidden="true"
+            className="bg-gold absolute top-0 left-0 z-10 block h-[2px] w-full origin-left"
+            style={{ scaleX: progress }}
+          />
+        ) : null}
         <div className="wrap flex h-full items-center justify-between">
           <motion.div {...enter(0.05)}>
             <Link href="/" aria-label="The Mountain Table, home" className="group block no-underline">

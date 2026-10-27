@@ -1,60 +1,68 @@
-import { Lines, Reveal, Rule } from "@/components/motion/primitives";
+import { Lines, Reveal } from "@/components/motion/primitives";
+import { LeafSprig } from "@/components/ui/decor";
 import { copy } from "@/data/copy";
 import { bookingPolicies, cancellationPolicies } from "@/data/policies";
 import { sentenceCase } from "@/lib/text";
-import { CancellationTimeline } from "./RoomsMotion";
+import { CancellationTimeline, PolicyRow } from "./RoomsMotion";
 
 /**
- * Booking policies and guidelines (ivory): the heading stays beside a long, quiet list; each guideline is a hairline row.
- * Then the cancellation policy (deep forest) as a drawn timeline. The `book-now` anchor, the target of every booking button
- * on this page, sits at the top.
+ * Booking policies and guidelines: a centred heading, then every guideline in one soft rounded card, in two columns with a gold
+ * marker. The cancellation policy follows on a deep forest band as a drawn timeline. The `book-now` anchor, the target of every
+ * booking button on this page, sits at the top.
  */
 export function RoomsPolicies() {
-  const [policyA, policyB] = sentenceCase(copy.rooms.policiesTitle).split(" & ");
   return (
     <section id="policies" aria-label="Policies" className="relative">
       <div id="book-now" className="scroll-mt-24" />
 
-      <div className="bg-ivory text-ink py-20 desk:py-32">
-        <div className="wrap grid gap-12 desk:grid-cols-12 desk:gap-x-12">
-          <header className="desk:col-span-4">
-            <div className="desk:sticky desk:top-32">
-              <Lines
-                as="h2"
-                lines={[...policyA.split(" "), `& ${policyB}`]}
-                lineClasses={["", "t-it", "t-it"]}
-                className="t-h2 text-forest m-0"
-              />
-              <Rule className="bg-gold/70 mt-8 max-w-16" delay={0.2} />
-            </div>
-          </header>
+      <div className="bg-ivory-deep text-ink relative overflow-hidden py-20 desk:py-28">
+        <LeafSprig className="text-gold/35 pointer-events-none absolute top-8 right-[5%] hidden h-48 w-auto rotate-[22deg] lg:block" />
+        <div className="wrap relative">
+          <div className="mx-auto mb-12 flex max-w-[40rem] flex-col items-center text-center desk:mb-14">
+            <Reveal>
+              <p className="t-eyebrow text-forest before:h-px before:w-14 before:bg-current before:opacity-35 before:content-['']">
+                Before you book
+              </p>
+            </Reveal>
+            <Lines
+              id="policies-title"
+              as="h2"
+              lines={[sentenceCase(copy.rooms.policiesTitle).replace(/\b(\w)/g, (m) => m.toUpperCase())]}
+              className="t-h2 text-forest m-0 mt-4 text-center"
+            />
+          </div>
 
-          <ul className="m-0 list-none p-0 desk:col-span-7 desk:col-start-6">
-            {bookingPolicies.map((item) => (
-              <li
-                key={item}
-                className="border-forest/15 border-t py-6 first:border-t-0 first:pt-0 desk:py-7 desk:first:pt-2"
-              >
-                <Reveal y={14}>
-                  <p className="t-body text-ink/90 m-0">{item}</p>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
+          <div className="rounded-[24px] bg-[#fffdf8] p-6 shadow-[0_10px_30px_rgba(10,34,27,0.06)] desk:p-12">
+            <ul className="m-0 list-none gap-x-14 p-0 lg:columns-2">
+              {bookingPolicies.map((item, i) => (
+                <li key={item} className="break-inside-avoid pb-5">
+                  <PolicyRow rule={i !== 0} ruleOnWide={i !== 14}>
+                    <p className="t-small text-ink/80 m-0 flex gap-3.5 [font-size:0.9375rem]">
+                      <span aria-hidden="true" className="bg-gold mt-[0.55em] block size-1.5 shrink-0 rotate-45" />
+                      <span>{item}</span>
+                    </p>
+                  </PolicyRow>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div className="bg-forest-deep text-ivory py-20 desk:py-32">
+      <div className="bg-forest-deep text-ivory py-20 desk:py-28">
         <div className="wrap grid gap-14 desk:grid-cols-12 desk:gap-x-12">
           <header className="desk:col-span-4">
             <div className="desk:sticky desk:top-32">
+              <Reveal>
+                <p className="t-eyebrow text-ivory">If plans change</p>
+              </Reveal>
               <Lines
+                id="cancellation-title"
                 as="h2"
                 lines={sentenceCase(copy.rooms.cancellationTitle).split(" ")}
                 lineClasses={["", "t-it text-gold-soft"]}
-                className="t-h2 m-0"
+                className="t-h2 m-0 mt-4"
               />
-              <Rule className="bg-gold/60 mt-8 max-w-16" delay={0.2} />
             </div>
           </header>
           <div className="desk:col-span-7 desk:col-start-6">

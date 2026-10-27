@@ -1,9 +1,11 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import Image from "next/image";
-import { Fragment, useRef } from "react";
-import { EASE } from "@/components/motion/primitives";
+import { Fragment, useRef, type ReactNode } from "react";
+import { ROOMS_FX } from "@/components/motion/home-fx.config";
+import { EASE, Rule } from "@/components/motion/primitives";
 
 /**
  * A wide photograph that opens as it scrolls into view: it starts as a letterboxed window and widens to the full frame while
@@ -99,5 +101,58 @@ export function CancellationTimeline({ items }: { items: readonly string[] }) {
         </li>
       ))}
     </ol>
+  );
+}
+
+/** The line where the two halves of a room photograph meet as they open: it shows at the centre and fades once the doors have opened. Place it inside the frame. */
+export function DoorSeam() {
+  const reduce = useReducedMotion();
+  if (!ROOMS_FX.doors.enabled || reduce) return null;
+  return (
+    <motion.span
+      data-motion=""
+      aria-hidden="true"
+      className="bg-gold-soft pointer-events-none absolute inset-y-0 left-1/2 z-10 block w-px"
+      initial={{ opacity: 1 }}
+      whileInView={{ opacity: 0 }}
+      viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+      transition={{ duration: ROOMS_FX.doors.seam, ease: EASE, delay: 0.35 }}
+    />
+  );
+}
+
+/**
+ * One row of the booking guidelines: its top rule draws from left to right, then the text fades in. The first row has no rule
+ * (`rule={false}`); `ruleOnWide={false}` hides the rule only when the list is in two columns (the top of the second column).
+ */
+export function PolicyRow({
+  children,
+  rule = true,
+  ruleOnWide = true,
+}: {
+  children: ReactNode;
+  rule?: boolean;
+  ruleOnWide?: boolean;
+}) {
+  const { enabled, textDelay } = ROOMS_FX.policies;
+  // The rule is in the flow (not positioned), so the two-column list balances and breaks cleanly.
+  return (
+    <>
+      {rule ? (
+        <span aria-hidden="true" className={`block ${ruleOnWide ? "" : "lg:hidden"}`}>
+          <Rule className="bg-forest/10" duration={1} />
+        </span>
+      ) : null}
+      <motion.div
+        data-motion=""
+        className={rule ? (ruleOnWide ? "pt-5" : "pt-5 lg:pt-0") : undefined}
+        initial={enabled ? { opacity: 0, y: 12 } : false}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "0px 0px -8% 0px" }}
+        transition={{ duration: 0.9, ease: EASE, delay: textDelay }}
+      >
+        {children}
+      </motion.div>
+    </>
   );
 }

@@ -1,11 +1,14 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
-import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type KeyboardEvent } from "react";
+import { HOME_FX } from "@/components/motion/home-fx.config";
 import { Lines, Reveal } from "@/components/motion/primitives";
 import { DUR, EASE, SCROLL_SPRING } from "@/components/motion/tokens";
+import { useHomeFx } from "@/components/motion/useHomeFx";
 import { copy } from "@/data/copy";
 import { sentenceCase } from "@/lib/text";
 
@@ -20,36 +23,65 @@ const discover = {
   cta: "Watch Our Story",
 } as const;
 
-/** The three photographs in the carousel, with the focal point that keeps the view in frame. */
+/** The three photographs in the carousel (high-resolution site photographs), with the focal point that keeps the view in frame. */
 const discoverPhotos = [
   {
-    src: "/images/image_1.png",
-    alt: "A terrace with timber armchairs looking out over snow-capped mountains",
-    focus: "62% 50%",
+    src: "/images/c18256_e258df5a2e004fb0b702a4bb9e142cec.jpg",
+    alt: "The infinity pool and covered terrace at sunset",
+    focus: "60% 55%",
   },
   {
-    src: "/images/image_2.png",
-    alt: "An infinity pool and sun loungers overlooking a mountain valley",
-    focus: "58% 50%",
+    src: "/images/81d784_a30ae9d65f7a4c158c25796451fed75f.jpg",
+    alt: "Aerial view of The Mountain Table's thatched house among the tea plantations",
+    focus: "50% 50%",
   },
   {
-    src: "/images/image_3.png",
-    alt: "A fire bowl and lanterns on a terrace at dusk with the mountains behind",
-    focus: "52% 55%",
+    src: "/images/81d784_1c2a1355792941408dd4987fa7e78484.jpg",
+    alt: "The infinity pool at night",
+    focus: "50% 55%",
   },
+] as const;
+
+/** Soft warm lights scattered over the lower half of the terrace picture (fixed positions, so server and client agree). */
+const LIGHTS = [
+  { x: 14, y: 58, s: 18, d: 0 },
+  { x: 27, y: 66, s: 12, d: 1.2 },
+  { x: 38, y: 52, s: 16, d: 2.1 },
+  { x: 46, y: 72, s: 22, d: 0.6 },
+  { x: 58, y: 60, s: 14, d: 1.7 },
+  { x: 66, y: 78, s: 18, d: 2.6 },
+  { x: 74, y: 55, s: 12, d: 0.9 },
+  { x: 82, y: 68, s: 20, d: 1.4 },
+  { x: 90, y: 62, s: 14, d: 2.3 },
+  { x: 22, y: 80, s: 14, d: 0.3 },
+  { x: 52, y: 86, s: 16, d: 1.9 },
+  { x: 70, y: 88, s: 12, d: 0.7 },
+  { x: 33, y: 90, s: 18, d: 2.8 },
+  { x: 88, y: 84, s: 16, d: 1.1 },
 ] as const;
 
 const control =
   "flex size-10 cursor-pointer items-center justify-center rounded-full border border-ivory/50 bg-forest-deep/30 text-ivory backdrop-blur-sm transition-colors duration-300 hover:bg-ivory hover:text-forest-deep focus-visible:bg-ivory focus-visible:text-forest-deep hover:scale-[1.06] active:scale-95";
 
-/** The film that "Watch Our Story" opens: the property's own hero film, in a native dialog (Esc and the close button dismiss it). */
+/**
+ * The film that "Watch Our Story" opens, full screen on a dark green backdrop with a cream close button. It is a native modal
+ * dialog: keyboard focus is trapped inside while it is open, Escape, the close button and a click on the backdrop close it, and
+ * focus returns to the button that opened it. The video fades in; the files are set in `HOME_FX.video`.
+ */
 export function StoryDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
   const ref = useRef<HTMLDialogElement>(null);
+  const opener = useRef<HTMLElement | null>(null);
   useEffect(() => {
     const dialog = ref.current;
     if (!dialog) return;
-    if (open && !dialog.open) dialog.showModal();
-    if (!open && dialog.open) dialog.close();
+    if (open && !dialog.open) {
+      opener.current = document.activeElement as HTMLElement | null;
+      dialog.showModal();
+    }
+    if (!open && dialog.open) {
+      dialog.close();
+      opener.current?.focus({ preventScroll: true });
+    }
   }, [open]);
 
   return (
@@ -58,23 +90,27 @@ export function StoryDialog({ open, onClose }: { open: boolean; onClose: () => v
       aria-label="Our story"
       onClose={onClose}
       onClick={(e) => e.target === ref.current && onClose()}
-      className="m-auto w-[min(92vw,70rem)] max-w-none overflow-visible border-0 bg-transparent p-0 backdrop:bg-black/80"
+      className="film-dialog m-auto w-[min(92vw,70rem)] max-w-none overflow-visible border-0 bg-transparent p-0 backdrop:bg-[rgba(10,34,27,0.94)]"
     >
       {open ? (
         <div className="relative">
           <video
-            src="/videos/kling_20261014_VIDEO_Create_a_p_4745_0.mov"
             className="aspect-video w-full rounded-[6px] bg-black object-cover"
             controls
             autoPlay
             playsInline
             loop
-          />
+            poster={HOME_FX.video.heroPoster}
+          >
+            <source src={HOME_FX.video.film} type="video/mp4" />
+            <source src={HOME_FX.video.filmFallback} type="video/quicktime" />
+            <source src={HOME_FX.video.filmFallback} type="video/mp4" />
+          </video>
           <button
             type="button"
             onClick={onClose}
             aria-label="Close video"
-            className={`${control} absolute -top-14 right-0`}
+            className="bg-ivory text-forest-deep hover:bg-gold absolute -top-14 right-0 flex size-10 cursor-pointer items-center justify-center rounded-full border-0 transition-colors duration-300 active:scale-95"
           >
             <svg
               viewBox="0 0 24 24"
@@ -107,6 +143,15 @@ export function HomeDiscover() {
   const inView = useRef(false);
   const [story, setStory] = useState(false);
   const reduce = useReducedMotion();
+  const night = useHomeFx("discover");
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress: sectionProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const dusk = useSpring(sectionProgress, SCROLL_SPRING);
+  // Sunset to night: the picture slowly zooms in while a golden wash drains out and a twilight-blue wash deepens; warm lights fade up.
+  const zoom = useTransform(dusk, [0, 1], [1.08, night ? 1.08 * HOME_FX.discover.zoomTo : 1.08]);
+  const goldenOpacity = useTransform(dusk, [0.15, 0.65], [HOME_FX.discover.goldenOpacity, 0]);
+  const twilightOpacity = useTransform(dusk, [0.2, 0.85], [0, HOME_FX.discover.twilightOpacity]);
+  const lightsOpacity = useTransform(dusk, [0.4, 0.8], [0, 1]);
   // Slow parallax: the photographs drift a few percent against the scroll while the band crosses the screen.
   const { scrollYProgress } = useScroll({ target: regionRef, offset: ["start end", "end start"] });
   const driftPct = useSpring(useTransform(scrollYProgress, [0, 1], [reduce ? 0 : -4, reduce ? 0 : 4]), SCROLL_SPRING);
@@ -165,6 +210,7 @@ export function HomeDiscover() {
 
   return (
     <section
+      ref={sectionRef}
       id="discover"
       aria-labelledby="discover-title"
       className="bg-forest-deep text-ivory relative isolate overflow-hidden"
@@ -214,7 +260,11 @@ export function HomeDiscover() {
           onFocus={touch}
           className="relative aspect-[4/3] overflow-hidden outline-offset-[-4px] lg:col-span-6 lg:aspect-auto lg:min-h-full"
         >
-          <motion.div className="absolute inset-0 scale-[1.08] will-change-transform" style={{ y: driftY }}>
+          <motion.div
+            className="absolute inset-0 will-change-transform"
+            style={{ y: driftY, scale: zoom }}
+            data-cursor="view"
+          >
             <motion.div
               data-motion=""
               className="absolute inset-0"
@@ -243,7 +293,8 @@ export function HomeDiscover() {
                           src={photo.src}
                           alt={photo.alt}
                           fill
-                          sizes="(min-width: 1024px) 50vw, 100vw"
+                          sizes="(min-width: 1024px) 60vw, 100vw"
+                          quality={85}
                           className="object-cover"
                           style={{ objectPosition: photo.focus }}
                           draggable={false}
@@ -256,6 +307,50 @@ export function HomeDiscover() {
               </div>
             </motion.div>
           </motion.div>
+
+          {night ? (
+            <>
+              <motion.div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  opacity: goldenOpacity,
+                  background: `linear-gradient(to top, rgba(${HOME_FX.color.golden},0.9), rgba(${HOME_FX.color.golden},0) 70%)`,
+                  mixBlendMode: "soft-light",
+                }}
+              />
+              <motion.div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  opacity: twilightOpacity,
+                  background: `rgba(${HOME_FX.color.twilight},1)`,
+                  mixBlendMode: "multiply",
+                }}
+              />
+              <motion.div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+                style={{ opacity: lightsOpacity }}
+              >
+                {LIGHTS.slice(0, HOME_FX.discover.lights).map((l, i) => (
+                  <span
+                    key={i}
+                    className="light-glow absolute block rounded-full"
+                    style={{
+                      left: `${l.x}%`,
+                      top: `${l.y}%`,
+                      width: l.s,
+                      height: l.s,
+                      animationDelay: `${l.d}s`,
+                      background:
+                        "radial-gradient(circle, rgba(255,226,170,1) 0%, rgba(255,176,84,0.55) 45%, rgba(255,176,84,0) 72%)",
+                    }}
+                  />
+                ))}
+              </motion.div>
+            </>
+          ) : null}
 
           {/* The photograph fades into the green on the text side (and at the top on small screens). */}
           <div

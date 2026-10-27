@@ -1,3 +1,4 @@
+import { CustomCursor } from "@/components/motion/CustomCursor";
 import { AboutFollow } from "@/components/sections/about/AboutFollow";
 import { AboutHero } from "@/components/sections/about/AboutHero";
 import { AboutPromise } from "@/components/sections/about/AboutPromise";
@@ -19,6 +20,7 @@ export default function AboutPage() {
       <AboutTiles />
       <AboutPromise />
       <AboutFollow />
+      <CustomCursor />
     </div>
   );
 }

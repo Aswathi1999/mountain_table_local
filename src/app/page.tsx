@@ -1,3 +1,4 @@
+import { CustomCursor } from "@/components/motion/CustomCursor";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { HomeDiscover } from "@/components/sections/home/HomeDiscover";
 import { HomeHero } from "@/components/sections/home/HomeHero";
@@ -12,6 +13,7 @@ export const metadata = pageMetadata("/");
 export default function HomePage() {
   return (
     <div className="home-page">
+      <CustomCursor />
       {pageJsonLd("/").map((block, i) => (
         <JsonLd key={i} data={block} />
       ))}

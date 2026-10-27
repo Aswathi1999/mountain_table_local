@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Lines, Reveal, Stagger, StaggerItem } from "@/components/motion/primitives";
+import { Lines, Reveal } from "@/components/motion/primitives";
 import { ArrowIcon } from "@/components/ui/BookNowButton";
 import { copy } from "@/data/copy";
 import { roomLayouts } from "@/data/rooms";
+import { Magnetic, RoomCard } from "./RoomsFx";
 
 /** Heading as set in the approved design reference. */
 const heading = ["Rooms With a View", "to Remember"] as const;
@@ -12,9 +13,9 @@ const heading = ["Rooms With a View", "to Remember"] as const;
 const focus = ["50% 55%", "45% 55%", "50% 60%"] as const;
 
 /**
- * "Stay with us", as in the reference: the eyebrow and a two-line headline with a "View All Rooms" button, then one card for each of
- * the three rooms. Names, photographs and descriptions are the ones on the Rooms & Booking page; the whole card links there.
- * (The site publishes no prices or room specifications, so none are shown.)
+ * "Stay with us", as in the reference: the eyebrow and a two-line headline with a magnetic "View All Rooms" button, then one card for
+ * each of the three rooms, dealt onto the page in 3D. Names, photographs and descriptions are the ones on the Rooms & Booking page;
+ * the whole card links there. (The site publishes no prices or room specifications, so none are shown.)
  */
 export function HomeRoomsPreview() {
   return (
@@ -33,46 +34,41 @@ export function HomeRoomsPreview() {
             />
           </div>
           <Reveal delay={0.15}>
-            <Link href="/rooms-booking" className="btn btn-line-dark btn-sweep">
-              View All Rooms
-              <ArrowIcon />
-            </Link>
+            <Magnetic>
+              <Link href="/rooms-booking" className="btn btn-line-dark">
+                View All Rooms
+                <ArrowIcon />
+              </Link>
+            </Magnetic>
           </Reveal>
         </div>
 
-        <Stagger step={0.12} className="mt-12 grid gap-6 desk:mt-14 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 desk:mt-14 md:grid-cols-3">
           {roomLayouts.map((room, i) => (
-            <StaggerItem key={room.name} y={30}>
-              <Link
-                href="/rooms-booking"
-                className="group border-forest/10 hover:border-forest/25 block overflow-hidden rounded-[10px] border bg-white no-underline shadow-[0_14px_36px_rgba(31,59,47,0.07)] transition-[border-color,transform,box-shadow] duration-500 hover:-translate-y-1.5 hover:shadow-[0_24px_50px_rgba(31,59,47,0.13)]"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <div className="img-zoom absolute inset-0">
-                    <Image
-                      src={room.image.src}
-                      alt={room.image.alt}
-                      fill
-                      sizes="(min-width: 1280px) 400px, (min-width: 768px) 33vw, 92vw"
-                      className="object-cover"
-                      style={{ objectPosition: focus[i] }}
-                    />
-                  </div>
+            <RoomCard key={room.name} index={i} href="/rooms-booking">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="img-zoom absolute inset-0">
+                  <Image
+                    src={room.image.src}
+                    alt={room.image.alt}
+                    fill
+                    sizes="(min-width: 1280px) 400px, (min-width: 768px) 33vw, 92vw"
+                    className="object-cover"
+                    style={{ objectPosition: focus[i] }}
+                  />
                 </div>
-                <div className="p-6">
-                  <h3 className="t-h4 text-forest m-0 [font-size:1.5rem]">{room.name}</h3>
-                  <p className="t-small text-ink/70 m-0 mt-2 line-clamp-3 [font-size:0.875rem]">
-                    {copy.rooms.cards[i]}
-                  </p>
-                  <span className="t-ui text-forest mt-5 inline-flex items-center gap-2">
-                    View room
-                    <ArrowIcon className="size-4 transition-transform duration-500 group-hover:translate-x-1.5" />
-                  </span>
-                </div>
-              </Link>
-            </StaggerItem>
+              </div>
+              <div className="p-6">
+                <h3 className="t-h4 text-forest m-0 [font-size:1.5rem]">{room.name}</h3>
+                <p className="t-small text-ink/70 m-0 mt-2 line-clamp-3 [font-size:0.875rem]">{copy.rooms.cards[i]}</p>
+                <span className="t-ui text-forest mt-5 inline-flex items-center gap-2">
+                  View room
+                  <ArrowIcon className="size-4 transition-transform duration-500 group-hover:translate-x-1.5" />
+                </span>
+              </div>
+            </RoomCard>
           ))}
-        </Stagger>
+        </div>
       </div>
     </section>
   );

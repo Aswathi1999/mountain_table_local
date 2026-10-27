@@ -12,6 +12,7 @@ export const nav: readonly NavItem[] = [
   { label: "Gallery", href: "/gallery" },
   { label: "Blog", href: "/blog" },
   { label: "Rooms & Booking", href: "/rooms-booking" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const contact = {

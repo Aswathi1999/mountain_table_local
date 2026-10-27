@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { Drift, ImageFrame, Lines, Reveal } from "@/components/motion/primitives";
+import { InkReveal, PageSweep, PhotoDrop, ScalePop } from "@/components/motion/about-fx";
+import { DrawnLeaf, ImageFrame, Lines, Reveal } from "@/components/motion/primitives";
 import { ArrowIcon } from "@/components/ui/BookNowButton";
-import { Disc, LeafSprig } from "@/components/ui/decor";
+import { Disc } from "@/components/ui/decor";
+import { ABOUT_FX } from "@/components/motion/home-fx.config";
 import { copy } from "@/data/copy";
 
 /**
@@ -11,7 +13,11 @@ import { copy } from "@/data/copy";
 export function AboutStory() {
   const [first, second] = copy.about.story;
   return (
-    <section id="story" aria-labelledby="story-title" className="bg-ivory relative overflow-hidden py-20 desk:py-28">
+    <section
+      id="story"
+      aria-labelledby="story-title"
+      className="bg-ivory relative overflow-hidden pt-20 pb-10 desk:pt-28 desk:pb-12"
+    >
       <div className="wrap grid items-center gap-16 lg:grid-cols-12 lg:gap-x-16">
         <div className="lg:col-span-6">
           <Reveal>
@@ -23,13 +29,13 @@ export function AboutStory() {
             lines={[copy.about.titleLines.join(" ")]}
             className="t-h2 text-forest m-0 mt-4"
           />
-          <Reveal delay={0.1} className="mt-6">
+          <InkReveal delay={0.1} className="mt-6">
             <p className="t-body text-ink/75 m-0">{first}</p>
-          </Reveal>
-          <Reveal delay={0.18} className="mt-4">
+          </InkReveal>
+          <InkReveal delay={0.1 + ABOUT_FX.story.inkStep} className="mt-4">
             <p className="t-body text-ink/75 m-0">{second}</p>
-          </Reveal>
-          <Reveal delay={0.26} className="mt-9">
+          </InkReveal>
+          <Reveal delay={0.3} className="mt-9">
             <Link href="/rooms-booking" className="btn btn-line-dark">
               See the rooms
               <ArrowIcon />
@@ -37,33 +43,37 @@ export function AboutStory() {
           </Reveal>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[34rem] pb-24 lg:col-span-6 lg:mx-0 lg:max-w-none lg:pb-20 lg:pl-8">
-          <Drift x={-24} y={0} className="absolute top-[10%] left-0 size-[44%]">
+        <div className="relative mx-auto w-full max-w-[34rem] pb-24 lg:col-span-6 lg:mx-0 lg:max-w-none lg:pb-10 lg:pl-8">
+          <ScalePop className="absolute top-[10%] left-0 size-[44%]">
             <Disc className="bg-ivory-deep inset-0" />
-          </Drift>
-          <Drift y={24} delay={0.2} className="absolute -top-3 left-[-2%] h-[24%] w-[14%] lg:-left-3">
-            <LeafSprig className="text-forest h-full w-auto" />
-          </Drift>
+          </ScalePop>
+          <div aria-hidden="true" className="absolute -top-3 left-[-2%] h-[24%] w-[14%] lg:-left-3">
+            <DrawnLeaf className="text-forest h-full w-auto" />
+          </div>
           <ImageFrame
             src="/images/about/ridges.jpg"
             alt="Misty mountain ridges at sunrise seen from the resort"
             sizes="(min-width: 1280px) 560px, (min-width: 1024px) 44vw, 90vw"
             className="relative ml-auto aspect-[4/3.2] w-[86%] shadow-[0_24px_50px_rgba(10,34,27,0.18)]"
-            from="bottom"
+            from="right"
             drift={3}
-          />
-          <div className="absolute bottom-0 left-[6%] w-[40%] lg:left-[8%]">
+            viewCursor
+          >
+            <PageSweep />
+          </ImageFrame>
+          <PhotoDrop className="absolute bottom-0 left-[6%] w-[40%] lg:left-[8%]">
             <ImageFrame
-              src="/images/about/dinner.jpg"
-              alt="A candlelit dinner table set with wine glasses"
-              sizes="(min-width: 1024px) 18vw, 36vw"
+              src="/images/c18256_4f1a87a5cd434f3e869c7e16b058f9b1.jpg"
+              alt="The dining area with a long wooden table and glass walls"
+              sizes="(min-width: 1024px) 420px, 70vw"
+              position="42% 55%"
               className="aspect-[1/1.12] w-full border-[6px] border-white shadow-[0_20px_44px_rgba(10,34,27,0.28)]"
-              from="fade"
-              delay={0.35}
+              from="none"
               drift={4}
               radius={5}
+              viewCursor
             />
-          </div>
+          </PhotoDrop>
         </div>
       </div>
     </section>

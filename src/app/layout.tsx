@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { ChatBubble } from "@/components/layout/ChatBubble";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { Splash } from "@/components/layout/Splash";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { caveat, cormorant, manrope } from "@/lib/fonts";
 import { SITE_URL } from "@/lib/site";
@@ -27,10 +28,16 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${cormorant.variable} ${caveat.variable}`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${manrope.variable} ${cormorant.variable} ${caveat.variable}`}
+      suppressHydrationWarning
+    >
       <body>
+        <Splash />
         <noscript>
-          <style>{`[data-motion]{opacity:1!important;transform:none!important;clip-path:none!important}`}</style>
+          <style>{`[data-motion]{opacity:1!important;transform:none!important;clip-path:none!important;filter:none!important}`}</style>
         </noscript>
         <a href="#PAGES_CONTAINER" className="skip-link">
           Skip to Main Content

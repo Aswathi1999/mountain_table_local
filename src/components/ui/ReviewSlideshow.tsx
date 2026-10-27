@@ -1,6 +1,7 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
+import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import { useEffect, useState, type CSSProperties } from "react";
 import { DUR, EASE, SPRING, STAGGER } from "@/components/motion/tokens";
 
@@ -47,10 +48,11 @@ function Card({
         y: active ? -10 : 0,
         backgroundColor: active ? "#1f3b2f" : "#fbf9f4",
         color: active ? "#f6f2ea" : "#242323",
+        borderColor: active ? "rgba(184,147,90,0.55)" : "rgba(184,147,90,0)",
       }}
       whileHover={{ y: active ? -14 : -4 }}
       transition={{ ...SPRING.soft, backgroundColor: { duration: DUR.ui }, color: { duration: DUR.ui } }}
-      className="relative m-0 flex min-h-[18rem] w-full flex-1 cursor-pointer flex-col overflow-hidden rounded-[10px] p-7 shadow-[0_18px_44px_rgba(31,59,47,0.10)] desk:p-9"
+      className="relative m-0 flex min-h-[18rem] w-full flex-1 cursor-pointer flex-col overflow-hidden rounded-[10px] border p-7 shadow-[0_18px_44px_rgba(31,59,47,0.10)] desk:p-9"
     >
       <QuoteMark className={`h-7 w-9 transition-colors duration-500 ${active ? "text-gold-soft" : "text-gold"}`} />
       <blockquote className="m-0 mt-6 flex-1">
@@ -117,7 +119,7 @@ export function ReviewSlideshow({ reviews }: { reviews: readonly string[] }) {
             transition={{ duration: DUR.reveal, ease: EASE, delay: i * STAGGER.base }}
             className="flex"
           >
-            <div className="flex flex-1 flex-col">
+            <div className={`flex flex-1 flex-col ${i === 1 ? "review-float" : ""}`}>
               <Card text={text} index={i} active={i === index} onSelect={() => goTo(i, i > index ? 1 : -1)} />
             </div>
           </motion.div>
@@ -157,7 +159,7 @@ export function ReviewSlideshow({ reviews }: { reviews: readonly string[] }) {
               >
                 <span
                   className={`block h-1.5 rounded-full transition-[width,background-color] duration-500 ${
-                    i === index ? "bg-forest w-6" : "bg-forest/25 w-1.5"
+                    i === index ? "bg-current w-6" : "bg-current/25 w-1.5"
                   }`}
                 />
               </button>
