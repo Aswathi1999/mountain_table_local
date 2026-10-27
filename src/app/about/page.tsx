@@ -1,10 +1,11 @@
-import { AboutClosing } from "@/components/sections/about/AboutClosing";
-import { AboutExperience } from "@/components/sections/about/AboutExperience";
+import { CustomCursor } from "@/components/motion/CustomCursor";
 import { AboutFollow } from "@/components/sections/about/AboutFollow";
 import { AboutHero } from "@/components/sections/about/AboutHero";
-import { AboutLocation } from "@/components/sections/about/AboutLocation";
-import { AboutPhilosophy } from "@/components/sections/about/AboutPhilosophy";
+import { AboutPromise } from "@/components/sections/about/AboutPromise";
+import { AboutQuote } from "@/components/sections/about/AboutQuote";
 import { AboutStory } from "@/components/sections/about/AboutStory";
+import { AboutTiles } from "@/components/sections/about/AboutTiles";
+import { AboutValues } from "@/components/sections/about/AboutValues";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata("/about");
@@ -14,13 +15,12 @@ export default function AboutPage() {
     <div className="about-page">
       <AboutHero />
       <AboutStory />
-      <AboutPhilosophy />
-      <AboutLocation />
-      <AboutExperience />
-      <div className="overflow-x-auto bg-ivory">
-        <AboutFollow />
-      </div>
-      <AboutClosing />
+      <AboutValues />
+      <AboutQuote />
+      <AboutTiles />
+      <AboutPromise />
+      <AboutFollow />
+      <CustomCursor />
     </div>
   );
 }

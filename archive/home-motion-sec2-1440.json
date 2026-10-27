@@ -2,53 +2,103 @@
  "reveals": [
   {
    "key": "#intro#0",
+   "effect": "drawy",
+   "effectM": "drawy",
+   "transition": "transform|1.8s|cubic-bezier(0.22, 1, 0.36, 1)",
+   "initialOpacity": "1",
+   "initialTransform": "matrix(1, 0, 0, 0, 0, 0)",
+   "triggerTop": 840,
+   "triggerFraction": 0.933
+  },
+  {
+   "key": "#intro#1",
    "effect": "fade",
    "effectM": "turn",
    "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "none",
-   "triggerTop": 838,
-   "triggerFraction": 0.931
+   "triggerTop": 836,
+   "triggerFraction": 0.929
   },
   {
-   "key": "#intro#1",
+   "key": "#intro#2",
+   "effect": "wipe",
+   "effectM": "wipe",
+   "transition": "clip-path|1.4s|cubic-bezier(0.77, 0, 0.18, 1)",
+   "initialOpacity": "1",
+   "initialTransform": "none",
+   "triggerTop": 846,
+   "triggerFraction": 0.94
+  },
+  {
+   "key": "#intro#3",
    "effect": "grow",
    "effectM": null,
    "transition": "opacity, transform|1.2s, 1.2s|linear, cubic-bezier(0.6, 0, 0.4, 1)",
    "initialOpacity": "0",
    "initialTransform": "matrix(0, 0, 0, 0, 0, 0)",
-   "triggerTop": 851,
-   "triggerFraction": 0.946
+   "triggerTop": 861,
+   "triggerFraction": 0.957
   },
   {
-   "key": "#intro#2",
+   "key": "#intro#4",
    "effect": "fade",
-   "effectM": null,
+   "effectM": "fade",
    "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
+   "initialTransform": "none",
+   "triggerTop": 834,
+   "triggerFraction": 0.927
+  },
+  {
+   "key": "section[aria-label=\"About the house\"]#0",
+   "effect": "mask",
+   "effectM": "mask",
+   "transition": "clip-path|1.3s|cubic-bezier(0.77, 0, 0.18, 1)",
+   "initialOpacity": "1",
+   "initialTransform": "none",
+   "triggerTop": 809,
+   "triggerFraction": 0.899
+  },
+  {
+   "key": "section[aria-label=\"About the house\"]#1",
+   "effect": "wipe",
+   "effectM": "wipe",
+   "transition": "clip-path|1.4s|cubic-bezier(0.77, 0, 0.18, 1)",
+   "initialOpacity": "1",
    "initialTransform": "none",
    "triggerTop": 861,
    "triggerFraction": 0.957
   },
   {
-   "key": "section[aria-label=\"About the house\"]#0",
+   "key": "section[aria-label=\"About the house\"]#2",
    "effect": "fade",
    "effectM": "slide-y",
    "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "none",
-   "triggerTop": 845,
-   "triggerFraction": 0.939
+   "triggerTop": 891,
+   "triggerFraction": 0.99
   },
   {
-   "key": "section[aria-label=\"About the house\"]#1",
+   "key": "section[aria-label=\"About the house\"]#3",
+   "effect": "grow",
+   "effectM": null,
+   "transition": "opacity, transform|1.2s, 1.2s|linear, cubic-bezier(0.6, 0, 0.4, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "matrix(0, 0, 0, 0, 0, 0)",
+   "triggerTop": 839,
+   "triggerFraction": 0.932
+  },
+  {
+   "key": "section[aria-label=\"About the house\"]#4",
    "effect": "fade",
    "effectM": "slide-y",
    "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "none",
-   "triggerTop": 831,
-   "triggerFraction": 0.923
+   "triggerTop": 872,
+   "triggerFraction": 0.969
   },
   {
    "key": "#reviews#0",
@@ -57,8 +107,8 @@
    "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "none",
-   "triggerTop": 871,
-   "triggerFraction": 0.968
+   "triggerTop": 885,
+   "triggerFraction": 0.983
   },
   {
    "key": "#reviews#1",
@@ -67,8 +117,8 @@
    "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "matrix(1, 0, 0, 1, 60, 0)",
-   "triggerTop": 835,
-   "triggerFraction": 0.928
+   "triggerTop": 849,
+   "triggerFraction": 0.943
   },
   {
    "key": "#reviews#2",
@@ -77,8 +127,8 @@
    "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "matrix(1, 0, 0, 1, 60, 0)",
-   "triggerTop": 895,
-   "triggerFraction": 0.994
+   "triggerTop": 849,
+   "triggerFraction": 0.943
   },
   {
    "key": "#reviews#3",
@@ -87,8 +137,8 @@
    "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "matrix(1, 0, 0, 1, 60, 0)",
-   "triggerTop": 870,
-   "triggerFraction": 0.967
+   "triggerTop": 824,
+   "triggerFraction": 0.916
   }
  ],
  "parallax": [
@@ -117,6 +167,51 @@
  "slideshow": {
   "samples": [
    [
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    0.2,
+    0.8,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0.1,
+    0.9
+   ],
+   [
     0,
     0,
     1
@@ -135,56 +230,11 @@
     0,
     0,
     1
-   ],
-   [
-    0.9,
-    0,
-    0.1
-   ],
-   [
-    1,
-    0,
-    0
-   ],
-   [
-    1,
-    0,
-    0
-   ],
-   [
-    1,
-    0,
-    0
-   ],
-   [
-    1,
-    0,
-    0
-   ],
-   [
-    1,
-    0,
-    0
    ],
    [
     0.1,
-    0.9,
-    0
-   ],
-   [
     0,
-    1,
-    0
-   ],
-   [
-    0,
-    1,
-    0
-   ],
-   [
-    0,
-    1,
-    0
+    0.9
    ]
   ],
   "afterClick": [

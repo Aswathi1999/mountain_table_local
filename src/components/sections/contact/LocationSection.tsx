@@ -1,60 +1,53 @@
-import type { CSSProperties } from "react";
+import { CONTACT_FX } from "@/components/motion/home-fx.config";
+import { Lines, Reveal } from "@/components/motion/primitives";
+import { Magnetic } from "@/components/sections/home/RoomsFx";
+import { ArrowIcon } from "@/components/ui/BookNowButton";
 import { contact, DIRECTIONS_URL, MAP_PAGE_URL } from "@/lib/site";
-import { rv } from "@/lib/reveal";
 import { LazyMap } from "./LazyMap";
 
-const delay = (seconds: number) => ({ "--d": `${seconds}s` }) as CSSProperties;
-
-/** Where to find us: the map (loaded only when close to view) beside a details card with directions. */
+/**
+ * Finding us: one rounded dark card, split in two. The address and the Get directions button sit on deep green on the left; the
+ * map (loaded only when close to view) fills the right.
+ */
 export function LocationSection() {
   return (
-    <section
-      id="location"
-      aria-labelledby="location-title"
-      className="bg-ivory relative px-6 py-14 desk:px-8 desk:py-20"
-    >
-      <div className="mx-auto grid max-w-[1180px] items-center desk:grid-cols-12">
-        <div
-          className="relative aspect-[4/3] overflow-hidden desk:col-span-8 desk:col-start-1 desk:row-start-1 desk:aspect-[16/11]"
-          {...rv("mask")}
-        >
-          <div className="mask-img absolute inset-0">
-            <LazyMap title="Map of The Mountain Table, Uluppuni, Vagamon" />
+    <section id="location" aria-labelledby="location-title" className="bg-ivory relative pb-20 desk:pb-28">
+      <div className="wrap">
+        <Reveal y={CONTACT_FX.location.enabled ? CONTACT_FX.location.rise : 0}>
+          <div className="bg-forest-deep text-ivory grid overflow-hidden rounded-[24px] shadow-[0_24px_60px_rgba(10,34,27,0.2)] lg:grid-cols-2">
+            <div className="flex flex-col justify-center p-8 desk:p-14">
+              <Reveal>
+                <p className="t-eyebrow text-ivory">Find us</p>
+              </Reveal>
+              <Lines
+                id="location-title"
+                as="h2"
+                lines={["The Mountain", "Table"]}
+                lineClasses={["", "t-it"]}
+                className="t-h2 m-0 mt-4 [font-size:clamp(2rem,1.3rem+2vw,3rem)]"
+              />
+              <Reveal delay={0.1} className="mt-6">
+                <address className="t-body text-ivory/85 m-0 not-italic [font-size:1rem]">{contact.address}</address>
+              </Reveal>
+              <Reveal delay={0.2} className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+                <Magnetic>
+                  <a href={DIRECTIONS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
+                    Get directions
+                    <ArrowIcon />
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                </Magnetic>
+                <a href={MAP_PAGE_URL} target="_blank" rel="noopener noreferrer" className="t-ui link-u text-ivory">
+                  Open in Maps
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </Reveal>
+            </div>
+            <div className="relative min-h-[22rem] lg:min-h-[28rem]">
+              <LazyMap title="Map of The Mountain Table, Uluppuni, Vagamon" />
+            </div>
           </div>
-        </div>
-
-        <div
-          className="relative z-10 -mt-10 mr-4 ml-4 bg-white p-6 shadow-[0_18px_50px_rgba(36,35,35,0.12)] desk:col-span-5 desk:col-start-8 desk:row-start-1 desk:m-0 desk:-ml-6 desk:p-12"
-          {...rv("rise", "rise", delay(0.25))}
-        >
-          <p className="m-0 text-[12px] tracking-[0.3em] text-muted uppercase">Find us</p>
-          <h2
-            id="location-title"
-            className="m-0 mt-4 text-[1.5rem] font-normal tracking-[0.12em] text-ink uppercase desk:text-[28px]"
-          >
-            The Mountain Table
-          </h2>
-          <span className="mt-5 block h-px w-14 bg-gold" />
-          <address className="t-lead mt-6 text-ink not-italic">{contact.address}</address>
-          <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
-            <a
-              href={DIRECTIONS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="t-ui bg-gold text-forest-deep hover:bg-forest hover:text-ivory inline-flex h-12 items-center px-5 tracking-[0.2em] whitespace-nowrap desk:px-7 uppercase no-underline transition-colors duration-300"
-            >
-              Get directions
-            </a>
-            <a
-              href={MAP_PAGE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="t-ui nav-underline tracking-[0.2em] text-ink uppercase no-underline"
-            >
-              Open in Maps
-            </a>
-          </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -6,12 +6,13 @@ export const SITE_NAME = "The Mountain Table";
 export type NavItem = { label: string; href: string };
 
 export const nav: readonly NavItem[] = [
-  { label: "HOME", href: "/" },
-  { label: "ABOUT", href: "/about" },
-  { label: "SEE & DO", href: "/see-do" },
-  { label: "GALLERY", href: "/gallery" },
-  { label: "BLOG", href: "/blog" },
-  { label: "ROOMS & BOOKING", href: "/rooms-booking" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "See & Do", href: "/see-do" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Blog", href: "/blog" },
+  { label: "Rooms & Booking", href: "/rooms-booking" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const contact = {

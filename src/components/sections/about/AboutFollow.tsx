@@ -1,28 +1,25 @@
-import { copy } from "@/data/copy";
-import { rv } from "@/lib/reveal";
-import { pos } from "@/lib/stage";
-import { Block } from "@/components/ui/Block";
+import { Lines, Reveal } from "@/components/motion/primitives";
 import { InstagramFeed } from "@/components/ui/InstagramFeed";
+import { copy } from "@/data/copy";
+import { social } from "@/lib/site";
 
-const O = { d: 1525, m: 2045 };
-
-/** "Explore & Follow Us" with the Instagram grid. */
+/** "Explore & Follow Us": the Instagram tiles, with the heading and a link to the profile above. */
 export function AboutFollow() {
   return (
-    <Block d={709} m={386} id="follow" label="Follow us on Instagram">
-      <h2
-        className="at m-0 text-[1.125rem] leading-[normal] font-normal text-muted italic desk:text-[40px] desk:leading-[52px] desk:text-ink desk:not-italic"
-        {...rv("fade")}
-        style={pos(O, [470, 1606, 420, 51], [140, 2087, 180, 23])}
-      >
-        {copy.about.followTitle}
-      </h2>
-      <InstagramFeed style={pos(O, [150, 1673, 980, 506], [22, 2123, 278, 278])} />
-      <div
-        className="at border-t border-rule max-desk:border-rule-soft"
-        {...rv("grow")}
-        style={pos(O, [206, 2210, 850, 6], [24, 2411, 276, 5])}
-      />
-    </Block>
+    <section id="follow" aria-labelledby="follow-title" className="bg-ivory-deep relative py-20 desk:py-32">
+      <div className="wrap">
+        <div className="flex flex-col gap-6 desk:flex-row desk:items-end desk:justify-between">
+          <Lines id="follow-title" as="h2" lines={[copy.about.followTitle]} className="t-h2 text-forest m-0" />
+          <Reveal delay={0.1}>
+            <a href={social.instagram} target="_blank" rel="noopener noreferrer" className="link-u t-ui text-forest">
+              Follow on Instagram<span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </Reveal>
+        </div>
+        <div className="mt-10 desk:mt-14">
+          <InstagramFeed />
+        </div>
+      </div>
+    </section>
   );
 }

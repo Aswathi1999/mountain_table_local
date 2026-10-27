@@ -1,7 +1,7 @@
 import { social } from "@/lib/site";
 
 const link =
-  "flex size-8 items-center justify-center text-nav no-underline transition-colors duration-300 hover:text-gold-soft focus-visible:text-gold-soft";
+  "flex size-8 items-center justify-center text-current opacity-70 no-underline transition-[opacity] duration-300 hover:opacity-100 focus-visible:opacity-100";
 
 /** Facebook and Instagram links (open in a new tab). Used in the header and the mobile menu. */
 export function SocialIcons({ className = "" }: { className?: string }) {

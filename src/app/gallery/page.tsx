@@ -1,3 +1,6 @@
+import { ViewfinderCursor } from "@/components/motion/ViewfinderCursor";
+import { GalleryFilm } from "@/components/sections/gallery/GalleryFilm";
+import { GalleryFollow } from "@/components/sections/gallery/GalleryFollow";
 import { GalleryGrid } from "@/components/sections/gallery/GalleryGrid";
 import { GalleryHero } from "@/components/sections/gallery/GalleryHero";
 import { galleryPhotos } from "@/data/gallery";
@@ -13,11 +16,14 @@ export default function GalleryPage() {
   return (
     <div className="gallery-page">
       <GalleryHero />
-      <section aria-label="Photographs" className="bg-ivory py-16 desk:py-[110px]">
-        <div className="mx-auto max-w-[1180px] px-6 desk:px-8">
+      <section aria-labelledby="photos-title" className="bg-ivory relative py-16 desk:py-24">
+        <div className="wrap">
           <GalleryGrid photos={galleryPhotos} />
         </div>
       </section>
+      <GalleryFilm />
+      <GalleryFollow />
+      <ViewfinderCursor />
     </div>
   );
 }

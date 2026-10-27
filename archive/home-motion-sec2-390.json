@@ -2,53 +2,103 @@
  "reveals": [
   {
    "key": "#intro#0",
+   "effect": "drawy",
+   "effectM": "drawy",
+   "transition": "transform|1.8s|cubic-bezier(0.22, 1, 0.36, 1)",
+   "initialOpacity": "1",
+   "initialTransform": "matrix(1, 0, 0, 0, 0, 0)",
+   "triggerTop": 740,
+   "triggerFraction": 0.925
+  },
+  {
+   "key": "#intro#1",
    "effect": "fade",
    "effectM": "turn",
    "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "matrix3d(0.743145, 0, -0.669131, 0.000669131, 0, 1, 0, 0, 0.669131, 0, 0.743145, -0.000743145, 0, 0, 0, 1)",
-   "triggerTop": 777,
-   "triggerFraction": 0.971
+   "triggerTop": 782,
+   "triggerFraction": 0.978
   },
   {
-   "key": "#intro#1",
+   "key": "#intro#2",
+   "effect": "wipe",
+   "effectM": "wipe",
+   "transition": "clip-path|1.4s|cubic-bezier(0.77, 0, 0.18, 1)",
+   "initialOpacity": "1",
+   "initialTransform": "none",
+   "triggerTop": 728,
+   "triggerFraction": 0.91
+  },
+  {
+   "key": "#intro#3",
    "effect": "grow",
    "effectM": null,
    "transition": "opacity, transform|0.8s, 0.8s|linear, cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "matrix(0.8, 0, 0, 0.8, 0, 0)",
-   "triggerTop": 760,
-   "triggerFraction": 0.95
+   "triggerTop": 795,
+   "triggerFraction": 0.994
   },
   {
-   "key": "#intro#2",
+   "key": "#intro#4",
    "effect": "fade",
-   "effectM": null,
-   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
+   "effectM": "fade",
+   "transition": "opacity|1.2s|cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "none",
-   "triggerTop": 727,
-   "triggerFraction": 0.909
+   "triggerTop": 715,
+   "triggerFraction": 0.894
   },
   {
    "key": "section[aria-label=\"About the house\"]#0",
-   "effect": "fade",
-   "effectM": "slide-y",
-   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
-   "initialOpacity": "0",
-   "initialTransform": "matrix(1, 0, 0, 1, 0, 60)",
-   "triggerTop": 783,
-   "triggerFraction": 0.979
+   "effect": "mask",
+   "effectM": "mask",
+   "transition": "clip-path|1.3s|cubic-bezier(0.77, 0, 0.18, 1)",
+   "initialOpacity": "1",
+   "initialTransform": "none",
+   "triggerTop": 753,
+   "triggerFraction": 0.941
   },
   {
    "key": "section[aria-label=\"About the house\"]#1",
+   "effect": "wipe",
+   "effectM": "wipe",
+   "transition": "clip-path|1.4s|cubic-bezier(0.77, 0, 0.18, 1)",
+   "initialOpacity": "1",
+   "initialTransform": "none",
+   "triggerTop": 769,
+   "triggerFraction": 0.961
+  },
+  {
+   "key": "section[aria-label=\"About the house\"]#2",
    "effect": "fade",
    "effectM": "slide-y",
    "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "matrix(1, 0, 0, 1, 0, 60)",
-   "triggerTop": 720,
-   "triggerFraction": 0.9
+   "triggerTop": 786,
+   "triggerFraction": 0.983
+  },
+  {
+   "key": "section[aria-label=\"About the house\"]#3",
+   "effect": "grow",
+   "effectM": null,
+   "transition": "opacity, transform|0.8s, 0.8s|linear, cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "matrix(0.8, 0, 0, 0.8, 0, 0)",
+   "triggerTop": 799,
+   "triggerFraction": 0.999
+  },
+  {
+   "key": "section[aria-label=\"About the house\"]#4",
+   "effect": "fade",
+   "effectM": "slide-y",
+   "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
+   "initialOpacity": "0",
+   "initialTransform": "matrix(1, 0, 0, 1, 0, 60)",
+   "triggerTop": 719,
+   "triggerFraction": 0.899
   },
   {
    "key": "#reviews#0",
@@ -57,8 +107,8 @@
    "transition": "opacity, transform|1.2s, 1.2s|cubic-bezier(0.42, 0, 0.58, 1), cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "none",
-   "triggerTop": 769,
-   "triggerFraction": 0.961
+   "triggerTop": 742,
+   "triggerFraction": 0.927
   },
   {
    "key": "#reviews#1",
@@ -67,8 +117,8 @@
    "transition": "opacity|1.2s|cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "none",
-   "triggerTop": 770,
-   "triggerFraction": 0.963
+   "triggerTop": 743,
+   "triggerFraction": 0.929
   },
   {
    "key": "#reviews#2",
@@ -77,8 +127,8 @@
    "transition": "opacity|1.2s|cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "none",
-   "triggerTop": 794,
-   "triggerFraction": 0.993
+   "triggerTop": 767,
+   "triggerFraction": 0.959
   },
   {
    "key": "#reviews#3",
@@ -87,8 +137,8 @@
    "transition": "opacity|1.2s|cubic-bezier(0.42, 0, 0.58, 1)",
    "initialOpacity": "0",
    "initialTransform": "none",
-   "triggerTop": 765,
-   "triggerFraction": 0.956
+   "triggerTop": 738,
+   "triggerFraction": 0.922
   }
  ],
  "parallax": [
@@ -117,49 +167,14 @@
  "slideshow": {
   "samples": [
    [
-    0.9,
-    0,
-    0.1
-   ],
-   [
-    1,
-    0,
-    0
-   ],
-   [
-    1,
-    0,
-    0
-   ],
-   [
-    1,
-    0,
-    0
-   ],
-   [
-    1,
-    0,
-    0
-   ],
-   [
-    1,
-    0,
-    0
-   ],
-   [
     0,
     1,
     0
    ],
    [
     0,
-    1,
-    0
-   ],
-   [
-    0,
-    0.8,
-    0.2
+    0.7,
+    0.3
    ],
    [
     0,
@@ -185,6 +200,41 @@
     0,
     0,
     1
+   ],
+   [
+    0.4,
+    0,
+    0.6
+   ],
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0
+   ],
+   [
+    0.5,
+    0.5,
+    0
    ]
   ],
   "afterClick": [

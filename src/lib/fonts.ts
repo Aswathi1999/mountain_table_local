@@ -1,12 +1,35 @@
 import localFont from "next/font/local";
 
-// The site's single typeface: a self-hosted copy of the original's Brandon Grotesque (one Light weight, ~17 KB).
-// Hierarchy is made with size, letter spacing and case, so no second family or synthetic bold is ever needed.
-export const brandon = localFont({
-  src: "../../public/fonts/brandon-grot-w01-light.woff2",
-  variable: "--font-face-brandon",
-  weight: "400",
+// Display face: Cormorant Garamond (variable weight 300 to 700, roman and italic, latin subset). A calm, high-contrast
+// garalde with generous italics. Used for headings, pull quotes, the wordmark and figures.
+export const cormorant = localFont({
+  src: [
+    { path: "../../public/fonts/cormorant-garamond-latin.woff2", style: "normal", weight: "300 700" },
+    { path: "../../public/fonts/cormorant-garamond-italic-latin.woff2", style: "italic", weight: "300 700" },
+  ],
+  variable: "--font-face-display",
+  display: "swap",
+  adjustFontFallback: "Times New Roman",
+  fallback: ["Georgia", "serif"],
+});
+
+// Text face: Manrope (variable weight 200 to 800, latin subset). Clean, open and sturdy at small sizes; used for running
+// text, navigation, buttons and captions.
+export const manrope = localFont({
+  src: "../../public/fonts/manrope-latin.woff2",
+  variable: "--font-face-text",
+  weight: "200 800",
   display: "swap",
   adjustFontFallback: "Arial",
-  fallback: ["Avenir Next", "Century Gothic", "Segoe UI", "system-ui", "sans-serif"],
+  fallback: ["system-ui", "Segoe UI", "sans-serif"],
+});
+
+// Handwritten accent (variable weight, latin subset): used only for the small "Stay Relax Explore" signature in the Experience section.
+export const caveat = localFont({
+  src: "../../public/fonts/caveat-latin.woff2",
+  variable: "--font-face-script",
+  weight: "400 600",
+  display: "swap",
+  adjustFontFallback: "Arial",
+  fallback: ["cursive"],
 });

@@ -1,4 +1,5 @@
-import type { Box } from "@/lib/stage";
+/** [x, y, width?, height?] in the original page coordinates (kept for reference; the redesigned layouts use only the photographs). */
+type Box = readonly [x: number, y: number, w?: number, h?: number];
 
 export type Placed = { d: Box; m: Box };
 
