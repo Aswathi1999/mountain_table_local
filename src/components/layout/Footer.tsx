@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Bleed, CompassRose, Coordinates, LeafyBranch, RidgeStack } from "@/components/decor";
 import { Reveal } from "@/components/motion/primitives";
 import { contact, nav } from "@/lib/site";
 import { BackToTop } from "./BackToTop";
@@ -18,7 +19,13 @@ export function Footer() {
     <footer id="SITE_FOOTER">
       <CtaBanner />
 
-      <div className="text-ivory bg-[#0a221b]">
+      <div className="text-ivory relative bg-[#0a221b]">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-full">
+          <RidgeStack color="#0a221b" height="clamp(28px, 4vw, 60px)" />
+        </div>
+        <Bleed>
+          <LeafyBranch size={64} rotate={8} opacity={0.3} draw className="decor-lg absolute right-4 bottom-20" />
+        </Bleed>
         <div className="wrap grid gap-12 pt-16 pb-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10">
           <Reveal>
             <Link href="/" aria-label="The Mountain Table, home" className="inline-flex flex-col gap-3 no-underline">
@@ -89,6 +96,10 @@ export function Footer() {
         <div className="wrap">
           <div className="border-ivory/14 flex flex-wrap items-center justify-between gap-3 border-t py-6">
             <p className="t-small text-ivory/65 m-0 [font-size:0.8125rem]">{contact.copyright}</p>
+            <p className="text-ivory/65 m-0 flex items-center gap-2.5">
+              <CompassRose size={22} color="var(--color-gold-soft)" opacity={0.9} className="shrink-0" />
+              <Coordinates />
+            </p>
             <BackToTop />
           </div>
         </div>

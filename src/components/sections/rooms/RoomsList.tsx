@@ -1,4 +1,5 @@
 import { ImageFrame, Lines, Reveal } from "@/components/motion/primitives";
+import { GoldFrame } from "@/components/decor";
 import { BookNowButton } from "@/components/ui/BookNowButton";
 import { Disc, LeafSprig } from "@/components/ui/decor";
 import { ROOMS_FX } from "@/components/motion/home-fx.config";
@@ -70,6 +71,13 @@ export function RoomsList() {
                   className={`text-forest/55 absolute -top-9 h-24 w-auto ${flip ? "right-[-2%] rotate-12" : "left-[-2%] -rotate-12"}`}
                 />
                 <div className="relative pb-16">
+                  {i === 0 ? (
+                    <GoldFrame
+                      className="aspect-[4/3.4] w-[88%]"
+                      radius="18px"
+                      style={{ inset: flip ? "0 0 auto auto" : "0 auto auto 0" }}
+                    />
+                  ) : null}
                   <ImageFrame
                     src={room.image.src}
                     alt={room.image.alt}

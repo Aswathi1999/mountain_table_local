@@ -1,4 +1,5 @@
 import { Lines, Reveal } from "@/components/motion/primitives";
+import { OrnamentRule } from "@/components/decor";
 import { ReviewSlideshow } from "@/components/ui/ReviewSlideshow";
 import { LeafSprig } from "@/components/ui/decor";
 import { copy } from "@/data/copy";
@@ -17,6 +18,7 @@ export function HomeReviews() {
     <NightSection className="bg-ivory-deep text-forest py-20 desk:py-28">
       <LeafSprig className="text-gold/40 pointer-events-none absolute top-4 right-[6%] hidden h-56 w-auto rotate-[24deg] lg:block" />
       <div className="wrap relative">
+        <OrnamentRule align="left" width="min(14rem, 60%)" className="mb-8" />
         <Reveal>
           <p className="t-eyebrow">{copy.home.reviewTitle}</p>
         </Reveal>

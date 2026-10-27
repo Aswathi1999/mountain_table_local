@@ -1,4 +1,5 @@
 import { ImageFrame } from "@/components/motion/primitives";
+import { CompassRose } from "@/components/decor";
 import { PageHero } from "@/components/sections/PageHero";
 import { copy } from "@/data/copy";
 import { activityLayouts } from "@/data/seeDo";
@@ -29,6 +30,7 @@ export function SeeDoHero() {
             position="62% 50%"
             radius={8}
           />
+          <CompassRose size={72} opacity={0.9} className="absolute -top-9 -left-9" />
         </div>
       }
     />

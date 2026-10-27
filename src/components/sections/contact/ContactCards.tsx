@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useInView } from "motion/react";
+import { CurvedArrow } from "@/components/decor";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { CONTACT_FX } from "@/components/motion/home-fx.config";
@@ -230,7 +231,7 @@ export function ContactCards() {
           <motion.div
             variants={item}
             data-motion=""
-            className="cc-chat-card"
+            className="cc-chat-card relative"
             style={{ ["--d" as string]: `${delay + stagger * 3 + 0.7}s` }}
           >
             <a
@@ -250,6 +251,13 @@ export function ContactCards() {
                 <span className="sr-only"> (opens in a new tab)</span>
               </span>
             </a>
+            <span
+              aria-hidden="true"
+              className="decor-lg pointer-events-none absolute top-full left-[22%] mt-1 flex items-start gap-2"
+            >
+              <CurvedArrow size={56} rotate={-28} flip className="-mt-1" />
+              <span className="t-script text-clay pt-5 text-[1.375rem]">say hello</span>
+            </span>
           </motion.div>
         </motion.div>
       </div>

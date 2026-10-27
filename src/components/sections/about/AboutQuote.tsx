@@ -10,6 +10,7 @@ import {
   type MotionValue,
 } from "motion/react";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
+import { RidgeDivider } from "@/components/decor";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import { ABOUT_FX } from "@/components/motion/home-fx.config";
@@ -85,6 +86,7 @@ export function AboutQuote() {
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#0a221b_0%,#0a221b_38%,rgba(10,34,27,0.55)_70%,rgba(10,34,27,0.25)_100%)] max-desk:bg-[rgba(10,34,27,0.78)]"
       />
+      <RidgeDivider color="var(--color-ivory)" height="clamp(40px, 6vw, 92px)" />
       <div className="wrap">
         <div className="max-w-[35rem]">
           <svg
