@@ -18,7 +18,7 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "right",
     image: {
-      src: "/images/11062b_4ed71e30b24e45bfa12d57c8cbbb52d3_d_5863_3920_s_4_2.jpg",
+      src: "/images/see-do-jeep-v1.webp",
       alt: "A jeep on a safari trail at sunset",
       d: [851, 1663, 277, 426],
       m: [27, 1059, 227, 95],
@@ -31,7 +31,7 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "left",
     image: {
-      src: "/images/11062b_ff90a3f429144c7d853bea6506b7f737.jpg",
+      src: "/images/see-do-paragliding-v1.webp",
       alt: "Paragliders above the hills of Vagamon",
       d: [152, 2129, 277, 426],
       m: [27, 1725, 227, 95],
@@ -44,7 +44,7 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "right",
     image: {
-      src: "/images/11062b_a52890f0d524450eb3e371bcfa5c0b77.jpg",
+      src: "/images/see-do-cycling-v1.webp",
       alt: "A cyclist on a hillside trail",
       d: [851, 2629, 277, 426],
       m: [30, 2569, 227, 95],
@@ -57,7 +57,7 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "left",
     image: {
-      src: "/images/8daf94f88f524d8cb168d8004c1fe282.jpg",
+      src: "/images/see-do-hiking-v1.webp",
       alt: "A hiker above the mist on the Vagamon trail",
       d: [152, 3055, 277, 426],
       m: [30, 3042, 227, 95],
@@ -70,7 +70,7 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "right",
     image: {
-      src: "/images/66154b37def64bfba3cf82929427e0c5.jpg",
+      src: "/images/see-do-bbq-v1.webp",
       alt: "Grilled food over a barbecue fire",
       d: [851, 3481, 277, 426],
       m: [33, 3606, 227, 95],
@@ -83,7 +83,7 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "left",
     image: {
-      src: "/images/7323565a035442139d080d3d3fead270.jpg",
+      src: "/images/see-do-wildlife-v1.webp",
       alt: "Wild elephants grazing in a meadow",
       d: [161, 3934, 277, 426],
       m: [30, 4233, 227, 95],

@@ -17,7 +17,7 @@ const tiles = [
     title: "The Rooms",
     text: "Three air-conditioned bedrooms, each with a breathtaking view of the tea plantation.",
     href: "/rooms-booking",
-    src: "/images/c18256_e6722fd3397a4b21a829c2ab06e9e5a6.jpg",
+    src: "/images/about-stay-v1.webp",
     alt: "Room 1 with panoramic glass windows",
     position: "38% 50%",
   },
@@ -26,7 +26,7 @@ const tiles = [
     title: "Dining",
     text: "Local cuisine by our chef, with a complimentary breakfast, and grilled dishes at the forest-set grill house.",
     href: "/#services",
-    src: "/images/c18256_0e64216c9f4a47aa9286384c0daec85b.jpg",
+    src: "/images/about-dine-v1.webp",
     alt: "A candle-lit wooden bar in the grill house",
     position: "50% 50%",
   },
@@ -35,7 +35,7 @@ const tiles = [
     title: "The Plantation",
     text: "Stroll through our lush garden and tea plantation and revel in the tranquillity of the surroundings.",
     href: "/see-do",
-    src: "/images/8daf94f88f524d8cb168d8004c1fe282.jpg",
+    src: "/images/about-explore-v1.webp",
     alt: "A hiker above the mist on the Vagamon trail",
     position: "50% 40%",
   },
@@ -71,7 +71,13 @@ export function AboutTiles() {
             <Reveal>
               <p className="t-eyebrow text-forest">Life at The Mountain Table</p>
             </Reveal>
-            <Lines id="tiles-title" as="h2" lines={["Stay, Dine, Explore"]} className="t-h2 text-forest m-0 mt-4" />
+            <Lines
+              id="tiles-title"
+              as="h2"
+              lines={["Stay, Dine,", "Explore"]}
+              lineClasses={["", "italic"]}
+              className="t-h2 text-forest m-0 mt-4 leading-[1.05] [font-size:clamp(2.25rem,1.4rem+3vw,4rem)]"
+            />
           </div>
           <Reveal delay={0.1} className="max-w-[25rem]">
             <p className="t-small text-ink/70 m-0">

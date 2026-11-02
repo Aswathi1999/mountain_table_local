@@ -7,27 +7,26 @@ import { copy } from "@/data/copy";
 import { roomLayouts } from "@/data/rooms";
 import { DoorSeam } from "./RoomsMotion";
 
-/** A second, supporting photograph for each room (all existing site photographs), laid over the corner of the main one. */
-const EXTRAS = [
-  { src: "/images/mountain_table_1.jpg", alt: "The pool terrace below the room balcony", position: "60% 50%" },
+/** The room concept photograph for each room, as on the home page rooms slider and the hero of this page. */
+const CONCEPTS = [
   {
-    src: "/images/c18256_e5d979a1e3574fa4982be5aba13e7d68.jpg",
-    alt: "A grass path between the tea plantation rows",
-    position: "50% 50%",
+    src: "/images/rooms-concept-panorama-v1.webp",
+    alt: "AI room concept: ivory bed and panoramic windows facing green hills",
   },
+  { src: "/images/rooms-concept-lawn-v1.webp", alt: "AI room concept: timber bedroom opening onto a private lawn" },
   {
-    src: "/images/c18256_55a42d4d67124846bf5373915527592c.jpg",
-    alt: "The infinity pool edge above the green hills",
-    position: "50% 30%",
+    src: "/images/rooms-concept-garden-v1.webp",
+    alt: "AI room concept: spacious bedroom with a tropical garden window",
   },
 ] as const;
 
-/** Main photograph anchoring for each room. */
-const FOCUS = ["50% 55%", "50% 50%", "50% 55%"] as const;
+/** Anchoring of the concept photograph, and of the real room photograph laid over its corner. */
+const FOCUS = ["50% 55%", "50% 55%", "50% 60%"] as const;
+const REAL_FOCUS = ["50% 55%", "50% 50%", "50% 55%"] as const;
 
 /**
- * The three rooms, in the page's alternating editorial layout: the room's photograph with a smaller photograph overlapping its
- * corner (white border), a beige disc and a leaf behind; the name, existing description and a booking button beside it.
+ * The three rooms, in the page's alternating editorial layout: the room's concept photograph with the real photograph of the room
+ * overlapping its corner (white border), a beige disc and a leaf behind; the name, existing description and a booking button beside it.
  */
 export function RoomsList() {
   /** The text follows once the doors have begun to open. */
@@ -54,7 +53,7 @@ export function RoomsList() {
 
       {roomLayouts.map((room, i) => {
         const flip = i % 2 === 1;
-        const extra = EXTRAS[i];
+        const concept = CONCEPTS[i];
         return (
           <article
             key={room.name}
@@ -79,8 +78,8 @@ export function RoomsList() {
                     />
                   ) : null}
                   <ImageFrame
-                    src={room.image.src}
-                    alt={room.image.alt}
+                    src={concept.src}
+                    alt={concept.alt}
                     sizes="(min-width: 1280px) 620px, (min-width: 1024px) 48vw, 92vw"
                     className={`aspect-[4/3.4] w-[88%] shadow-[0_24px_50px_rgba(10,34,27,0.18)] ${flip ? "ml-auto" : ""}`}
                     radius={18}
@@ -93,15 +92,15 @@ export function RoomsList() {
                   </ImageFrame>
                   <div className={`absolute bottom-0 w-[44%] ${flip ? "left-0" : "right-0"}`}>
                     <ImageFrame
-                      src={extra.src}
-                      alt={extra.alt}
+                      src={room.image.src}
+                      alt={room.image.alt}
                       sizes="(min-width: 1024px) 22vw, 40vw"
                       className="border-ivory aspect-[4/3] w-full border-[6px] shadow-[0_20px_44px_rgba(10,34,27,0.28)]"
                       radius={12}
                       from="fade"
                       delay={0.35}
                       drift={4}
-                      position={extra.position}
+                      position={REAL_FOCUS[i]}
                     />
                   </div>
                 </div>

@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ImageFrame, Lines, Reveal, ScaleIn, Stagger, StaggerItem } from "@/components/motion/primitives";
 import { ArrowIcon } from "@/components/ui/BookNowButton";
-import { Disc, LeafSprig } from "@/components/ui/decor";
 import { copy } from "@/data/copy";
 import { activityLayouts } from "@/data/seeDo";
 import {
@@ -105,7 +104,7 @@ function Activity({ index }: { index: number }) {
     ) : undefined;
   const picture = (
     <LanternImage
-      className={`${frame.ratio} w-full rounded-[18px] shadow-[0_24px_50px_rgba(10,34,27,0.18)]`}
+      className={`${frame.ratio} w-full rounded-[2px] shadow-[0_30px_60px_-24px_rgba(10,34,27,0.35)]`}
       overlay={overlay}
     >
       <ImageFrame
@@ -121,26 +120,20 @@ function Activity({ index }: { index: number }) {
       />
     </LanternImage>
   );
-  const numberClass = `t-num text-[5.5rem] leading-none ${dark ? "text-ivory/15" : "text-forest/12"}`;
+  const numberClass = `t-num text-[3.25rem] leading-none ${dark ? "text-gold-soft/70" : "text-gold-ink/70"}`;
 
   return (
     <section
       id={id}
       aria-labelledby={`${id}-title`}
-      className={`relative scroll-mt-12 overflow-hidden py-20 desk:py-28 ${
+      className={`relative scroll-mt-12 overflow-hidden py-20 desk:py-36 ${
         dark ? "bg-forest-deep text-ivory" : tone === "sand" ? "bg-ivory-deep text-forest" : "bg-ivory text-forest"
       }`}
     >
       {index === 4 ? <WarmWash /> : null}
       {index === 5 ? <FootprintScatter /> : null}
-      <div className="wrap relative grid items-center gap-14 lg:grid-cols-12 lg:gap-x-16">
-        <div className={`relative lg:col-span-6 lg:row-start-1 ${flip ? "lg:col-start-7" : "lg:col-start-1"}`}>
-          <Disc
-            className={`${dark ? "bg-ivory/[0.06]" : tone === "sand" ? "bg-ivory" : "bg-ivory-deep"} -top-6 ${flip ? "-right-6" : "-left-6"} size-[44%]`}
-          />
-          <LeafSprig
-            className={`absolute -top-7 h-24 w-auto ${flip ? "right-[-3%] rotate-12" : "left-[-3%] -rotate-12"} ${dark ? "text-gold-soft/60" : "text-forest/55"}`}
-          />
+      <div className="wrap relative grid items-center gap-14 lg:grid-cols-12 lg:gap-x-20">
+        <div className={`relative lg:col-span-7 lg:row-start-1 ${flip ? "lg:col-start-6" : "lg:col-start-1"}`}>
           <div className="relative">
             {index === 5 ? <BinocularMask>{picture}</BinocularMask> : picture}
             <Reveal
@@ -153,7 +146,9 @@ function Activity({ index }: { index: number }) {
           </div>
         </div>
 
-        <div className={`relative lg:col-span-5 lg:row-start-1 ${flip ? "lg:col-start-1" : "lg:col-start-8"}`}>
+        <div
+          className={`relative lg:col-span-5 lg:row-start-1 ${flip ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-8"}`}
+        >
           {index === 3 ? (
             <Footprints
               className={`absolute -top-4 -right-2 hidden lg:block ${dark ? "text-gold-soft" : "text-forest"}`}
@@ -173,9 +168,9 @@ function Activity({ index }: { index: number }) {
           </Reveal>
           <h2
             id={`${id}-title`}
-            className={`t-h2 m-0 mt-4 ${dark ? "text-ivory" : "text-forest"} [font-size:clamp(2.125rem,1.3rem+2.6vw,3.5rem)]`}
+            className={`t-h2 m-0 mt-4 uppercase leading-[1.25] tracking-[0.14em] ${dark ? "text-ivory" : "text-forest"} [font-size:clamp(1.75rem,1.15rem+1.9vw,2.75rem)]`}
           >
-            <Lines as="div" lines={lines} lineClasses={["", "t-it"]} />
+            <Lines as="div" lines={lines} />
           </h2>
           {index === 0 ? <TyreTracks className={`mt-4 ${dark ? "text-gold-soft" : "text-gold-ink"}`} /> : null}
           {index === 2 ? <RouteLine className={`mt-4 ${dark ? "text-gold-soft" : "text-gold-ink"}`} /> : null}
@@ -210,9 +205,16 @@ function Activity({ index }: { index: number }) {
           ) : null}
 
           <Reveal delay={0.25} className="mt-9">
-            <Link href="/rooms-booking#book-now" className="btn btn-gold">
+            <Link
+              href="/rooms-booking#book-now"
+              className={`group inline-flex items-center gap-3 border-0 border-b pb-2 text-[0.75rem] tracking-[0.24em] uppercase no-underline transition-colors duration-500 ${
+                dark
+                  ? "border-ivory/60 text-ivory hover:border-gold-soft hover:text-gold-soft"
+                  : "border-forest/50 text-forest hover:border-gold-ink hover:text-gold-ink"
+              }`}
+            >
               Enquire
-              <ArrowIcon />
+              <ArrowIcon className="size-4 transition-transform duration-500 group-hover:translate-x-1.5" />
             </Link>
           </Reveal>
         </div>

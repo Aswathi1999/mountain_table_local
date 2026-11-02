@@ -6,12 +6,28 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BookNowButton } from "@/components/ui/BookNowButton";
 import { DUR, EASE, EASE_REVEAL } from "@/components/motion/tokens";
+import Image from "next/image";
+import { SITE_FX } from "@/components/motion/home-fx.config";
+import { useSiteFx } from "@/components/motion/useSiteFx";
 import { nav } from "@/lib/site";
+
+/** Photograph shown beside the links while one is hovered or focused (tablet and wider). */
+const PREVIEW: Record<string, string> = {
+  "/": "/images/hero-poster.jpg",
+  "/about": "/images/about/hero.jpg",
+  "/see-do": "/images/about/hiker.jpg",
+  "/gallery": "/images/gallery/peaks-sunrise.jpg",
+  "/blog": "/images/about/ridges.jpg",
+  "/rooms-booking": "/images/about/bedroom.jpg",
+  "/contact": "/images/about/lounge.jpg",
+};
 import { SocialIcons } from "./SocialIcons";
 
 /** Hamburger + full-screen menu used below 1180px: large serif links rise out of a panel that opens from the top. */
 export function MobileMenu({ bookHref }: { bookHref: string }) {
   const [open, setOpen] = useState(false);
+  const [hover, setHover] = useState<string | null>(null);
+  const preview = useSiteFx("menuPreview");
   const pathname = usePathname();
 
   useEffect(() => {
@@ -46,22 +62,60 @@ export function MobileMenu({ bookHref }: { bookHref: string }) {
 
       <AnimatePresence>
         {open ? (
+          <motion.div
+            key="menu-sliver"
+            aria-hidden="true"
+            className="bg-gold pointer-events-none fixed inset-0 z-[59]"
+            initial={{ clipPath: "inset(0 0 100% 0)" }}
+            animate={{ clipPath: "inset(0 0 0% 0)", transition: { duration: 0.7, ease: EASE_REVEAL } }}
+            exit={{ clipPath: "inset(100% 0 0 0)", transition: { duration: DUR.ui, ease: EASE_REVEAL, delay: 0.12 } }}
+          />
+        ) : null}
+        {open ? (
           <motion.nav
+            key="menu-panel"
             id="mobile-menu"
             aria-label="Site"
             className="bg-forest-deep fixed inset-0 z-[60] flex flex-col overflow-y-auto px-8 pt-28 pb-10"
             initial={{ clipPath: "inset(0 0 100% 0)" }}
-            animate={{ clipPath: "inset(0 0 0% 0)", transition: { duration: 0.7, ease: EASE_REVEAL } }}
-            exit={{ clipPath: "inset(0 0 100% 0)", transition: { duration: DUR.ui, ease: EASE_REVEAL } }}
+            animate={{ clipPath: "inset(0 0 0% 0)", transition: { duration: 0.7, ease: EASE_REVEAL, delay: 0.14 } }}
+            exit={{ clipPath: "inset(100% 0 0 0)", transition: { duration: DUR.ui, ease: EASE_REVEAL } }}
           >
-            <ul className="m-0 list-none p-0">
+            {preview ? (
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute top-28 right-8 bottom-10 w-[38vw] overflow-hidden"
+              >
+                {nav.map((item) => (
+                  <motion.div
+                    key={item.href}
+                    className="absolute inset-0"
+                    initial={false}
+                    animate={{ clipPath: hover === item.href ? "inset(0 0 0% 0)" : "inset(100% 0 0 0)" }}
+                    transition={{ duration: SITE_FX.menuPreview.wipe, ease: EASE_REVEAL }}
+                  >
+                    <Image src={PREVIEW[item.href]} alt="" fill sizes="38vw" className="object-cover" />
+                  </motion.div>
+                ))}
+              </div>
+            ) : null}
+            <ul className="m-0 list-none p-0 md:w-[48vw]" onMouseLeave={() => setHover(null)}>
               {nav.map((item, i) => {
                 const current = pathname === item.href;
                 return (
-                  <li key={item.href} className="overflow-hidden border-b border-white/10">
+                  <li
+                    key={item.href}
+                    className="overflow-hidden border-b border-white/10"
+                    onMouseEnter={() => setHover(item.href)}
+                    onFocus={() => setHover(item.href)}
+                  >
                     <motion.div
-                      initial={{ y: "100%" }}
-                      animate={{ y: 0, transition: { duration: DUR.reveal, ease: EASE, delay: 0.2 + i * 0.06 } }}
+                      initial={{ y: "110%", rotate: 3 }}
+                      animate={{
+                        y: 0,
+                        rotate: 0,
+                        transition: { duration: DUR.line, ease: EASE, delay: 0.4 + i * 0.07 },
+                      }}
                       exit={{ opacity: 0, transition: { duration: 0.2 } }}
                     >
                       <Link

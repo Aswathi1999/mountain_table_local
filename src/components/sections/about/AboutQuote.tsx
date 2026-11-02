@@ -74,7 +74,7 @@ export function AboutQuote() {
     >
       <motion.div className="absolute inset-0 -z-10 will-change-transform" style={{ scale }}>
         <Image
-          src="/images/about/quote.jpg"
+          src="/images/about-quote-v1.webp"
           alt=""
           fill
           sizes="100vw"
@@ -125,7 +125,7 @@ export function AboutQuote() {
             animate={{ opacity: signatureOn || !on ? 1 : 0 }}
             transition={{ duration: 1.1, ease: EASE, delay: 0.4 }}
           >
-            — The Mountain Table family
+            â€” The Mountain Table family
           </motion.p>
           <Reveal delay={0.25} className="mt-10">
             <button

@@ -409,10 +409,14 @@ export function MusicNotes() {
 /** A wash of amber behind the section that fades in as it scrolls into view, so the green warms toward firelight. */
 export function WarmWash() {
   const on = useAllowMotion();
+  return on ? <WarmWashFx /> : null;
+}
+
+/** The scroll-linked part, mounted only when motion is allowed (its scroll target must exist when it is created). */
+function WarmWashFx() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "center center"] });
   const opacity = useTransform(scrollYProgress, [0, 1], [0, SEEDO_FX.bbq.warmth]);
-  if (!on) return null;
   return (
     <div ref={ref} aria-hidden="true" className="pointer-events-none absolute inset-0">
       <motion.div

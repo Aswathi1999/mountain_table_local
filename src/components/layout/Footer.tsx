@@ -6,7 +6,7 @@ import { BackToTop } from "./BackToTop";
 import { CtaBanner } from "./CtaBanner";
 import { NewsletterForm } from "./NewsletterForm";
 
-const link = "t-small text-ivory/85 hover:text-ivory no-underline transition-colors [font-size:0.875rem]";
+const link = "t-small link-u text-ivory/85 hover:text-ivory transition-colors [font-size:0.875rem]";
 const heading = "t-ui text-ivory m-0 font-semibold tracking-[0.2em] uppercase [font-size:0.75rem]";
 
 /**

@@ -2,9 +2,11 @@ import { CustomCursor } from "@/components/motion/CustomCursor";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { HomeDiscover } from "@/components/sections/home/HomeDiscover";
 import { HomeHero } from "@/components/sections/home/HomeHero";
+import { HomeHouse } from "@/components/sections/home/HomeHouse";
 import { HomeIntro } from "@/components/sections/home/HomeIntro";
+import { MomentsStrip } from "@/components/sections/home/MomentsStrip";
 import { HomeReviews } from "@/components/sections/home/HomeReviews";
-import { HomeRoomsPreview } from "@/components/sections/home/HomeRoomsPreview";
+import { HomeRoomsSlider } from "@/components/sections/home/HomeRoomsSlider";
 import { HomeServices } from "@/components/sections/home/HomeServices";
 import { pageJsonLd, pageMetadata } from "@/lib/metadata";
 
@@ -18,9 +20,17 @@ export default function HomePage() {
         <JsonLd key={i} data={block} />
       ))}
       <HomeHero />
-      <HomeIntro afterExperience={<HomeDiscover />} />
+      <HomeHouse />
+      <HomeIntro
+        afterExperience={
+          <>
+            <HomeDiscover />
+            <HomeRoomsSlider />
+          </>
+        }
+      />
       <HomeServices />
-      <HomeRoomsPreview />
+      <MomentsStrip />
       <HomeReviews />
     </div>
   );

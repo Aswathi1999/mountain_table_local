@@ -52,13 +52,46 @@ function Card({
       }}
       whileHover={{ y: active ? -14 : -4 }}
       transition={{ ...SPRING.soft, backgroundColor: { duration: DUR.ui }, color: { duration: DUR.ui } }}
-      className="relative m-0 flex min-h-[18rem] w-full flex-1 cursor-pointer flex-col overflow-hidden rounded-[10px] border p-7 shadow-[0_18px_44px_rgba(31,59,47,0.10)] desk:p-9"
+      className={`relative m-0 flex min-h-[21rem] w-full flex-1 cursor-pointer flex-col overflow-hidden rounded-[10px] border p-8 transition-shadow duration-700 desk:p-10 ${
+        active
+          ? "shadow-[0_34px_70px_-20px_rgba(10,34,27,0.55),0_0_0_1px_rgba(184,147,90,0.25)]"
+          : "shadow-[0_18px_44px_rgba(31,59,47,0.10)]"
+      }`}
     >
-      <QuoteMark className={`h-7 w-9 transition-colors duration-500 ${active ? "text-gold-soft" : "text-gold"}`} />
-      <blockquote className="m-0 mt-6 flex-1">
-        <p className="t-body m-0 [font-size:1rem] [line-height:1.75]">{text}</p>
+      {/* A soft gold glow in the corner of the lit card. */}
+      <span
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${active ? "opacity-100" : "opacity-0"}`}
+        style={{ background: "radial-gradient(120% 80% at 0% 0%, rgba(210,181,127,0.16), transparent 60%)" }}
+      />
+      {/* Fine gold frame set inside the card edge. */}
+      <span
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-2.5 rounded-[6px] border transition-colors duration-700 ${
+          active ? "border-gold-soft/35" : "border-gold/25"
+        }`}
+      />
+      <div className="relative flex items-start justify-between">
+        <QuoteMark className={`h-7 w-9 transition-colors duration-500 ${active ? "text-gold-soft" : "text-gold"}`} />
+        <span
+          aria-hidden="true"
+          className={`font-display text-[1.75rem] leading-none italic tabular-nums transition-colors duration-500 ${
+            active ? "text-gold-soft/70" : "text-gold/60"
+          }`}
+        >
+          {String(index + 1).padStart(2, "0")}
+        </span>
+      </div>
+      <blockquote className="relative m-0 mt-7 flex-1">
+        <p className="font-display m-0 [font-size:1.1875rem] leading-[1.7] italic">{text}</p>
       </blockquote>
-      <figcaption className="t-small mt-6 opacity-70">Guest review {index + 1}</figcaption>
+      <figcaption className="relative mt-8 flex items-center gap-4">
+        <span
+          aria-hidden="true"
+          className={`h-px w-10 transition-colors duration-500 ${active ? "bg-gold-soft" : "bg-gold"}`}
+        />
+        <span className="text-[11px] tracking-[0.24em] uppercase opacity-70">Guest review {index + 1}</span>
+      </figcaption>
       {/* Time left in the spotlight. */}
       {active ? (
         <span aria-hidden="true" className="bg-ivory/15 absolute inset-x-0 bottom-0 h-[3px]">

@@ -26,7 +26,8 @@ export function HomeReviews() {
           id="reviews-title"
           as="h2"
           lines={heading}
-          className="t-h2 m-0 mt-5 [font-size:clamp(2rem,1.3rem+2vw,3rem)]"
+          lineClasses={["", "italic"]}
+          className="t-h2 m-0 mt-5 leading-[1.08] [font-size:clamp(2.25rem,1.4rem+3vw,4rem)]"
         />
         <RatingBadge />
         <div className="mt-12 desk:mt-14">

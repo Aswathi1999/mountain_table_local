@@ -3,6 +3,9 @@ import Image from "next/image";
 /** Runs before the page paints: a visitor who has already seen the splash this session skips it (and a script-less visitor sees it once per page, then it lifts away by itself). */
 const SKIP_IF_SEEN = `try{var d=document.documentElement;if(sessionStorage.getItem("mt-splash"))d.classList.add("splash-seen");else sessionStorage.setItem("mt-splash","1")}catch(e){}`;
 
+/** Lets the visitor lift the splash early (the Skip button, Escape or a click on the screen). */
+const SKIP_HANDLER = `(function(){var s=document.getElementById("splash");if(!s)return;var go=function(){s.style.display="none"};s.addEventListener("click",go);document.addEventListener("keydown",function(e){if(e.key==="Escape")go()},{once:true})})()`;
+
 /**
  * The opening screen: the logo on deep green with a gold line that draws beneath it, then the whole screen lifts away like a
  * curtain. It is part of the server HTML (so it covers the page from the very first paint) and is driven entirely by CSS
@@ -28,7 +31,12 @@ export function Splash() {
           </div>
           <span className="splash-line" />
         </div>
+        <span className="splash-count" />
+        <button type="button" id="splash-skip" className="splash-skip">
+          Skip
+        </button>
       </div>
+      <script dangerouslySetInnerHTML={{ __html: SKIP_HANDLER }} />
     </>
   );
 }
