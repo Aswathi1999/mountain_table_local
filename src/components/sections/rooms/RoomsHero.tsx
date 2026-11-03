@@ -125,7 +125,7 @@ export function RoomsHero() {
           {copy.rooms.intro}
         </motion.p>
         <motion.div {...enter(3)}>
-          <BookNowButton href="/rooms-booking#book-now" />
+          <BookNowButton href="/contact" />
         </motion.div>
       </motion.div>
 

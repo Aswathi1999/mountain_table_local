@@ -12,7 +12,7 @@ import { SocialIcons } from "./SocialIcons";
 import { MobileMenu } from "./MobileMenu";
 import { NavLinks } from "./NavLinks";
 
-const BOOK_HREF = "/rooms-booking";
+const BOOK_HREF = "/contact";
 
 const subscribeToScroll = (notify: () => void) => {
   window.addEventListener("scroll", notify, { passive: true });
