@@ -91,7 +91,7 @@ export function CtaBanner() {
           <p className="t-body text-ivory/85 m-0 mx-auto max-w-[26em] [font-size:0.9375rem]">{cta.body}</p>
         </Reveal>
         <Reveal delay={0.22} className="mt-9">
-          <BookNowButton href="/rooms-booking" className="btn-shimmer" />
+          <BookNowButton href="/contact" className="btn-shimmer" />
         </Reveal>
       </div>
     </motion.section>

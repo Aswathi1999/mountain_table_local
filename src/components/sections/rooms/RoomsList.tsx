@@ -120,7 +120,7 @@ export function RoomsList() {
                   <p className="t-body text-ink/75 m-0">{copy.rooms.cards[i]}</p>
                 </Reveal>
                 <Reveal delay={0.25 + text} className="mt-9">
-                  <BookNowButton href="/rooms-booking#book-now" />
+                  <BookNowButton href="/contact" />
                 </Reveal>
               </div>
             </div>
