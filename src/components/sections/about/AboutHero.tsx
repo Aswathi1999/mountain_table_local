@@ -10,7 +10,7 @@ export function AboutHero() {
     <PageHero
       id="about-hero"
       titleId="about-title"
-      image={{ src: "/images/about/hero.jpg", position: "50% 40%" }}
+      image={{ src: "/images/about-hero-v1.webp", position: "50% 40%" }}
       crumb="About Us"
       eyebrow="Our story"
       lines={["About", "The Mountain Table"]}

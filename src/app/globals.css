@@ -1133,7 +1133,7 @@ html.has-viewfinder dialog * {
   align-items: center;
   justify-content: center;
   background: var(--color-forest-deep, #0a221b);
-  animation: splash-out 0.85s cubic-bezier(0.22, 1, 0.36, 1) 1.9s forwards;
+  animation: splash-out 0.8s cubic-bezier(0.65, 0, 0.2, 1) 1.55s forwards;
 }
 html.splash-seen .splash {
   display: none;
@@ -1182,6 +1182,68 @@ html.splash-seen .splash {
     visibility: hidden;
   }
 }
+/* Loader counter 000 to 100 (CSS only: an animated integer split into digits with counters) and the skip button. */
+@property --n {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+.splash-count {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.25rem;
+  color: var(--color-gold-soft, #d8bd78);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  counter-reset: d1 round(down, calc(var(--n) / 100), 1) d2
+    calc(round(down, calc(var(--n) / 10), 1) - 10 * round(down, calc(var(--n) / 100), 1)) d3
+    calc(var(--n) - 10 * round(down, calc(var(--n) / 10), 1));
+  animation: splash-count 1.3s cubic-bezier(0.5, 0, 0.2, 1) 0.2s both;
+}
+.splash-count::after {
+  content: counter(d1) counter(d2) counter(d3);
+}
+@keyframes splash-count {
+  from {
+    --n: 0;
+  }
+  to {
+    --n: 100;
+  }
+}
+.splash-skip {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.5rem;
+  border: 0;
+  background: none;
+  padding: 0.5rem 0;
+  color: var(--color-ivory);
+  font-family: var(--font-text);
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.splash-skip:hover,
+.splash-skip:focus-visible {
+  opacity: 1;
+}
+
+/* Lenis smooth scroll: it drives the scrolling itself, so the browser's own smoothing must be off. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+html.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+html.lenis-stopped {
+  overflow: hidden;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .splash {
     animation: splash-fade 0.5s ease 1.2s forwards;
@@ -1191,6 +1253,9 @@ html.splash-seen .splash {
   }
   .splash-line {
     animation: none;
+  }
+  .splash-count {
+    display: none;
   }
 }
 @keyframes splash-fade {
@@ -1615,3 +1680,47 @@ html.splash-seen .splash {
   background-size: 180px 180px;
   mix-blend-mode: multiply;
 }
+
+/* Home hero, pinned: the two headline lines drift apart as the page scrolls (--hs is set from the scroll position). */
+.hero-spread > span:nth-of-type(odd) > span {
+  transform: translateX(calc(var(--hs, 0) * -1px));
+}
+.hero-spread > span:nth-of-type(even) > span {
+  transform: translateX(calc(var(--hs, 0) * 1px));
+}
+
+/* Homepage photographic hero and its transparent navigation. */
+.resort-hero { position: relative; isolation: isolate; height: 100svh; min-height: 680px; background: var(--color-forest-deep); color: white; overflow: hidden; }
+.resort-hero-photos, .resort-hero-photo, .resort-hero-shade { position: absolute; inset: 0; }
+.resort-hero-shade { background: linear-gradient(180deg, rgb(0 0 0 / .38), rgb(0 0 0 / .08) 35%, rgb(0 0 0 / .56)); }
+.resort-hero-copy { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center; padding-top: 180px; padding-bottom: 150px; }
+.resort-hero-copy h1 { font-size: clamp(2.8rem, 4.1vw, 4.8rem); line-height: 1.04; margin: 18px 0 24px; color: inherit; }
+.resort-hero-copy > p:first-child { margin: 0; }
+.resort-hero-description { max-width: 37em; margin: 0 0 32px; text-wrap: pretty; }
+.resort-hero-copy .btn { border-radius: 0; padding: 12px 30px; min-height: 44px; }
+.resort-hero-controls { position: absolute; bottom: 70px; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; }
+.resort-hero-dots, .resort-hero-arrows { display: flex; gap: 8px; }
+.resort-hero-controls button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: transparent; color: white; cursor: pointer; }
+.resort-hero-controls button:focus-visible, .resort-hero a:focus-visible { outline-color: white; }
+.resort-hero-dots span { width: 5px; height: 5px; border-radius: 50%; background: white; opacity: .45; }
+.resort-hero-dots button[aria-pressed="true"] span { opacity: 1; box-shadow: 0 0 0 5px rgb(255 255 255 / .18); }
+.resort-hero-arrows svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1; }
+#SITE_HEADER[data-home-top="true"] { background: transparent; backdrop-filter: none; color: white; box-shadow: none; }
+#SITE_HEADER[data-home-top="true"] + div { height: 0; }
+#SITE_HEADER[data-home-top="true"] .nav-link { color: white; }
+#SITE_HEADER[data-home-top="true"] > .wrap > div:first-child img { filter: brightness(0) invert(1); }
+@media (min-width: 1180px) {
+  #SITE_HEADER[data-home-top="true"] { height: 96px; }
+  #SITE_HEADER[data-home-top="true"] > .wrap { flex-direction: row; justify-content: space-between; gap: 24px; }
+  #SITE_HEADER[data-home-top="true"] > .wrap > div:last-child { justify-content: flex-end; gap: 24px; }
+  #SITE_HEADER[data-home-top="true"] > .wrap > div:last-child > div:nth-child(2) { display: none; }
+  #SITE_HEADER[data-home-top="true"] .btn { background: transparent; color: white; border: 1px solid rgb(255 255 255 / .7); border-radius: 0; }
+}
+@media (max-width: 749px) {
+  .resort-hero { min-height: 660px; }
+  .resort-hero-copy { padding-top: 110px; padding-bottom: 135px; }
+  .resort-hero-controls { bottom: 55px; }
+  .resort-hero-description { max-width: 30em; }
+}
+
+#SITE_HEADER[data-home-top="true"] button[aria-controls="mobile-menu"] span { background-color: white; }

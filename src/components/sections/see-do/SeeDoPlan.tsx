@@ -28,7 +28,12 @@ export function SeeDoPlan() {
               Make the most of your stay
             </p>
           </Reveal>
-          <Lines id="plan-title" as="h2" lines={["Plan your day"]} className="t-h2 text-forest m-0 mt-4" />
+          <Lines
+            id="plan-title"
+            as="h2"
+            lines={["Plan your day"]}
+            className="t-h2 text-forest m-0 mt-4 uppercase leading-[1.25] tracking-[0.14em] [font-size:clamp(1.75rem,1.15rem+1.9vw,2.75rem)]"
+          />
         </div>
 
         <Stagger step={0.12} className="grid items-start gap-6 lg:grid-cols-3">

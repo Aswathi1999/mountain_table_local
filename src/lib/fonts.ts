@@ -1,5 +1,23 @@
 import localFont from "next/font/local";
 
+export const playfair = localFont({
+  src: [
+    { path: "../../public/fonts/playfair-display-variable.ttf", weight: "400 900", style: "normal" },
+    { path: "../../public/fonts/playfair-display-italic-variable.ttf", weight: "400 900", style: "italic" },
+  ],
+  variable: "--font-face-display",
+  display: "swap",
+  fallback: ["Georgia", "serif"],
+});
+
+export const openSans = localFont({
+  src: "../../public/fonts/open-sans-variable.ttf",
+  weight: "300 800",
+  variable: "--font-face-text",
+  display: "swap",
+  fallback: ["Arial", "sans-serif"],
+});
+
 // Display face: Cormorant Garamond (variable weight 300 to 700, roman and italic, latin subset). A calm, high-contrast
 // garalde with generous italics. Used for headings, pull quotes, the wordmark and figures.
 export const cormorant = localFont({

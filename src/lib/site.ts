@@ -9,9 +9,9 @@ export const nav: readonly NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "See & Do", href: "/see-do" },
+  { label: "Rooms & Booking", href: "/rooms-booking" },
   { label: "Gallery", href: "/gallery" },
   { label: "Blog", href: "/blog" },
-  { label: "Rooms & Booking", href: "/rooms-booking" },
   { label: "Contact", href: "/contact" },
 ];
 

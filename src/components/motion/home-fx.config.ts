@@ -29,12 +29,13 @@ export const HOME_FX = {
   /** 1. Hero: text-mask intro (video seen through the headline, then the mask opens), scroll zoom, copy lifting away. */
   heroIntro: { enabled: true, minWidth: 768, hold: 0.9, open: 1.5, textScaleFrom: 1.9, bgFade: 1.1, skipOnScrollPx: 8 },
   hero: { enabled: true, zoomTo: 1.1, copyLift: 70 },
+  experienceArrival: { enabled: true, headingRise: 60, galleryRise: 80, cardRise: 36, mobileFactor: 0.7 },
 
   /** 2. Experience: pinned photo story (three steps, one per feature row). */
   experience: { enabled: true, minWidth: 1024, pinVh: 150, wipe: 1.1 },
 
-  /** 3. Discover: sunset to night with the scroll, glowing lights; the film modal. */
-  discover: { enabled: true, minWidth: 768, zoomTo: 1.12, goldenOpacity: 0.28, twilightOpacity: 0.55, lights: 14 },
+  /** 3. Discover: four photographs converge around the story as the section crosses the viewport. */
+  discover: { enabled: true, minWidth: 0, travelVh: 95, mobileFactor: 0.28, photoDrift: 5, copyRise: 28 },
 
   /** 5. Rooms: 3D deal-in, hover tilt with shine, magnetic button. */
   rooms: {
@@ -46,6 +47,7 @@ export const HOME_FX = {
     magnetRadius: 90,
     magnetStrength: 0.3,
   },
+  roomSlider: { enabled: true, autoplayMs: 6000, crossfade: 1.1, settle: 6, scaleFrom: 1.08, scaleTo: 1.02 },
 
   /** 6. Reviews: beige to night green, twinkling stars, rating count-up (rating is shown only if you set a real value). */
   reviews: { enabled: true, stars: 46, floatPx: 4, floatSeconds: 4, rating: null as number | null, ratingOutOf: 5 },
@@ -214,4 +216,30 @@ export const CONTACT_FX = {
   },
   /** Finding us: the panel rises, the button is magnetic, the map fades in over its placeholder. */
   location: { enabled: true, rise: 40, mapFade: 0.8 },
+} as const;
+
+/**
+ * Site-wide motion shared by every page (same rules as the `*_FX` blocks: `enabled: false` switches one effect off and the page
+ * keeps working normally; `minWidth` is the narrowest window it runs at; reduced motion skips every effect). Seconds, px.
+ */
+export const SITE_FX = {
+  /** Weighted inertial scrolling (Lenis), for mouse and trackpad; touch keeps the browser's own scrolling. */
+  smoothScroll: { enabled: true, minWidth: 768, duration: 1.35, wheelMultiplier: 0.9 },
+  /** A green panel sweeps up over the page, the logo shows briefly, the next page is revealed. */
+  pageTransition: { enabled: false, cover: 0.7, hold: 0.25, reveal: 0.8, maxWaitMs: 4000 },
+  /** Big serif marquee whose speed and direction follow the scroll velocity. */
+  marquee: {
+    enabled: true,
+    baseSpeed: 28,
+    velocityBoost: 0.0016,
+    text: ["Stay", "Relax", "Explore", "The Mountain Table"],
+  },
+  /** Menu: the photograph beside the links changes as a link is hovered. */
+  menuPreview: { enabled: true, minWidth: 768, wipe: 0.9 },
+  /** Home hero pinned for `pinScreens` of scrolling while it zooms, drifts in layers and the copy lifts and spreads apart. */
+  heroPin: { enabled: true, minWidth: 1024, minHeight: 600, pinScreens: 0.9, mediaShift: 4, spread: 56, dim: 0.35 },
+  /** Pinned scene: a small photograph grows to fill the screen, then a line of text fades in over it. */
+  expand: { enabled: true, minWidth: 1024, minHeight: 600, pinScreens: 2.1, from: { x: 28, y: 22 } },
+  /** Drag-to-explore strip of Instagram posts. `glide` is the sideways drift (px) as the page scrolls past. */
+  moments: { enabled: true, minWidth: 768, glide: 70 },
 } as const;

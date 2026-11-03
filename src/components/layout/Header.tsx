@@ -3,6 +3,7 @@
 import { motion, useScroll, useSpring } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { HOME_FX } from "@/components/motion/home-fx.config";
 import { DUR, EASE, SCROLL_SPRING } from "@/components/motion/tokens";
@@ -30,6 +31,7 @@ const enter = (delay: number) => ({
  * parts arrive one after another on first load. A spacer keeps the page content below it.
  */
 export function Header() {
+  const pathname = usePathname();
   const scrolled = useSyncExternalStore(subscribeToScroll, isScrolled, () => false);
   const [hidden, setHidden] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -55,6 +57,7 @@ export function Header() {
     <>
       <header
         id="SITE_HEADER"
+        data-home-top={pathname === "/" && !scrolled ? "true" : undefined}
         className={`text-forest fixed inset-x-0 top-0 z-50 transition-[height,box-shadow,transform,background-color,backdrop-filter] duration-500 ease-out focus-within:translate-y-0 ${
           scrolled
             ? "h-[64px] bg-ivory/80 shadow-[0_1px_0_rgba(31,59,47,0.12)] backdrop-blur-xl"
@@ -98,7 +101,7 @@ export function Header() {
         </div>
         <MobileMenu bookHref={BOOK_HREF} />
       </header>
-      <div aria-hidden="true" className="h-[72px] desk:h-[84px]" />
+      <div aria-hidden="true" className={pathname === "/" ? "h-0" : "h-[72px] desk:h-[84px]"} />
     </>
   );
 }

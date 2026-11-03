@@ -1,5 +1,3 @@
-import { ViewfinderCursor } from "@/components/motion/ViewfinderCursor";
-import { GalleryFilm } from "@/components/sections/gallery/GalleryFilm";
 import { GalleryFollow } from "@/components/sections/gallery/GalleryFollow";
 import { GalleryGrid } from "@/components/sections/gallery/GalleryGrid";
 import { GalleryHero } from "@/components/sections/gallery/GalleryHero";
@@ -21,9 +19,7 @@ export default function GalleryPage() {
           <GalleryGrid photos={galleryPhotos} />
         </div>
       </section>
-      <GalleryFilm />
       <GalleryFollow />
-      <ViewfinderCursor />
     </div>
   );
 }

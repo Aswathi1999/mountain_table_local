@@ -3,8 +3,10 @@ import { ChatBubble } from "@/components/layout/ChatBubble";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Splash } from "@/components/layout/Splash";
+import { PageTransition } from "@/components/motion/PageTransition";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { MotionProvider } from "@/components/motion/MotionProvider";
-import { caveat, cormorant, manrope } from "@/lib/fonts";
+import { caveat, playfair, openSans } from "@/lib/fonts";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -31,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${manrope.variable} ${cormorant.variable} ${caveat.variable}`}
+      className={`${openSans.variable} ${playfair.variable} ${caveat.variable}`}
       suppressHydrationWarning
     >
       <body>
@@ -43,6 +45,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to Main Content
         </a>
         <MotionProvider>
+          <SmoothScroll />
+          <PageTransition />
           <Header />
           <main id="PAGES_CONTAINER">{children}</main>
           <Footer />

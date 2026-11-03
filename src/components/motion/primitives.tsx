@@ -15,7 +15,8 @@ import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, type CSSProperties, type ElementType, type ReactNode } from "react";
 
-import { DUR, EASE, EASE_REVEAL, SCROLL_SPRING, SETTLE_SCALE, VIEW_ONCE } from "./tokens";
+import { DUR, EASE, EASE_REVEAL, PARALLAX_MIN_WIDTH, SCROLL_SPRING, SETTLE_SCALE, VIEW_ONCE } from "./tokens";
+import { useAllowMotion } from "./useAllowMotion";
 
 export { EASE, EASE_REVEAL };
 
@@ -37,7 +38,38 @@ type RevealProps = {
 };
 
 /** Fades and rises once when scrolled into view. Used sparingly; images and headings have their own reveals. */
-export function Reveal({ children, className, delay = 0, y = 18, x = 0, as = "div", style, immediate }: RevealProps) {
+export function Reveal(props: RevealProps) {
+  // Wide screens: the block is driven by the scroll position itself (scrubbed and reversible, as in the reference);
+  // narrow screens, reduced motion and hero content keep the simple timed entrance.
+  const scrub = useAllowMotion(PARALLAX_MIN_WIDTH) && !props.immediate;
+  return scrub ? <ScrubReveal {...props} /> : <TimedReveal {...props} />;
+}
+
+/** Rises, settles and brightens in step with the scroll (smoothed by a spring so it glides rather than tracks each wheel tick). */
+function ScrubReveal({ children, className, delay = 0, y = 18, x = 0, as = "div", style }: RevealProps) {
+  const Tag = motion[as] as ElementType;
+  const ref = useRef<HTMLElement>(null);
+  // Later siblings (larger `delay`) finish a little further up the screen, which staggers a row without any timers.
+  const end = 72 - Math.min(delay, 0.6) * 35;
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 98%", `start ${end}%`] });
+  const p = useSpring(scrollYProgress, SCROLL_SPRING);
+  const opacity = useTransform(p, [0, 0.8], [0, 1]);
+  const ty = useTransform(p, [0, 1], [Math.max(y * 2.2, 36), 0]);
+  const tx = useTransform(p, [0, 1], [x * 2, 0]);
+  const scale = useTransform(p, [0, 1], [0.985, 1]);
+  return (
+    <Tag
+      ref={ref}
+      data-motion=""
+      className={className}
+      style={{ ...style, opacity, y: ty, x: tx, scale, willChange: "transform, opacity" }}
+    >
+      {children}
+    </Tag>
+  );
+}
+
+function TimedReveal({ children, className, delay = 0, y = 18, x = 0, as = "div", style, immediate }: RevealProps) {
   const Tag = motion[as] as ElementType;
   const start = { opacity: 0, y, x };
   const end = { opacity: 1, y: 0, x: 0, transition: { duration: DUR.reveal, ease: EASE, delay } };
@@ -145,6 +177,17 @@ const INSETS = {
   doors: "inset(0 50% 0 50%)",
 } as const;
 
+/** The same wipes in one unit throughout, so a scroll-linked value can interpolate between them (and a faint rounding in). */
+const SCRUB_INSETS = {
+  bottom: "inset(0% 0% 100% 0%)",
+  top: "inset(100% 0% 0% 0%)",
+  left: "inset(0% 100% 0% 0%)",
+  right: "inset(0% 0% 0% 100%)",
+  center: "inset(50% 50% 50% 50%)",
+  doors: "inset(0% 50% 0% 50%)",
+} as const;
+const SCRUB_OPEN = "inset(0% 0% 0% 0%)";
+
 /**
  * Photograph in a frame: the frame is uncovered with a clip-path as it enters, the photograph settles from a slight zoom, and,
  * when `drift` is set, the photograph glides inside the frame as the page scrolls (it is oversized by the drift amount, so
@@ -175,25 +218,47 @@ export function ImageFrame({
   const y = useMotionTemplate`${driftPct}%`;
   const scale = 1 + (drift * 2) / 100;
 
+  // Wide screens: the frame opens and the photograph settles (1.18 to 1) in step with the scroll, and closes again on the way back.
+  const scrub = useAllowMotion(PARALLAX_MIN_WIDTH) && from !== "none";
+  const reveal = useScroll({ target: ref, offset: ["start 99%", `start ${60 - Math.min(delay, 0.6) * 20}%`] });
+  const open = useSpring(reveal.scrollYProgress, SCROLL_SPRING);
+  const clip = useTransform(
+    open,
+    [0, 1],
+    [SCRUB_INSETS[from === "fade" || from === "none" ? "bottom" : from], SCRUB_OPEN],
+  );
+  const fadeOpacity = useTransform(open, [0, 1], [0, 1]);
+  const fadeY = useTransform(open, [0, 1], [40, 0]);
+  const settle = useTransform(open, [0, 1], [1.18, 1]);
+  const scrubOuter = from === "fade" ? { opacity: fadeOpacity, y: fadeY } : { clipPath: clip };
+  const timedOuter = {
+    initial: reduce || from === "none" ? false : from === "fade" ? { opacity: 0, y: 26 } : { clipPath: INSETS[from] },
+    whileInView: from === "none" ? {} : from === "fade" ? { opacity: 1, y: 0 } : { clipPath: "inset(0 0 0 0)" },
+    viewport: { once: true, margin: "0px 0px -10% 0px" },
+    transition: { duration: DUR.image, ease: EASE_REVEAL, delay },
+  };
+
   return (
     <motion.div
       ref={ref}
       data-motion=""
       data-cursor={viewCursor ? "view" : undefined}
       className={`relative overflow-hidden ${className}`}
-      style={{ borderRadius: radius }}
-      initial={reduce || from === "none" ? false : from === "fade" ? { opacity: 0, y: 26 } : { clipPath: INSETS[from] }}
-      whileInView={from === "none" ? {} : from === "fade" ? { opacity: 1, y: 0 } : { clipPath: "inset(0 0 0 0)" }}
-      viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-      transition={{ duration: DUR.image, ease: EASE_REVEAL, delay }}
+      style={scrub ? { borderRadius: radius, ...scrubOuter } : { borderRadius: radius }}
+      {...(scrub ? {} : timedOuter)}
     >
       <motion.div
         data-motion=""
         className="absolute inset-0"
-        initial={reduce ? false : { scale: SETTLE_SCALE }}
-        whileInView={{ scale: 1 }}
-        viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-        transition={{ duration: DUR.settle, ease: EASE, delay }}
+        style={scrub ? { scale: settle } : undefined}
+        {...(scrub
+          ? {}
+          : {
+              initial: reduce ? false : { scale: SETTLE_SCALE },
+              whileInView: { scale: 1 },
+              viewport: { once: true, margin: "0px 0px -10% 0px" },
+              transition: { duration: DUR.settle, ease: EASE, delay },
+            })}
       >
         <div className={`absolute inset-0 ${zoomOnHover ? "img-zoom" : ""}`}>
           <motion.div

@@ -47,6 +47,26 @@ const CATEGORY_OF: readonly Exclude<Category, "All">[] = [
   "Rooms", // lounge with balcony
   "Property", // fire bowl terrace
   "Nature", // peaks at sunrise
+  "Property", // hero-concept-pool-v1
+  "Property", // hero-concept-veranda-v1
+  "Dining", // hero-concept-dining-v1
+  "Nature", // hero-concept-garden-v1
+  "Rooms", // rooms-concept-panorama-v1
+  "Rooms", // rooms-concept-lawn-v1
+  "Rooms", // rooms-concept-garden-v1
+  "Rooms", // experience-concept-room-v1
+  "Nature", // discover-concept-tea-dawn-v1
+  "Nature", // discover-concept-forest-path-v1
+  "Nature", // experience-concept-hiking-v1
+  "Nature", // experience-concept-safari-v1
+  "Nature", // experience-concept-cycling-v1
+  "Dining", // experience-concept-bbq-v1
+  "Nature", // see-do-jeep-v1
+  "Nature", // see-do-paragliding-v1
+  "Nature", // see-do-cycling-v1
+  "Nature", // see-do-hiking-v1
+  "Nature", // see-do-wildlife-v1
+  "Dining", // see-do-bbq-v1
 ];
 
 const PAGE = 9;

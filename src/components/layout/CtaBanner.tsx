@@ -31,19 +31,26 @@ export function CtaBanner() {
   const { scaleFrom, blurFrom, wordStagger } = HOME_FX.banner;
   const scale = useTransform(p, [0, 1], [on ? scaleFrom : 1, 1]);
   const filter = useTransform(p, [0, 1], [on ? `blur(${blurFrom}px)` : "blur(0px)", "blur(0px)"]);
+  // The whole band opens like a curtain as it arrives: a rounded inset panel grows to the full width (scrubbed, so it also closes on the way back).
+  const open = useTransform(
+    p,
+    [0, 1],
+    [on ? "inset(14% 6% 0% 6% round 40px)" : "inset(0% 0% 0% 0% round 0px)", "inset(0% 0% 0% 0% round 0px)"],
+  );
   const words = cta.lines.flatMap((line, li) =>
     line.split(" ").map((w, wi) => ({ w, key: `${li}-${wi}`, br: wi === 0 && li > 0 })),
   );
 
   return (
-    <section
+    <motion.section
       ref={ref}
       aria-labelledby="cta-title"
       className="bg-forest-deep text-ivory relative isolate overflow-hidden"
+      style={{ clipPath: open }}
     >
       <motion.div className="absolute inset-0 -z-10 will-change-[transform,filter]" style={{ scale, filter }}>
         <Image
-          src="/images/c18256_e5d979a1e3574fa4982be5aba13e7d68.jpg"
+          src="/images/home-cta-stay-relax-explore-v1.webp"
           alt=""
           fill
           sizes="100vw"
@@ -51,7 +58,7 @@ export function CtaBanner() {
           style={{ objectPosition: "50% 55%" }}
         />
       </motion.div>
-      <div aria-hidden="true" className="bg-forest-deep/70 absolute inset-0 -z-10" />
+      <div aria-hidden="true" className="bg-forest-deep/40 absolute inset-0 -z-10" />
       <div className="wrap flex flex-col items-center py-24 text-center desk:py-32">
         <Reveal>
           <p className="t-script text-gold-soft m-0 text-[1.5rem] desk:text-[1.875rem]">{cta.signature}</p>
@@ -87,6 +94,6 @@ export function CtaBanner() {
           <BookNowButton href="/rooms-booking" className="btn-shimmer" />
         </Reveal>
       </div>
-    </section>
+    </motion.section>
   );
 }

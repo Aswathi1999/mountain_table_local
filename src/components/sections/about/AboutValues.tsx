@@ -158,8 +158,19 @@ function ValueCard({ i, p, pinned }: { i: number; p: MotionValue<number>; pinned
   return (
     <motion.article
       style={pinned ? { y, rotate, opacity } : undefined}
-      className="group flex flex-1 flex-col gap-4 rounded-[18px] bg-[#fffdf8] p-8 shadow-[0_10px_30px_rgba(10,34,27,0.06)] transition-[translate,box-shadow] duration-500 hover:[translate:0_var(--lift)] hover:shadow-[0_22px_44px_rgba(10,34,27,0.14)]"
+      className="group relative flex flex-1 flex-col gap-4 rounded-[18px] bg-[#fffdf8] p-8 shadow-[0_10px_30px_rgba(10,34,27,0.06)] transition-[translate,box-shadow] duration-500 hover:[translate:0_var(--lift)] hover:shadow-[0_22px_44px_rgba(10,34,27,0.14)]"
     >
+      {/* Fine gold frame and a small italic number, as on the home page review cards. */}
+      <span
+        aria-hidden="true"
+        className="border-gold/25 group-hover:border-gold/60 pointer-events-none absolute inset-2 rounded-[12px] border transition-colors duration-500"
+      />
+      <span
+        aria-hidden="true"
+        className="font-display text-gold/60 absolute top-6 right-7 text-[1.5rem] leading-none italic tabular-nums"
+      >
+        {String(i + 1).padStart(2, "0")}
+      </span>
       {/* The hover lift uses the individual `translate` property, so it never fights the deal-in's transform. */}
       <span className="bg-ivory-deep text-forest group-hover:bg-forest group-hover:text-ivory flex size-[3.75rem] items-center justify-center rounded-full transition-colors duration-500">
         <Icon draw={draw} />
@@ -188,7 +199,13 @@ export function AboutValues() {
           What we believe
         </p>
       </Reveal>
-      <Lines id="philosophy-title" as="h2" lines={["Our Philosophy"]} className="t-h2 text-forest m-0 mt-4" />
+      <Lines
+        id="philosophy-title"
+        as="h2"
+        lines={["Our", "Philosophy"]}
+        lineClasses={["", "italic"]}
+        className="t-h2 text-forest m-0 mt-4 leading-[1.05] [font-size:clamp(2.25rem,1.4rem+3vw,4rem)]"
+      />
       <Reveal delay={0.1} className="mt-5">
         <p className="t-body text-ink/70 m-0 [font-size:1rem]">{lead}</p>
       </Reveal>
