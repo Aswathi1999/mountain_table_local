@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { HOME_FX } from "@/components/motion/home-fx.config";
 import { DUR, EASE, SCROLL_SPRING, STAGGER } from "@/components/motion/tokens";
@@ -10,15 +9,18 @@ import { useAllowMotion } from "@/components/motion/useAllowMotion";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
 
 import { copy } from "@/data/copy";
+import { ExperienceViewer, type OpenFrom } from "./ExperienceViewer";
 import "./ExperienceStory.css";
 const experiences = [
-  { title: "Luxurious Rooms", text: "Comfortable stays with stunning views.", image: "/images/experience-concept-room-v1.webp", alt: "Illustrative concept: a timber suite overlooking misty hills" },
-  { title: "Fine Dining", text: "Savor locally inspired cuisine.", image: "/images/hero-concept-dining-v1.webp", alt: "Illustrative concept: an open-air dining pavilion at sunset" },
-  { title: "Nature & Adventure", text: "Explore the beauty around you.", image: "/images/experience-concept-hiking-v1.webp", alt: "Illustrative concept: a hiker exploring a green mountain trail" },
-  { title: "Infinity Pool", text: "The infinity pool overlooking the hills.", image: "/images/hero-concept-pool-v1.webp", alt: "Illustrative concept: an infinity pool above a tropical valley" },
-  ...([{ index: 0, name: "safari", alt: "a safari vehicle in tea gardens" }, { index: 2, name: "cycling", alt: "a bicycle beside a tea plantation trail" }, { index: 4, name: "bbq", alt: "a barbecue terrace with an acoustic guitar at dusk" }]).map(({ index, name, alt }) => ({ title: copy.seeDo.activities[index].title, text: copy.seeDo.activities[index].subtitle, note: index === 0 ? "Extra charges apply." : undefined, image: `/images/experience-concept-${name}-v1.webp`, alt: `Illustrative concept: ${alt}` })),
+  { title: "Luxurious Rooms", text: "Comfortable stays with stunning views.", details: [copy.home.roomsBody[0], copy.home.roomsBody[1]], image: "/images/experience-concept-room-v1.webp", alt: "Illustrative concept: a timber suite overlooking misty hills" },
+  { title: "Fine Dining", text: "Savor locally inspired cuisine.", details: [copy.home.services.breakfast], image: "/images/hero-concept-dining-v1.webp", alt: "Illustrative concept: an open-air dining pavilion at sunset" },
+  { title: "Nature & Adventure", text: "Explore the beauty around you.", details: [copy.home.services.garden], image: "/images/experience-concept-hiking-v1.webp", alt: "Illustrative concept: a hiker exploring a green mountain trail" },
+  { title: "Infinity Pool", text: "The infinity pool overlooking the hills.", details: [copy.home.services.pool], image: "/images/hero-concept-pool-v1.webp", alt: "Illustrative concept: an infinity pool above a tropical valley" },
+  ...([{ index: 0, name: "safari", alt: "a safari vehicle in tea gardens" }, { index: 2, name: "cycling", alt: "a bicycle beside a tea plantation trail" }, { index: 4, name: "bbq", alt: "a barbecue terrace with an acoustic guitar at dusk" }]).map(({ index, name, alt }) => ({ title: copy.seeDo.activities[index].title, text: copy.seeDo.activities[index].subtitle, details: copy.seeDo.activities[index].body.filter((paragraph) => !paragraph.startsWith("*")), note: index === 0 ? "Extra charges apply." : undefined, image: `/images/experience-concept-${name}-v1.webp`, alt: `Illustrative concept: ${alt}` })),
 ];
 export function ExperienceStory() {
+  const [viewer, setViewer] = useState<OpenFrom | null>(null);
+  const closeViewer = useCallback(() => setViewer(null), []);
   const section = useRef<HTMLElement>(null);
   const gallery = useRef<HTMLDivElement>(null);
   const track = useRef<HTMLDivElement>(null);
@@ -82,7 +84,7 @@ export function ExperienceStory() {
       <motion.div data-motion="" style={{ y: allowMotion ? galleryY : 0, opacity: allowMotion ? galleryOpacity : 1 }}>
       <div ref={track} className={"mt-exp-track"} role="region" aria-label="Experiences gallery" tabIndex={0} onKeyDown={(event) => { if (event.target !== event.currentTarget) return; if (event.key === "ArrowRight" || event.key === "ArrowLeft") { event.preventDefault(); move(event.key === "ArrowRight" ? 1 : -1); } }}>
         {experiences.map((item, index) => (
-          <article key={item.title} className={"mt-exp-card"}>
+          <article key={item.title} className={"mt-exp-card"} data-experience-card="">
             <motion.div
               data-motion=""
               className="mt-exp-card-surface"
@@ -94,6 +96,13 @@ export function ExperienceStory() {
             >
             <div className={"mt-exp-photo"} data-experience-photo><Image src={item.image} alt={item.alt} fill sizes="(min-width: 1407px) 450px, (min-width: 844px) 32vw, 270px" className="object-cover" /></div>
             <div className={"mt-exp-shade"} />
+            <button
+              type="button"
+              className="mt-exp-open"
+              aria-haspopup="dialog"
+              aria-label={`Open ${item.title} full screen`}
+              onClick={(event) => setViewer({ index, rect: event.currentTarget.closest("article")?.getBoundingClientRect() ?? null })}
+            />
             <span aria-hidden="true" className={"mt-exp-number"}>{String(index + 1).padStart(2, "0")}</span>
             <span aria-hidden="true" className={"mt-exp-counter"}>{String(index + 1).padStart(2, "0")} / {String(experiences.length).padStart(2, "0")}</span>
             <div className={"mt-exp-caption"}>
@@ -101,7 +110,6 @@ export function ExperienceStory() {
               <div className={"mt-exp-details"}>
                 <p>{item.text}</p>
                 {"note" in item && item.note && <p>{item.note}</p>}
-                <Link href="/see-do" className="link-u">Discover More<span className="sr-only">: {item.title}</span></Link>
               </div>
               <span className={"mt-exp-rule"} aria-hidden="true" />
             </div>
@@ -115,6 +123,7 @@ export function ExperienceStory() {
       </div>
       </motion.div>
       </div>
+      <ExperienceViewer items={experiences} open={viewer} onClose={closeViewer} />
     </section>
   );
 }

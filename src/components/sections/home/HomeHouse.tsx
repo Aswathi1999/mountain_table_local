@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Drift, ImageFrame, Lines, Reveal } from "@/components/motion/primitives";
+import { Drift, ImageFrame, Reveal } from "@/components/motion/primitives";
 import { PanelWipe } from "@/components/motion/PanelWipe";
 import { ArrowIcon } from "@/components/ui/BookNowButton";
 import { LeafSprig } from "@/components/ui/decor";
@@ -13,7 +13,10 @@ import { copy } from "@/data/copy";
  */
 export function HomeHouse() {
   return (
-    <section aria-labelledby="house-title" className="bg-ivory relative overflow-hidden pt-14 pb-12 desk:pt-16 desk:pb-16 lg:pt-24 lg:pb-20">
+    <section
+      aria-labelledby="house-title"
+      className="bg-ivory relative overflow-hidden pt-14 pb-12 desk:pt-16 desk:pb-16 lg:pt-24 lg:pb-20"
+    >
       {/* Tall faint frond cropped by the left edge, as on the reference. */}
       <Drift x={-16} y={40} className="pointer-events-none absolute -top-4 -left-10 hidden h-[34rem] lg:block">
         <LeafSprig className="text-forest/[0.08] h-full w-auto -rotate-[8deg]" />
@@ -21,15 +24,15 @@ export function HomeHouse() {
 
       <div className="wrap relative lg:grid lg:grid-cols-12 lg:items-center">
         {/* Photograph: a wide, modest frame that sits higher than the panel and overlaps its left end. */}
-        <div className="relative z-10 lg:col-span-5 lg:col-start-2 lg:row-start-1 lg:-translate-y-6">
+        <div className="relative z-10 lg:col-span-5 lg:col-start-2 lg:row-start-1 lg:self-center">
           <ImageFrame
-            src="/images/81d784_a30ae9d65f7a4c158c25796451fed75f.jpg"
-            alt="Aerial view of The Mountain Table's thatched house among the tea plantations"
+            src="/images/discover-concept-tea-dawn-v1.webp"
+            alt="Illustrative concept: tea plantation terraces glowing at dawn"
             sizes="(min-width: 1280px) 520px, (min-width: 1024px) 42vw, 92vw"
             className="aspect-[4/3] w-full shadow-[0_24px_50px_rgba(20,42,33,0.18)] lg:aspect-[2.1/1]"
             from="left"
             drift={4}
-            position="50% 55%"
+            position="50% 50%"
             radius={0}
           />
         </div>
@@ -38,14 +41,10 @@ export function HomeHouse() {
         <div className="relative lg:col-span-8 lg:col-start-4 lg:row-start-1">
           <PanelWipe from="right" delay={0.1} className="absolute inset-0 -mt-px" panelClassName="bg-sage/35" />
           <div className="relative -mt-6 px-6 pt-14 pb-12 desk:px-10 lg:mt-0 lg:py-20 lg:pr-16 lg:pl-[calc(37.5%+3.5rem)]">
-            <Lines
-              as="h2"
-              id="house-title"
-              lines={["THE HOUSE"]}
-              className="t-h3 text-forest m-0 [letter-spacing:0.14em]"
-              delay={0.2}
-            />
-            <Reveal delay={0.3} className="mt-9">
+            <h2 id="house-title" className="sr-only">
+              The House
+            </h2>
+            <Reveal delay={0.3}>
               <p className="t-lead text-ink/80 m-0 max-w-[22rem] [font-size:0.9375rem] [line-height:1.9]">
                 {copy.home.house}
               </p>

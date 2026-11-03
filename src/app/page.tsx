@@ -1,6 +1,7 @@
 import { CustomCursor } from "@/components/motion/CustomCursor";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { HomeDiscover } from "@/components/sections/home/HomeDiscover";
+import { HomeFaq } from "@/components/sections/home/HomeFaq";
 import { HomeHero } from "@/components/sections/home/HomeHero";
 import { HomeHouse } from "@/components/sections/home/HomeHouse";
 import { HomeIntro } from "@/components/sections/home/HomeIntro";
@@ -32,6 +33,7 @@ export default function HomePage() {
       <HomeServices />
       <MomentsStrip />
       <HomeReviews />
+      <HomeFaq />
     </div>
   );
 }

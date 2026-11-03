@@ -1,132 +1,35 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
-import { useReducedMotion } from "@/components/motion/useReducedMotion";
+import { motion } from "motion/react";
 import { useEffect, useState, type CSSProperties } from "react";
-import { DUR, EASE, SPRING, STAGGER } from "@/components/motion/tokens";
+import { DUR, EASE } from "@/components/motion/tokens";
+import { useReducedMotion } from "@/components/motion/useReducedMotion";
 
-/** Seconds each review stays in the spotlight. Paused while the carousel is hovered or focused, and off under reduced motion. */
+/** Seconds each review stays on screen. Paused while the carousel is hovered or focused, and off under reduced motion. */
 const HOLD_MS = 7000;
 
 const arrow =
-  "flex size-11 cursor-pointer items-center justify-center rounded-full border border-forest/30 bg-ivory text-forest transition-colors duration-300 hover:bg-forest hover:text-ivory focus-visible:bg-forest focus-visible:text-ivory active:scale-95";
-
-function QuoteMark({ className = "" }: { className?: string }) {
-  return (
-    <motion.svg
-      data-motion=""
-      viewBox="0 0 40 32"
-      className={className}
-      fill="currentColor"
-      aria-hidden="true"
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: DUR.reveal, ease: EASE, delay: 0.3 }}
-    >
-      <path d="M0 32V19.2C0 8.2 5.6 1.6 15.6 0l1.8 4.6C11.6 6.4 9.2 10 9 14.4h7.4V32H0Zm22.6 0V19.2C22.6 8.2 28.2 1.6 38.2 0L40 4.6c-5.8 1.8-8.2 5.4-8.4 9.8H39V32H22.6Z" />
-    </motion.svg>
-  );
-}
-
-function Card({
-  text,
-  active,
-  onSelect,
-  index,
-}: {
-  text: string;
-  active: boolean;
-  onSelect?: () => void;
-  index: number;
-}) {
-  return (
-    <motion.figure
-      data-motion=""
-      onClick={onSelect}
-      animate={{
-        y: active ? -10 : 0,
-        backgroundColor: active ? "#1f3b2f" : "#fbf9f4",
-        color: active ? "#f6f2ea" : "#242323",
-        borderColor: active ? "rgba(184,147,90,0.55)" : "rgba(184,147,90,0)",
-      }}
-      whileHover={{ y: active ? -14 : -4 }}
-      transition={{ ...SPRING.soft, backgroundColor: { duration: DUR.ui }, color: { duration: DUR.ui } }}
-      className={`relative m-0 flex min-h-[21rem] w-full flex-1 cursor-pointer flex-col overflow-hidden rounded-[10px] border p-8 transition-shadow duration-700 desk:p-10 ${
-        active
-          ? "shadow-[0_34px_70px_-20px_rgba(10,34,27,0.55),0_0_0_1px_rgba(184,147,90,0.25)]"
-          : "shadow-[0_18px_44px_rgba(31,59,47,0.10)]"
-      }`}
-    >
-      {/* A soft gold glow in the corner of the lit card. */}
-      <span
-        aria-hidden="true"
-        className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${active ? "opacity-100" : "opacity-0"}`}
-        style={{ background: "radial-gradient(120% 80% at 0% 0%, rgba(210,181,127,0.16), transparent 60%)" }}
-      />
-      {/* Fine gold frame set inside the card edge. */}
-      <span
-        aria-hidden="true"
-        className={`pointer-events-none absolute inset-2.5 rounded-[6px] border transition-colors duration-700 ${
-          active ? "border-gold-soft/35" : "border-gold/25"
-        }`}
-      />
-      <div className="relative flex items-start justify-between">
-        <QuoteMark className={`h-7 w-9 transition-colors duration-500 ${active ? "text-gold-soft" : "text-gold"}`} />
-        <span
-          aria-hidden="true"
-          className={`font-display text-[1.75rem] leading-none italic tabular-nums transition-colors duration-500 ${
-            active ? "text-gold-soft/70" : "text-gold/60"
-          }`}
-        >
-          {String(index + 1).padStart(2, "0")}
-        </span>
-      </div>
-      <blockquote className="relative m-0 mt-7 flex-1">
-        <p className="font-display m-0 [font-size:1.1875rem] leading-[1.7] italic">{text}</p>
-      </blockquote>
-      <figcaption className="relative mt-8 flex items-center gap-4">
-        <span
-          aria-hidden="true"
-          className={`h-px w-10 transition-colors duration-500 ${active ? "bg-gold-soft" : "bg-gold"}`}
-        />
-        <span className="text-[11px] tracking-[0.24em] uppercase opacity-70">Guest review {index + 1}</span>
-      </figcaption>
-      {/* Time left in the spotlight. */}
-      {active ? (
-        <span aria-hidden="true" className="bg-ivory/15 absolute inset-x-0 bottom-0 h-[3px]">
-          <span
-            className="bg-gold block h-full origin-left"
-            style={{
-              animation: `review-fill ${HOLD_MS}ms linear both`,
-              animationPlayState: "var(--review-play, running)",
-            }}
-          />
-        </span>
-      ) : null}
-    </motion.figure>
-  );
-}
+  "flex size-10 cursor-pointer items-center justify-center rounded-full border border-current/30 bg-transparent text-current transition-colors duration-300 hover:border-gold hover:text-gold focus-visible:border-gold focus-visible:text-gold active:scale-95";
 
 /**
- * Guest reviews: three cards side by side with one in the spotlight (forest green, lifted); the spotlight moves along by itself,
- * on a click, or with the arrows, and holds while the visitor points at or focuses the carousel. A thin gold line on the lit card
- * shows the time left. Below 1024px one card is shown at a time, sliding in the direction of travel.
+ * Guest reviews, kept simple: one quote at a time, centred and set large in the display italic, with a short gold rule and a quiet
+ * caption beneath. Thin bars below show which review is up (the current one fills while it waits its turn), with two outline
+ * arrows. It advances by itself, holds while the visitor points at or focuses it, and never moves under reduced motion. All reviews
+ * share one grid cell, so the section never changes height as they swap.
  */
 export function ReviewSlideshow({ reviews }: { reviews: readonly string[] }) {
-  const [[index, dir], setPage] = useState<[number, number]>([0, 1]);
+  const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const reduce = useReducedMotion();
   const autoplay = !reduce && !paused;
   const count = reviews.length;
 
-  const goTo = (to: number, direction: number) => setPage([(to + count) % count, direction]);
+  const goTo = (to: number) => setIndex((to + count) % count);
 
   useEffect(() => {
     if (!autoplay) return;
-    const id = window.setTimeout(() => goTo(index + 1, 1), HOLD_MS);
+    const id = window.setTimeout(() => setIndex((i) => (i + 1) % count), HOLD_MS);
     return () => window.clearTimeout(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoplay, index, count]);
 
   return (
@@ -139,92 +42,104 @@ export function ReviewSlideshow({ reviews }: { reviews: readonly string[] }) {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
       style={{ "--review-play": autoplay ? "running" : "paused" } as CSSProperties}
+      className="mx-auto flex max-w-[40rem] flex-col items-center text-center"
     >
-      {/* Wide screens: all three, one lit. */}
-      <div className="hidden gap-6 pt-3 lg:grid lg:grid-cols-3" aria-live={autoplay ? "off" : "polite"}>
-        {reviews.map((text, i) => (
-          <motion.div
-            key={i}
-            data-motion=""
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: DUR.reveal, ease: EASE, delay: i * STAGGER.base }}
-            className="flex"
-          >
-            <div className={`flex flex-1 flex-col ${i === 1 ? "review-float" : ""}`}>
-              <Card text={text} index={i} active={i === index} onSelect={() => goTo(i, i > index ? 1 : -1)} />
-            </div>
-          </motion.div>
-        ))}
+      <motion.svg
+        data-motion=""
+        viewBox="0 0 40 32"
+        className="text-gold h-5 w-7"
+        fill="currentColor"
+        aria-hidden="true"
+        initial={{ opacity: 0, scale: 0.85 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: DUR.reveal, ease: EASE }}
+      >
+        <path d="M0 32V19.2C0 8.2 5.6 1.6 15.6 0l1.8 4.6C11.6 6.4 9.2 10 9 14.4h7.4V32H0Zm22.6 0V19.2C22.6 8.2 28.2 1.6 38.2 0L40 4.6c-5.8 1.8-8.2 5.4-8.4 9.8H39V32H22.6Z" />
+      </motion.svg>
+
+      <div className="mt-6 grid w-full" aria-live={autoplay ? "off" : "polite"}>
+        {reviews.map((text, i) => {
+          const on = i === index;
+          return (
+            <motion.figure
+              key={i}
+              data-motion=""
+              aria-hidden={!on}
+              inert={!on}
+              initial={false}
+              animate={{ opacity: on ? 1 : 0, y: reduce ? 0 : on ? 0 : 14 }}
+              transition={{
+                duration: reduce ? 0 : on ? DUR.reveal : DUR.micro,
+                delay: reduce || !on ? 0 : 0.15,
+                ease: EASE,
+              }}
+              className="m-0 flex flex-col items-center [grid-area:1/1]"
+            >
+              <blockquote className="m-0">
+                <p className="font-display m-0 [font-size:clamp(1.0625rem,0.95rem+0.6vw,1.375rem)] leading-[1.65] italic">
+                  {text}
+                </p>
+              </blockquote>
+              <figcaption className="mt-6">
+                <span className="text-[11px] tracking-[0.24em] uppercase opacity-60">Guest review {i + 1}</span>
+              </figcaption>
+            </motion.figure>
+          );
+        })}
       </div>
 
-      {/* Narrow screens: one at a time. */}
-      <div className="relative overflow-x-clip pt-3 lg:hidden">
-        <AnimatePresence mode="popLayout" initial={false} custom={dir}>
-          <motion.div
-            key={index}
-            custom={dir}
-            variants={{
-              enter: (d: number) => ({ opacity: 0, x: d * 36 }),
-              center: { opacity: 1, x: 0, transition: { duration: DUR.reveal, ease: EASE, delay: 0.1 } },
-              exit: (d: number) => ({ opacity: 0, x: -d * 36, transition: { duration: DUR.ui, ease: EASE } }),
-            }}
-            initial="enter"
-            animate="center"
-            exit="exit"
+      <div className="mt-9 flex items-center gap-5">
+        <button type="button" aria-label="Previous review" onClick={() => goTo(index - 1)} className={arrow}>
+          <svg
+            viewBox="0 0 24 24"
+            className="size-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            aria-hidden="true"
           >
-            <Card text={reviews[index]} index={index} active />
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
-      <div className="mt-8 flex items-center justify-between">
-        <ol className="m-0 flex list-none gap-2 p-0">
+            <path d="M20 12H5M11 6l-6 6 6 6" />
+          </svg>
+        </button>
+        <ol className="m-0 flex list-none items-center gap-3 p-0">
           {reviews.map((_, i) => (
             <li key={i}>
               <button
                 type="button"
                 aria-label={`Show review ${i + 1}`}
                 aria-current={i === index}
-                onClick={() => goTo(i, i > index ? 1 : -1)}
-                className="flex size-6 cursor-pointer items-center justify-center border-0 bg-transparent p-0"
+                onClick={() => goTo(i)}
+                className="flex h-6 w-14 cursor-pointer items-center border-0 bg-transparent p-0"
               >
-                <span
-                  className={`block h-1.5 rounded-full transition-[width,background-color] duration-500 ${
-                    i === index ? "bg-current w-6" : "bg-current/25 w-1.5"
-                  }`}
-                />
+                <span className="relative block h-px w-full bg-current/25">
+                  {i === index ? (
+                    <span
+                      key={index}
+                      className="bg-gold absolute inset-y-[-0.5px] left-0 block h-[2px] w-full origin-left"
+                      style={{
+                        animation: `review-fill ${HOLD_MS}ms linear both`,
+                        animationPlayState: "var(--review-play, running)",
+                      }}
+                    />
+                  ) : null}
+                </span>
               </button>
             </li>
           ))}
         </ol>
-        <div className="flex gap-2">
-          <button type="button" aria-label="Previous review" onClick={() => goTo(index - 1, -1)} className={arrow}>
-            <svg
-              viewBox="0 0 24 24"
-              className="size-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              aria-hidden="true"
-            >
-              <path d="M20 12H5M11 6l-6 6 6 6" />
-            </svg>
-          </button>
-          <button type="button" aria-label="Next review" onClick={() => goTo(index + 1, 1)} className={arrow}>
-            <svg
-              viewBox="0 0 24 24"
-              className="size-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              aria-hidden="true"
-            >
-              <path d="M4 12h15M13 6l6 6-6 6" />
-            </svg>
-          </button>
-        </div>
+        <button type="button" aria-label="Next review" onClick={() => goTo(index + 1)} className={arrow}>
+          <svg
+            viewBox="0 0 24 24"
+            className="size-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.4"
+            aria-hidden="true"
+          >
+            <path d="M4 12h15M13 6l6 6-6 6" />
+          </svg>
+        </button>
       </div>
     </div>
   );
