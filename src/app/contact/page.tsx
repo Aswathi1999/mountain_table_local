@@ -18,7 +18,7 @@ export default function ContactPage() {
       <PageHero
         id="contact-hero"
         titleId="contact-hero-title"
-        image={{ src: "/images/about/ridges.jpg", position: "50% 40%" }}
+        image={{ src: "/images/contact-hero-v1.webp", position: "50% 50%" }}
         crumb="Contact"
         eyebrow="Vagamon, Kerala"
         mist

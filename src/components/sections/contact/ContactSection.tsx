@@ -35,7 +35,7 @@ export function ContactSection() {
           </Reveal>
           <div className="relative mt-9 pb-10">
             <ImageFrame
-              src="/images/about/lounge.jpg"
+              src="/images/contact-lounge-v1.webp"
               alt="A lounge opening onto a balcony with mountain views"
               sizes="(min-width: 1024px) 34vw, 90vw"
               className="aspect-[4/3] w-[88%] shadow-[0_20px_40px_rgba(10,34,27,0.14)]"
