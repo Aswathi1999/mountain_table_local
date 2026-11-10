@@ -26,8 +26,8 @@ export function HomeHouse() {
         {/* Photograph: a wide, modest frame that sits higher than the panel and overlaps its left end. */}
         <div className="relative z-10 lg:col-span-5 lg:col-start-2 lg:row-start-1 lg:self-center">
           <ImageFrame
-            src="/images/discover-concept-tea-dawn-v1.webp"
-            alt="Illustrative concept: tea plantation terraces glowing at dawn"
+            src="/images/home-house-about-v1.jpg"
+            alt="The Mountain Table"
             sizes="(min-width: 1280px) 520px, (min-width: 1024px) 42vw, 92vw"
             className="aspect-[4/3] w-full shadow-[0_24px_50px_rgba(20,42,33,0.18)] lg:aspect-[2.1/1]"
             from="left"

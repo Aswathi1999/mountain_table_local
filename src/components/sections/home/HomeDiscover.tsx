@@ -98,7 +98,7 @@ function AmbientFilm({ still }: { still: boolean }) {
       aria-hidden="true"
       tabIndex={-1}
     >
-      <source src={HOME_FX.video.film} type="video/mp4" />
+      <source src="/videos/discover-v1.mp4" type="video/mp4" />
     </video>
   );
 }

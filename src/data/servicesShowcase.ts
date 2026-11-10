@@ -26,9 +26,9 @@ export const showcaseServices: readonly ShowcaseService[] = [
     cta: { label: "View the Menu", href: "/contact" },
     icon: "dining",
     image: {
-      src: "/images/c18256_4f1a87a5cd434f3e869c7e16b058f9b1.jpg",
-      alt: "The dining area with a long wooden table and glass walls",
-      position: "42% 55%",
+      src: "/images/service-dining-v1.jpg",
+      alt: "A steaming plate of rice and chicken on a polished wooden table",
+      position: "50% 60%",
     },
   },
   {
@@ -42,9 +42,9 @@ export const showcaseServices: readonly ShowcaseService[] = [
     cta: { label: "See Activities", href: "/see-do" },
     icon: "adventure",
     image: {
-      src: "/images/8daf94f88f524d8cb168d8004c1fe282.jpg",
-      alt: "A hiker above the mist on the Vagamon trail",
-      position: "50% 40%",
+      src: "/images/service-adventure-v1.jpg",
+      alt: "A waterfall tumbling over dark rocks in the forest",
+      position: "50% 50%",
     },
   },
   {
@@ -58,8 +58,8 @@ export const showcaseServices: readonly ShowcaseService[] = [
     cta: { label: "Explore the Spa", href: "/contact" },
     icon: "spa",
     image: {
-      src: "/images/81d784_a43d2aa0646e4ef884b76c80a2b04d2f.jpg",
-      alt: "A bathtub beside a slatted window",
+      src: "/images/service-wellness-v1.jpg",
+      alt: "A cool drink and a rolled towel beside an infinity pool",
       position: "50% 50%",
     },
   },
@@ -74,9 +74,9 @@ export const showcaseServices: readonly ShowcaseService[] = [
     cta: { label: "Plan Your Evening", href: "/see-do#activity-5" },
     icon: "fire",
     image: {
-      src: "/images/66154b37def64bfba3cf82929427e0c5.jpg",
-      alt: "Burgers sizzling over open flames on the barbecue",
-      position: "28% 55%",
+      src: "/images/service-evenings-v1.jpg",
+      alt: "The dining area at night, lit warmly, with a long wooden table and glass walls",
+      position: "42% 55%",
     },
   },
   {

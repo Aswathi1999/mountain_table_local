@@ -13,13 +13,13 @@ import { roomLayouts } from "@/data/rooms";
 /** The three room photographs used on the home page's rooms slider, one per room. */
 const photographs = [
   {
-    src: "/images/rooms-concept-panorama-v1.webp",
-    alt: "AI room concept: ivory bed and panoramic windows facing green hills",
+    src: "/images/room-1-v1.jpg",
+    alt: "Bedroom with a large bed, a teak desk and tall windows opening onto a balcony above green hills",
   },
-  { src: "/images/rooms-concept-lawn-v1.webp", alt: "AI room concept: timber bedroom opening onto a private lawn" },
+  { src: "/images/room-2-v1.jpg", alt: "Bedroom with a wooden double bed, cream linen and warm lighting" },
   {
-    src: "/images/rooms-concept-garden-v1.webp",
-    alt: "AI room concept: spacious bedroom with a tropical garden window",
+    src: "/images/room-3-v1.jpg",
+    alt: "Spacious bedroom with a wooden double bed, cushions and a teak door",
   },
 ] as const;
 
