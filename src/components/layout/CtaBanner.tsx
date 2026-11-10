@@ -45,12 +45,12 @@ export function CtaBanner() {
     <motion.section
       ref={ref}
       aria-labelledby="cta-title"
-      className="bg-forest-deep text-ivory relative isolate overflow-hidden"
+      className="bg-forest-deep text-ivory relative isolate flex items-center overflow-hidden lg:aspect-video lg:max-h-[100svh]"
       style={{ clipPath: open }}
     >
       <motion.div className="absolute inset-0 -z-10 will-change-[transform,filter]" style={{ scale, filter }}>
         <Image
-          src="/images/home-cta-stay-relax-explore-v1.webp"
+          src="/images/home-cta-booking-v1.jpg"
           alt=""
           fill
           sizes="100vw"
@@ -59,7 +59,7 @@ export function CtaBanner() {
         />
       </motion.div>
       <div aria-hidden="true" className="bg-forest-deep/40 absolute inset-0 -z-10" />
-      <div className="wrap flex flex-col items-center py-24 text-center desk:py-32">
+      <div className="wrap flex w-full flex-col items-center py-24 text-center desk:py-32">
         <Reveal>
           <p className="t-script text-gold-soft m-0 text-[1.5rem] desk:text-[1.875rem]">{cta.signature}</p>
         </Reveal>
