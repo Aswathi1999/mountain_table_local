@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { HOME_FX } from "@/components/motion/home-fx.config";
 import { DUR, EASE, STAGGER, VIEW_ONCE } from "@/components/motion/tokens";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
@@ -12,7 +12,6 @@ import "./HomeDiscover.css";
 const discover = {
   lines: ["Where Every Moment", "Feels Extraordinary"],
   body: "From peaceful mornings to starlit evenings, The Mountain Table offers a sanctuary where nature, comfort, and unforgettable experiences come together.",
-  cta: "Watch Our Story",
 } as const;
 
 export function StoryDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -104,7 +103,6 @@ function AmbientFilm({ still }: { still: boolean }) {
 }
 
 export function HomeDiscover() {
-  const [story, setStory] = useState(false);
   const reduce = useReducedMotion();
   const copyRef = useRef<HTMLDivElement>(null);
   const seen = useInView(copyRef, VIEW_ONCE);
@@ -142,15 +140,8 @@ export function HomeDiscover() {
           <motion.p {...rise(2)} className="discover-description">
             {discover.body}
           </motion.p>
-          <motion.button {...rise(3)} type="button" className="discover-story-button" onClick={() => setStory(true)}>
-            {discover.cta}
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-              <path d="M4 12h15M13 6l6 6-6 6" />
-            </svg>
-          </motion.button>
         </div>
       </div>
-      <StoryDialog open={story} onClose={() => setStory(false)} />
     </section>
   );
 }

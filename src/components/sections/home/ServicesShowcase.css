@@ -258,36 +258,36 @@
 @media (max-width: 749px) {
   .svc-collage {
     min-height: 0;
-    padding-bottom: 48px;
+    padding-bottom: 0;
   }
   .svc-stage {
-    min-height: max(900px, 100svh);
+    min-height: 0;
   }
   .svc-photo {
-    width: 30vw;
+    width: 43vw;
   }
   .svc-photo-0,
   .svc-photo-2 {
-    left: 4vw;
+    left: 3vw;
   }
   .svc-photo-1,
   .svc-photo-3 {
-    right: 4vw;
+    right: 3vw;
   }
   .svc-photo-0,
   .svc-photo-1 {
-    top: 48px;
+    top: 24px;
   }
   .svc-photo-2,
   .svc-photo-3 {
-    bottom: 48px;
+    bottom: 24px;
   }
   .svc-copy {
     width: 100%;
     max-width: 34rem;
   }
   .svc-copy-position {
-    padding-block: 200px;
+    padding-block: calc(43vw + 56px);
   }
   .svc-copy h2 {
     font-size: clamp(32px, 9vw, 48px);

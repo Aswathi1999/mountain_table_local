@@ -111,18 +111,18 @@ function Card({ n, p, live }: { n: number; p: MotionValue<number>; live: boolean
 /**
  * The home page gallery: the centred headline and the two links, then a spread of the site's generated concept images like the Gallery page
  * hero's postcards. They gather at the middle and fan out as the section scrolls into view (a scroll-linked reveal, so it also
- * folds back on the way up). Phones show five cards without the scroll motion; reduced motion shows them all in place.
+ * folds back on the way up). Phones show five cards with the same scroll motion; reduced motion shows them in place.
  */
 export function MomentsStrip() {
   const row = useRef<HTMLUListElement>(null);
   const reduce = useReducedMotion();
-  const wide = useAllowMotion(768);
-  const live = wide && !reduce;
+  const allowed = useAllowMotion();
+  const live = allowed && !reduce;
   const { scrollYProgress } = useScroll({ target: row, offset: ["start 92%", "center 52%"] });
   const p = useSpring(scrollYProgress, SCROLL_SPRING);
 
   return (
-    <section aria-labelledby="moments-title" className="bg-ivory-deep relative overflow-hidden py-20 desk:py-28">
+    <section aria-labelledby="moments-title" className="bg-ivory-deep relative overflow-hidden pt-24 pb-14 md:py-20 desk:py-28">
       <div className="wrap text-center">
         <Reveal>
           <p className="t-eyebrow text-forest justify-center before:h-px before:w-14 before:bg-current before:opacity-35 before:content-['']">
@@ -138,7 +138,7 @@ export function MomentsStrip() {
         />
       </div>
 
-      <div className="mx-auto mt-20 w-full max-w-[1320px] px-5 pt-16 pb-24 desk:mt-24">
+      <div className="mx-auto mt-8 w-full max-w-[1320px] px-5 pt-8 pb-10 md:mt-20 md:pt-16 md:pb-24 desk:mt-24">
         <ul ref={row} className="m-0 flex list-none items-center justify-center p-0">
           {CARDS.map((_, n) => (
             <Card key={n} n={n} p={p} live={live} />
