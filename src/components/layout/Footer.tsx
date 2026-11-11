@@ -24,7 +24,7 @@ function ColumnHeading({ children }: { children: string }) {
 /**
  * Closing area shared by every page: the call to action (a misty valley photograph under a forest tint, with the headline and the
  * booking button) and a deep green footer. The footer opens on a fine gold line and sets the logo and tagline with the social
- * links, then the page links, contact details and newsletter sign-up in gold-headed columns, an oversized faint wordmark, and a
+ * links, then the page links, contact details and newsletter sign-up in gold-headed columns, and a
  * quiet bottom bar with the copyright, coordinates and back-to-top.
  */
 export function Footer() {
@@ -114,15 +114,6 @@ export function Footer() {
             <NewsletterForm />
           </Reveal>
         </div>
-
-        <Reveal y={0} className="wrap">
-          <p
-            aria-hidden="true"
-            className="font-display text-ivory/[0.06] m-0 text-center leading-none font-medium whitespace-nowrap uppercase select-none [font-size:clamp(1.5rem,6.6vw,6rem)] [letter-spacing:0.06em]"
-          >
-            The Mountain Table
-          </p>
-        </Reveal>
 
         <div className="wrap">
           <div className="border-ivory/14 mt-8 flex flex-wrap items-center justify-between gap-3 border-t py-6">

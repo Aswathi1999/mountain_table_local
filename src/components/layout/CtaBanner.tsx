@@ -45,7 +45,7 @@ export function CtaBanner() {
     <motion.section
       ref={ref}
       aria-labelledby="cta-title"
-      className="bg-forest-deep text-ivory relative isolate flex items-center overflow-hidden lg:aspect-video lg:max-h-[100svh]"
+      className="bg-forest-deep text-ivory relative isolate flex items-center overflow-hidden lg:aspect-video lg:max-h-[100svh] lg:w-full"
       style={{ clipPath: open }}
     >
       <motion.div className="absolute inset-0 -z-10 will-change-[transform,filter]" style={{ scale, filter }}>
@@ -55,7 +55,7 @@ export function CtaBanner() {
           fill
           sizes="100vw"
           className="object-cover"
-          style={{ objectPosition: "50% 55%" }}
+          style={{ objectPosition: "50% 50%" }}
         />
       </motion.div>
       <div aria-hidden="true" className="bg-forest-deep/40 absolute inset-0 -z-10" />
