@@ -268,7 +268,7 @@ export function HomeRoomsSlider() {
           </div>
 
           {/* Lower row: frosted card + counter */}
-          <div className="mt-auto flex flex-col gap-8 pt-12 lg:flex-row lg:items-end lg:justify-between">
+          <div className="mt-auto flex flex-col gap-8 pt-[34svh] md:pt-[18svh] lg:flex-row lg:pt-12 lg:items-end lg:justify-between">
             <motion.div
               {...rise(3)}
               id="rooms-slide"

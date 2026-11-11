@@ -27,7 +27,9 @@ export function ServicesShowcase() {
   const on = useHomeFx("discover");
   const wide = useAllowMotion(1024);
   const config = HOME_FX.discover;
-  const travel = config.travelVh * (wide ? 1 : config.mobileFactor);
+  const tablet = useAllowMotion(750);
+  // Phones have a compact stage, so the photographs travel less to stay clear of the copy.
+  const travel = config.travelVh * (wide ? 1 : tablet ? config.mobileFactor : 0.08);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
   const progress = useSpring(scrollYProgress, SCROLL_SPRING);
   const topY = useTransform(progress, [0, 1], ["-" + travel + "svh", travel + "svh"]);
@@ -51,7 +53,7 @@ export function ServicesShowcase() {
                 src={item.image.src}
                 alt={item.image.alt}
                 fill
-                sizes="(min-width: 1390px) 360px, 30vw"
+                sizes="(min-width: 1390px) 360px, (max-width: 749px) 43vw, 26vw"
                 className="object-cover"
                 style={{ objectPosition: item.image.position }}
               />

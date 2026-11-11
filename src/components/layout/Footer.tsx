@@ -33,7 +33,10 @@ export function Footer() {
     <footer id="SITE_FOOTER" className="bg-white">
       <CtaBanner />
 
-      <div className="text-ivory relative overflow-hidden bg-[linear-gradient(180deg,#0a221b_0%,#071812_100%)]">
+      <div
+        data-cursor-dark=""
+        className="text-ivory relative overflow-hidden bg-[linear-gradient(180deg,#0a221b_0%,#071812_100%)]"
+      >
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-full">
           <RidgeStack color="#0a221b" height="clamp(28px, 4vw, 60px)" />
         </div>

@@ -80,9 +80,8 @@ export function HomeHero() {
       aria-label="Welcome to The Mountain Table"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onFocusCapture={(event) => {
-        if (!(event.target as HTMLElement).closest("[data-slideshow-toggle]")) setPaused(true);
-      }}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={() => setPaused(false)}
     >
       <motion.div className="resort-hero-photos" style={{ y: allowScrollMotion ? photoDrift : 0 }}>
         <div className="resort-hero-photo" style={{ opacity: 1 }}>
@@ -183,16 +182,6 @@ export function HomeHero() {
           Slide {active + 1} of {photographs.length}: {photographs[active].title.join(" ")}
         </span>
         <div className="resort-hero-arrows">
-          {!reduce && (
-            <button
-              data-slideshow-toggle
-              type="button"
-              aria-label={paused ? "Play slideshow" : "Pause slideshow"}
-              onClick={() => setPaused((value) => !value)}
-            >
-              <span aria-hidden="true">{paused ? "▶" : "Ⅱ"}</span>
-            </button>
-          )}
           <button type="button" aria-label="Previous photograph" onClick={() => change(-1)}>
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="m14 4-8 8 8 8" />
