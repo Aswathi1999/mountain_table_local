@@ -112,7 +112,7 @@ export function CustomCursor() {
   return createPortal(
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-[300]"
+      className="pointer-events-none fixed inset-0 z-[1000]"
       style={{ opacity: visible ? 1 : 0, transition: "opacity 0.3s" }}
     >
       <motion.div className="absolute top-0 left-0" style={{ x: rx, y: ry }}>
