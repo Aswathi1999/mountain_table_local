@@ -21,8 +21,17 @@ const experiences = [
 ];
 function CardVideo({ src }: { src: string }) {
   const ref = useRef<HTMLVideoElement>(null);
+  const [near, setNear] = useState(false);
   useAutoplay(ref);
-  return <video ref={ref} className="size-full object-cover" src={src} autoPlay muted loop playsInline preload="auto" aria-hidden="true" />;
+  // Only start downloading a card's video once it is close to the screen, so the six clips (5-16 MB each) don't compete with the hero.
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { setNear(true); observer.disconnect(); } }, { rootMargin: "300px 600px" });
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+  return <video ref={ref} className="size-full object-cover" src={near ? src : undefined} autoPlay muted loop playsInline preload={near ? "auto" : "none"} aria-hidden="true" />;
 }
 export function ExperienceStory() {
   const [viewer, setViewer] = useState<OpenFrom | null>(null);
