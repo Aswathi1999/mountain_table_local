@@ -8,16 +8,15 @@ import { splitTitle } from "./title";
 
 /**
  * How the existing activities fall across a day. Only what the page already says is used: the barbecue is an evening ("an
- * unforgettable evening of BBQ and music"), the elephants are watched from the homestay, and the rest are the day's outings.
+ * unforgettable evening of BBQ and music"), and the rest are the day's outings.
  * Nothing here adds a time, a price or a duration.
  */
 const PARTS = [
-  { title: "By day", note: "Out on the trails and over the valley", items: [0, 1, 2, 3] },
+  { title: "By day", note: "Out on the trails and over the valley", items: [0, 1, 2, 3, 5] },
   { title: "In the evening", note: "Around the fire, under the stars", items: [4] },
-  { title: "From the homestay", note: "Watching the meadows", items: [5] },
 ] as const;
 
-/** "Plan your day": three soft cards grouping the six activities, each linking to its section above. */
+/** "Plan your day": two soft cards grouping the six activities, each linking to its section above. */
 export function SeeDoPlan() {
   return (
     <section id="plan" aria-labelledby="plan-title" className="bg-ivory relative py-20 desk:py-28">
@@ -36,7 +35,7 @@ export function SeeDoPlan() {
           />
         </div>
 
-        <Stagger step={0.12} className="grid items-start gap-6 lg:grid-cols-3">
+        <Stagger step={0.12} className="grid items-start gap-6 lg:grid-cols-2">
           {PARTS.map((part) => (
             <StaggerItem key={part.title}>
               <article className="flex flex-col rounded-[18px] bg-[#fffdf8] p-8 shadow-[0_10px_30px_rgba(10,34,27,0.06)]">

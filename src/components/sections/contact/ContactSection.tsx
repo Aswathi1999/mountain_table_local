@@ -35,13 +35,13 @@ export function ContactSection() {
           </Reveal>
           <div className="relative mt-9 pb-10">
             <ImageFrame
-              src="/images/contact-lounge-v1.webp"
-              alt="A lounge opening onto a balcony with mountain views"
+              src="/images/contact/Lets%20Plan.jpg"
+              alt="A paved garden path beside tea hedges at sunset, with the hills beyond"
               sizes="(min-width: 1024px) 34vw, 90vw"
               className="aspect-[4/3] w-[88%] shadow-[0_20px_40px_rgba(10,34,27,0.14)]"
               from="bottom"
               drift={3}
-              position="40% 55%"
+              position="50% 55%"
               radius={6}
             />
             <div className="absolute right-0 bottom-0 -rotate-6" aria-hidden="true">

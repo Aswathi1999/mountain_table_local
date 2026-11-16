@@ -1,0 +1,89 @@
+/* Explore & Follow Us: two drifting strips of square-framed photographs. Two photographs show on a phone, three on a tablet, four on a desktop. */
+.follow-strip {
+  --follow-count: 2;
+  container-type: inline-size;
+  overflow: hidden;
+  padding-block: 56px 40px;
+}
+@media (min-width: 750px) {
+  .follow-strip {
+    --follow-count: 3;
+  }
+}
+@media (min-width: 1024px) {
+  .follow-strip {
+    --follow-count: 4;
+  }
+}
+.follow-track {
+  display: flex;
+  width: max-content;
+  animation: follow-left 80s linear infinite;
+}
+.follow-track-reverse {
+  animation-name: follow-right;
+}
+.follow-strip:hover .follow-track,
+.follow-strip:focus-within .follow-track {
+  animation-play-state: paused;
+}
+.follow-group {
+  /* Wide, airy gaps: the photographs are about a quarter of the strip, leaving room for the next one to peek in. */
+  --follow-gap: clamp(2rem, 7cqw, 7rem);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--follow-gap);
+  padding-right: var(--follow-gap);
+}
+.follow-tile {
+  display: block;
+  flex: none;
+  width: calc((100cqw - var(--follow-gap) * (var(--follow-count) + 0.5)) / var(--follow-count));
+  padding: 6px;
+  border: 1px solid rgb(31 59 47 / 25%);
+  border-radius: 2px;
+  transition: border-color 0.5s;
+}
+.follow-group .follow-tile:nth-child(3n + 2) {
+  margin-top: 56px;
+}
+.follow-group .follow-tile:nth-child(3n) {
+  margin-top: 24px;
+}
+.follow-tile:hover,
+.follow-tile:focus-visible {
+  border-color: var(--color-gold-ink);
+}
+.follow-photo {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--color-ivory);
+}
+@keyframes follow-left {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes follow-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+/* With reduced motion the strips stay still and can be scrolled by hand; the repeated copy is hidden. */
+@media (prefers-reduced-motion: reduce) {
+  .follow-strip {
+    overflow-x: auto;
+  }
+  .follow-track {
+    animation: none;
+  }
+  .follow-track > .follow-group[aria-hidden="true"] {
+    display: none;
+  }
+}

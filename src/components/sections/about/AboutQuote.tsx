@@ -74,7 +74,7 @@ export function AboutQuote() {
     >
       <motion.div className="absolute inset-0 -z-10 will-change-transform" style={{ scale }}>
         <Image
-          src="/images/about-quote-v1.webp"
+          src="/images/about_new/about-watch-story-v2.jpg"
           alt=""
           fill
           sizes="100vw"
