@@ -65,18 +65,18 @@ export const copy = {
         ],
       },
       {
-        title: "Bicycling",
-        subtitle: "Pedal Through Paradise",
-        body: [
-          "Explore Wagamon's charm on two wheels, cycling through scenic villages and stunning landscapes. Discover the art of farming and spice cultivation, blending nature and culture into a captivating journey.",
-        ],
-      },
-      {
-        title: "Hiking",
+        title: "Mottakunnu Hills",
         subtitle: "Vagamon's Windy Walk Trek",
         body: [
           "Explore the scenic Vakavanam trail, known as Vagamon Windy Walk Trekking, through grasslands and shola forests. Enjoy stunning views of Idukki reservoir's catchment area and vast mountain ranges. Keep an eye out for wildlife like elephants. It's a serene and rewarding hike in Wagamon",
           "*Extra Charges Apply.",
+        ],
+      },
+      {
+        title: "Pine Forest Walk",
+        subtitle: "Wander Among the Pines",
+        body: [
+          "Stroll the quiet, misty pine forest trails of Wagamon, where tall trunks, soft light and the scent of the woods slow every step.",
         ],
       },
       {
@@ -87,10 +87,11 @@ export const copy = {
         ],
       },
       {
-        title: "Elephant Watch",
-        subtitle: "Witness Wild Elephants Grazing",
+        title: "Glass Bridge",
+        subtitle: "Walk Above the Clouds",
         body: [
-          "At our homestay, guests can marvel at the sight of wild elephants peacefully grazing in the meadows, adding an unforgettable touch of natural beauty to their stay",
+          "Step out onto the glass bridge and look down over the forested valley and rolling hills, with the mist drifting beneath your feet.",
+          "*Extra Charges Apply",
         ],
       },
     ],

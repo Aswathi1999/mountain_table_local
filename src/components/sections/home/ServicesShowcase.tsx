@@ -16,13 +16,16 @@ import "./ServicesShowcase.css";
 const TILT = [-3, 2, 3, -2] as const;
 
 /**
+/**
  * "Our Services", composed like the Discover section: four tilted photographs drift in from the edges and converge around centred
- * copy as the section scrolls past. The photographs are the first four services in `src/data/servicesShowcase.ts`.
+ * copy as the section scrolls past. Hovering (or focusing) a photograph reveals that service's details; on touch screens its name
+ * always shows. The photographs and their wording are the first four services in `src/data/servicesShowcase.ts`.
  */
 export function ServicesShowcase() {
   const photos = showcaseServices.slice(0, 4);
   const sectionRef = useRef<HTMLElement>(null);
-
+  /** The collage stage, so the photographs travel over the stage's own scroll range. */
+  const stageRef = useRef<HTMLDivElement>(null);
   // Scroll choreography shared with Discover (same config, same easing of the scroll value).
   const on = useHomeFx("discover");
   const wide = useAllowMotion(1024);
@@ -30,7 +33,7 @@ export function ServicesShowcase() {
   const tablet = useAllowMotion(750);
   // Phones have a compact stage, so the photographs travel less to stay clear of the copy.
   const travel = config.travelVh * (wide ? 1 : tablet ? config.mobileFactor : 0.08);
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const { scrollYProgress } = useScroll({ target: stageRef, offset: ["start end", "end start"] });
   const progress = useSpring(scrollYProgress, SCROLL_SPRING);
   const topY = useTransform(progress, [0, 1], ["-" + travel + "svh", travel + "svh"]);
   const bottomY = useTransform(progress, [0, 1], [travel + "svh", "-" + travel + "svh"]);
@@ -40,12 +43,13 @@ export function ServicesShowcase() {
 
   return (
     <section ref={sectionRef} id="services" aria-labelledby="services-title" className="svc-collage">
-      <div className="svc-stage">
+      <div ref={stageRef} className="svc-stage">
         {photos.map((item, slot) => (
           <motion.div
             key={item.id}
             data-motion=""
             className={`svc-photo svc-photo-${slot}`}
+            tabIndex={0}
             style={{ y: on ? (slot < 2 ? topY : bottomY) : 0, rotate: TILT[slot] }}
           >
             <motion.div className="svc-photo-inner" style={{ y: on ? photoY : 0, scale: on ? 1.12 : 1 }}>
@@ -58,6 +62,21 @@ export function ServicesShowcase() {
                 style={{ objectPosition: item.image.position }}
               />
             </motion.div>
+            <div className="svc-photo-info">
+              <p className="svc-photo-tag">{item.tag}</p>
+              <h3 className="svc-photo-title">{item.title}</h3>
+              <div className="svc-photo-more">
+                <div>
+                  <p className="svc-photo-sub">{item.subtitle}</p>
+                  <p className="svc-photo-desc">{item.description}</p>
+                  <ul className="svc-photo-points">
+                    {item.highlights.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
           </motion.div>
         ))}
 

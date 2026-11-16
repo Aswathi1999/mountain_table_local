@@ -11,13 +11,13 @@ import { DUR, EASE, EASE_REVEAL, SCROLL_SPRING } from "@/components/motion/token
 import { useAllowMotion } from "@/components/motion/useAllowMotion";
 import { galleryPhotos } from "@/data/gallery";
 
-/** Five of the gallery's own photographs, fanned like postcards; the centre one is the largest. `stack` is how far (in its own widths) the card starts from the centre pile. */
+/** Five of the gallery's own photographs (the first five of the new set; 01 is the centre card), fanned like postcards; the centre one is the largest. `stack` is how far (in its own widths) the card starts from the centre pile. */
 const FAN = [
-  { i: 15, rotate: -7, lift: "mt-8", w: "w-[15%]", stack: 257 },
-  { i: 25, rotate: -3, lift: "mt-3", w: "w-[17%]", stack: 123 },
-  { i: 21, rotate: 0, lift: "mt-0", w: "w-[22%]", stack: 0 },
-  { i: 23, rotate: 3, lift: "mt-3", w: "w-[17%]", stack: -123 },
-  { i: 16, rotate: 7, lift: "mt-8", w: "w-[15%]", stack: -257 },
+  { i: 1, rotate: -7, lift: "mt-8", w: "w-[15%]", stack: 257 },
+  { i: 2, rotate: -3, lift: "mt-3", w: "w-[17%]", stack: 123 },
+  { i: 0, rotate: 0, lift: "mt-0", w: "w-[22%]", stack: 0 },
+  { i: 3, rotate: 3, lift: "mt-3", w: "w-[17%]", stack: -123 },
+  { i: 4, rotate: 7, lift: "mt-8", w: "w-[15%]", stack: -257 },
 ] as const;
 
 const hero = GALLERY_FX.hero;

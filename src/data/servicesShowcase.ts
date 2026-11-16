@@ -10,7 +10,7 @@ export type ShowcaseService = {
   description: string;
   highlights: readonly [string, string, string];
   cta: { label: string; href: string };
-  icon: "dining" | "adventure" | "spa" | "fire" | "celebration";
+  icon: "dining" | "adventure" | "pool" | "fire" | "celebration";
   image: { src: string; alt: string; position: string };
 };
 
@@ -48,15 +48,16 @@ export const showcaseServices: readonly ShowcaseService[] = [
     },
   },
   {
-    id: "spa",
-    title: "Spa & Wellness",
-    subtitle: "Slow, restoring rituals",
-    tag: "Wellness",
+    id: "pool",
+    title: "Infinity Pool",
+    subtitle: "Panoramic views of the misty hills",
+    tag: "Pool",
     script: "Breathe it in",
-    description: "Warm stone, soft linen and treatments that let the mountain air do the rest.",
-    highlights: ["Massages", "Wellness rituals", "Morning yoga"],
-    cta: { label: "Explore the Spa", href: "/contact" },
-    icon: "spa",
+    description:
+      "Take a refreshing dip in our infinity pool while soaking in the panoramic vistas of the misty hills and meadows.",
+    highlights: ["Infinity pool", "Misty hill views", "Meadow vistas"],
+    cta: { label: "Enquire Now", href: "/contact" },
+    icon: "pool",
     image: {
       src: "/images/service-wellness-v1.jpg",
       alt: "A cool drink and a rolled towel beside an infinity pool",

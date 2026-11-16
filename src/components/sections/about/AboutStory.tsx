@@ -55,8 +55,8 @@ export function AboutStory() {
           <Wildflower size={58} rotate={10} opacity={0.6} draw className="decor-lg absolute -right-3 bottom-[14%]" />
           <Postmark size={132} opacity={0.75} rotate={-8} className="decor-lg absolute top-[-4%] right-[2%] z-10" />
           <ImageFrame
-            src="/images/about-story-v1.webp"
-            alt="Misty mountain ridges at sunrise seen from the resort"
+            src="/images/about_new/about-story-2-v2.jpg"
+            alt="Aerial view of the property with its wooden roof and pool among tea terraces"
             sizes="(min-width: 1280px) 560px, (min-width: 1024px) 44vw, 90vw"
             className="relative ml-auto aspect-[4/3.2] w-[86%] shadow-[0_24px_50px_rgba(10,34,27,0.18)]"
             from="right"
@@ -67,10 +67,10 @@ export function AboutStory() {
           </ImageFrame>
           <PhotoDrop className="absolute bottom-0 left-[6%] w-[40%] lg:left-[8%]">
             <ImageFrame
-              src="/images/about-story-home-v1.webp"
-              alt="The dining area with a long wooden table and glass walls"
+              src="/images/about_new/about-story-1-v2.jpg"
+              alt="A bedroom with a white bed and windows opening onto greenery"
               sizes="(min-width: 1024px) 420px, 70vw"
-              position="42% 55%"
+              position="50% 60%"
               className="aspect-[1/1.12] w-full border-[6px] border-white shadow-[0_20px_44px_rgba(10,34,27,0.28)]"
               from="none"
               drift={4}

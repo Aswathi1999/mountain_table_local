@@ -18,8 +18,8 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "right",
     image: {
-      src: "/images/see-do-jeep-v1.webp",
-      alt: "A jeep on a safari trail at sunset",
+      src: "/images/see_and_do/Jeep%20Safari.jpg",
+      alt: "A jeep on a safari trail through Vagamon",
       d: [851, 1663, 277, 426],
       m: [27, 1059, 227, 95],
     },
@@ -31,8 +31,8 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "left",
     image: {
-      src: "/images/see-do-paragliding-v1.webp",
-      alt: "Paragliders above the hills of Vagamon",
+      src: "/images/see_and_do/Paragliding.jpg",
+      alt: "A paraglider above the hills of Vagamon",
       d: [152, 2129, 277, 426],
       m: [27, 1725, 227, 95],
     },
@@ -44,8 +44,8 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "right",
     image: {
-      src: "/images/see-do-cycling-v1.webp",
-      alt: "A cyclist on a hillside trail",
+      src: "/images/see_and_do/Mottakunnu.jpg",
+      alt: "Green grassy hills and a small lake at Mottakunnu",
       d: [851, 2629, 277, 426],
       m: [30, 2569, 227, 95],
     },
@@ -57,8 +57,8 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "left",
     image: {
-      src: "/images/see-do-hiking-v1.webp",
-      alt: "A hiker above the mist on the Vagamon trail",
+      src: "/images/see_and_do/pineforest.jpg",
+      alt: "A misty trail through a tall pine forest",
       d: [152, 3055, 277, 426],
       m: [30, 3042, 227, 95],
     },
@@ -70,8 +70,8 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "right",
     image: {
-      src: "/images/see-do-bbq-v1.webp",
-      alt: "Grilled food over a barbecue fire",
+      src: "/images/see_and_do/BBq.jpg",
+      alt: "Grilled food at an evening barbecue",
       d: [851, 3481, 277, 426],
       m: [33, 3606, 227, 95],
     },
@@ -83,8 +83,8 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "left",
     image: {
-      src: "/images/see-do-wildlife-v1.webp",
-      alt: "Wild elephants grazing in a meadow",
+      src: "/images/see_and_do/Glassbridge.jpg",
+      alt: "A glass bridge viewpoint above a misty forested valley",
       d: [161, 3934, 277, 426],
       m: [30, 4233, 227, 95],
     },

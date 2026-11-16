@@ -25,14 +25,13 @@ const photographs = [
 
 /**
  * Rooms & Booking hero, built like the home page hero: a full-screen slideshow of the room photographs (cross-fading with a
- * slight settle, drifting as the page scrolls away) under a soft shade, with the copy centred at the bottom and dots, a pause
- * button and arrows. The title and introduction are the page's existing copy and stay put; the small label above them names the
- * room in view. The slideshow advances by itself, and holds on hover or focus, when paused, and with reduced motion.
+ * slight settle, drifting as the page scrolls away) under a soft shade, with the copy at the bottom left and dots
+ * and arrows. The title and introduction are the page's existing copy and stay put; the small label above them names the
+ * room in view. The slideshow advances by itself, and holds on hover or focus and with reduced motion.
  */
 export function RoomsHero() {
   const [first, second] = copy.rooms.titleLines;
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState(false);
   const section = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
@@ -44,7 +43,7 @@ export function RoomsHero() {
   const photoDrift = useTransform(departure, [0, 1], [0, 100]);
 
   useEffect(() => {
-    if (paused || hovered || reduce) return;
+    if (hovered || reduce) return;
     const timer = window.setInterval(() => {
       if (document.hidden || !section.current) return;
       const bounds = section.current.getBoundingClientRect();
@@ -52,7 +51,7 @@ export function RoomsHero() {
       setActive((value) => (value + 1) % photographs.length);
     }, 4500);
     return () => window.clearInterval(timer);
-  }, [paused, hovered, reduce, active]);
+  }, [hovered, reduce, active]);
 
   const change = (direction: number) =>
     setActive((value) => (value + direction + photographs.length) % photographs.length);
@@ -144,16 +143,6 @@ export function RoomsHero() {
           ))}
         </div>
         <div className="resort-hero-arrows">
-          {!reduce && (
-            <button
-              data-slideshow-toggle
-              type="button"
-              aria-label={paused ? "Play slideshow" : "Pause slideshow"}
-              onClick={() => setPaused((value) => !value)}
-            >
-              <span aria-hidden="true">{paused ? "▶" : "Ⅱ"}</span>
-            </button>
-          )}
           <button type="button" aria-label="Previous photograph" onClick={() => change(-1)}>
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="m14 4-8 8 8 8" />

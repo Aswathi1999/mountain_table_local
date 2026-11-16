@@ -5,18 +5,14 @@ import { ArrowIcon } from "@/components/ui/BookNowButton";
 import { copy } from "@/data/copy";
 import { activityLayouts } from "@/data/seeDo";
 import {
-  BinocularMask,
   DustTrail,
   Embers,
-  FootprintScatter,
   Footprints,
   LanternImage,
   MusicNotes,
   ParagliderPath,
-  RouteLine,
   TyreTracks,
   WarmWash,
-  WheelNumber,
 } from "./ActivityFx";
 import { splitTitle } from "./title";
 
@@ -24,10 +20,10 @@ import { splitTitle } from "./title";
 const NOTES = [
   "Off the beaten track",
   "Fly above the valley",
-  "Slow wheels, wide views",
   "Follow the windy walk",
+  "Quiet, misty trails",
   "Fire, music, stars",
-  "Quiet watchers",
+  "Walk above the clouds",
 ] as const;
 
 /** Section look per activity: BBQ & Music is the dark evening band; the others alternate cream and sand. */
@@ -37,10 +33,10 @@ const TONES = ["ivory", "sand", "ivory", "sand", "dark", "ivory"] as const;
 const FRAMES = [
   { position: "50% 60%", ratio: "aspect-[4/3]", drift: 3 },
   { position: "45% 50%", ratio: "aspect-[4/3]", drift: 3 },
-  { position: "78% 30%", ratio: "aspect-[4/4.2]", drift: 3 },
-  { position: "40% 55%", ratio: "aspect-[4/3]", drift: 3 },
+  { position: "50% 55%", ratio: "aspect-[4/3]", drift: 3 },
+  { position: "50% 55%", ratio: "aspect-[4/4.2]", drift: 3 },
   { position: "35% 50%", ratio: "aspect-[4/3]", drift: 3 },
-  { position: "50% 40%", ratio: "aspect-[4/4.4]", drift: 3 },
+  { position: "50% 55%", ratio: "aspect-[4/3]", drift: 3 },
 ] as const;
 
 const icon = (d: ReactNode) => (
@@ -113,7 +109,7 @@ function Activity({ index }: { index: number }) {
         sizes="(min-width: 1280px) 620px, (min-width: 1024px) 48vw, 92vw"
         className="h-full w-full"
         radius={0}
-        from={index === 5 ? "fade" : flip ? "right" : "left"}
+        from={flip ? "right" : "left"}
         drift={frame.drift}
         lock
         position={frame.position}
@@ -131,11 +127,10 @@ function Activity({ index }: { index: number }) {
       }`}
     >
       {index === 4 ? <WarmWash /> : null}
-      {index === 5 ? <FootprintScatter /> : null}
       <div className="wrap relative grid items-center gap-14 lg:grid-cols-12 lg:gap-x-20">
         <div className={`relative lg:col-span-7 lg:row-start-1 ${flip ? "lg:col-start-6" : "lg:col-start-1"}`}>
           <div className="relative">
-            {index === 5 ? <BinocularMask>{picture}</BinocularMask> : picture}
+            {picture}
             <Reveal
               delay={0.9}
               y={10}
@@ -149,19 +144,15 @@ function Activity({ index }: { index: number }) {
         <div
           className={`relative lg:col-span-5 lg:row-start-1 ${flip ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-8"}`}
         >
-          {index === 3 ? (
+          {index === 2 ? (
             <Footprints
               className={`absolute -top-4 -right-2 hidden lg:block ${dark ? "text-gold-soft" : "text-forest"}`}
             />
           ) : null}
           <div>
-            {index === 2 ? (
-              <WheelNumber className={numberClass}>{num}</WheelNumber>
-            ) : (
-              <Reveal as="span" y={0} className={numberClass}>
-                <span aria-hidden="true">{num}</span>
-              </Reveal>
-            )}
+            <Reveal as="span" y={0} className={numberClass}>
+              <span aria-hidden="true">{num}</span>
+            </Reveal>
           </div>
           <Reveal delay={0.05}>
             <p className={`t-eyebrow ${dark ? "text-ivory" : "text-forest"}`}>{text.subtitle}</p>
@@ -173,7 +164,6 @@ function Activity({ index }: { index: number }) {
             <Lines as="div" lines={lines} />
           </h2>
           {index === 0 ? <TyreTracks className={`mt-4 ${dark ? "text-gold-soft" : "text-gold-ink"}`} /> : null}
-          {index === 2 ? <RouteLine className={`mt-4 ${dark ? "text-gold-soft" : "text-gold-ink"}`} /> : null}
 
           <div className="mt-6 flex flex-col gap-4">
             {paragraphs.map((p, i) => (

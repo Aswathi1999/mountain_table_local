@@ -108,7 +108,11 @@ export function HomeHero() {
       <div className="resort-hero-shade" aria-hidden="true" />
       <motion.div
         className="resort-hero-copy wrap"
-        style={{ y: allowScrollMotion ? copyLift : 0, opacity: allowScrollMotion ? copyFade : 1 }}
+        style={{
+          y: allowScrollMotion ? copyLift : 0,
+          opacity: allowScrollMotion ? copyFade : 1,
+          justifyContent: "center",
+        }}
       >
         <h1 className="sr-only">The Mountain Table — A luxury mountain escape</h1>
         <div style={{ display: "grid", width: "100%" }}>
@@ -133,6 +137,7 @@ export function HomeHero() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
+                  textAlign: "center",
                   justifyContent: "flex-end",
                   pointerEvents: selected ? "auto" : "none",
                 }}

@@ -112,8 +112,8 @@ export function AboutPromise() {
         <div className="grid overflow-hidden rounded-[24px] bg-[#fffdf8] shadow-[0_10px_30px_rgba(10,34,27,0.06)] lg:grid-cols-2">
           <Reveal x={enabled ? -slide : 0} y={0} className="h-[22rem] lg:h-full lg:min-h-[32rem]">
             <ImageFrame
-              src="/images/about-promise-v1.webp"
-              alt="An open lounge of natural materials facing the mountains"
+              src="/images/about_new/about-promise-v2.jpg"
+              alt="A lounge with wooden sofas, a wood-panelled ceiling and an open kitchen beyond"
               sizes="(min-width: 1024px) 600px, 100vw"
               className="h-full w-full"
               from="none"
