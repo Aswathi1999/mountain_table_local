@@ -7,6 +7,7 @@ import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import { DUR, EASE, STAGGER, SCROLL_SPRING } from "@/components/motion/tokens";
 import { useAllowMotion } from "@/components/motion/useAllowMotion";
+import { useAutoplay } from "@/components/motion/useAutoplay";
 
 const photographs = [
   {
@@ -52,7 +53,9 @@ export function HomeHero() {
   const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState(false);
   const section = useRef<HTMLElement>(null);
+  const heroVideo = useRef<HTMLVideoElement>(null);
   const reduce = useReducedMotion();
+  useAutoplay(heroVideo, !reduce);
   const allowScrollMotion = useAllowMotion(750);
   const { scrollYProgress } = useScroll({ target: section, offset: ["start start", "end start"] });
   const departure = useSpring(scrollYProgress, SCROLL_SPRING);
@@ -89,6 +92,7 @@ export function HomeHero() {
             <Image src={photographs[0].src} alt="" fill sizes="100vw" priority className="object-cover" />
           ) : (
             <video
+              ref={heroVideo}
               className="size-full object-cover"
               src="/videos/web-banner.mp4"
               poster="/images/hero-banner-poster-v1.webp"

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useAutoplay } from "@/components/motion/useAutoplay";
 
 type Props = {
   videoSrc: string;
@@ -21,12 +22,9 @@ export function TextVideo({ videoSrc, poster, className = "", style }: Props) {
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      video.pause();
-      return;
-    }
-    video.play().catch(() => {});
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) video.pause();
   }, []);
+  useAutoplay(ref, typeof window === "undefined" || !window.matchMedia("(prefers-reduced-motion: reduce)").matches);
 
   const mask = 'url("/images/adventure-mask.svg")';
   return (
