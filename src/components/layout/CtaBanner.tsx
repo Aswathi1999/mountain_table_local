@@ -50,7 +50,7 @@ export function CtaBanner() {
     >
       <motion.div className="absolute inset-0 -z-10 will-change-[transform,filter]" style={{ scale, filter }}>
         <Image
-          src="/images/home-cta-booking-v1.jpg"
+          src="/images/home-cta-booking-v2.jpg"
           alt=""
           fill
           sizes="100vw"

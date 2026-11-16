@@ -19,10 +19,10 @@ export const HOME_FX = {
 
   /** Video files (put the real ones in /public/videos; the existing hero clip is the fallback source). */
   video: {
-    heroLoop: "/videos/hero-loop.mp4",
+    heroLoop: "/videos/hero-loop-v2.mp4",
     heroFallback: "/videos/kling_20261014_VIDEO_Create_a_p_4745_0.mov",
     heroPoster: "/images/hero-poster.jpg",
-    film: "/videos/Video_20261027_142530_254.mp4",
+    film: "/videos/Video_20261027_142530_254-v2.mp4",
     filmFallback: "/videos/kling_20261014_VIDEO_Create_a_p_4745_0.mov",
   },
 

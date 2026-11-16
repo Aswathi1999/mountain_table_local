@@ -119,7 +119,7 @@ function AmbientFilm({ still }: { still: boolean }) {
       aria-hidden="true"
       tabIndex={-1}
     >
-      <source src="/videos/discover-v2.mp4" type="video/mp4" />
+      <source src="/videos/discover-v3.mp4" type="video/mp4" />
     </video>
   );
 }

@@ -136,7 +136,7 @@ export function BlogHero({ intro }: { intro: string }) {
         </div>
         <div className="relative desk:col-span-4 desk:col-start-9 desk:-mb-32">
           <ImageFrame
-            src="/images/c18256_9bf951b03ba94f55a8d71c9ad2cd5249.jpg"
+            src="/images/c18256_9bf951b03ba94f55a8d71c9ad2cd5249-v2.jpg"
             alt=""
             sizes="(min-width: 1280px) 400px, (min-width: 750px) 33vw, 80vw"
             className="aspect-[4/5] w-4/5 max-desk:ml-auto desk:w-full"

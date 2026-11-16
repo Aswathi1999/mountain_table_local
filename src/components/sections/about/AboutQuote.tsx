@@ -155,7 +155,7 @@ export function AboutQuote() {
           </Reveal>
         </div>
       </div>
-      <StoryDialog open={open} onClose={() => setOpen(false)} src="/videos/discover-v2.mp4" />
+      <StoryDialog open={open} onClose={() => setOpen(false)} src="/videos/discover-v3.mp4" />
     </section>
   );
 }

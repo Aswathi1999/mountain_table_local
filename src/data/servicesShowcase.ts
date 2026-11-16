@@ -92,7 +92,7 @@ export const showcaseServices: readonly ShowcaseService[] = [
     cta: { label: "Enquire Now", href: "/contact" },
     icon: "celebration",
     image: {
-      src: "/images/c18256_e258df5a2e004fb0b702a4bb9e142cec.jpg",
+      src: "/images/c18256_e258df5a2e004fb0b702a4bb9e142cec-v2.jpg",
       alt: "The infinity pool and covered terrace at sunset",
       position: "60% 55%",
     },

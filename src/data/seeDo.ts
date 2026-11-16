@@ -18,7 +18,7 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "right",
     image: {
-      src: "/images/see_and_do/Jeep%20Safari.jpg",
+      src: "/images/see_and_do/Jeep-Safari-v2.jpg",
       alt: "A jeep on a safari trail through Vagamon",
       d: [851, 1663, 277, 426],
       m: [27, 1059, 227, 95],
@@ -44,7 +44,7 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "right",
     image: {
-      src: "/images/see_and_do/Mottakunnu.jpg",
+      src: "/images/see_and_do/Mottakunnu-v2.jpg",
       alt: "Green grassy hills and a small lake at Mottakunnu",
       d: [851, 2629, 277, 426],
       m: [30, 2569, 227, 95],
@@ -57,7 +57,7 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "left",
     image: {
-      src: "/images/see_and_do/pineforest.jpg",
+      src: "/images/see_and_do/pineforest-v2.jpg",
       alt: "A misty trail through a tall pine forest",
       d: [152, 3055, 277, 426],
       m: [30, 3042, 227, 95],
@@ -70,7 +70,7 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "right",
     image: {
-      src: "/images/see_and_do/BBq.jpg",
+      src: "/images/see_and_do/BBq-v2.jpg",
       alt: "Grilled food at an evening barbecue",
       d: [851, 3481, 277, 426],
       m: [33, 3606, 227, 95],
@@ -83,7 +83,7 @@ export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "left",
     image: {
-      src: "/images/see_and_do/Glassbridge.jpg",
+      src: "/images/see_and_do/Glassbridge-v2.jpg",
       alt: "A glass bridge viewpoint above a misty forested valley",
       d: [161, 3934, 277, 426],
       m: [30, 4233, 227, 95],
@@ -97,14 +97,14 @@ export const activityLayouts: readonly ActivityLayout[] = [
 
 /** The seven "Exciting Escapes" photographs, in their original order. */
 export const honeycombPhotos = [
-  { src: "/images/81d784_a43d2aa0646e4ef884b76c80a2b04d2f.jpg", alt: "A bathtub beside a slatted window" },
-  { src: "/images/81d784_1c2a1355792941408dd4987fa7e78484.jpg", alt: "The infinity pool at night" },
-  { src: "/images/81d784_25b1f7c4c5de4910a05fa23069ef109a.jpg", alt: "A basin beside a lit window niche" },
+  { src: "/images/81d784_a43d2aa0646e4ef884b76c80a2b04d2f-v2.jpg", alt: "A bathtub beside a slatted window" },
+  { src: "/images/81d784_1c2a1355792941408dd4987fa7e78484-v2.jpg", alt: "The infinity pool at night" },
+  { src: "/images/81d784_25b1f7c4c5de4910a05fa23069ef109a-v2.jpg", alt: "A basin beside a lit window niche" },
   {
-    src: "/images/c18256_e258df5a2e004fb0b702a4bb9e142cec.jpg",
+    src: "/images/c18256_e258df5a2e004fb0b702a4bb9e142cec-v2.jpg",
     alt: "The infinity pool and covered terrace at sunset",
   },
-  { src: "/images/c18256_9bf951b03ba94f55a8d71c9ad2cd5249.jpg", alt: "A stone path through the tea plantation" },
-  { src: "/images/c18256_6f8159e643924ae99302e95ab1689264.jpg", alt: "A wooden writing desk" },
-  { src: "/images/c18256_856598ef975d4cef8aab0df95f08eb12.jpg", alt: "A bright hall with a world map" },
+  { src: "/images/c18256_9bf951b03ba94f55a8d71c9ad2cd5249-v2.jpg", alt: "A stone path through the tea plantation" },
+  { src: "/images/c18256_6f8159e643924ae99302e95ab1689264-v2.jpg", alt: "A wooden writing desk" },
+  { src: "/images/c18256_856598ef975d4cef8aab0df95f08eb12-v2.jpg", alt: "A bright hall with a world map" },
 ] as const;
