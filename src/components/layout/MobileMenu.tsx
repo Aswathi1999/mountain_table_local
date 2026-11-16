@@ -3,7 +3,8 @@
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import { BookNowButton } from "@/components/ui/BookNowButton";
 import { DUR, EASE, EASE_REVEAL } from "@/components/motion/tokens";
 import Image from "next/image";
@@ -29,15 +30,22 @@ export function MobileMenu({ bookHref }: { bookHref: string }) {
   const [hover, setHover] = useState<string | null>(null);
   const preview = useSiteFx("menuPreview");
   const pathname = usePathname();
+  // The header is transformed and blurred, which makes it the containing block of a fixed panel (clipping it to header height),
+  // so the panel is rendered in a portal on <body>.
+  const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
 
   useEffect(() => {
     if (!open) return;
+    const wide = window.matchMedia("(min-width: 1180px)");
+    const onWide = () => wide.matches && setOpen(false);
+    wide.addEventListener("change", onWide);
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", onKey);
+      wide.removeEventListener("change", onWide);
       document.body.style.overflow = prev;
     };
   }, [open]);
@@ -49,8 +57,10 @@ export function MobileMenu({ bookHref }: { bookHref: string }) {
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         aria-controls="mobile-menu"
+        aria-hidden={open || undefined}
+        tabIndex={open ? -1 : undefined}
         onClick={() => setOpen((v) => !v)}
-        className="absolute top-1/2 right-4 z-[70] flex size-11 -translate-y-1/2 cursor-pointer flex-col items-center justify-center gap-[7px] border-0 bg-transparent p-0"
+        className={`absolute top-1/2 right-4 z-[70] flex size-11 -translate-y-1/2 cursor-pointer flex-col items-center justify-center gap-[7px] border-0 bg-transparent p-0 ${open ? "invisible" : ""}`}
       >
         <span
           className={`block h-px w-7 transition-[transform,background-color] duration-500 ease-out ${open ? "bg-ivory translate-y-[4px] rotate-45" : "bg-forest"}`}
@@ -60,16 +70,19 @@ export function MobileMenu({ bookHref }: { bookHref: string }) {
         />
       </button>
 
+      {mounted ? createPortal(
       <AnimatePresence>
         {open ? (
-          <motion.div
-            key="menu-sliver"
-            aria-hidden="true"
-            className="bg-gold pointer-events-none fixed inset-0 z-[59]"
-            initial={{ clipPath: "inset(0 0 100% 0)" }}
-            animate={{ clipPath: "inset(0 0 0% 0)", transition: { duration: 0.7, ease: EASE_REVEAL } }}
-            exit={{ clipPath: "inset(100% 0 0 0)", transition: { duration: DUR.ui, ease: EASE_REVEAL, delay: 0.12 } }}
-          />
+          <button
+            key="menu-close"
+            type="button"
+            aria-label="Close menu"
+            onClick={() => setOpen(false)}
+            className="fixed top-3.5 right-4 z-[70] flex size-11 cursor-pointer flex-col items-center justify-center gap-[7px] border-0 bg-transparent p-0"
+          >
+            <span className="bg-ivory block h-px w-7 translate-y-[4px] rotate-45" />
+            <span className="bg-ivory block h-px w-7 -translate-y-[4px] -rotate-45" />
+          </button>
         ) : null}
         {open ? (
           <motion.nav
@@ -78,7 +91,7 @@ export function MobileMenu({ bookHref }: { bookHref: string }) {
             aria-label="Site"
             className="bg-forest-deep fixed inset-0 z-[60] flex flex-col overflow-y-auto px-8 pt-28 pb-10"
             initial={{ clipPath: "inset(0 0 100% 0)" }}
-            animate={{ clipPath: "inset(0 0 0% 0)", transition: { duration: 0.7, ease: EASE_REVEAL, delay: 0.14 } }}
+            animate={{ clipPath: "inset(0 0 0% 0)", transition: { duration: 0.7, ease: EASE_REVEAL, delay: 0 } }}
             exit={{ clipPath: "inset(100% 0 0 0)", transition: { duration: DUR.ui, ease: EASE_REVEAL } }}
           >
             {preview ? (
@@ -122,7 +135,7 @@ export function MobileMenu({ bookHref }: { bookHref: string }) {
                         href={item.href}
                         aria-current={current ? "page" : undefined}
                         onClick={() => setOpen(false)}
-                        className="t-h3 text-ivory flex items-baseline justify-between py-4 leading-none no-underline aria-[current=page]:text-gold-soft aria-[current=page]:italic"
+                        className="t-h3 text-ivory text-[1.5rem] flex items-baseline justify-between py-3.5 leading-none no-underline aria-[current=page]:text-gold-soft aria-[current=page]:italic"
                       >
                         <span>{titleCase(item.label)}</span>
                       </Link>
@@ -142,7 +155,8 @@ export function MobileMenu({ bookHref }: { bookHref: string }) {
             </motion.div>
           </motion.nav>
         ) : null}
-      </AnimatePresence>
+      </AnimatePresence>,
+      document.body) : null}
     </div>
   );
 }

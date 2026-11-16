@@ -95,7 +95,6 @@ export function HomeHero() {
               ref={heroVideo}
               className="size-full object-cover"
               src="/videos/web-banner.mp4"
-              poster="/images/hero-banner-poster-v1.webp"
               autoPlay
               muted
               loop
