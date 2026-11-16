@@ -7,17 +7,23 @@ import { HOME_FX } from "@/components/motion/home-fx.config";
 import { DUR, EASE, SCROLL_SPRING, STAGGER } from "@/components/motion/tokens";
 import { useAllowMotion } from "@/components/motion/useAllowMotion";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
+import { useAutoplay } from "@/components/motion/useAutoplay";
 
 import { copy } from "@/data/copy";
 import { ExperienceViewer, type OpenFrom } from "./ExperienceViewer";
 import "./ExperienceStory.css";
 const experiences = [
+  { title: "Infinity Pool", text: "The infinity pool overlooking the hills.", details: [copy.home.services.pool], image: "/images/experience-pool-expand-v1.jpg", video: "/videos/experience-pool-v1.mp4", alt: "An infinity pool looking out over green hills and a blue sky" },
   { title: "Luxurious Rooms", text: "Comfortable stays with stunning views.", details: [copy.home.roomsBody[0], copy.home.roomsBody[1]], image: "/images/experience-room-expand-v1.jpg", video: "/videos/experience-rooms-v1.mp4", alt: "A bedroom with a wooden bed and a window onto greenery" },
   { title: "Fine Dining", text: "Savor locally inspired cuisine.", details: [copy.home.services.breakfast], image: "/images/experience-dining-expand-v1.jpg", video: "/videos/experience-dining-v1.mp4", alt: "Sliced fresh pineapple served on a white plate" },
   { title: "Nature & Adventure", text: "Explore the beauty around you.", details: [copy.home.services.garden], image: "/images/experience-adventure-expand-v1.jpg", video: "/videos/experience-adventure-v1.mp4", alt: "A jeep on a red dirt track through green grassy hills, seen from above" },
-  { title: "Infinity Pool", text: "The infinity pool overlooking the hills.", details: [copy.home.services.pool], image: "/images/experience-pool-expand-v1.jpg", video: "/videos/experience-pool-v1.mp4", alt: "An infinity pool looking out over green hills and a blue sky" },
   ...([{ index: 0, name: "safari", alt: "a safari vehicle in tea gardens", image: "/images/experience-safari-expand-v1.jpg", video: "/videos/experience-safari-v1.mp4", realAlt: "A jeep crossing a shallow forest stream, reflected in the dark water" }, { index: 4, name: "bbq", alt: "a barbecue terrace with an acoustic guitar at dusk", image: "/images/experience-bbq-expand-v1.jpg", video: "/videos/experience-bbq-v1.mp4", realAlt: "Grilled barbecue chicken served on a white plate with fresh vegetable garnish" }]).map(({ index, name, alt, image, video, realAlt }: { index: number; name: string; alt: string; image?: string; video?: string; realAlt?: string }) => ({ title: copy.seeDo.activities[index].title, text: copy.seeDo.activities[index].subtitle, details: copy.seeDo.activities[index].body.filter((paragraph) => !paragraph.startsWith("*")), note: index === 0 ? "Extra charges apply." : undefined, image: image ?? `/images/experience-concept-${name}-v1.webp`, video, alt: realAlt ?? `Illustrative concept: ${alt}` })),
 ];
+function CardVideo({ src }: { src: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useAutoplay(ref);
+  return <video ref={ref} className="size-full object-cover" src={src} autoPlay muted loop playsInline preload="auto" aria-hidden="true" />;
+}
 export function ExperienceStory() {
   const [viewer, setViewer] = useState<OpenFrom | null>(null);
   const closeViewer = useCallback(() => setViewer(null), []);
@@ -94,8 +100,7 @@ export function ExperienceStory() {
               viewport={{ amount: 0.2 }}
               transition={{ duration: allowMotion ? DUR.reveal : 0, ease: EASE, delay: allowMotion ? (index % 3) * STAGGER.tight : 0 }}
             >
-            <div className={"mt-exp-photo"} data-experience-photo>{"video" in item && item.video && !reduced ? <video className="size-full object-cover" src={item.video} autoPlay muted loop playsInline preload="auto" aria-hidden="true" /> : <Image src={item.image} alt={item.alt} fill sizes="(min-width: 1407px) 450px, (min-width: 844px) 32vw, 270px" className="object-cover" />}</div>
-            <div className={"mt-exp-shade"} />
+            <div className={"mt-exp-photo"} data-experience-photo>{"video" in item && item.video && !reduced ? <CardVideo src={item.video} /> : <Image src={item.image} alt={item.alt} fill sizes="(min-width: 1407px) 450px, (min-width: 844px) 32vw, 270px" className="object-cover" />}</div>
             <button
               type="button"
               className="mt-exp-open"

@@ -80,6 +80,8 @@ function AmbientFilm({ still }: { still: boolean }) {
   const ref = useRef<HTMLVideoElement>(null);
   const seen = useInView(ref, { amount: 0.25 });
   useEffect(() => {
+    // React omits the `muted` attribute from server HTML; phones need it set before play().
+    if (ref.current) { ref.current.muted = true; ref.current.defaultMuted = true; }
     const video = ref.current;
     if (!video || still) return;
     if (seen) void video.play().catch(() => undefined);
