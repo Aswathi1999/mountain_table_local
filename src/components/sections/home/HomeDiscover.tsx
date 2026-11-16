@@ -84,8 +84,18 @@ function AmbientFilm({ still }: { still: boolean }) {
     if (ref.current) { ref.current.muted = true; ref.current.defaultMuted = true; }
     const video = ref.current;
     if (!video || still) return;
-    if (seen) void video.play().catch(() => undefined);
-    else video.pause();
+    if (!seen) {
+      video.pause();
+      return;
+    }
+    // iOS blocks autoplay in Low Power Mode (and sometimes on slow loads); retry on the first touch, scroll or key.
+    const events = ["touchstart", "pointerdown", "scroll", "keydown"] as const;
+    const retry = () => {
+      void video.play().then(stop, () => undefined);
+    };
+    const stop = () => events.forEach((name) => window.removeEventListener(name, retry));
+    video.play().catch(() => events.forEach((name) => window.addEventListener(name, retry, { passive: true })));
+    return stop;
   }, [seen, still]);
 
   return (
