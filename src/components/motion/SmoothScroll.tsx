@@ -40,8 +40,22 @@ export function SmoothScroll() {
     };
   }, [on]);
 
+  // A new route starts at the top, unless the link carried a #section: then it opens on that section (retrying briefly while the page renders).
   useEffect(() => {
-    lenis.current?.scrollTo(0, { immediate: true, force: true });
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id) {
+      lenis.current?.scrollTo(0, { immediate: true, force: true });
+      return;
+    }
+    let tries = 0;
+    let timer = 0;
+    const go = () => {
+      const el = document.getElementById(id);
+      if (el) lenis.current?.scrollTo(el, { immediate: true, force: true });
+      else if (tries++ < 20) timer = window.setTimeout(go, 100);
+    };
+    go();
+    return () => window.clearTimeout(timer);
   }, [pathname]);
 
   return null;
