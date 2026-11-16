@@ -89,7 +89,7 @@ function AmbientFilm({ still }: { still: boolean }) {
       return;
     }
     // iOS blocks autoplay in Low Power Mode (and sometimes on slow loads); retry on the first touch, scroll or key.
-    const events = ["touchstart", "pointerdown", "scroll", "keydown"] as const;
+    const events = ["touchstart", "touchend", "pointerdown", "pointerup", "scroll", "keydown"] as const;
     const retry = () => {
       void video.play().then(stop, () => undefined);
     };

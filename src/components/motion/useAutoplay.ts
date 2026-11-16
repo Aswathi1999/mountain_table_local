@@ -20,7 +20,7 @@ export function useAutoplay(ref: RefObject<HTMLVideoElement | null>, enabled = t
       if (document.hidden || !video.paused) return;
       void video.play().catch(() => undefined);
     };
-    const events = ["touchstart", "pointerdown", "scroll", "click"] as const;
+    const events = ["touchstart", "touchend", "pointerdown", "pointerup", "scroll", "click"] as const;
     const once = () => {
       play();
       if (!video.paused) events.forEach((e) => window.removeEventListener(e, once));
