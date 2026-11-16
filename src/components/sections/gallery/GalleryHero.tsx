@@ -13,11 +13,11 @@ import { galleryPhotos } from "@/data/gallery";
 
 /** Five of the gallery's own photographs (the first five of the new set; 01 is the centre card), fanned like postcards; the centre one is the largest. `stack` is how far (in its own widths) the card starts from the centre pile. */
 const FAN = [
-  { i: 1, rotate: -7, lift: "mt-8", w: "w-[15%]", stack: 257 },
-  { i: 2, rotate: -3, lift: "mt-3", w: "w-[17%]", stack: 123 },
-  { i: 0, rotate: 0, lift: "mt-0", w: "w-[22%]", stack: 0 },
-  { i: 3, rotate: 3, lift: "mt-3", w: "w-[17%]", stack: -123 },
-  { i: 4, rotate: 7, lift: "mt-8", w: "w-[15%]", stack: -257 },
+  { i: 1, rotate: -7, lift: "mt-8", w: "w-[20%] desk:w-[15%]", stack: 257 },
+  { i: 2, rotate: -3, lift: "mt-3", w: "w-[25%] desk:w-[17%]", stack: 123 },
+  { i: 0, rotate: 0, lift: "mt-0", w: "w-[34%] desk:w-[22%]", stack: 0 },
+  { i: 3, rotate: 3, lift: "mt-3", w: "w-[25%] desk:w-[17%]", stack: -123 },
+  { i: 4, rotate: 7, lift: "mt-8", w: "w-[20%] desk:w-[15%]", stack: -257 },
 ] as const;
 
 const hero = GALLERY_FX.hero;
@@ -75,8 +75,8 @@ function Postcard({ n, hover, setHover, p, live, fx }: CardProps) {
   const stage = fx && !reduce;
   return (
     <motion.div
-      className={`${f.w} ${f.lift} relative shrink-0`}
-      style={{ x: spreadX, zIndex: hovered ? 30 : 1 }}
+      className={`${f.w} ${f.lift} ${n > 0 ? "-ml-[6%] desk:ml-0" : ""} relative shrink-0`}
+      style={{ x: spreadX, zIndex: hovered ? 30 : 5 - rank }}
       onPointerEnter={live ? () => setHover(n) : undefined}
       onPointerLeave={live ? () => setHover(null) : undefined}
     >
@@ -151,7 +151,6 @@ function EyebrowLine({ side }: { side: "left" | "right" }) {
  * spreads the fan a little and fades it as the photographs arrive. Settings: `GALLERY_FX.hero`.
  */
 export function GalleryHero() {
-  const reduce = useReducedMotion();
   const wide = useAllowMotion(hero.minWidth);
   const live = hero.enabled && wide;
   const ref = useRef<HTMLElement>(null);
@@ -207,40 +206,13 @@ export function GalleryHero() {
         </Reveal>
 
         <motion.div
-          className="mx-auto mt-12 flex max-w-[56rem] items-start justify-center gap-[1.5%] pb-10 desk:mt-16"
+          className="mx-auto mt-12 flex max-w-[56rem] items-start justify-center desk:gap-[1.5%] pb-10 desk:mt-16"
           style={{ opacity: fanOpacity }}
         >
           {FAN.map((_, n) => (
             <Postcard key={n} n={n} hover={hover} setHover={setHover} p={p} live={live} fx={hero.enabled} />
           ))}
         </motion.div>
-        <div className="relative mx-auto -mt-6 h-8 w-[22%] max-w-[12.5rem]">
-          <motion.span
-            data-motion=""
-            className="t-script text-forest/80 absolute inset-x-0 top-0 block whitespace-nowrap text-[1.5rem]"
-            initial={hero.enabled && !reduce ? { clipPath: "inset(-20% 100% -20% -2%)" } : false}
-            animate={{ clipPath: "inset(-20% -6% -20% -2%)" }}
-            transition={{ duration: 1.1, ease: EASE_REVEAL, delay: hero.captionDelay }}
-          >
-            our little cabin
-          </motion.span>
-          <svg
-            viewBox="0 0 120 8"
-            className="text-gold absolute inset-x-0 top-[1.9rem] h-2 w-full"
-            fill="none"
-            aria-hidden="true"
-          >
-            <motion.path
-              d="M4 5C30 1 60 7 116 2"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              initial={hero.enabled && !reduce ? { pathLength: 0 } : false}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 0.9, ease: EASE, delay: hero.captionDelay + 0.6 }}
-            />
-          </svg>
-        </div>
       </div>
     </section>
   );
