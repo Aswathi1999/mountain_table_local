@@ -14,7 +14,8 @@ const discover = {
   body: "From peaceful mornings to starlit evenings, The Mountain Table offers a sanctuary where nature, comfort, and unforgettable experiences come together.",
 } as const;
 
-export function StoryDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
+/** The film dialog. `src` swaps in a different single video (the About page plays the Discover film); by default it plays the property film. */
+export function StoryDialog({ open, onClose, src }: { open: boolean; onClose: () => void; src?: string }) {
   const ref = useRef<HTMLDialogElement>(null);
   const opener = useRef<HTMLElement | null>(null);
   useEffect(() => {
@@ -48,9 +49,15 @@ export function StoryDialog({ open, onClose }: { open: boolean; onClose: () => v
             loop
             poster={HOME_FX.video.heroPoster}
           >
-            <source src={HOME_FX.video.film} type="video/mp4" />
-            <source src={HOME_FX.video.filmFallback} type="video/quicktime" />
-            <source src={HOME_FX.video.filmFallback} type="video/mp4" />
+            {src ? (
+              <source src={src} type="video/mp4" />
+            ) : (
+              <>
+                <source src={HOME_FX.video.film} type="video/mp4" />
+                <source src={HOME_FX.video.filmFallback} type="video/quicktime" />
+                <source src={HOME_FX.video.filmFallback} type="video/mp4" />
+              </>
+            )}
           </video>
           <button
             type="button"
@@ -81,7 +88,10 @@ function AmbientFilm({ still }: { still: boolean }) {
   const seen = useInView(ref, { amount: 0.25 });
   useEffect(() => {
     // React omits the `muted` attribute from server HTML; phones need it set before play().
-    if (ref.current) { ref.current.muted = true; ref.current.defaultMuted = true; }
+    if (ref.current) {
+      ref.current.muted = true;
+      ref.current.defaultMuted = true;
+    }
     const video = ref.current;
     if (!video || still) return;
     if (!seen) {

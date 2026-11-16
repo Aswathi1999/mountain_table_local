@@ -125,7 +125,10 @@ export function Footer() {
               <CompassRose size={22} color="var(--color-gold-soft)" opacity={0.9} className="shrink-0" />
               <Coordinates />
             </p>
-            <BackToTop />
+            {/* Kept clear of the fixed chat launcher, which sits over the bottom-right corner when the page is scrolled to the end. */}
+            <div className="mr-[4.5rem]">
+              <BackToTop />
+            </div>
           </div>
         </div>
       </div>
