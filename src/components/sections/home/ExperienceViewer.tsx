@@ -256,14 +256,6 @@ export function ExperienceViewer({
                       className="object-cover"
                     />
                   </motion.div>
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0"
-                    style={{
-                      background:
-                        "linear-gradient(to top, rgba(10,34,27,0.88) 0%, rgba(10,34,27,0.35) 45%, rgba(10,34,27,0.45) 100%)",
-                    }}
-                  />
                   <span
                     aria-hidden="true"
                     className="font-display pointer-events-none absolute right-[4vw] bottom-[-4vw] leading-none text-white/10 [font-size:clamp(9rem,26vw,24rem)]"
