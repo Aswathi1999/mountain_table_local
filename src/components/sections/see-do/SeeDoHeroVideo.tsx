@@ -14,7 +14,7 @@ export function SeeDoHeroVideo() {
     <video
       ref={ref}
       className="absolute inset-0 size-full object-cover"
-      src="/images/see_and_do/Banner.mp4"
+      src="/images/see_and_do/Banner-v2.mp4"
       autoPlay
       muted
       loop

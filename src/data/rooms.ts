@@ -17,7 +17,7 @@ export const roomLayouts: readonly RoomLayout[] = [
   {
     name: "Room 1",
     image: {
-      src: "/images/c18256_e6722fd3397a4b21a829c2ab06e9e5a6.jpg",
+      src: "/images/c18256_e6722fd3397a4b21a829c2ab06e9e5a6-v2.jpg",
       alt: "Room 1 with panoramic glass windows",
       d: [154, 894, 302, 849],
       m: [0, 636, 320, 630],
@@ -29,7 +29,7 @@ export const roomLayouts: readonly RoomLayout[] = [
   {
     name: "Room 2",
     image: {
-      src: "/images/c18256_6f8159e643924ae99302e95ab1689264.jpg",
+      src: "/images/c18256_6f8159e643924ae99302e95ab1689264-v2.jpg",
       alt: "Room 2 with a wooden writing desk",
       d: [489, 894, 302, 849],
       m: [0, 1299, 320, 653],

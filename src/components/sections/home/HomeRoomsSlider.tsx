@@ -22,12 +22,12 @@ const highlights: readonly (readonly string[])[] = [
 const focus = ["50% 55%", "50% 55%", "50% 60%"] as const;
 const concepts = [
   {
-    src: "/images/room-1-v1.jpg",
+    src: "/images/room-1-v2.jpg",
     alt: "Bedroom with a large bed, a teak desk and tall windows opening onto a balcony above green hills",
   },
-  { src: "/images/room-2-v1.jpg", alt: "Bedroom with a wooden double bed, cream linen and warm lighting" },
+  { src: "/images/room-2-v2.jpg", alt: "Bedroom with a wooden double bed, cream linen and warm lighting" },
   {
-    src: "/images/room-3-v1.jpg",
+    src: "/images/room-3-v2.jpg",
     alt: "Spacious bedroom with a wooden double bed, cushions and a teak door",
   },
 ] as const;
