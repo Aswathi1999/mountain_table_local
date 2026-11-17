@@ -9,15 +9,68 @@ import { useAllowMotion } from "@/components/motion/useAllowMotion";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import { useAutoplay } from "@/components/motion/useAutoplay";
 
-import { copy } from "@/data/copy";
 import { ExperienceViewer, type OpenFrom } from "./ExperienceViewer";
 import "./ExperienceStory.css";
 const experiences = [
-  { title: "Infinity Pool", text: "The infinity pool overlooking the hills.", details: [copy.home.services.pool], image: "/images/experience-pool-expand-v2.jpg", video: "/videos/experience-pool-v2.mp4", alt: "An infinity pool looking out over green hills and a blue sky" },
-  { title: "Luxurious Rooms", text: "Comfortable stays with stunning views.", details: [copy.home.roomsBody[0], copy.home.roomsBody[1]], image: "/images/experience-room-expand-v2.jpg", video: "/videos/experience-rooms-v2.mp4", alt: "A bedroom with a wooden bed and a window onto greenery" },
-  { title: "Fine Dining", text: "Savor locally inspired cuisine.", details: [copy.home.services.breakfast], image: "/images/experience-dining-expand-v2.jpg", video: "/videos/experience-dining-v2.mp4", alt: "Sliced fresh pineapple served on a white plate" },
-  { title: "Nature & Adventure", text: "Explore the beauty around you.", details: [copy.home.services.garden], image: "/images/experience-adventure-expand-v2.jpg", video: "/videos/experience-adventure-v2.mp4", alt: "A jeep on a red dirt track through green grassy hills, seen from above" },
-  ...([{ index: 0, name: "safari", alt: "a safari vehicle in tea gardens", image: "/images/experience-safari-expand-v2.jpg", video: "/videos/experience-safari-v2.mp4", realAlt: "A jeep crossing a shallow forest stream, reflected in the dark water" }, { index: 4, name: "bbq", alt: "a barbecue terrace with an acoustic guitar at dusk", image: "/images/experience-bbq-expand-v2.jpg", video: "/videos/experience-bbq-v2.mp4", realAlt: "Grilled barbecue chicken served on a white plate with fresh vegetable garnish" }]).map(({ index, name, alt, image, video, realAlt }: { index: number; name: string; alt: string; image?: string; video?: string; realAlt?: string }) => ({ title: copy.seeDo.activities[index].title, text: copy.seeDo.activities[index].subtitle, details: copy.seeDo.activities[index].body.filter((paragraph) => !paragraph.startsWith("*")), note: index === 0 ? "Extra charges apply." : undefined, image: image ?? `/images/experience-concept-${name}-v1.webp`, video, alt: realAlt ?? `Illustrative concept: ${alt}` })),
+  {
+    title: "Infinity Pool",
+    text: "An infinity pool with the majestic view of the hills.",
+    details: ["Take a refreshing dip in our infinity pool overlooking the hills and enjoy the unforgettable panoramic sight of the misty hills and meadows that can refresh your mind and soul."],
+    image: "/images/experience-pool-expand-v2.jpg",
+    video: "/videos/experience-pool-v2.mp4",
+    alt: "An infinity pool looking out over green hills and a blue sky",
+  },
+  {
+    title: "Luxurious Rooms",
+    text: "Comfortable stay in Vagamon with stunning views",
+    details: [
+      "Your relaxing vacation could be backed with comfortable rooms in our homestay in Uluppuni. Each of our rooms has to offer unforgettable views of the misty hills. With carefully curated cosy ambience and modern amenities, you can step into comfort and peace.",
+      "A calm day where you wake up to the sound of morning birds and rustling leaves, forgetting all the worries and deadlines of your everyday life.",
+    ],
+    image: "/images/experience-room-expand-v2.jpg",
+    video: "/videos/experience-rooms-v2.mp4",
+    alt: "A bedroom with a wooden bed and a window onto greenery",
+  },
+  {
+    title: "Fine Dining",
+    text: "Locally inspired cuisine for your palette",
+    details: ["Delicacies from the heart of Kerala for your stay. We provide complimentary breakfasts where you will get to savour the regional flavours curated by our chef."],
+    image: "/images/experience-dining-expand-v2.jpg",
+    video: "/videos/experience-dining-v2.mp4",
+    alt: "Sliced fresh pineapple served on a white plate",
+  },
+  {
+    title: "Nature & Adventure",
+    text: "The beauty of Vagamon is all around me.",
+    details: ["With the lush garden and tea plantations, you can explore the tranquillity and calmness in the Uluppuni hills in Vagamon."],
+    image: "/images/experience-adventure-expand-v2.jpg",
+    video: "/videos/experience-adventure-v2.mp4",
+    alt: "A jeep on a red dirt track through green grassy hills, seen from above",
+  },
+  {
+    title: "Jeep Safari (On Request)",
+    text: "Unleash Adventure, Discover Nature",
+    details: ["Have a thrilling Jeep safari in Vagamon through the deeper side of nature. The journey starts from the Vagamon Viewpoint for the panoramic view of the hill and tea plantations. Covering the intriguing Vellaramchitta Tunnel, dam views, and off-road ride through the rugged terrain, you will have an unforgettable experience in this natural setup."],
+    note: "Extra Charges Apply",
+    image: "/images/experience-safari-expand-v2.jpg",
+    video: "/videos/experience-safari-v2.mp4",
+    alt: "A jeep crossing a shallow forest stream, reflected in the dark water",
+  },
+  {
+    title: "Trekking (On Request)",
+    text: "A Rush of Adrenaline with the Hills",
+    details: ["Wake up for an adventure by trekking through the forest and near by mountains that can bring out your energy."],
+    image: "/images/see_and_do/Mottakunnu-v2.jpg",
+    alt: "Green grassy hills and a small lake at Mottakunnu",
+  },
+  {
+    title: "BBQ & Music",
+    text: "Sizzle, Strum, Stars",
+    details: ["Our stay offers a starry experience with evening BBQ and music. Live music, delicious grilled dishes, and the calmness of the cool night can transform your night into an experience that can stay with you forever."],
+    image: "/images/experience-bbq-expand-v2.jpg",
+    video: "/videos/experience-bbq-v2.mp4",
+    alt: "Grilled barbecue chicken served on a white plate with fresh vegetable garnish",
+  },
 ];
 function CardVideo({ src }: { src: string }) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -91,9 +144,9 @@ export function ExperienceStory() {
   return (
     <section ref={section} id="intro" aria-labelledby="experience-title" className={"mt-exp-section"}>
       <div className={`wrap ${"mt-exp-heading"}`}>
-        <motion.p data-motion="" style={{ y: allowMotion ? eyebrowY : 0, opacity: allowMotion ? eyebrowOpacity : 1 }} className={"mt-exp-eyebrow"}><span aria-hidden="true" />The experience</motion.p>
-        <motion.h2 data-motion="" style={{ y: allowMotion ? titleY : 0, opacity: allowMotion ? titleOpacity : 1 }} id="experience-title" className="t-h2">More Than a Stay,<br /><em>It’s an Experience</em></motion.h2>
-        <motion.p data-motion="" style={{ y: allowMotion ? descriptionY : 0, opacity: allowMotion ? descriptionOpacity : 1 }} className={"mt-exp-description"}>At The Mountain Table, we believe in creating moments that stay with you forever. From cozy accommodations to unforgettable dining, every detail is designed for your comfort and joy.</motion.p>
+        <motion.p data-motion="" style={{ y: allowMotion ? eyebrowY : 0, opacity: allowMotion ? eyebrowOpacity : 1 }} className={"mt-exp-eyebrow"}><span aria-hidden="true" />The Experience</motion.p>
+        <motion.h2 data-motion="" style={{ y: allowMotion ? titleY : 0, opacity: allowMotion ? titleOpacity : 1 }} id="experience-title" className="t-h2">More Than Just a Stay –<br /><em>A Complete Nature Experience</em></motion.h2>
+        <motion.p data-motion="" style={{ y: allowMotion ? descriptionY : 0, opacity: allowMotion ? descriptionOpacity : 1 }} className={"mt-exp-description"}>We always try to create moments that will last with you forever. The Mountain Table has arranged for you a complete de-stress experience with cosy accommodation and premium dining that can bring you joy and comfort.</motion.p>
       </div>
       <div ref={gallery} className="flow-root">
       <motion.div data-motion="" style={{ y: allowMotion ? galleryY : 0, opacity: allowMotion ? galleryOpacity : 1 }}>

@@ -10,6 +10,8 @@ export type ActivityLayout = {
   title: Placed;
   subtitle: Placed;
   body: Placed;
+  /** More photographs of the same activity, shown after the main one when the picture is opened full screen. */
+  more?: readonly { src: string; alt: string }[];
   /** Which side the photo sits on (desktop); drives the entrance direction. */
   side: "right" | "left";
 };
@@ -17,6 +19,12 @@ export type ActivityLayout = {
 export const activityLayouts: readonly ActivityLayout[] = [
   {
     side: "right",
+    more: [
+      {
+        src: "/images/see_and_do/jeep-safari-2-v1.jpg",
+        alt: "A jeep turning on a red dirt clearing above green hills and misty mountains",
+      },
+    ],
     image: {
       src: "/images/see_and_do/Jeep-Safari-v2.jpg",
       alt: "A jeep on a safari trail through Vagamon",
@@ -30,6 +38,69 @@ export const activityLayouts: readonly ActivityLayout[] = [
   },
   {
     side: "left",
+    more: [
+      {
+        src: "/images/see_and_do/river-crossing-2-v1.jpg",
+        alt: "A jeep splashing through a shallow, rocky forest stream",
+      },
+    ],
+    image: {
+      src: "/images/see_and_do/river-crossing-v1.jpg",
+      alt: "A jeep crossing a shallow forest stream, reflected in the still water",
+      d: [152, 2129, 277, 426],
+      m: [27, 1725, 227, 95],
+    },
+    number: { d: [226, 2387, 142, 152], m: [119, 1748, 42, 46] },
+    title: { d: [534, 2152, 560, 112], m: [27, 1850, 250, 124] },
+    subtitle: { d: [595, 2278, 300, 33], m: [27, 1985, 260, 33] },
+    body: { d: [595, 2329, 502, 280], m: [27, 2028, 263, 500] },
+  },
+  {
+    side: "right",
+    more: [
+      {
+        src: "/images/see_and_do/waterfall-2-v1.jpg",
+        alt: "A clear forest stream flowing softly over rocks under green trees",
+      },
+    ],
+    image: {
+      src: "/images/see_and_do/waterfall-v1.jpg",
+      alt: "A waterfall tumbling over dark rocks, surrounded by dense green forest",
+      d: [851, 2629, 277, 426],
+      m: [30, 2569, 227, 95],
+    },
+    number: { d: [925, 2887, 142, 152], m: [122, 2592, 42, 46] },
+    title: { d: [179, 2661, 560, 112], m: [27, 2694, 250, 62] },
+    subtitle: { d: [240, 2774, 300, 33], m: [30, 2764, 260, 33] },
+    body: { d: [240, 2824, 438, 140], m: [30, 2806, 251, 190] },
+  },
+  {
+    side: "left",
+    more: [
+      {
+        src: "/images/see_and_do/dam-view-2-v1.jpg",
+        alt: "Layered misty hills and winding reservoir waters in the blue light of early morning",
+      },
+    ],
+    image: {
+      src: "/images/see_and_do/dam-view-v1.jpg",
+      alt: "Misty hills and a reservoir at sunset, seen from above",
+      d: [152, 2129, 277, 426],
+      m: [27, 1725, 227, 95],
+    },
+    number: { d: [226, 2387, 142, 152], m: [119, 1748, 42, 46] },
+    title: { d: [534, 2152, 560, 112], m: [27, 1850, 250, 124] },
+    subtitle: { d: [595, 2278, 300, 33], m: [27, 1985, 260, 33] },
+    body: { d: [595, 2329, 502, 280], m: [27, 2028, 263, 500] },
+  },
+  {
+    side: "right",
+    more: [
+      {
+        src: "/images/see_and_do/paragliding-2-v1.jpg",
+        alt: "Colourful paragliders in the air above a grassy hilltop with onlookers gathered below",
+      },
+    ],
     image: {
       src: "/images/see_and_do/Paragliding.jpg",
       alt: "A paraglider above the hills of Vagamon",
@@ -43,6 +114,12 @@ export const activityLayouts: readonly ActivityLayout[] = [
   },
   {
     side: "right",
+    more: [
+      {
+        src: "/images/see_and_do/mottakunnu-2-v1.jpg",
+        alt: "Rounded green grassy hills rising into low cloud",
+      },
+    ],
     image: {
       src: "/images/see_and_do/Mottakunnu-v2.jpg",
       alt: "Green grassy hills and a small lake at Mottakunnu",
@@ -56,6 +133,12 @@ export const activityLayouts: readonly ActivityLayout[] = [
   },
   {
     side: "left",
+    more: [
+      {
+        src: "/images/see_and_do/pineforest-2-v1.jpg",
+        alt: "A stone-paved path winding up through tall pines, covered in fallen pine needles",
+      },
+    ],
     image: {
       src: "/images/see_and_do/pineforest-v2.jpg",
       alt: "A misty trail through a tall pine forest",
@@ -82,6 +165,12 @@ export const activityLayouts: readonly ActivityLayout[] = [
   },
   {
     side: "left",
+    more: [
+      {
+        src: "/images/see_and_do/glassbridge-2-v1.jpg",
+        alt: "A glass-floored bridge reaching out over a dense forest canopy, seen from above",
+      },
+    ],
     image: {
       src: "/images/see_and_do/Glassbridge-v2.jpg",
       alt: "A glass bridge viewpoint above a misty forested valley",

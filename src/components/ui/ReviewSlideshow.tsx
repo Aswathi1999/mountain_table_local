@@ -17,7 +17,9 @@ const arrow =
  * arrows. It advances by itself, holds while the visitor points at or focuses it, and never moves under reduced motion. All reviews
  * share one grid cell, so the section never changes height as they swap.
  */
-export function ReviewSlideshow({ reviews }: { reviews: readonly string[] }) {
+export type Review = string | { text: string; author: string };
+
+export function ReviewSlideshow({ reviews }: { reviews: readonly Review[] }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const reduce = useReducedMotion();
@@ -59,8 +61,10 @@ export function ReviewSlideshow({ reviews }: { reviews: readonly string[] }) {
       </motion.svg>
 
       <div className="mt-6 grid w-full" aria-live={autoplay ? "off" : "polite"}>
-        {reviews.map((text, i) => {
+        {reviews.map((review, i) => {
           const on = i === index;
+          const text = typeof review === "string" ? review : review.text;
+          const author = typeof review === "string" ? null : review.author;
           return (
             <motion.figure
               key={i}
@@ -82,7 +86,7 @@ export function ReviewSlideshow({ reviews }: { reviews: readonly string[] }) {
                 </p>
               </blockquote>
               <figcaption className="mt-6">
-                <span className="text-[11px] tracking-[0.24em] uppercase opacity-60">Guest review {i + 1}</span>
+                <span className="text-[11px] tracking-[0.24em] uppercase opacity-60">{author ?? `Guest review ${i + 1}`}</span>
               </figcaption>
             </motion.figure>
           );

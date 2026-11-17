@@ -12,11 +12,11 @@ import { splitTitle } from "./title";
  * Nothing here adds a time, a price or a duration.
  */
 const PARTS = [
-  { title: "By day", note: "Out on the trails and over the valley", items: [0, 1, 2, 3, 5] },
-  { title: "In the evening", note: "Around the fire, under the stars", items: [4] },
+  { title: "By day", note: "Out on the trails and over the valley", items: [0, 1, 2, 3, 4, 5, 6, 8] },
+  { title: "In the evening", note: "Around the fire, under the stars", items: [7] },
 ] as const;
 
-/** "Plan your day": two soft cards grouping the six activities, each linking to its section above. */
+/** "Plan your day": two soft cards grouping the nine activities, each linking to its section above. */
 export function SeeDoPlan() {
   return (
     <section id="plan" aria-labelledby="plan-title" className="bg-ivory relative py-20 desk:py-28">

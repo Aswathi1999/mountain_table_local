@@ -5,13 +5,12 @@ import { useEffect, useRef } from "react";
 import { HOME_FX } from "@/components/motion/home-fx.config";
 import { DUR, EASE, STAGGER, VIEW_ONCE } from "@/components/motion/tokens";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
-import { copy } from "@/data/copy";
-import { sentenceCase } from "@/lib/text";
 import "./HomeDiscover.css";
 
 const discover = {
-  lines: ["Where Every Moment", "Feels Extraordinary"],
-  body: "From peaceful mornings to starlit evenings, The Mountain Table offers a sanctuary where nature, comfort, and unforgettable experiences come together.",
+  label: "Discover",
+  lines: ["Best Homestay in Vagamon", "for Extraordinary Moments"],
+  body: "There are no ordinary moments at The Mountain Table. Your peaceful morning and orange-hued evenings with our family homestay in Vagamon can become much more than special. We aim to bring you the memory and experience that will never be forgotten.",
 } as const;
 
 /** The film dialog. `src` swaps in a different single video (the About page plays the Discover film); by default it plays the property film. */
@@ -153,7 +152,7 @@ export function HomeDiscover() {
 
         <div ref={copyRef} className="discover-copy">
           <motion.p {...rise(0)} className="discover-label">
-            {sentenceCase(copy.home.discoverTitle)}
+            {discover.label}
           </motion.p>
           <motion.h2 {...rise(1)} id="discover-title">
             {discover.lines[0]}

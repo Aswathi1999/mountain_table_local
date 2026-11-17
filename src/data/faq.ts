@@ -1,38 +1,32 @@
 /**
- * Frequently asked questions for the home page. Every answer restates what the Rooms & Booking page already says (see
- * `src/data/policies.ts`); nothing here adds a rule, time, price or amenity. Edit this list to change, reorder or add questions.
+ * Frequently asked questions for the home page, also published as FAQPage structured data. Edit this list to change, reorder or add
+ * questions. (Check-in times, payments and cancellation terms are on the Rooms & Booking page, `src/data/policies.ts`.)
  */
 export type Faq = { question: string; answer: string };
 
 export const faqs: readonly Faq[] = [
   {
-    question: "What are the check-in and check-out times?",
-    answer:
-      "Check-in is at 14:00 and check-out is at 11:00 (IST). Early check-in and late check-out are subject to availability, must be requested beforehand and are chargeable. All guests must share a valid ID proof at check-in.",
+    question: "Where is the Mountain Table located?",
+    answer: "The Mountain Table is a family homestay hidden in the beautiful hills of Uluppuni, Vagamon, Kerala.",
   },
   {
-    question: "Is breakfast included?",
+    question: "What facilities are available at The Mountain Table?",
     answer:
-      "Yes. Complimentary breakfast is provided, and guests can select up to three main courses from the food menu. We ask guests to confirm their food choices two days before arrival.",
+      "The Mountain Table, as a homestay in Vagamon, offers comfortable rooms with an infinity pool. The wide views of the hills, premium dining, and unlimited access to scenic views. We also provide BBQ evenings and music. We can also arrange jeep safaris and trekking upon request, which will be charged separately.",
   },
   {
-    question: "How is a booking confirmed?",
+    question: "Does The Mountain Table have a swimming pool?",
     answer:
-      "Bookings are confirmed only upon receipt of the advance payment. The balance payment is completed at check-in. On weekends (Friday, Saturday and Sunday) we prioritise full-property bookings.",
+      "Yes. The Mountain Table is a homestay with a swimming pool in Vagamon. You can have a perfect vacation with your family or a weekend escape with us.",
   },
   {
-    question: "What is the cancellation policy?",
+    question: "What activities can guests enjoy during their stay at The Mountain Table?",
     answer:
-      "Cancelling at least 7 days before arrival returns 90% of the advance amount, and at least 3 days before returns 50%. Cancellations within 3 days of arrival are not refunded, and reservations cancelled between 20 December and 10 January are not eligible for any refund.",
+      "There will be a BBQ evening with music, which could be arranged within The Mountain Table. For outside activities we can arrange trekking, jeep safaris, tea plantation walks, and other walks upon the request.",
   },
   {
-    question: "Are jeep safaris and trekking included?",
+    question: "Is The Mountain Table suitable for a family vacation?",
     answer:
-      "Jeep safari and trekking activities are subject to availability, should be requested during the booking process and incur additional charges.",
-  },
-  {
-    question: "Can we bring outside food or pets?",
-    answer:
-      "For the health, safety and quality standards of our guests, we do not permit outside food on the property, and food and beverages are served only in designated areas. Our homestay is not pet-friendly.",
+      "Of course. The Mountain Table is a family-friendly homestay in Vagamon. We offer comfortable accommodation and activities that you can explore as a family.",
   },
 ];

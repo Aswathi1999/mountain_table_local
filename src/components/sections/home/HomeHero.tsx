@@ -13,18 +13,18 @@ const photographs = [
   {
     src: "/images/hero-concept-pool-v1.webp",
     alt: "Illustrative resort concept: infinity pool overlooking a tropical valley",
-    label: "A luxury mountain escape",
-    title: ["Nature’s Beauty,", "Your Perfect Stay"],
-    body: "Experience the perfect blend of luxury, comfort, and breathtaking views at The Mountain Table. Your mountain escape awaits.",
+    label: "Family homestay in Vagamon",
+    title: ["Nature’s Beauty, Your Perfect", "Homestay in Vagamon"],
+    body: "A perfect mountain escape that gives you luxury, comfort, and breathtaking views. Experience a refreshing homestay in Vagamon with The Mountain Table.",
     cta: "Explore Rooms",
     href: "/rooms-booking",
   },
   {
     src: "/images/hero-concept-veranda-v1.webp",
     alt: "Illustrative resort concept: teak veranda overlooking lush hills",
-    label: "Stay with us",
-    title: ["Rooms With a View", "to Remember"],
-    body: "Find your mountain escape in cosy rooms surrounded by the serene hills of Vagamon.",
+    label: "A Serene Stay with Us",
+    title: ["A View to Remember", "in the Hills"],
+    body: "One of the best homestays in Vagamon that can take you to inner chambers of nature, surrounded by the calm mountain.",
     cta: "View All Rooms",
     href: "/rooms-booking",
   },
@@ -32,17 +32,17 @@ const photographs = [
     src: "/images/hero-concept-dining-v1.webp",
     alt: "Illustrative resort concept: open-air dining pavilion at sunset",
     label: "The Mountain Table",
-    title: ["Good Food,", "Unhurried Moments"],
-    body: "Enjoy local cuisine and relaxed evenings as part of your stay in the hills.",
+    title: ["Enjoy Good Food and", "Relaxing Moments"],
+    body: "Have a taste of the local cuisines and some relaxed evenings with cosy rooms and a homestay with a swimming pool in Vagamon.",
     cta: "Discover Our Story",
     href: "/about",
   },
   {
     src: "/images/hero-concept-garden-v1.webp",
     alt: "Illustrative resort concept: garden path through tropical greenery",
-    label: "Thrills and Tranquility",
-    title: ["Step Outside,", "Explore Vagamon"],
-    body: "Discover scenic trekking trails, leisurely cycling routes, and plantation walks around Vagamon.",
+    label: "Thrills and Tranquillity",
+    title: ["Nature and Outdoor Experiences", "in Vagamon"],
+    body: "Experience scenic trekking trails, leisurely cycling routes, and slow walks through the plantations around Vagamon. Enjoy a combined experience of indoor relaxation and outdoor adventure during our stay at The Mountain Table.",
     cta: "Explore See & Do",
     href: "/see-do",
   },
@@ -51,7 +51,6 @@ const photographs = [
 export function HomeHero() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [hovered, setHovered] = useState(false);
   const section = useRef<HTMLElement>(null);
   const heroVideo = useRef<HTMLVideoElement>(null);
   const reduce = useReducedMotion();
@@ -63,7 +62,7 @@ export function HomeHero() {
   const copyFade = useTransform(departure, [0, 0.8], [1, 0]);
   const photoDrift = useTransform(departure, [0, 1], [0, 100]);
   useEffect(() => {
-    if (paused || hovered || reduce) return;
+    if (paused || reduce) return;
     const timer = window.setInterval(() => {
       if (document.hidden || !section.current) return;
       const bounds = section.current.getBoundingClientRect();
@@ -71,7 +70,7 @@ export function HomeHero() {
       setActive((value) => (value + 1) % photographs.length);
     }, 4000);
     return () => window.clearInterval(timer);
-  }, [paused, hovered, reduce, active]);
+  }, [paused, reduce, active]);
   const change = (direction: number) =>
     setActive((value) => (value + direction + photographs.length) % photographs.length);
 
@@ -81,9 +80,7 @@ export function HomeHero() {
       id="hero"
       className="resort-hero"
       aria-label="Welcome to The Mountain Table"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onFocusCapture={() => setPaused(true)}
+      onFocusCapture={(e) => setPaused((e.target as HTMLElement).matches(":focus-visible"))}
       onBlurCapture={() => setPaused(false)}
     >
       <motion.div className="resort-hero-photos" style={{ y: allowScrollMotion ? photoDrift : 0 }}>
@@ -94,7 +91,7 @@ export function HomeHero() {
             <video
               ref={heroVideo}
               className="size-full object-cover"
-              src="/videos/web-banner-v2.mp4"
+              src="/videos/web-banner-v3.mp4"
               autoPlay
               muted
               loop

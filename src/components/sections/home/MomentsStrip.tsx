@@ -136,6 +136,11 @@ export function MomentsStrip() {
           lineClasses={["", "italic"]}
           className="t-h2 text-forest m-0 mt-5 leading-[1.05] [font-size:clamp(1.875rem,1.3rem+2vw,3rem)]"
         />
+        <Reveal delay={0.15}>
+          <p className="t-body text-ink/75 mx-auto m-0 mt-5 max-w-[34rem]">
+            Here are the glimpses of the memories our guests unlocked with our homestay in Vagamon.
+          </p>
+        </Reveal>
       </div>
 
       <div className="mx-auto mt-8 w-full max-w-[1320px] px-5 pt-8 pb-10 md:mt-20 md:pt-16 md:pb-24 desk:mt-24">

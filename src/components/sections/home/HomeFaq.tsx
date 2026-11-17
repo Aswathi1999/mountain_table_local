@@ -7,7 +7,7 @@ import { FaqAccordion } from "./FaqAccordion";
 
 /**
  * Frequently Asked Questions: the centred heading on top, then the accordion with a link to the full booking policies beneath it. The
- * answers restate the existing booking policies (`src/data/faq.ts`). The same questions are published as FAQPage structured data.
+ * answers are in `src/data/faq.ts`. The same questions are published as FAQPage structured data.
  */
 export function HomeFaq() {
   const structured = {
