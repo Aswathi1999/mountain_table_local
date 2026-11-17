@@ -14,11 +14,15 @@ import {
   TyreTracks,
   WarmWash,
 } from "./ActivityFx";
+import { PhotoSlider } from "./PhotoSlider";
 import { splitTitle } from "./title";
 
 /** Short handwritten notes beside each photograph (the only new wording on this page). */
 const NOTES = [
   "Off the beaten track",
+  "Through the stream",
+  "Hear it before you see it",
+  "Golden hour over the water",
   "Fly above the valley",
   "Follow the windy walk",
   "Quiet, misty trails",
@@ -27,14 +31,17 @@ const NOTES = [
 ] as const;
 
 /** Section look per activity: BBQ & Music is the dark evening band; the others alternate cream and sand. */
-const TONES = ["ivory", "sand", "ivory", "sand", "dark", "ivory"] as const;
+const TONES = ["ivory", "sand", "ivory", "sand", "ivory", "sand", "ivory", "dark", "ivory"] as const;
 
 /** Where each photograph is anchored in its frame, the frame's aspect ratio and how far the picture drifts inside it. */
 const FRAMES = [
   { position: "50% 60%", ratio: "aspect-[4/3]", drift: 3 },
+  { position: "60% 55%", ratio: "aspect-[4/3]", drift: 3 },
+  { position: "50% 50%", ratio: "aspect-[4/3]", drift: 3 },
+  { position: "50% 55%", ratio: "aspect-[4/3]", drift: 3 },
   { position: "45% 50%", ratio: "aspect-[4/3]", drift: 3 },
   { position: "50% 55%", ratio: "aspect-[4/3]", drift: 3 },
-  { position: "50% 55%", ratio: "aspect-[4/4.2]", drift: 3 },
+  { position: "50% 55%", ratio: "aspect-[4/3]", drift: 3 },
   { position: "35% 50%", ratio: "aspect-[4/3]", drift: 3 },
   { position: "50% 55%", ratio: "aspect-[4/3]", drift: 3 },
 ] as const;
@@ -74,6 +81,7 @@ function Activity({ index }: { index: number }) {
   const words = name.split(" ");
   const lines = words.length > 1 ? [words.slice(0, -1).join(" "), words[words.length - 1]] : [name];
   const photo = activityLayouts[index].image;
+  const photos = [photo, ...(activityLayouts[index].more ?? [])];
   const frame = FRAMES[index];
   const tone = TONES[index];
   const dark = tone === "dark";
@@ -90,9 +98,9 @@ function Activity({ index }: { index: number }) {
   const overlay =
     index === 0 ? (
       <DustTrail />
-    ) : index === 1 ? (
-      <ParagliderPath />
     ) : index === 4 ? (
+      <ParagliderPath />
+    ) : index === 7 ? (
       <>
         <Embers />
         <MusicNotes />
@@ -103,17 +111,25 @@ function Activity({ index }: { index: number }) {
       className={`${frame.ratio} w-full rounded-[2px] shadow-[0_30px_60px_-24px_rgba(10,34,27,0.35)]`}
       overlay={overlay}
     >
-      <ImageFrame
-        src={photo.src}
-        alt={photo.alt}
-        sizes="(min-width: 1280px) 620px, (min-width: 1024px) 48vw, 92vw"
-        className="h-full w-full"
-        radius={0}
-        from={flip ? "right" : "left"}
-        drift={frame.drift}
-        lock
-        position={frame.position}
-      />
+      {photos.length > 1 ? (
+        <PhotoSlider
+          photos={photos}
+          sizes="(min-width: 1280px) 620px, (min-width: 1024px) 48vw, 92vw"
+          position={frame.position}
+        />
+      ) : (
+        <ImageFrame
+          src={photo.src}
+          alt={photo.alt}
+          sizes="(min-width: 1280px) 620px, (min-width: 1024px) 48vw, 92vw"
+          className="h-full w-full"
+          radius={0}
+          from={flip ? "right" : "left"}
+          drift={frame.drift}
+          lock
+          position={frame.position}
+        />
+      )}
     </LanternImage>
   );
   const numberClass = `t-num text-[3.25rem] leading-none ${dark ? "text-gold-soft/70" : "text-gold-ink/70"}`;
@@ -126,7 +142,7 @@ function Activity({ index }: { index: number }) {
         dark ? "bg-forest-deep text-ivory" : tone === "sand" ? "bg-ivory-deep text-forest" : "bg-ivory text-forest"
       }`}
     >
-      {index === 4 ? <WarmWash /> : null}
+      {index === 7 ? <WarmWash /> : null}
       <div className="wrap relative grid items-center gap-14 lg:grid-cols-12 lg:gap-x-20">
         <div className={`relative lg:col-span-7 lg:row-start-1 ${flip ? "lg:col-start-6" : "lg:col-start-1"}`}>
           <div className="relative">
@@ -144,7 +160,7 @@ function Activity({ index }: { index: number }) {
         <div
           className={`relative lg:col-span-5 lg:row-start-1 ${flip ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-8"}`}
         >
-          {index === 2 ? (
+          {index === 5 ? (
             <Footprints
               className={`absolute -top-4 -right-2 hidden lg:block ${dark ? "text-gold-soft" : "text-forest"}`}
             />
@@ -213,7 +229,7 @@ function Activity({ index }: { index: number }) {
   );
 }
 
-/** The six activities, alternating image left and right, each with its own signature effect. BBQ & Music is a dark band. */
+/** The nine activities, alternating image left and right, each with its own signature effect. BBQ & Music is a dark band. */
 export function SeeDoActivities() {
   return (
     <div id="activities">

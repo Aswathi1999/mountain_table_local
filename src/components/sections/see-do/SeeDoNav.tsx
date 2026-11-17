@@ -32,6 +32,29 @@ export const ACTIVITY_ICONS: ReactNode[] = [
   ),
   svg(
     <>
+      <path d="M2 10c2.5-2 4.5-2 7 0s4.5 2 7 0 4-2 6 0" />
+      <path d="M2 15c2.5-2 4.5-2 7 0s4.5 2 7 0 4-2 6 0" />
+      <path d="M5 20h14" />
+    </>,
+  ),
+  svg(
+    <>
+      <path d="M8 3c0 4-1 6-1 9" />
+      <path d="M13 3c0 4-1 6-1 9" />
+      <path d="M18 3v9" />
+      <path d="M4 17c2-1.5 3.5-1.5 5 0s3 1.5 5 0 3.5-1.5 6 0" />
+      <path d="M4 21h16" />
+    </>,
+  ),
+  svg(
+    <>
+      <path d="M3 18l5-7 3 4 3-5 7 8z" />
+      <path d="M3 21h18" />
+      <circle cx="17" cy="6" r="2" />
+    </>,
+  ),
+  svg(
+    <>
       <path d="M3 9c3-6 15-6 18 0-3-1.5-15-1.5-18 0z" />
       <path d="M5 9.5l7 8 7-8" />
       <circle cx="12" cy="19.5" r="1.2" />

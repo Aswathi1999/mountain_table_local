@@ -11,7 +11,7 @@ const VIEW = { once: true, amount: 0.3 } as const;
 /* ------------------------------------------------------------------ shared: lantern glow on image hover */
 
 /**
- * Wraps a photograph: on a fine pointer the picture sits slightly dimmed and a warm lantern of light follows the cursor, lighting
+ * Wraps a photograph: on a fine pointer a warm lantern of light follows the cursor, lighting
  * what it passes over; the picture also zooms very slowly inside its frame. Plain (just the zoom) on touch and small screens.
  */
 export function LanternImage({
@@ -26,7 +26,7 @@ export function LanternImage({
 }) {
   const on = useAllowMotion(SEEDO_FX.minWidth);
   const ref = useRef<HTMLDivElement>(null);
-  const { radius, dim } = SEEDO_FX.lantern;
+  const { radius } = SEEDO_FX.lantern;
 
   const move = (e: React.PointerEvent) => {
     const el = ref.current;
@@ -50,11 +50,6 @@ export function LanternImage({
       {overlay}
       {on ? (
         <>
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 opacity-100 transition-opacity duration-700 group-hover:opacity-0 [@media(hover:none)]:hidden"
-            style={{ background: `rgba(20,42,33,${dim})` }}
-          />
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 [@media(hover:none)]:hidden"

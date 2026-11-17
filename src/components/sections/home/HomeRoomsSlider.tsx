@@ -8,14 +8,20 @@ import { DUR, EASE, STAGGER, VIEW_ONCE } from "@/components/motion/tokens";
 import { HOME_FX } from "@/components/motion/home-fx.config";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import { ArrowIcon } from "@/components/ui/BookNowButton";
-import { copy } from "@/data/copy";
 import { roomLayouts } from "@/data/rooms";
 
-/** Short highlights, each taken from the room's own description on the Rooms & Booking page (no specs or prices are published). */
+const title = ["Luxurious Rooms:", "Comfortable Rooms with Beautiful Mountain Views"] as const;
+
+/** Each room's description and its highlights. */
+const details: readonly string[] = [
+  "Enjoy the rich view of the misty hills and meadows through the panoramic glass windows. Our homestay in Uluppuni offers a shaded balcony, giving access to the pool under the canopy of a mango tree. The room includes an attached bathroom that features a stunning glass window, perfect for enjoying mountain sunsets. Enjoy luxury along with the beauty of nature and an unforgettable stay.",
+  "Our next room within this homestay has a private grass lawn for the sunset chats and refreshing breeze. For your relaxed exploration, have easy access to the tea plantation walk and grill house. An attached bathroom with the glass window for the hillside wide view adds an extra charm to your stay with us.",
+  "The latest and most luxurious in our homestay. This room offers a side glass window that provides a stunning view of the lush green and ambient hills. This room has direct access to the infinity pool, where you can unwind with a refreshing experience whenever you want. A room designed for ultimate comfort and relaxation.",
+];
 const highlights: readonly (readonly string[])[] = [
-  ["Panoramic glass windows", "Shaded balcony", "Pool access", "Mountain-sunset toilet window"],
+  ["Panoramic glass windows", "Shaded balcony", "Pool access", "Bathroom with a Mountain Sunset View"],
   ["Private grass lawn", "Grill house access", "Tea plantation walk", "Wide hill-view window"],
-  ["Our largest room", "Side glass window", "Garden view", "Direct infinity-pool access"],
+  ["Our largest room", "Side glass window", "Garden view", "Easy access to infinity pool"],
 ];
 
 /** Where each photograph is anchored so the window and the bed stay in the frame. */
@@ -170,7 +176,7 @@ export function HomeRoomsSlider() {
           {/* Headline */}
           <h2
             id="our-rooms-title"
-            className="font-display m-0 mt-6 text-center text-[clamp(2rem,1.3rem+2.6vw,3.5rem)] leading-[1.1] font-medium"
+            className="font-display m-0 mx-auto mt-6 max-w-[56rem] text-balance text-center text-[clamp(2rem,1.3rem+2.6vw,3.5rem)] leading-[1.1] font-medium"
           >
             <span className="block overflow-hidden pb-1">
               <motion.span
@@ -180,7 +186,7 @@ export function HomeRoomsSlider() {
                 animate={{ y: seen || reduce ? 0 : "105%" }}
                 transition={{ duration: dur(DUR.line), ease: EASE, delay: dur(0.25) }}
               >
-                {copy.rooms.titleLines[0]}
+                {title[0]}
               </motion.span>
             </span>
             <span className="block overflow-hidden pb-2">
@@ -191,7 +197,7 @@ export function HomeRoomsSlider() {
                 animate={{ y: seen || reduce ? 0 : "105%" }}
                 transition={{ duration: dur(DUR.line), ease: EASE, delay: dur(0.38) }}
               >
-                {copy.rooms.titleLines[1]}
+                {title[1]}
               </motion.em>
             </span>
           </h2>
@@ -297,11 +303,11 @@ export function HomeRoomsSlider() {
                   variants={line}
                   className="text-ivory/85 m-0 mt-3 hidden text-[0.8125rem] leading-[1.7] md:block"
                 >
-                  {copy.rooms.cards[active]}
+                  {details[active]}
                 </motion.p>
                 <details className="mt-3 md:hidden" key={room.name}>
                   <summary className="cursor-pointer py-2 text-sm">Room details</summary>
-                  <p className="text-ivory/85 text-sm leading-relaxed">{copy.rooms.cards[active]}</p>
+                  <p className="text-ivory/85 text-sm leading-relaxed">{details[active]}</p>
                 </details>
                 <motion.p
                   data-motion=""

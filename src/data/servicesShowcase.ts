@@ -72,7 +72,7 @@ export const showcaseServices: readonly ShowcaseService[] = [
     script: "Stay up for the stars",
     description: "As the sun sets, the terrace comes alive with the fire pit, the grill and music under the stars.",
     highlights: ["BBQ nights", "Live music", "Stargazing"],
-    cta: { label: "Plan Your Evening", href: "/see-do#activity-5" },
+    cta: { label: "Plan Your Evening", href: "/see-do#activity-8" },
     icon: "fire",
     image: {
       src: "/images/service-evenings-v1.jpg",

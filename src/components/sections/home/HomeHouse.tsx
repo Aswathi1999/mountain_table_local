@@ -3,7 +3,11 @@ import { Drift, ImageFrame, Reveal } from "@/components/motion/primitives";
 import { PanelWipe } from "@/components/motion/PanelWipe";
 import { ArrowIcon } from "@/components/ui/BookNowButton";
 import { LeafSprig } from "@/components/ui/decor";
-import { copy } from "@/data/copy";
+
+const house = {
+  title: "A Tranquil Homestay in Uluppuni to Revive You",
+  body: "Cradled by the serene hills of Uluppuni, The Mountain Table offers you an escape from the chaos or pollution of city life. Our homestay in Vagamon can be a place where you can relax, unwind, and find yourself by melting into the beauty of pure nature. The charm of Vagamon and The Mountain Table is waiting for you.",
+} as const;
 
 /**
  * The section after the hero, matching Jannata's "The Resort": a wide, modest aerial photograph sits higher than a tinted panel and
@@ -41,12 +45,17 @@ export function HomeHouse() {
         <div className="relative lg:col-span-8 lg:col-start-4 lg:row-start-1">
           <PanelWipe from="right" delay={0.1} className="absolute inset-0 -mt-px" panelClassName="bg-sage/35" />
           <div className="relative -mt-6 px-6 pt-14 pb-12 desk:px-10 lg:mt-0 lg:py-20 lg:pr-16 lg:pl-[calc(37.5%+3.5rem)]">
-            <h2 id="house-title" className="sr-only">
-              The House
-            </h2>
+            <Reveal delay={0.2}>
+              <h2
+                id="house-title"
+                className="t-h2 text-forest m-0 max-w-[26rem] leading-[1.25] [font-size:clamp(1.5rem,1.1rem+1.2vw,2.125rem)]"
+              >
+                {house.title}
+              </h2>
+            </Reveal>
             <Reveal delay={0.3}>
-              <p className="t-lead text-ink/80 m-0 max-w-[22rem] [font-size:0.9375rem] [line-height:1.9]">
-                {copy.home.house}
+              <p className="t-lead text-ink/80 m-0 mt-5 max-w-[26rem] [font-size:0.9375rem] [line-height:1.9]">
+                {house.body}
               </p>
             </Reveal>
             <Reveal delay={0.4} className="mt-7">

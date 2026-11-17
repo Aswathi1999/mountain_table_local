@@ -9,11 +9,11 @@ import { DUR, EASE, SCROLL_SPRING } from "@/components/motion/tokens";
 import { useHomeFx } from "@/components/motion/useHomeFx";
 import { BookNowButton } from "@/components/ui/BookNowButton";
 
-/** Closing call to action copy, as set in the approved design reference (without its "best rates" claim, which the site does not make). */
+/** Closing call to action copy. */
 const cta = {
-  signature: "Stay · Relax · Explore",
+  signature: "Stay. Unwind. Explore",
   lines: ["Your Mountain", "Escape Awaits"],
-  body: "Book directly with us and arrive to a warm welcome at the door.",
+  body: "Book directly with us for an experience in the lap of nature.",
 } as const;
 
 /**

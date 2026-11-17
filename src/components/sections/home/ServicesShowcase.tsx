@@ -84,11 +84,12 @@ export function ServicesShowcase() {
           <motion.div data-motion="" className="svc-copy" style={{ opacity: on ? copyOpacity : 1, y: on ? copyY : 0 }}>
             <p className="svc-label">Our Services</p>
             <h2 id="services-title">
-              Thoughtful Services for a<em>Seamless Stay</em>
+              Services Curated<em>for an Easy Stay</em>
             </h2>
             <p className="svc-description">
-              From the table to the trail to the spa, every detail is arranged quietly in the background — so all you
-              have to do is enjoy it.
+              Enjoy the true meaning of comfort with every detail of your stay being arranged without stressing you out.
+              We will help you with everything from food to outdoor activities. So, your focus should be on relaxing and
+              enjoying.
             </p>
             <div className="svc-actions">
               <Link href="/see-do" className="svc-cta">

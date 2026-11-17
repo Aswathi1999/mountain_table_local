@@ -68,7 +68,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="font-display text-ivory/80 m-0 mt-6 max-w-[19rem] text-[1.0625rem] leading-[1.65] italic">
-              A luxury mountain escape where nature, comfort and good food come together.
+              A premium homestay in Vagamon where nature and good food comfort you.
             </p>
             <SocialIcons className="mt-7 -ml-1 gap-2" />
           </Reveal>

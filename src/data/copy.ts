@@ -57,6 +57,27 @@ export const copy = {
         ],
       },
       {
+        title: "River Crossing",
+        subtitle: "Splash Through the Stream",
+        body: [
+          "Ease the jeep through a shallow forest stream, with the trees meeting overhead and the water holding their reflection.",
+        ],
+      },
+      {
+        title: "Waterfall",
+        subtitle: "Where the Forest Meets the Water",
+        body: [
+          "Pause at a waterfall tumbling over dark rocks, surrounded by thick green forest and the sound of falling water.",
+        ],
+      },
+      {
+        title: "Dam View",
+        subtitle: "Hills, Water and Open Sky",
+        body: [
+          "Take in a wide view over the reservoir, with layered hills, drifting mist and the sky turning gold at the end of the day.",
+        ],
+      },
+      {
         title: "Paragliding (Seasonal)",
         subtitle: "Soar High with Wagamon Paragliding",
         body: [
