@@ -1694,7 +1694,7 @@ html.lenis-stopped {
 .resort-hero-photos, .resort-hero-photo, .resort-hero-shade { position: absolute; inset: 0; }
 .resort-hero-shade { background: linear-gradient(180deg, rgb(0 0 0 / .38), rgb(0 0 0 / .08) 35%, rgb(0 0 0 / .56)); }
 .resort-hero-copy { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; text-align: left; padding-top: 180px; padding-bottom: 150px; }
-.resort-hero-copy h1 { font-size: clamp(2.8rem, 4.1vw, 4.8rem); line-height: 1.04; margin: 18px 0 24px; color: inherit; }
+.resort-hero-copy h1 { color: inherit; margin: 18px 0 24px; }
 .resort-hero-copy > p:first-child { margin: 0; }
 .resort-hero-description { max-width: 37em; margin: 0 0 32px; text-wrap: pretty; }
 .resort-hero-copy .btn { border-radius: 0; padding: 12px 30px; min-height: 44px; }
@@ -1717,6 +1717,7 @@ html.lenis-stopped {
   #SITE_HEADER[data-home-top="true"] .btn { background: transparent; color: white; border: 1px solid rgb(255 255 255 / .7); border-radius: 0; }
 }
 @media (max-width: 749px) {
+  .resort-hero-shade { display: none; }
   .resort-hero { min-height: 660px; }
   .resort-hero-copy { padding-top: 110px; padding-bottom: 135px; }
   .resort-hero-controls { bottom: 55px; }

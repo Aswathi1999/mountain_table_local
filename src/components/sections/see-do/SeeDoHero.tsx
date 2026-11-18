@@ -5,7 +5,7 @@ import { SeeDoHeroVideo } from "./SeeDoHeroVideo";
 
 /**
  * See & Do hero, composed like the restaurant page it follows: a full-screen banner film (no overlay), with the breadcrumb,
- * eyebrow, spaced capital headline, introduction and one outlined action anchored bottom-left. The photograph drifts slowly with the
+ * eyebrow, t-h1 headline, introduction and one outlined action anchored bottom-left. The photograph drifts slowly with the
  * scroll; the headline lines rise out of a mask, then the rest fades up in turn. The wording is the page's existing copy.
  */
 export function SeeDoHero() {
@@ -36,7 +36,7 @@ export function SeeDoHero() {
           as="h1"
           lines={["Thrills and", "Tranquility"]}
           delay={0.2}
-          className="t-h2 text-ivory m-0 mt-5 uppercase leading-[1.2] tracking-[0.16em] [font-size:clamp(2rem,1.2rem+3.2vw,3.75rem)]"
+          className="t-h1 text-ivory m-0 mt-4"
         />
         <Reveal immediate delay={0.55} className="mt-6 max-w-[28rem]">
           <p className="t-body text-ivory/90 m-0">

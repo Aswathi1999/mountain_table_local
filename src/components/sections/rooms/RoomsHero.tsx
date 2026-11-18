@@ -109,8 +109,6 @@ export function RoomsHero() {
           id="rooms-title"
           className="t-h1"
           style={{
-            fontSize: "clamp(2.1rem, 3.6vw, 4.2rem)",
-            lineHeight: 1.08,
             margin: "18px 0 24px",
             color: "inherit",
           }}
