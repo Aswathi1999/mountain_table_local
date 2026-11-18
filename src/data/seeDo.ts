@@ -152,6 +152,12 @@ export const activityLayouts: readonly ActivityLayout[] = [
   },
   {
     side: "right",
+    more: [
+      {
+        src: "/images/see_and_do/bbq-2-v1.jpg",
+        alt: "Skewers of grilled meat sizzling over open flames on a smoking barbecue grill",
+      },
+    ],
     image: {
       src: "/images/see_and_do/BBq-v2.jpg",
       alt: "Grilled food at an evening barbecue",
