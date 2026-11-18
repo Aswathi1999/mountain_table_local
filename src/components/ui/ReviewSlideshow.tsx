@@ -78,7 +78,9 @@ export function ReviewSlideshow({ reviews }: { reviews: readonly Review[] }) {
                 delay: reduce || !on ? 0 : 0.15,
                 ease: EASE,
               }}
-              className="m-0 flex flex-col items-center [grid-area:1/1]"
+              // The global reduced-motion rule forces every [data-motion] element to opacity 1, which would stack all reviews on top of
+              // each other. With motion reduced, swap by visibility instead (no fade to lose).
+              className={`m-0 flex flex-col items-center [grid-area:1/1] ${reduce && !on ? "invisible" : ""}`}
             >
               <blockquote className="m-0">
                 <p className="font-display m-0 [font-size:clamp(1.0625rem,0.95rem+0.6vw,1.375rem)] leading-[1.65] italic">
