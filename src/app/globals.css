@@ -1725,3 +1725,24 @@ html.lenis-stopped {
 }
 
 #SITE_HEADER[data-home-top="true"] button[aria-controls="mobile-menu"] span { background-color: white; }
+
+.resort-hero-loader {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+}
+.resort-hero-loader-ring {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgb(255 255 255 / 0.25);
+  border-top-color: #fff;
+  animation: hero-loader-spin 0.9s linear infinite;
+}
+@keyframes hero-loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

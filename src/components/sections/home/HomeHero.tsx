@@ -54,18 +54,33 @@ function subscribeWidth(notify: () => void) {
 }
 
 function pickHeroVideo() {
-  return window.innerWidth < 750 ? "/videos/vertical_new.mp4" : "/videos/web-banner-v4.mp4";
+  return window.innerWidth < 750 ? "/videos/vertical_new-v2.mp4" : "/videos/web-banner-v4.mp4";
 }
 
 export function HomeHero() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [loadedSrc, setLoadedSrc] = useState<string>();
   const section = useRef<HTMLElement>(null);
   const heroVideo = useRef<HTMLVideoElement>(null);
   const reduce = useReducedMotion();
   // Phones get a small portrait cut; chosen after mount so the desktop film is never downloaded on a phone.
   const videoSrc = useSyncExternalStore(subscribeWidth, pickHeroVideo, () => undefined);
   useAutoplay(heroVideo, !reduce);
+  // Only the heavy portrait phone video gets a loader; it clears once the browser can start playing it.
+  const isPhoneVideo = videoSrc === "/videos/vertical_new-v2.mp4";
+  const videoLoading = !reduce && isPhoneVideo && loadedSrc !== videoSrc;
+  useEffect(() => {
+    if (!videoLoading || !videoSrc) return;
+    const video = heroVideo.current;
+    if (video && video.readyState >= 3) {
+      setLoadedSrc(videoSrc);
+      return;
+    }
+    // Safety net so a stalled network never blocks the hero for good.
+    const timer = window.setTimeout(() => setLoadedSrc(videoSrc), 15000);
+    return () => window.clearTimeout(timer);
+  }, [videoLoading, videoSrc]);
   const allowScrollMotion = useAllowMotion(750);
   const { scrollYProgress } = useScroll({ target: section, offset: ["start start", "end start"] });
   const departure = useSpring(scrollYProgress, SCROLL_SPRING);
@@ -108,8 +123,17 @@ export function HomeHero() {
               loop
               playsInline
               preload="auto"
+              poster={isPhoneVideo ? "/videos/vertical_new-poster.jpg" : undefined}
               aria-hidden="true"
+              onCanPlay={() => setLoadedSrc(videoSrc)}
+              onError={() => setLoadedSrc(videoSrc)}
             />
+          )}
+          {videoLoading && (
+            <div className="resort-hero-loader" role="status">
+              <span className="resort-hero-loader-ring" aria-hidden="true" />
+              <span className="sr-only">Loading video</span>
+            </div>
           )}
         </div>
       </motion.div>
