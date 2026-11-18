@@ -54,7 +54,7 @@ function subscribeWidth(notify: () => void) {
 }
 
 function pickHeroVideo() {
-  return window.innerWidth < 750 ? "/videos/hero-mobile-v1.mp4" : "/videos/web-banner-v4.mp4";
+  return window.innerWidth < 750 ? "/videos/hero-mobile-v2.mp4" : "/videos/web-banner-v4.mp4";
 }
 
 export function HomeHero() {
@@ -156,8 +156,6 @@ export function HomeHero() {
                 <motion.h2
                   className="t-h1"
                   style={{
-                    fontSize: "clamp(2.4rem, 4.1vw, 4.8rem)",
-                    lineHeight: 1.08,
                     margin: "18px 0 24px",
                     color: "inherit",
                   }}
