@@ -54,7 +54,7 @@ function subscribeWidth(notify: () => void) {
 }
 
 function pickHeroVideo() {
-  return window.innerWidth < 750 ? "/videos/hero-mobile-v1.mp4" : "/videos/web-banner-v4.mp4";
+  return window.innerWidth < 750 ? "/videos/vertical_new.mp4" : "/videos/web-banner-v4.mp4";
 }
 
 export function HomeHero() {
