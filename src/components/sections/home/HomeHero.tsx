@@ -91,7 +91,7 @@ export function HomeHero() {
             <video
               ref={heroVideo}
               className="size-full object-cover"
-              src="/videos/web-banner-v3.mp4"
+              src="/videos/web-banner-v4.mp4"
               autoPlay
               muted
               loop
