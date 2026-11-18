@@ -54,7 +54,7 @@ function subscribeWidth(notify: () => void) {
 }
 
 function pickHeroVideo() {
-  return window.innerWidth < 750 ? "/videos/vertical_new-v2.mp4" : "/videos/web-banner-v4.mp4";
+  return window.innerWidth < 750 ? "/videos/vertical_new-v2.mp4" : "/videos/web_banner_new-v2.mp4";
 }
 
 export function HomeHero() {
@@ -67,9 +67,14 @@ export function HomeHero() {
   // Phones get a small portrait cut; chosen after mount so the desktop film is never downloaded on a phone.
   const videoSrc = useSyncExternalStore(subscribeWidth, pickHeroVideo, () => undefined);
   useAutoplay(heroVideo, !reduce);
-  // Only the heavy portrait phone video gets a loader; it clears once the browser can start playing it.
-  const isPhoneVideo = videoSrc === "/videos/vertical_new-v2.mp4";
-  const videoLoading = !reduce && isPhoneVideo && loadedSrc !== videoSrc;
+  // Both hero videos get a loader over their poster; it clears once the browser can start playing it.
+  const heroPoster =
+    videoSrc === "/videos/vertical_new-v2.mp4"
+      ? "/videos/vertical_new-poster.jpg"
+      : videoSrc
+        ? "/videos/web_banner_new-poster.jpg"
+        : undefined;
+  const videoLoading = !reduce && !!videoSrc && loadedSrc !== videoSrc;
   useEffect(() => {
     if (!videoLoading || !videoSrc) return;
     const video = heroVideo.current;
@@ -123,7 +128,7 @@ export function HomeHero() {
               loop
               playsInline
               preload="auto"
-              poster={isPhoneVideo ? "/videos/vertical_new-poster.jpg" : undefined}
+              poster={heroPoster}
               aria-hidden="true"
               onCanPlay={() => setLoadedSrc(videoSrc)}
               onError={() => setLoadedSrc(videoSrc)}
