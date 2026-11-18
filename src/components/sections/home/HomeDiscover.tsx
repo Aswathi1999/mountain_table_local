@@ -114,7 +114,7 @@ function AmbientFilm({ still }: { still: boolean }) {
       loop
       playsInline
       preload={still ? "none" : "metadata"}
-      poster={HOME_FX.video.heroPoster}
+      poster="/videos/discover-poster.jpg"
       aria-hidden="true"
       tabIndex={-1}
     >
