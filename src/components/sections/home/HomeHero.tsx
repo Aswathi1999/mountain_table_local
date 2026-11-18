@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import { DUR, EASE, STAGGER, SCROLL_SPRING } from "@/components/motion/tokens";
@@ -48,12 +48,23 @@ const photographs = [
   },
 ];
 
+function subscribeWidth(notify: () => void) {
+  window.addEventListener("resize", notify);
+  return () => window.removeEventListener("resize", notify);
+}
+
+function pickHeroVideo() {
+  return window.innerWidth < 750 ? "/videos/hero-mobile-v1.mp4" : "/videos/web-banner-v4.mp4";
+}
+
 export function HomeHero() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const section = useRef<HTMLElement>(null);
   const heroVideo = useRef<HTMLVideoElement>(null);
   const reduce = useReducedMotion();
+  // Phones get a small portrait cut; chosen after mount so the desktop film is never downloaded on a phone.
+  const videoSrc = useSyncExternalStore(subscribeWidth, pickHeroVideo, () => undefined);
   useAutoplay(heroVideo, !reduce);
   const allowScrollMotion = useAllowMotion(750);
   const { scrollYProgress } = useScroll({ target: section, offset: ["start start", "end start"] });
@@ -91,7 +102,7 @@ export function HomeHero() {
             <video
               ref={heroVideo}
               className="size-full object-cover"
-              src="/videos/web-banner-v4.mp4"
+              src={videoSrc}
               autoPlay
               muted
               loop
