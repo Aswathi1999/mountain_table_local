@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 export type SliderPhoto = { src: string; alt: string };
 
-const INTERVAL = 4500;
+const INTERVAL = 3000;
 
 /**
  * An activity's photographs as a swipeable strip that advances by itself. Auto-advance pauses while the pointer is over it, while
