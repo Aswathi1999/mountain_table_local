@@ -100,7 +100,6 @@ export function AboutTiles() {
               <motion.div variants={enabled ? clip : undefined} className="rounded-[18px]">
                 <Link
                   href={t.href}
-                  data-cursor="view"
                   className="group text-ivory relative block h-[26rem] overflow-hidden rounded-[18px] no-underline desk:h-[27.5rem]"
                 >
                   <motion.span

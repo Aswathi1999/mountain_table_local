@@ -1,11 +1,11 @@
 "use client";
 
-import { motion, useScroll, useSpring, useTransform, type MotionValue } from "motion/react";
+import { cubicBezier, motion, useScroll, useSpring, useTransform, type MotionValue } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { Lines, Reveal } from "@/components/motion/primitives";
-import { SCROLL_SPRING } from "@/components/motion/tokens";
+import { EASE, SCROLL_SPRING, SPRING } from "@/components/motion/tokens";
 import { useAllowMotion } from "@/components/motion/useAllowMotion";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import { ArrowIcon } from "@/components/ui/BookNowButton";
@@ -74,6 +74,8 @@ const CARDS = [
   },
 ] as const;
 const MID = (CARDS.length - 1) / 2;
+/** The project's EASE curve as a function, so scroll-linked values settle softly instead of moving in straight lines. */
+const ease = cubicBezier(...EASE);
 
 /**
  * One card. As the section scrolls into view the cards start gathered in a pile at the middle (turned flat, a little low and
@@ -84,26 +86,36 @@ const MID = (CARDS.length - 1) / 2;
 function Card({ n, p, live }: { n: number; p: MotionValue<number>; live: boolean }) {
   const card = CARDS[n];
   const rank = Math.abs(n - MID);
-  const start = rank * 0.07;
-  const end = start + 0.45;
+  const start = rank * 0.09;
+  const end = start + 0.55;
   const shift = (MID - n) * 92;
-  const x = useTransform(p, [start, end], [`${shift}%`, "0%"], { clamp: true });
-  const y = useTransform(p, [start, end], [70, -card.lift], { clamp: true });
-  const rotate = useTransform(p, [start, end], [0, card.rotate], { clamp: true });
-  const opacity = useTransform(p, [start, start + 0.18], [0, 1], { clamp: true });
-  const scale = useTransform(p, [start, end], [0.8, card.scale], { clamp: true });
+  const opts = { clamp: true, ease };
+  const x = useTransform(p, [start, end], [`${shift}%`, "0%"], opts);
+  const y = useTransform(p, [start, end], [70, -card.lift], opts);
+  const rotate = useTransform(p, [start, end], [0, card.rotate], opts);
+  const opacity = useTransform(p, [start, start + 0.22], [0, 1], { clamp: true });
+  const scale = useTransform(p, [start, end], [0.8, card.scale], opts);
 
   return (
     <motion.li
       data-motion=""
-      className={`${card.phone ? "" : "max-md:hidden"} relative -ml-[4%] w-[25%] shrink-0 first:ml-0 md:-ml-[2.5%] md:w-[17.5%]`}
-      style={live ? { x, y, rotate, opacity, scale } : { y: -card.lift, rotate: card.rotate, scale: card.scale }}
-      whileHover={live ? { rotate: 0, y: -card.lift - 14, scale: card.scale * 1.06, zIndex: 20 } : undefined}
-      transition={{ duration: 0.5 }}
+      className={`${card.phone ? "" : "max-md:hidden"} relative -ml-[4%] hover:z-20 w-[25%] shrink-0 first:ml-0 md:-ml-[2.5%] md:w-[17.5%]`}
+      style={
+        live
+          ? { x, y, rotate, opacity, scale, willChange: "transform, opacity" }
+          : { y: -card.lift, rotate: card.rotate, scale: card.scale }
+      }
     >
-      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[4px] border-[5px] border-white bg-white shadow-[0_18px_40px_rgba(10,34,27,0.22)] desk:border-[7px]">
-        <Image src={card.src} alt={card.alt} fill sizes="(min-width: 768px) 19vw, 28vw" className="object-cover" />
-      </div>
+      {/* Hover lives on this inner layer so it never fights the scroll-linked motion of the card itself. */}
+      <motion.div
+        className="relative"
+        whileHover={live ? { rotate: -card.rotate, y: -14, scale: 1.06 } : undefined}
+        transition={SPRING.soft}
+      >
+        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[4px] border-[5px] border-white bg-white shadow-[0_18px_40px_rgba(10,34,27,0.22)] desk:border-[7px]">
+          <Image src={card.src} alt={card.alt} fill sizes="(min-width: 768px) 19vw, 28vw" className="object-cover" />
+        </div>
+      </motion.div>
     </motion.li>
   );
 }
@@ -118,11 +130,14 @@ export function MomentsStrip() {
   const reduce = useReducedMotion();
   const allowed = useAllowMotion();
   const live = allowed && !reduce;
-  const { scrollYProgress } = useScroll({ target: row, offset: ["start 92%", "center 52%"] });
+  const { scrollYProgress } = useScroll({ target: row, offset: ["start 100%", "center 45%"] });
   const p = useSpring(scrollYProgress, SCROLL_SPRING);
 
   return (
-    <section aria-labelledby="moments-title" className="bg-ivory-deep relative overflow-hidden pt-24 pb-14 md:py-20 desk:py-28">
+    <section
+      aria-labelledby="moments-title"
+      className="bg-ivory-deep relative overflow-hidden pt-24 pb-14 md:py-20 desk:py-28"
+    >
       <div className="wrap text-center">
         <Reveal>
           <p className="t-eyebrow text-forest justify-center before:h-px before:w-14 before:bg-current before:opacity-35 before:content-['']">

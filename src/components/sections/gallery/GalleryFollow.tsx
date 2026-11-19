@@ -47,7 +47,8 @@ const TILTS = [1.6, -1.2, 2, -1.8, 1, -2] as const;
  */
 export function GalleryFollow() {
   const reduce = useReducedMotion();
-  const posts = instagramPosts.slice(0, 6);
+  // Generated concept images (.webp) are excluded; only the property's own photos/reel frames are shown.
+  const posts = instagramPosts.filter((p) => !p.src.endsWith(".webp")).slice(0, 6);
   const fx = guests.enabled && !reduce;
   return (
     <section id="follow" aria-labelledby="follow-title" className="bg-ivory relative py-20 desk:py-28">
