@@ -1,8 +1,11 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { DUR, EASE, EASE_REVEAL } from "@/components/motion/tokens";
+import { useReducedMotion } from "@/components/motion/useReducedMotion";
 
 export type SliderPhoto = { src: string; alt: string };
 
@@ -16,11 +19,15 @@ export function PhotoSlider({
   photos,
   sizes,
   position = "50% 50%",
+  from = "left",
 }: {
   photos: readonly SliderPhoto[];
   sizes: string;
   position?: string;
+  /** Side the picture wipes in from when it first scrolls into view (matches the single-photo frames). */
+  from?: "left" | "right";
 }) {
+  const reduce = useReducedMotion();
   const [emblaRef, embla] = useEmblaCarousel({ duration: 30 });
   const [index, setIndex] = useState(0);
   const root = useRef<HTMLDivElement>(null);
@@ -84,9 +91,14 @@ export function PhotoSlider({
   };
 
   return (
-    <div
+    <motion.div
       ref={root}
+      data-motion=""
       className="relative h-full w-full"
+      initial={reduce ? false : { clipPath: from === "left" ? "inset(0 100% 0 0)" : "inset(0 0 0 100%)" }}
+      whileInView={{ clipPath: "inset(0 0 0 0)" }}
+      viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+      transition={{ duration: DUR.image, ease: EASE_REVEAL }}
       role="group"
       aria-roledescription="carousel"
       onPointerEnter={(e) => e.pointerType === "mouse" && set("hover", true)}
@@ -94,29 +106,38 @@ export function PhotoSlider({
       onFocus={() => set("focus", true)}
       onBlur={() => set("focus", false)}
     >
-      <div ref={emblaRef} className="h-full overflow-hidden">
-        <div className="flex h-full touch-pan-y will-change-transform">
-          {photos.map((p, i) => (
-            <div
-              key={p.src}
-              className="relative h-full min-w-0 flex-[0_0_100%]"
-              role="group"
-              aria-roledescription="slide"
-              aria-label={`${i + 1} of ${photos.length}`}
-            >
-              <Image
-                src={p.src}
-                alt={p.alt}
-                fill
-                sizes={sizes}
-                className="object-cover"
-                style={{ objectPosition: position }}
-                draggable={false}
-              />
-            </div>
-          ))}
+      <motion.div
+        data-motion=""
+        className="h-full"
+        initial={reduce ? false : { scale: 1.18 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+        transition={{ duration: DUR.settle, ease: EASE }}
+      >
+        <div ref={emblaRef} className="h-full overflow-hidden">
+          <div className="flex h-full touch-pan-y will-change-transform">
+            {photos.map((p, i) => (
+              <div
+                key={p.src}
+                className="relative h-full min-w-0 flex-[0_0_100%]"
+                role="group"
+                aria-roledescription="slide"
+                aria-label={`${i + 1} of ${photos.length}`}
+              >
+                <Image
+                  src={p.src}
+                  alt={p.alt}
+                  fill
+                  sizes={sizes}
+                  className="object-cover"
+                  style={{ objectPosition: position }}
+                  draggable={false}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </motion.div>
       <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2">
         {photos.map((p, i) => (
           <button
@@ -133,6 +154,6 @@ export function PhotoSlider({
           </button>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

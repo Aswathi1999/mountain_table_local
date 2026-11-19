@@ -116,6 +116,7 @@ function Activity({ index }: { index: number }) {
           photos={photos}
           sizes="(min-width: 1280px) 620px, (min-width: 1024px) 48vw, 92vw"
           position={frame.position}
+          from={flip ? "right" : "left"}
         />
       ) : (
         <ImageFrame
