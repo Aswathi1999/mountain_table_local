@@ -117,7 +117,7 @@ function Postcard({ n, hover, setHover, p, live, fx }: CardProps) {
                 src={photo.src}
                 alt={photo.alt}
                 fill
-                sizes="(min-width: 1024px) 200px, 22vw"
+                sizes="(min-width: 1024px) 280px, 22vw"
                 className="object-cover"
                 priority
               />
@@ -206,7 +206,7 @@ export function GalleryHero() {
         </Reveal>
 
         <motion.div
-          className="mx-auto mt-12 flex max-w-[56rem] items-start justify-center desk:gap-[1.5%] pb-10 desk:mt-16"
+          className="mx-auto mt-12 flex max-w-[56rem] items-start justify-center desk:max-w-[70rem] desk:gap-[1.5%] pb-10 desk:mt-16"
           style={{ opacity: fanOpacity }}
         >
           {FAN.map((_, n) => (
