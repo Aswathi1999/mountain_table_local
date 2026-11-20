@@ -1692,6 +1692,13 @@ html.lenis-stopped {
 /* Homepage photographic hero and its transparent navigation. */
 .resort-hero { position: relative; isolation: isolate; height: 100svh; min-height: 680px; background: var(--color-forest-deep); color: white; overflow: hidden; }
 .resort-hero-photos, .resort-hero-photo, .resort-hero-shade { position: absolute; inset: 0; }
+/* Background video: never show the native play button/controls overlay (iOS/Android) while it loads or is waiting to autoplay. */
+.resort-hero-photo video { pointer-events: none; }
+.resort-hero-photo video::-webkit-media-controls,
+.resort-hero-photo video::-webkit-media-controls-panel,
+.resort-hero-photo video::-webkit-media-controls-play-button,
+.resort-hero-photo video::-webkit-media-controls-start-playback-button,
+.resort-hero-photo video::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; opacity: 0; }
 .resort-hero-shade { background: linear-gradient(180deg, rgb(0 0 0 / .38), rgb(0 0 0 / .08) 35%, rgb(0 0 0 / .56)); }
 .resort-hero-copy { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; text-align: left; padding-top: 180px; padding-bottom: 150px; }
 .resort-hero-copy h1 { color: inherit; margin: 18px 0 24px; }
