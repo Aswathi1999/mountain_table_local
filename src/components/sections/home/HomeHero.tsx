@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { Fragment, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { useReducedMotion } from "@/components/motion/useReducedMotion";
 import { DUR, EASE, STAGGER, SCROLL_SPRING } from "@/components/motion/tokens";
@@ -14,7 +14,7 @@ const photographs = [
     src: "/images/hero-concept-pool-v1.webp",
     alt: "Illustrative resort concept: infinity pool overlooking a tropical valley",
     label: "Family homestay in Vagamon",
-    title: ["Nature’s Beauty, Your Perfect", "Homestay in Vagamon"],
+    title: ["Nature’s Beauty,", "Your Perfect", "Homestay in Vagamon"],
     body: "A perfect mountain escape that gives you luxury, comfort, and breathtaking views. Experience a refreshing homestay in Vagamon with The Mountain Table.",
     cta: "Explore Rooms",
     href: "/rooms-booking",
@@ -190,9 +190,12 @@ export function HomeHero() {
                   }}
                   {...enter(1)}
                 >
-                  {photo.title[0]}
-                  <br />
-                  {photo.title[1]}
+                  {photo.title.map((line, lineIndex) => (
+                    <Fragment key={line}>
+                      {lineIndex > 0 && <br />}
+                      {line}
+                    </Fragment>
+                  ))}
                 </motion.h2>
                 <motion.p className="t-body resort-hero-description" {...enter(2)}>
                   {photo.body}
