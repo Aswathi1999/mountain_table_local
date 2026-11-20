@@ -54,7 +54,7 @@ function subscribeWidth(notify: () => void) {
 }
 
 function pickHeroVideo() {
-  return window.innerWidth < 750 ? "/videos/mobile_video_new.mp4" : "/videos/web_video_new.webm";
+  return window.innerWidth < 750 ? "/videos/mobile_hero_size_reduce.mp4" : "/videos/web_hero_size_reduce.mp4";
 }
 
 export function HomeHero() {
@@ -69,7 +69,7 @@ export function HomeHero() {
   useAutoplay(heroVideo, !reduce);
   // Both hero videos get a loader over their poster; it clears once the browser can start playing it.
   const heroPoster =
-    videoSrc === "/videos/mobile_video_new.mp4"
+    videoSrc === "/videos/mobile_hero_size_reduce.mp4"
       ? "/videos/mobile_video_new-poster.jpg"
       : videoSrc
         ? "/videos/web_video_new-poster.jpg"
