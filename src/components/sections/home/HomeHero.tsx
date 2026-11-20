@@ -54,7 +54,7 @@ function subscribeWidth(notify: () => void) {
 }
 
 function pickHeroVideo() {
-  return window.innerWidth < 750 ? "/videos/vertical_new-v2.mp4" : "/videos/web_banner_new-v2.mp4";
+  return window.innerWidth < 750 ? "/videos/mobile_video_new.mp4" : "/videos/web_video_new.webm";
 }
 
 export function HomeHero() {
@@ -69,10 +69,10 @@ export function HomeHero() {
   useAutoplay(heroVideo, !reduce);
   // Both hero videos get a loader over their poster; it clears once the browser can start playing it.
   const heroPoster =
-    videoSrc === "/videos/vertical_new-v2.mp4"
-      ? "/videos/vertical_new-poster.jpg"
+    videoSrc === "/videos/mobile_video_new.mp4"
+      ? "/videos/mobile_video_new-poster.jpg"
       : videoSrc
-        ? "/videos/web_banner_new-poster.jpg"
+        ? "/videos/web_video_new-poster.jpg"
         : undefined;
   const videoLoading = !reduce && !!videoSrc && loadedSrc !== videoSrc;
   useEffect(() => {
